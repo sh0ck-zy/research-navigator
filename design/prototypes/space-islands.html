@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Concept B — Space Islands</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { background: #050508; overflow: hidden; font-family: 'Inter', -apple-system, sans-serif; }
+        canvas { display: block; }
+
+        #ui { position: absolute; top: 0; left: 0; width: 100%; height: 100%; pointer-events: none; }
+
+        #header { position: absolute; top: 32px; left: 32px; pointer-events: auto; }
+        #header h1 { font-size: 13px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: rgba(255,255,255,0.9); }
+        #header p { font-size: 10px; color: rgba(255,255,255,0.35); margin-top: 4px; letter-spacing: 0.1em; }
+
+        #search { position: absolute; top: 32px; left: 50%; transform: translateX(-50%); pointer-events: auto; }
+        #search input {
+            width: 380px; padding: 12px 20px; border-radius: 24px;
+            background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.08);
+            color: white; font-size: 13px; outline: none;
+            backdrop-filter: blur(20px);
+        }
+        #search input::placeholder { color: rgba(255,255,255,0.25); }
+        #search input:focus { border-color: rgba(140,120,255,0.4); }
+
+        #legend { position: absolute; bottom: 32px; left: 32px; }
+        #legend span { font-size: 10px; color: rgba(255,255,255,0.25); letter-spacing: 0.08em; }
+
+        #tooltip {
+            position: absolute; display: none; padding: 12px 16px; border-radius: 12px;
+            background: rgba(8,8,12,0.95); border: 1px solid rgba(255,255,255,0.08);
+            backdrop-filter: blur(20px); pointer-events: none; max-width: 240px;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="c"></canvas>
+    <div id="ui">
+        <div id="header">
+            <h1>The Observatory</h1>
+            <p>Concept B — Space Islands</p>
+        </div>
+        <div id="search">
+            <input type="text" placeholder="Explore a research field..." value="Machine Learning" readonly>
+        </div>
+        <div id="legend">
+            <span>MACHINE LEARNING — 10,247 PAPERS — 8 RESEARCH NEBULAE</span>
+        </div>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('c');
+        const ctx = canvas.getContext('2d');
+        let W, H;
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+            // Recalculate star positions on resize
+            stars.forEach(s => { s.x = Math.random() * W; s.y = Math.random() * H; });
+        }
+
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+        window.addEventListener('resize', resize);
+
+        const clusters = [
+            { name: 'Transformers & Attention', papers: 2840, x: 0.35, y: 0.38, r: 0.13, color: [74, 158, 255], sub: ['Self-Attention', 'Multi-Head', 'Efficient Transformers', 'Vision Transformers'] },
+            { name: 'Reinforcement Learning', papers: 1920, x: 0.70, y: 0.32, r: 0.10, color: [255, 107, 138], sub: ['Multi-Agent RL', 'Offline RL', 'Policy Gradient', 'Model-Based RL'] },
+            { name: 'Generative Models', papers: 1650, x: 0.22, y: 0.65, r: 0.095, color: [139, 92, 246], sub: ['Diffusion', 'GANs', 'VAEs', 'Flow Models'] },
+            { name: 'LLM Safety & Alignment', papers: 1100, x: 0.55, y: 0.60, r: 0.08, color: [245, 158, 11], sub: ['RLHF', 'Red-Teaming', 'Constitutional AI', 'Jailbreaking'] },
+            { name: 'Graph Neural Networks', papers: 890, x: 0.80, y: 0.62, r: 0.065, color: [16, 185, 129], sub: ['Message Passing', 'Spectral Methods', 'Link Prediction'] },
+            { name: 'Federated Learning', papers: 620, x: 0.12, y: 0.35, r: 0.055, color: [6, 182, 212], sub: ['Privacy', 'Aggregation', 'Heterogeneity'] },
+            { name: 'Neural Architecture Search', papers: 480, x: 0.88, y: 0.40, r: 0.045, color: [236, 72, 153], sub: ['One-Shot NAS', 'Pruning', 'Distillation'] },
+            { name: 'Causal Inference', papers: 350, x: 0.48, y: 0.82, r: 0.04, color: [132, 204, 22], sub: ['Do-Calculus', 'Counterfactuals', 'Treatment Effects'] },
+        ];
+
+        // Stars background
+        const stars = [];
+        for (let i = 0; i < 600; i++) {
+            stars.push({
+                x: Math.random() * W,
+                y: Math.random() * H,
+                size: Math.random() * 1.2,
+                brightness: 0.1 + Math.random() * 0.3,
+                twinkleSpeed: 0.5 + Math.random() * 2
+            });
+        }
+
+        // Paper particles per cluster
+        const particles = [];
+        clusters.forEach(cl => {
+            const cx = cl.x;
+            const cy = cl.y;
+            const count = Math.floor(cl.papers / 4);
+            for (let i = 0; i < count; i++) {
+                const angle = Math.random() * Math.PI * 2;
+                const dist = Math.pow(Math.random(), 0.5) * cl.r;
+                particles.push({
+                    relX: cx + Math.cos(angle) * dist,
+                    relY: cy + Math.sin(angle) * dist,
+                    cluster: cl,
+                    size: 0.8 + Math.random() * 2,
+                    brightness: 0.3 + Math.random() * 0.7,
+                    twinkle: Math.random() * Math.PI * 2
+                });
+            }
+        });
+
+        let hoveredCluster = null;
+        let mouseX = 0, mouseY = 0;
+        let time = 0;
+
+        function rgbStr(c, a) { return `rgba(${c[0]},${c[1]},${c[2]},${a})`; }
+
+        function drawNebula(cl, highlight) {
+            const cx = cl.x * W;
+            const cy = cl.y * H;
+            const baseR = cl.r * Math.min(W, H);
+
+            // Outer glow — nebula effect
+            for (let layer = 3; layer >= 0; layer--) {
+                const r = baseR * (1.3 + layer * 0.25);
+                const alpha = highlight ? 0.06 - layer * 0.012 : 0.025 - layer * 0.005;
+                if (alpha <= 0) continue;
+
+                ctx.beginPath();
+                const points = 48;
+                for (let i = 0; i <= points; i++) {
+                    const angle = (i / points) * Math.PI * 2;
+                    const noise = Math.sin(angle * 3 + time * 0.4 + layer) * 0.12 +
+                                  Math.sin(angle * 5 + time * 0.2) * 0.06 +
+                                  Math.cos(angle * 2 + time * 0.6) * 0.08;
+                    const pr = r * (1 + noise);
+                    const px = cx + Math.cos(angle) * pr;
+                    const py = cy + Math.sin(angle) * pr;
+                    if (i === 0) ctx.moveTo(px, py);
+                    else ctx.lineTo(px, py);
+                }
+                ctx.closePath();
+                ctx.fillStyle = rgbStr(cl.color, alpha);
+                ctx.fill();
+            }
+
+            // Core glow
+            const coreGrad = ctx.createRadialGradient(cx, cy, 0, cx, cy, baseR * 0.6);
+            coreGrad.addColorStop(0, rgbStr(cl.color, highlight ? 0.15 : 0.06));
+            coreGrad.addColorStop(1, 'transparent');
+            ctx.beginPath();
+            ctx.arc(cx, cy, baseR * 0.6, 0, Math.PI * 2);
+            ctx.fillStyle = coreGrad;
+            ctx.fill();
+
+            // Subtle border ring
+            ctx.beginPath();
+            const ringPoints = 64;
+            for (let i = 0; i <= ringPoints; i++) {
+                const angle = (i / ringPoints) * Math.PI * 2;
+                const noise = Math.sin(angle * 3 + time * 0.5) * 0.08 +
+                              Math.sin(angle * 6 + time * 0.3) * 0.04;
+                const r2 = baseR * (1.1 + noise);
+                const px = cx + Math.cos(angle) * r2;
+                const py = cy + Math.sin(angle) * r2;
+                if (i === 0) ctx.moveTo(px, py);
+                else ctx.lineTo(px, py);
+            }
+            ctx.closePath();
+            ctx.strokeStyle = rgbStr(cl.color, highlight ? 0.2 : 0.06);
+            ctx.lineWidth = highlight ? 1 : 0.5;
+            ctx.stroke();
+        }
+
+        function drawConnections() {
+            for (let i = 0; i < clusters.length; i++) {
+                for (let j = i + 1; j < clusters.length; j++) {
+                    const a = clusters[i], b = clusters[j];
+                    const dist = Math.sqrt((a.x - b.x) ** 2 + (a.y - b.y) ** 2);
+                    if (dist < 0.35) {
+                        const ax = a.x * W, ay = a.y * H;
+                        const bx = b.x * W, by = b.y * H;
+
+                        // Curved connection
+                        const mx = (ax + bx) / 2 + Math.sin(time * 0.3 + i) * 15;
+                        const my = (ay + by) / 2 + Math.cos(time * 0.4 + j) * 15;
+
+                        ctx.beginPath();
+                        ctx.moveTo(ax, ay);
+                        ctx.quadraticCurveTo(mx, my, bx, by);
+
+                        const bothHovered = hoveredCluster === a || hoveredCluster === b;
+                        ctx.strokeStyle = bothHovered ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.02)';
+                        ctx.lineWidth = 0.5;
+                        ctx.stroke();
+                    }
+                }
+            }
+        }
+
+        function drawLabel(cl, highlight) {
+            const cx = cl.x * W;
+            const cy = cl.y * H;
+
+            ctx.textAlign = 'center';
+
+            // Name
+            ctx.font = highlight ? 'bold 13px Inter, sans-serif' : '500 11px Inter, sans-serif';
+            ctx.fillStyle = highlight ? 'rgba(255,255,255,0.95)' : 'rgba(255,255,255,0.45)';
+            ctx.fillText(cl.name, cx, cy - 8);
+
+            // Count
+            ctx.font = '10px Inter, sans-serif';
+            ctx.fillStyle = highlight ? rgbStr(cl.color, 0.9) : 'rgba(255,255,255,0.2)';
+            ctx.fillText(`${cl.papers.toLocaleString()} papers`, cx, cy + 8);
+
+            // Sub-topics on hover
+            if (highlight) {
+                cl.sub.forEach((s, i) => {
+                    ctx.font = '9px Inter, sans-serif';
+                    ctx.fillStyle = 'rgba(255,255,255,0.3)';
+                    ctx.fillText(s, cx, cy + 28 + i * 14);
+                });
+            }
+        }
+
+        function draw() {
+            time += 0.008;
+            ctx.clearRect(0, 0, W, H);
+
+            // Deep space background
+            const bgGrad = ctx.createRadialGradient(W * 0.4, H * 0.4, 0, W/2, H/2, W * 0.8);
+            bgGrad.addColorStop(0, '#0a0a12');
+            bgGrad.addColorStop(0.5, '#060608');
+            bgGrad.addColorStop(1, '#030304');
+            ctx.fillStyle = bgGrad;
+            ctx.fillRect(0, 0, W, H);
+
+            // Stars
+            stars.forEach(s => {
+                const twinkle = 0.5 + 0.5 * Math.sin(time * s.twinkleSpeed + s.x);
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(200,210,240,${s.brightness * twinkle})`;
+                ctx.fill();
+            });
+
+            // Check hover
+            hoveredCluster = null;
+            clusters.forEach(cl => {
+                const cx = cl.x * W;
+                const cy = cl.y * H;
+                const dist = Math.sqrt((mouseX - cx) ** 2 + (mouseY - cy) ** 2);
+                if (dist < cl.r * Math.min(W, H) * 1.3) {
+                    hoveredCluster = cl;
+                }
+            });
+
+            // Connections
+            drawConnections();
+
+            // Nebulae
+            clusters.forEach(cl => drawNebula(cl, hoveredCluster === cl));
+
+            // Particles (papers)
+            particles.forEach(p => {
+                const px = p.relX * W;
+                const py = p.relY * H;
+                const highlight = hoveredCluster === p.cluster;
+                const twinkle = 0.6 + 0.4 * Math.sin(time * 1.5 + p.twinkle);
+                const alpha = highlight ? p.brightness * twinkle : p.brightness * twinkle * 0.4;
+                const size = highlight ? p.size * 1.2 : p.size;
+
+                ctx.beginPath();
+                ctx.arc(px, py, size, 0, Math.PI * 2);
+                ctx.fillStyle = rgbStr(p.cluster.color, alpha);
+                ctx.fill();
+
+                // Subtle glow on bright particles
+                if (p.brightness > 0.7 && highlight) {
+                    ctx.beginPath();
+                    ctx.arc(px, py, size * 3, 0, Math.PI * 2);
+                    ctx.fillStyle = rgbStr(p.cluster.color, 0.05);
+                    ctx.fill();
+                }
+            });
+
+            // Labels
+            clusters.forEach(cl => drawLabel(cl, hoveredCluster === cl));
+
+            requestAnimationFrame(draw);
+        }
+
+        canvas.addEventListener('mousemove', e => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        draw();
+    </script>
+</body>
+</html>

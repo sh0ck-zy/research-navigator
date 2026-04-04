@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Observatório - Knowledge Graph OS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;1,300&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Inter"', 'sans-serif'],
+                        serif: ['"Merriweather"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { margin: 0; overflow: hidden; background-color: #010103; color: white; }
+        #canvas-container { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; }
+        #ui-layer { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 10; pointer-events: none; }
+        .pointer-events-auto { pointer-events: auto; }
+        
+        /* Glassmorphism de Próxima Geração */
+        .glass-ui { background: rgba(10, 10, 15, 0.4); backdrop-filter: blur(40px); -webkit-backdrop-filter: blur(40px); border: 1px solid rgba(255, 255, 255, 0.05); }
+        .glass-panel { background: rgba(5, 5, 8, 0.96); backdrop-filter: blur(60px); -webkit-backdrop-filter: blur(60px); border-left: 1px solid rgba(255, 255, 255, 0.08); }
+        
+        #tooltip { position: absolute; top: -1000px; left: -1000px; transition: opacity 0.2s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1); opacity: 0; pointer-events: none; z-index: 100; }
+        
+        /* Badges de Status */
+        .badge-gap { background: linear-gradient(90deg, rgba(251, 191, 36, 0.2), transparent); border-left: 2px solid #fbbf24; }
+        .badge-discovery { background: linear-gradient(90deg, rgba(59, 130, 246, 0.2), transparent); border-left: 2px solid #3b82f6; }
+
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="antialiased font-sans">
+
+    <div id="canvas-container"></div>
+
+    <!-- Tooltip de Grafo Semântico -->
+    <div id="tooltip" class="glass-ui px-5 py-4 rounded-2xl max-w-xs shadow-2xl scale-90">
+        <div class="flex justify-between items-center mb-3">
+            <span class="text-[8px] font-black tracking-[0.2em] uppercase px-2 py-0.5 rounded bg-white/5 text-gray-400 border border-white/10" id="tt-topic">Tópico</span>
+            <div class="flex items-center space-x-1">
+                <div class="w-1.5 h-1.5 rounded-full bg-blue-500"></div>
+                <span class="text-[9px] text-blue-400 font-mono" id="tt-id">KG: 0.98</span>
+            </div>
+        </div>
+        <h4 class="font-serif font-bold text-sm leading-tight mb-4 text-white/95" id="tt-title">O Título da Investigação</h4>
+        <div class="flex justify-between items-center pt-3 border-t border-white/5">
+            <span class="text-[8px] text-gray-500 uppercase tracking-widest font-bold">Relacional</span>
+            <span class="text-[9px] font-mono text-emerald-400" id="tt-connections">12 Conexões</span>
+        </div>
+    </div>
+
+    <!-- Camada de UI OS -->
+    <div id="ui-layer" class="flex flex-col justify-between p-8 h-screen w-screen overflow-hidden">
+        
+        <!-- Topo: Contexto do Grafo -->
+        <header class="flex justify-between items-start w-full">
+            <div class="pointer-events-auto flex items-center space-x-4">
+                <div class="w-11 h-11 rounded-2xl bg-white flex items-center justify-center shadow-2xl">
+                    <svg class="w-6 h-6 text-black" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3 4-3 9-3 9 1.34 9 3z"></path><path d="M3 12v6c0 1.66 4 3 9 3s9-1.34 9-3v-6"></path><path d="M3 6v6c0 1.66 4 3 9 3s9-1.34 9-3V6"></path><path d="M21 6c0 1.66-4 3-9 3S3 7.66 3 6s4-3 9-3 9 1.34 9 3z"></path></svg>
+                </div>
+                <div>
+                    <h1 class="text-xs font-black tracking-[0.4em] uppercase text-white/90">Observatório</h1>
+                    <div class="flex items-center mt-1 text-[8px] font-bold text-gray-500 uppercase tracking-widest">
+                        <span class="text-blue-500 mr-2">Knowledge Graph v4.0</span>
+                        <span>•</span>
+                        <span class="ml-2">512 Cluster Nodes</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lentes de Inteligência -->
+            <div class="pointer-events-auto glass-ui rounded-3xl p-1.5 flex space-x-1 border border-white/5">
+                <button onclick="updateView('clusters')" class="lens-btn active px-6 py-2 rounded-2xl text-[9px] font-bold uppercase tracking-widest text-white bg-white/10 transition-all" data-view="clusters">Clusters</button>
+                <button onclick="updateView('centrality')" class="lens-btn px-6 py-2 rounded-2xl text-[9px] font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-all" data-view="centrality">Influência</button>
+                <button onclick="updateView('hidden')" class="lens-btn px-6 py-2 rounded-2xl text-[9px] font-bold uppercase tracking-widest text-gray-500 hover:text-white transition-all" data-view="hidden">Descoberta Oculta</button>
+            </div>
+            
+            <div class="pointer-events-auto flex items-center space-x-4">
+                <div class="glass-ui px-4 py-2 rounded-xl border border-white/5 flex items-center space-x-3">
+                    <div class="w-2 h-2 rounded-full bg-amber-400"></div>
+                    <span class="text-[9px] font-bold uppercase tracking-widest text-gray-400">Focus Mode</span>
+                </div>
+                <div class="w-11 h-11 rounded-2xl bg-gradient-to-tr from-blue-600 to-indigo-600 shadow-xl shadow-blue-500/20"></div>
+            </div>
+        </header>
+
+        <!-- Base: Comando de Síntese -->
+        <footer class="flex flex-col items-center space-y-8 pb-4">
+            <div class="pointer-events-auto w-full max-w-2xl">
+                <div class="glass-ui rounded-3xl p-3 flex items-center space-x-4 shadow-[0_40px_80px_-20px_rgba(0,0,0,1)] border border-white/10 focus-within:border-blue-500/50 transition-all duration-700">
+                    <div class="w-11 h-11 rounded-2xl bg-blue-500/10 flex items-center justify-center flex-shrink-0">
+                        <svg class="w-5 h-5 text-blue-500 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                    </div>
+                    <input type="text" placeholder="Cruzamento de hipóteses entre clusters ou comando de grafo..." class="bg-transparent border-none outline-none text-white w-full placeholder-gray-600 text-sm font-medium">
+                    <button class="bg-white hover:bg-gray-100 text-black rounded-2xl px-10 py-3.5 text-[10px] font-black uppercase tracking-[0.3em] transition-all shadow-2xl active:scale-95">
+                        Inferir
+                    </button>
+                </div>
+            </div>
+            <div class="flex space-x-12 text-[8px] font-black uppercase tracking-[0.4em] text-gray-600">
+                <span class="flex items-center hover:text-white cursor-pointer transition-colors"><div class="w-1.5 h-1.5 rounded-full bg-blue-500 mr-2"></div> 42 Nodes Sugeridos</span>
+                <span class="flex items-center hover:text-white cursor-pointer transition-colors"><div class="w-1.5 h-1.5 rounded-full bg-emerald-500 mr-2"></div> Novas Adjacências</span>
+                <span class="flex items-center hover:text-white cursor-pointer transition-colors"><div class="w-1.5 h-1.5 rounded-full bg-amber-500 mr-2"></div> Lacunas de Conhecimento</span>
+            </div>
+        </footer>
+
+        <!-- Workpad: Painel de Conhecimento Estruturado -->
+        <div id="workpad" class="pointer-events-auto absolute top-0 right-0 h-full w-[600px] glass-panel transform translate-x-full transition-transform duration-700 ease-in-out flex flex-col z-30 shadow-[-60px_0_120px_rgba(0,0,0,1)]">
+            
+            <div class="p-8 flex justify-between items-center border-b border-white/5">
+                <div class="flex items-center space-x-4">
+                    <button onclick="closeWorkpad()" class="p-3 rounded-xl bg-white/5 hover:bg-white/10 text-gray-500 hover:text-white transition-all">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M13 5l7 7-7 7M5 5l7 7-7 7"></path></svg>
+                    </button>
+                    <span class="text-[9px] font-black tracking-[0.2em] text-gray-500 uppercase">Análise de Adjacência de Grafo</span>
+                </div>
+                <button class="px-5 py-2.5 rounded-xl bg-blue-600 text-white text-[9px] font-black uppercase tracking-widest shadow-xl shadow-blue-500/20 active:scale-95 transition-all">Salvar Hipótese</button>
+            </div>
+
+            <div class="p-16 overflow-y-auto no-scrollbar flex-1">
+                <div class="flex items-center space-x-3 mb-8">
+                    <span id="wp-topic" class="text-[10px] font-black tracking-[0.3em] uppercase text-blue-400">Deep Learning</span>
+                    <span class="w-1 h-1 rounded-full bg-gray-700"></span>
+                    <span id="wp-id" class="text-[10px] font-bold text-gray-500 uppercase tracking-widest">DOI: 10.1522</span>
+                </div>
+                
+                <h2 id="wp-title" class="text-4xl font-serif font-bold leading-[1.1] mb-12 text-white/95">Relational Induction in Neural Networks</h2>
+                
+                <!-- Métricas do Grafo -->
+                <div class="grid grid-cols-3 gap-8 mb-16 pb-10 border-b border-white/5">
+                    <div class="badge-discovery p-4 rounded-xl">
+                        <p class="text-gray-500 uppercase text-[8px] font-black tracking-widest mb-2">Centralidade</p>
+                        <p class="text-2xl font-sans font-medium text-white tracking-tighter">0.94 <span class="text-[10px] text-blue-400 ml-1">Hub</span></p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-white/5 border border-white/5">
+                        <p class="text-gray-500 uppercase text-[8px] font-black tracking-widest mb-2">Adjacências</p>
+                        <p class="text-2xl font-sans font-medium text-white tracking-tighter" id="wp-conn-count">24</p>
+                    </div>
+                    <div class="badge-gap p-4 rounded-xl">
+                        <p class="text-gray-500 uppercase text-[8px] font-black tracking-widest mb-2">Potencial Gap</p>
+                        <p class="text-2xl font-sans font-medium text-amber-500 tracking-tighter">82%</p>
+                    </div>
+                </div>
+
+                <div class="mb-16">
+                    <h3 class="text-[10px] font-black text-gray-500 mb-6 uppercase tracking-[0.3em]">Resumo Relacional</h3>
+                    <p id="wp-abstract" class="font-serif text-gray-300 text-lg leading-relaxed mb-10 text-justify opacity-90 first-letter:text-6xl first-letter:font-bold first-letter:float-left first-letter:mr-3 first-letter:text-white">
+                        Este paper serve como um ponto de articulação (hub) entre modelos de grafos e arquiteturas de atenção. A sua importância reside na capacidade de mapear relações não-euclidianas em espaços de latência elevada...
+                    </p>
+                </div>
+
+                <!-- Agente IA: Descoberta de Relacionamentos Ocultos -->
+                <div class="p-8 rounded-3xl bg-blue-600/5 border border-blue-500/20 cursor-pointer hover:bg-blue-600/10 transition-all mb-10 group" onclick="visualizeHiddenRelationships()">
+                    <div class="flex items-start space-x-6">
+                        <div class="w-14 h-14 rounded-2xl bg-blue-600 flex items-center justify-center shadow-2xl shadow-blue-600/40 group-hover:scale-105 transition-transform">
+                            <svg class="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"></path></svg>
+                        </div>
+                        <div>
+                            <h4 class="text-[10px] font-black text-blue-400 uppercase tracking-[0.25em] mb-1">Inferência de Grafo</h4>
+                            <p class="text-base font-bold text-white mb-2">Mapear Relações Implícitas</p>
+                            <p class="text-xs text-gray-500 leading-relaxed">A IA detetou uma ligação conceptual não citada entre este paper e a área de Bio-Neuro-Engenharia. Clique para visualizar a ponte.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="kg-insight" class="hidden opacity-0 translate-y-6 transition-all duration-1000">
+                    <div class="bg-white/5 rounded-2xl p-7 border border-white/5">
+                        <div class="flex items-center space-x-3 mb-5">
+                            <div class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></div>
+                            <span class="text-[9px] font-black text-blue-400 uppercase tracking-[0.3em]">Hidden Relationship Found</span>
+                        </div>
+                        <p class="text-sm font-serif text-gray-300 leading-relaxed italic">
+                            "Apesar de não haver uma citação direta, o modelo matemático de 'Message Passing' aqui descrito é 89% idêntico ao protocolo de sinalização celular observado no cluster de Bio-Engenharia. Esta adjacência sugere uma nova via de investigação para chips neuromórficos."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // --- Configuração de Clusters e KG ---
+        const CLUSTERS = [
+            { id: 'ai', name: 'Machine Learning', color: 0x00A3FF, center: [0, 0, 0], scale: 1.2 },
+            { id: 'bio', name: 'Bio-Engineering', color: 0xFF0055, center: [100, 40, -80], scale: 0.9 },
+            { id: 'quantum', name: 'Quantum Computing', color: 0xFFB800, center: [-110, -50, 60], scale: 1.0 },
+            { id: 'neuro', name: 'Neuroscience', color: 0x00FF85, center: [50, -90, -40], scale: 1.1 }
+        ];
+
+        let papersData = [];
+        const TOTAL_POINTS = 4000;
+
+        function generateData() {
+            for(let i=0; i<TOTAL_POINTS; i++) {
+                const cluster = CLUSTERS[Math.floor(Math.random() * CLUSTERS.length)];
+                
+                // Distribuição tipo Nuvem de Probabilidade (mais orgânico)
+                const std = 25 + Math.random() * 25;
+                const x = cluster.center[0] + (Math.random() - 0.5) * std * 4;
+                const y = cluster.center[1] + (Math.random() - 0.5) * std * 3;
+                const z = cluster.center[2] + (Math.random() - 0.5) * std * 4;
+
+                const centrality = Math.random();
+                const connections = Math.floor(Math.random() * 30);
+
+                papersData.push({
+                    id: i,
+                    topic: cluster.name,
+                    topicColor: cluster.color,
+                    centrality: centrality,
+                    connections: connections,
+                    x: x, y: y, z: z,
+                    title: `Investigação Relacional v.${i} em ${cluster.name}`,
+                    abstract: "O presente estudo utiliza grafos de conhecimento para mapear a evolução de conceitos interdisciplinares, revelando que as fronteiras entre domínios são onde ocorre a inovação radical..."
+                });
+            }
+        }
+        generateData();
+
+        // --- Motor Three.js ---
+        let scene, camera, renderer, controls, raycaster, mouse, points, geometry, material;
+        let lineMesh = null;
+        let nebulaParticles = [];
+        let selectedIndex = -1, hoveredIndex = -1;
+
+        function init() {
+            scene = new THREE.Scene();
+            scene.fog = new THREE.FogExp2(0x010103, 0.003);
+
+            camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 2000);
+            camera.position.set(0, 200, 500);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+            document.getElementById('canvas-container').appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.autoRotate = true;
+            controls.autoRotateSpeed = 0.12;
+
+            // 1. Adicionar Nebulosas (Cluster Shrouds)
+            createNebulae();
+
+            // 2. Criar a Galáxia de Pontos
+            createGalaxy();
+
+            animate();
+
+            window.addEventListener('resize', onWindowResize);
+            document.addEventListener('mousemove', onMouseMove);
+            document.addEventListener('click', onClick);
+        }
+
+        function createNebulae() {
+            CLUSTERS.forEach(cluster => {
+                const nebulaGeo = new THREE.SphereGeometry(60 * cluster.scale, 32, 32);
+                const nebulaMat = new THREE.MeshBasicMaterial({
+                    color: cluster.color,
+                    transparent: true,
+                    opacity: 0.03,
+                    blending: THREE.AdditiveBlending,
+                    side: THREE.BackSide
+                });
+                const nebula = new THREE.Mesh(nebulaGeo, nebulaMat);
+                nebula.position.set(...cluster.center);
+                scene.add(nebula);
+                
+                // Adicionar um halo mais brilhante no centro
+                const haloGeo = new THREE.SphereGeometry(10, 16, 16);
+                const haloMat = new THREE.MeshBasicMaterial({ color: cluster.color, transparent: true, opacity: 0.1 });
+                const halo = new THREE.Mesh(haloGeo, haloMat);
+                halo.position.set(...cluster.center);
+                scene.add(halo);
+            });
+        }
+
+        function createGalaxy() {
+            geometry = new THREE.BufferGeometry();
+            const pos = new Float32Array(TOTAL_POINTS * 3);
+            const col = new Float32Array(TOTAL_POINTS * 3);
+            const siz = new Float32Array(TOTAL_POINTS);
+
+            const c = new THREE.Color();
+            papersData.forEach((p, i) => {
+                pos[i*3] = p.x; pos[i*3+1] = p.y; pos[i*3+2] = p.z;
+                c.setHex(p.topicColor);
+                col[i*3] = c.r; col[i*3+1] = c.g; col[i*3+2] = c.b;
+                // Tamanho baseado na centralidade (Hubs são maiores)
+                siz[i] = 1.5 + (p.centrality * 4.5);
+            });
+
+            geometry.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+            geometry.setAttribute('color', new THREE.BufferAttribute(col, 3));
+            geometry.setAttribute('size', new THREE.BufferAttribute(siz, 1));
+
+            material = new THREE.ShaderMaterial({
+                vertexShader: `
+                    attribute float size;
+                    attribute vec3 color;
+                    varying vec3 vColor;
+                    void main() {
+                        vColor = color;
+                        vec4 mvPos = modelViewMatrix * vec4(position, 1.0);
+                        gl_PointSize = size * (450.0 / -mvPos.z);
+                        gl_Position = projectionMatrix * mvPos;
+                    }
+                `,
+                fragmentShader: `
+                    varying vec3 vColor;
+                    void main() {
+                        float dist = length(gl_PointCoord - vec2(0.5));
+                        if(dist > 0.5) discard;
+                        float core = smoothstep(0.4, 0.0, dist * 3.0);
+                        float glow = pow(1.0 - dist*2.0, 1.8);
+                        gl_FragColor = vec4(vColor * (1.1 + core * 5.0), glow);
+                    }
+                `,
+                transparent: true,
+                blending: THREE.AdditiveBlending,
+                depthWrite: false
+            });
+
+            points = new THREE.Points(geometry, material);
+            scene.add(points);
+        }
+
+        function onMouseMove(e) {
+            mouse = new THREE.Vector2((e.clientX / window.innerWidth) * 2 - 1, -(e.clientY / window.innerHeight) * 2 + 1);
+            raycaster = new THREE.Raycaster();
+            raycaster.setFromCamera(mouse, camera);
+            raycaster.params.Points.threshold = 1.5;
+            const intersects = raycaster.intersectObject(points);
+            const tt = document.getElementById('tooltip');
+
+            if(intersects.length > 0) {
+                const idx = intersects[0].index;
+                if(hoveredIndex !== idx) {
+                    hoveredIndex = idx;
+                    const p = papersData[idx];
+                    document.getElementById('tt-title').innerText = p.title;
+                    document.getElementById('tt-topic').innerText = p.topic;
+                    document.getElementById('tt-connections').innerText = `${p.connections} Adjacências`;
+                    document.getElementById('tt-id').innerText = `KG: ${p.centrality.toFixed(2)}`;
+                    tt.style.opacity = '1';
+                    tt.style.transform = 'translateY(0) scale(1)';
+                }
+                tt.style.left = (e.clientX + 25) + 'px';
+                tt.style.top = (e.clientY + 25) + 'px';
+            } else {
+                hoveredIndex = -1;
+                tt.style.opacity = '0';
+                tt.style.transform = 'translateY(15px) scale(0.9)';
+            }
+        }
+
+        function onClick() {
+            if(!mouse) return;
+            raycaster.setFromCamera(mouse, camera);
+            const intersects = raycaster.intersectObject(points);
+            if(intersects.length > 0) {
+                const idx = intersects[0].index;
+                selectedIndex = idx;
+                const p = papersData[idx];
+                
+                showWorkpad(p);
+                
+                // Voo de Câmara
+                gsap.to(camera.position, { duration: 2, x: p.x, y: p.y + 15, z: p.z + 70, ease: "expo.out" });
+                gsap.to(controls.target, { duration: 2, x: p.x, y: p.y, z: p.z, ease: "expo.out" });
+                controls.autoRotate = false;
+
+                // Desenhar Vizinhos Imediatos (Citações reais)
+                drawConnections(idx);
+            }
+        }
+
+        function drawConnections(centerIdx) {
+            if(lineMesh) scene.remove(lineMesh);
+            
+            const center = papersData[centerIdx];
+            const positions = [];
+            const colors = [];
+            const color = new THREE.Color(center.topicColor);
+
+            // Simular 8 vizinhos mais próximos no mesmo cluster
+            for(let i=0; i<8; i++) {
+                const neighborIdx = (centerIdx + i + 1) % TOTAL_POINTS;
+                const neighbor = papersData[neighborIdx];
+                positions.push(center.x, center.y, center.z);
+                positions.push(neighbor.x, neighbor.y, neighbor.z);
+                colors.push(color.r, color.g, color.b);
+                colors.push(color.r, color.g, color.b);
+            }
+
+            const lineGeo = new THREE.BufferGeometry();
+            lineGeo.setAttribute('position', new THREE.Float32BufferAttribute(positions, 3));
+            lineGeo.setAttribute('color', new THREE.Float32BufferAttribute(colors, 3));
+            
+            const lineMat = new THREE.LineBasicMaterial({ 
+                vertexColors: true, 
+                transparent: true, 
+                opacity: 0.2, 
+                blending: THREE.AdditiveBlending 
+            });
+            lineMesh = new THREE.LineSegments(lineGeo, lineMat);
+            scene.add(lineMesh);
+        }
+
+        function visualizeHiddenRelationships() {
+            const insight = document.getElementById('kg-insight');
+            insight.classList.remove('hidden');
+            setTimeout(() => insight.classList.remove('opacity-0', 'translate-y-6'), 100);
+
+            // Criar uma ponte de luz pulsante para outro cluster
+            const p1 = papersData[selectedIndex];
+            const targetCluster = CLUSTERS.find(c => c.name !== p1.topic);
+            // Encontrar um hub no cluster alvo
+            const p2 = papersData.find(p => p.topic === targetCluster.name && p.centrality > 0.8);
+
+            const curve = new THREE.CatmullRomCurve3([
+                new THREE.Vector3(p1.x, p1.y, p1.z),
+                new THREE.Vector3((p1.x+p2.x)/2, (p1.y+p2.y)/2 + 60, (p1.z+p2.z)/2),
+                new THREE.Vector3(p2.x, p2.y, p2.z)
+            ]);
+
+            const tubeGeo = new THREE.TubeGeometry(curve, 100, 0.25, 8, false);
+            const tubeMat = new THREE.MeshBasicMaterial({ color: 0x3b82f6, transparent: true, opacity: 0.7, blending: THREE.AdditiveBlending });
+            const bridge = new THREE.Mesh(tubeGeo, tubeMat);
+            scene.add(bridge);
+
+            // Animação de "Disparo" de informação
+            tubeGeo.setDrawRange(0, 0);
+            let draw = { v: 0 };
+            gsap.to(draw, { v: 1, duration: 2, ease: "power2.inOut", onUpdate: () => tubeGeo.setDrawRange(0, Math.floor(draw.v * 10000)) });
+        }
+
+        function updateView(view) {
+            document.querySelectorAll('.lens-btn').forEach(b => {
+                if(b.dataset.view === view) b.classList.add('active', 'bg-white/10', 'text-white');
+                else b.classList.remove('active', 'bg-white/10', 'text-white');
+            });
+
+            const colAttr = geometry.attributes.color;
+            const sizeAttr = geometry.attributes.size;
+            const c = new THREE.Color();
+
+            papersData.forEach((p, i) => {
+                if(view === 'centrality') {
+                    // Visão de Calor: Vermelho (Hubs) para Azul (Periferia)
+                    c.setHSL(0.66 * (1 - p.centrality), 1.0, 0.5);
+                    sizeAttr.array[i] = 1.0 + (p.centrality * 8.0);
+                } else if(view === 'hidden') {
+                    // Escurece tudo exceto os nós com alto potencial de Gap
+                    const isGap = p.centrality > 0.4 && p.centrality < 0.6;
+                    c.setHex(isGap ? 0xfbb03b : 0x111111);
+                    sizeAttr.array[i] = isGap ? 6.0 : 1.0;
+                } else {
+                    c.setHex(p.topicColor);
+                    sizeAttr.array[i] = 1.5 + (p.centrality * 4.5);
+                }
+                colAttr.array[i*3] = c.r; colAttr.array[i*3+1] = c.g; colAttr.array[i*3+2] = c.b;
+            });
+            colAttr.needsUpdate = true;
+            sizeAttr.needsUpdate = true;
+        }
+
+        function showWorkpad(p) {
+            const wp = document.getElementById('workpad');
+            document.getElementById('wp-title').innerText = p.title;
+            document.getElementById('wp-topic').innerText = p.topic;
+            document.getElementById('wp-conn-count').innerText = p.connections;
+            document.getElementById('kg-insight').classList.add('hidden', 'opacity-0', 'translate-y-6');
+            wp.classList.remove('translate-x-full');
+        }
+
+        function closeWorkpad() {
+            document.getElementById('workpad').classList.add('translate-x-full');
+            controls.autoRotate = true;
+            if(lineMesh) scene.remove(lineMesh);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        function animate() {
+            requestAnimationFrame(animate);
+            controls.update();
+            renderer.render(scene, camera);
+        }
+
+        window.onload = init;
+    </script>
+</body>
+</html>
