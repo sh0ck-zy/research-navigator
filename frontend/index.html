@@ -134,14 +134,17 @@
             pointer-events:auto;
             transition:opacity 0.4s, transform 0.4s;
         }
-        .cl-label:hover { transform:translate(-50%,-50%) scale(1.08); }
+        .cl-label:hover { transform:translate(-50%,-50%) scale(1.05); }
         .cl-label .cl-name {
-            font-weight:500;
-            color:rgba(255,255,255,0.6);
-            text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,1);
+            font-weight:600;
+            color:rgba(255,255,255,0.75);
             white-space:nowrap;
+            padding:3px 8px;
+            border-radius:4px;
+            background:rgba(0,0,0,0.45);
+            backdrop-filter:blur(4px);
         }
-        .cl-label:hover .cl-name { color:rgba(255,255,255,0.95); }
+        .cl-label:hover .cl-name { color:#fff; background:rgba(0,0,0,0.6); }
         .cl-label .cl-count { font-size:8px; color:rgba(255,255,255,0.3); margin-top:1px; }
         .cl-label.dim { opacity:0.1; }
 
@@ -554,12 +557,12 @@ function updateLabels() {
         ).project(camera);
         const x=(v.x*0.5+0.5)*innerWidth;
         const y=(-v.y*0.5+0.5)*innerHeight;
-        const camDist = camera.position.length();
-        const labelOpacity = Math.max(0, Math.min(1, (500 - camDist) / 150));
+        const camDist = camera.position.distanceTo(controls.target);
+        const labelOpacity = Math.max(0.5, Math.min(1, (500 - camDist) / 300));
         el.style.left=x+'px';
         el.style.top=y+'px';
-        el.style.display = (v.z<1 && labelOpacity > 0) ? '' : 'none';
-        el.style.opacity = labelOpacity;
+        el.style.display = v.z < 1 ? '' : 'none';
+        if(!el.style.opacity || el.style.opacity === '') el.style.opacity = labelOpacity;
     });
 }
 
