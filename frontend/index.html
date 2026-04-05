@@ -928,6 +928,29 @@ function openPaper(p,idx) {
         <div class="section-title"><span>Abstract</span></div>
         <p class="drop-cap" style="font-family:'Playfair Display',serif;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:28px">${p.abstract||'No abstract.'}</p>
 
+        ${(() => {
+            // Find nearby papers from OTHER clusters (cross-cluster reach)
+            const crossNbs = allPapers
+                .map((q,i) => ({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)}))
+                .filter(o => o.i !== idx && o.q._cl.id !== p._cl.id)
+                .sort((a,b) => a.d - b.d).slice(0, 15);
+            // Group by cluster, count
+            const clMap = {};
+            crossNbs.forEach(({q}) => {
+                if (!clMap[q._cl.id]) clMap[q._cl.id] = { cl: q._cl, count: 0 };
+                clMap[q._cl.id].count++;
+            });
+            const crossClusters = Object.values(clMap).sort((a,b) => b.count - a.count).slice(0, 4);
+            if (!crossClusters.length) return '';
+            return '<div class="section-title" style="margin-bottom:8px"><span>Connects to other areas</span></div>' +
+                '<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:24px">' +
+                crossClusters.map(({cl, count}) =>
+                    '<span onclick="openCluster(mapData.clusters.find(c=>c.id==='+cl.id+'))" style="cursor:pointer;display:inline-flex;align-items:center;gap:5px;padding:5px 10px;border-radius:20px;border:1px solid '+cl.color+'30;background:'+cl.color+'10;font-size:11px;color:'+cl.color+';transition:all 0.2s" onmouseover="this.style.background=\''+cl.color+'25\'" onmouseout="this.style.background=\''+cl.color+'10\'">' +
+                    '<span style="width:6px;height:6px;border-radius:50%;background:'+cl.color+'"></span>' +
+                    cl.name + '</span>'
+                ).join('') + '</div>';
+        })()}
+
         <div class="section-title"><span>Nearby Papers</span><span style="color:#8ab4f8">${nbs.length}</span></div>
         ${nbs.map(({q,i})=>`<div class="nb-row" onclick="navP(${i})"><div style="width:6px;height:6px;border-radius:50%;background:${q._cl.color};flex-shrink:0"></div><div style="flex:1;overflow:hidden"><div style="font-size:12px;color:rgba(255,255,255,0.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${q.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:1px">${q._cl.name} &middot; ${q.year||''}</div></div></div>`).join('')}
     `;
