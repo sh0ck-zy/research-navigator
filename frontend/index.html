@@ -411,6 +411,7 @@
 <script>
 let mapData, allPapers=[], scene, camera, renderer, controls, ptsMesh, ptsGeo;
 let conLines=null, hovIdx=-1, activeCluster=null, panelIsOpen=false;
+let cardPaper=null;
 const SPREAD = 600;
 
 async function boot() {
@@ -450,8 +451,11 @@ async function boot() {
     renderer.domElement.addEventListener('click', onClk);
     window.addEventListener('resize', onRsz);
     document.addEventListener('keydown', e => {
-        if (e.key === 'Escape') { closePanel(); clearSearch(); }
-        if (e.key === '/' && !panelIsOpen) { e.preventDefault(); document.getElementById('search').focus(); }
+        if (e.key === 'Escape') {
+            if (cardPaper) { closeCard(); }
+            else { resetView(); clearSearch(); }
+        }
+        if (e.key === '/') { e.preventDefault(); document.getElementById('search').focus(); }
     });
 
     // Build context message
@@ -831,9 +835,9 @@ function handleSearch(t) {
 
 function searchNavigate(i) {
     const p = allPapers[i];
-    openPaper(p, i);
+    openPaperCard(p, i);
     drawLines(i);
-    fly(p._x, p._y+20, p._z+100);
+    flyToNeighborhood(p, i);
     controls.autoRotate = false;
     document.getElementById('search-results').style.display = 'none';
 }
@@ -945,7 +949,6 @@ function hideClusterInsight() {
 let hoveredClusterId = null;
 
 function onMouse(e) {
-    if (panelIsOpen) return;
     const m=new THREE.Vector2((e.clientX/innerWidth)*2-1,-(e.clientY/innerHeight)*2+1);
     const rc=new THREE.Raycaster();
     rc.setFromCamera(m,camera);
@@ -993,12 +996,16 @@ function onMouse(e) {
 }
 
 function onClk() {
-    if(hovIdx<0)return;
+    if(hovIdx < 0) {
+        // Clicked empty space — close card
+        closeCard();
+        return;
+    }
     const p=allPapers[hovIdx];
     document.getElementById('tooltip').style.display='none';
-    openPaper(p,hovIdx);
+    openPaperCard(p,hovIdx);
     drawLines(hovIdx);
-    fly(p._x, p._y+20, p._z+100);
+    flyToNeighborhood(p, hovIdx);
     controls.autoRotate=false;
 }
 
@@ -1061,6 +1068,131 @@ function drawLines(ci) {
     g.setAttribute('color',new THREE.Float32BufferAttribute(cols,3));
     conLines=new THREE.LineSegments(g,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.2,blending:THREE.AdditiveBlending}));
     scene.add(conLines);
+}
+
+// === FLOATING PAPER CARD ===
+function openPaperCard(p, idx) {
+    cardPaper = p;
+    const card = document.getElementById('paper-card');
+
+    // Centrality percentile
+    const clPapers = allPapers.filter(q => q._cl.id === p._cl.id);
+    const rank = clPapers.filter(q => (q._centrality||0) <= (p._centrality||0)).length;
+    const percentile = Math.round((rank / clPapers.length) * 100);
+    const centralityLabel = percentile >= 95 ? 'Core paper' : percentile >= 80 ? 'Highly central' : percentile >= 50 ? 'Moderate' : 'Peripheral';
+
+    // Abstract: first 2 sentences
+    const rawAbstract = (p.abstract||'').replace(/\n/g,' ').trim();
+    const sentences = rawAbstract.match(/[^.!?]+[.!?]+/g) || [];
+    let shortAbstract = sentences.slice(0,2).join(' ').trim();
+    if(shortAbstract.length > 200) shortAbstract = shortAbstract.slice(0,197) + '...';
+    if(!shortAbstract && rawAbstract) shortAbstract = rawAbstract.slice(0,197) + '...';
+
+    // Nearby papers (top 3)
+    const nbs = allPapers.map((q,i)=>({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)})).filter(o=>o.i!==idx).sort((a,b)=>a.d-b.d).slice(0,3);
+
+    // Cross-cluster (nearby from OTHER clusters)
+    const crossNbs = allPapers
+        .map((q,i) => ({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)}))
+        .filter(o => o.i !== idx && o.q._cl.id !== p._cl.id)
+        .sort((a,b) => a.d - b.d).slice(0, 12);
+    const clMap = {};
+    crossNbs.forEach(({q}) => {
+        if (!clMap[q._cl.id]) clMap[q._cl.id] = { cl: q._cl, count: 0 };
+        clMap[q._cl.id].count++;
+    });
+    const crossClusters = Object.values(clMap).sort((a,b) => b.count - a.count).slice(0, 3);
+
+    card.innerHTML = `
+        <div class="pc-header">
+            <div style="width:7px;height:7px;border-radius:50%;background:${p._cl.color};flex-shrink:0"></div>
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:${p._cl.color}">${p._cl.name}</span>
+            <button class="pc-close" onclick="closeCard()">&times;</button>
+        </div>
+        <div class="pc-body">
+            <div class="pc-title">${p.title}</div>
+            ${p.id ? `<a href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;color:rgba(255,255,255,0.35);text-decoration:none;margin-bottom:12px;padding:4px 10px;border:1px solid rgba(255,255,255,0.08);border-radius:5px;transition:all 0.2s" onmouseover="this.style.color='rgba(255,255,255,0.7)'" onmouseout="this.style.color='rgba(255,255,255,0.35)'"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>arXiv</a>` : ''}
+            <div class="pc-stats">
+                <div class="card-m" style="padding:10px">
+                    <div class="card-label">Authors</div>
+                    <div style="font-size:10px;color:rgba(255,255,255,0.55);line-height:1.3">${p.authors?p.authors.split(/,|and/).slice(0,3).map(s=>s.trim()).join(', '):'—'}</div>
+                </div>
+                <div class="card-m" style="padding:10px">
+                    <div class="card-label">Year</div>
+                    <div style="font-size:16px;font-weight:500;color:rgba(255,255,255,0.7)">${p.year||'—'}</div>
+                </div>
+                <div class="card-m" style="padding:10px">
+                    <div class="card-label">Centrality</div>
+                    <div style="font-size:14px;font-weight:500;color:${percentile>=80?p._cl.color:'rgba(255,255,255,0.6)'}">Top ${100-percentile}%</div>
+                    <div style="font-size:8px;color:rgba(255,255,255,0.2)">${centralityLabel}</div>
+                </div>
+                <div class="card-m" style="padding:10px">
+                    <div class="card-label">Categories</div>
+                    <div style="font-size:10px;color:rgba(255,255,255,0.4)">${p.categories||'—'}</div>
+                </div>
+            </div>
+            <div class="pc-abstract">${shortAbstract}</div>
+            ${crossClusters.length ? `
+                <div class="section-title" style="margin-bottom:6px"><span>Connects to</span></div>
+                <div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:12px">
+                    ${crossClusters.map(({cl})=>`<span onclick="zoomToCluster(mapData.clusters.find(c=>c.id===${cl.id}))" style="cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:3px 8px;border-radius:12px;border:1px solid ${cl.color}30;background:${cl.color}08;font-size:10px;color:${cl.color}"><span style="width:5px;height:5px;border-radius:50%;background:${cl.color}"></span>${cl.name}</span>`).join('')}
+                </div>` : ''}
+            <div class="section-title" style="margin-bottom:6px"><span>Nearby</span><span style="color:#8ab4f8">${nbs.length}</span></div>
+            ${nbs.map(({q,i})=>`<div class="nb-row" style="padding:6px 8px" onclick="navP(${i})"><div style="width:5px;height:5px;border-radius:50%;background:${q._cl.color};flex-shrink:0"></div><div style="flex:1;overflow:hidden"><div style="font-size:11px;color:rgba(255,255,255,0.6);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${q.title}</div><div style="font-size:9px;color:rgba(255,255,255,0.2)">${q._cl.name} · ${q.year||''}</div></div></div>`).join('')}
+        </div>
+    `;
+
+    // Show with animation
+    card.style.display = 'block';
+    requestAnimationFrame(() => card.classList.add('visible'));
+}
+
+function closeCard() {
+    const card = document.getElementById('paper-card');
+    card.classList.remove('visible');
+    setTimeout(() => { card.style.display = 'none'; }, 300);
+    cardPaper = null;
+    if(conLines) { scene.remove(conLines); conLines = null; }
+}
+
+function resetView() {
+    closeCard();
+    removeClusterConnections();
+    hideClusterInsight();
+    activeCluster = null;
+    dimExcept(null);
+    hideBubbles();
+    controls.autoRotate = true;
+    fly(0, 80, 500);
+    document.querySelectorAll('.filter-dd').forEach((f,i) => {
+        if(i===0) { f.style.background='rgba(255,255,255,0.9)'; f.style.color='#111'; f.style.borderColor='transparent'; f.classList.add('active'); }
+        else { f.style.background='rgba(255,255,255,0.03)'; f.style.color='rgba(255,255,255,0.5)'; f.style.borderColor=''; f.classList.remove('active'); }
+    });
+}
+
+function flyToNeighborhood(p, idx) {
+    const nbs = allPapers
+        .map((q,i) => ({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)}))
+        .filter(o => o.i !== idx)
+        .sort((a,b) => a.d - b.d)
+        .slice(0, 6);
+
+    let sumX=p._x, sumY=p._y, sumZ=p._z;
+    nbs.forEach(({q}) => { sumX+=q._x; sumY+=q._y; sumZ+=q._z; });
+    const count = nbs.length + 1;
+    const cx=sumX/count, cy=sumY/count, cz=sumZ/count;
+
+    let maxR = 0;
+    [p, ...nbs.map(n=>n.q)].forEach(q => {
+        const d = Math.sqrt((q._x-cx)**2+(q._y-cy)**2+(q._z-cz)**2);
+        if(d > maxR) maxR = d;
+    });
+
+    const fovRad = (camera.fov/2) * Math.PI / 180;
+    const camDist = Math.max(80, (maxR / Math.tan(fovRad)) * 1.8);
+
+    gsap.to(camera.position, { x:cx, y:cy+camDist*0.25, z:cz+camDist, duration:1.8, ease:'expo.out' });
+    gsap.to(controls.target, { x:cx, y:cy, z:cz, duration:1.8, ease:'expo.out' });
 }
 
 // === PANEL: PAPER (enhanced) ===
@@ -1230,9 +1362,9 @@ function openCluster(cl) {
 function navP(i){
     const p=allPapers[i];
     document.getElementById('tooltip').style.display='none';
-    openPaper(p,i);
+    openPaperCard(p,i);
     drawLines(i);
-    fly(p._x,p._y+20,p._z+100);
+    flyToNeighborhood(p,i);
 }
 
 function closePanel(){
