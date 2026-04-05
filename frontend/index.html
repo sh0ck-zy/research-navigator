@@ -944,8 +944,16 @@ function onMouse(e) {
         const auth=p.authors?p.authors.split(/,|and/).slice(0,2).map(s=>s.trim()).join(', '):'';
         document.getElementById('tt-meta').textContent=auth+(p.year?' \u00b7 '+p.year:'')+(p.categories?' \u00b7 '+p.categories:'');
         tt.style.display='block';
-        tt.style.left=Math.min(e.clientX+20,innerWidth-400)+'px';
-        tt.style.top=Math.min(e.clientY+20,innerHeight-280)+'px';
+        // Position tooltip on opposite side of card to avoid overlap
+        const cardOpen = !!cardPaper;
+        const ttWidth = 380;
+        if (cardOpen) {
+            // Card is on the right — force tooltip to the left side
+            tt.style.left = Math.min(e.clientX + 20, innerWidth - ttWidth - 600) + 'px';
+        } else {
+            tt.style.left = Math.min(e.clientX + 20, innerWidth - ttWidth - 20) + 'px';
+        }
+        tt.style.top = Math.min(e.clientY + 20, innerHeight - 280) + 'px';
         renderer.domElement.style.cursor='pointer';
 
         // Show bubble for this point's cluster
@@ -1299,7 +1307,9 @@ function loop(){
     const heroNew = heroCurrent + (heroTarget - heroCurrent) * 0.1;
     heroEl.style.opacity = heroNew;
     heroEl.style.pointerEvents = heroNew > 0.5 ? '' : 'none';
-    document.getElementById('right-stats').style.opacity = isLanding ? heroNew : 1;
+    // Hide stats when card is open (they overlap)
+    const statsOpacity = cardPaper ? 0 : (isLanding ? heroNew : 1);
+    document.getElementById('right-stats').style.opacity = statsOpacity;
 
     // Progressive edges: fade in when zoomed in
     if (edgesMesh) {
