@@ -882,6 +882,12 @@ function openPaper(p,idx) {
 
     const nbs=allPapers.map((q,i)=>({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)})).filter(o=>o.i!==idx).sort((a,b)=>a.d-b.d).slice(0,5);
 
+    // Compute centrality percentile within cluster
+    const clPapers = allPapers.filter(q => q._cl.id === p._cl.id);
+    const rank = clPapers.filter(q => (q._centrality||0) <= (p._centrality||0)).length;
+    const percentile = Math.round((rank / clPapers.length) * 100);
+    const centralityLabel = percentile >= 95 ? 'Core paper' : percentile >= 80 ? 'Highly central' : percentile >= 50 ? 'Moderate' : 'Peripheral';
+
     document.getElementById('panel-body').innerHTML=`
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
             <div style="width:8px;height:8px;border-radius:50%;background:${p._cl.color}"></div>
@@ -890,7 +896,7 @@ function openPaper(p,idx) {
         <h2 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:500;line-height:1.25;color:rgba(255,255,255,0.95);margin-bottom:12px">${p.title}</h2>
         ${p.id ? `<a href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:6px;font-size:12px;color:rgba(255,255,255,0.4);text-decoration:none;margin-bottom:20px;padding:6px 12px;border:1px solid rgba(255,255,255,0.1);border-radius:6px;transition:all 0.2s" onmouseover="this.style.color='rgba(255,255,255,0.8)';this.style.borderColor='rgba(255,255,255,0.25)'" onmouseout="this.style.color='rgba(255,255,255,0.4)';this.style.borderColor='rgba(255,255,255,0.1)'"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View on arXiv</a>` : ''}
 
-        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:24px">
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;margin-bottom:24px">
             <div class="card-m">
                 <div class="card-label">Authors</div>
                 <div style="font-size:11px;color:rgba(255,255,255,0.6);line-height:1.4">${p.authors?p.authors.split(/,|and/).slice(0,3).map(s=>s.trim()).join(', '):'&mdash;'}</div>
@@ -898,6 +904,11 @@ function openPaper(p,idx) {
             <div class="card-m">
                 <div class="card-label">Year</div>
                 <div class="card-value">${p.year||'&mdash;'}</div>
+            </div>
+            <div class="card-m">
+                <div class="card-label">Centrality</div>
+                <div class="card-value" style="font-size:16px;color:${percentile>=80?p._cl.color:'rgba(255,255,255,0.6)'}">Top ${100-percentile}%</div>
+                <div style="font-size:9px;color:rgba(255,255,255,0.25);margin-top:2px">${centralityLabel}</div>
             </div>
             <div class="card-m">
                 <div class="card-label">Categories</div>
