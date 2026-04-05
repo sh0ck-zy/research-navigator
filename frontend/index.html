@@ -309,7 +309,7 @@ async function boot() {
 
 function initScene() {
     scene = new THREE.Scene();
-    scene.fog = new THREE.FogExp2(0x0a0a0a, 0.0012);
+    scene.fog = new THREE.FogExp2(0x0a0a0a, 0.0004);
     camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 3000);
     camera.position.set(0, 80, 500);
     renderer = new THREE.WebGLRenderer({ antialias:true });
