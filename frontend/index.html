@@ -197,7 +197,7 @@
         /* Minimap */
         #minimap {
             position:fixed; bottom:24px; right:24px; z-index:50;
-            width:150px; height:110px; border-radius:10px;
+            width:180px; height:140px; border-radius:10px;
             background:rgba(10,10,14,0.8); border:1px solid rgba(255,255,255,0.06);
             backdrop-filter:blur(12px); overflow:hidden; pointer-events:auto; cursor:pointer;
         }
@@ -259,7 +259,7 @@
 <!-- Side Panel -->
 <div class="side-panel" id="panel">
     <div class="panel-header">
-        <span id="panel-breadcrumb" style="font-size:11px;color:rgba(255,255,255,0.25)"></span>
+        <span id="panel-breadcrumb" style="font-size:13px;color:rgba(255,255,255,0.5)"></span>
         <button onclick="closePanel()" style="background:rgba(255,255,255,0.06);border:none;color:rgba(255,255,255,0.4);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">&times;</button>
     </div>
     <div id="panel-body" style="padding:24px"></div>
@@ -950,16 +950,16 @@ function fly(x,y,z){
 // === MINIMAP ===
 function drawMinimap() {
     const mc = document.getElementById('minimap-canvas');
-    mc.width = 150; mc.height = 110;
+    mc.width = 180; mc.height = 140;
     const mctx = mc.getContext('2d');
     mctx.fillStyle = 'rgba(10,10,14,0.3)';
-    mctx.fillRect(0, 0, 150, 110);
+    mctx.fillRect(0, 0, 180, 140);
 
     mapData.clusters.forEach(cl => {
         if (cl.id === -1) return;
-        const x = cl.center_x * 140 + 5;
-        const y = cl.center_y * 100 + 5;
-        const r = Math.sqrt(cl.paper_count) * 0.18;
+        const x = cl.center_x * 170 + 5;
+        const y = cl.center_y * 130 + 5;
+        const r = Math.sqrt(cl.paper_count) * 0.22;
         mctx.beginPath();
         mctx.arc(x, y, Math.max(2.5, r), 0, Math.PI * 2);
         mctx.fillStyle = cl.color + '50';
