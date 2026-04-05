@@ -185,6 +185,70 @@
             font-size:10px; color:rgba(255,255,255,0.25);
         }
 
+        /* === CLUSTER INSIGHT CARD === */
+        #cluster-insight {
+            position:fixed; display:none; z-index:190;
+            background:rgba(12,12,16,0.97);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:16px; padding:0;
+            width:340px; pointer-events:none;
+            backdrop-filter:blur(30px);
+            box-shadow:0 24px 80px rgba(0,0,0,0.8);
+            overflow:hidden;
+        }
+        #cluster-insight .ci-header {
+            padding:16px 20px 12px; display:flex; align-items:center; gap:10px;
+        }
+        #cluster-insight .ci-name {
+            font-family:'Playfair Display',serif;
+            font-size:18px; font-weight:500; color:#fff;
+        }
+        #cluster-insight .ci-desc {
+            padding:0 20px 12px; font-size:11px; color:rgba(255,255,255,0.35); line-height:1.5;
+        }
+        #cluster-insight .ci-stats {
+            display:grid; grid-template-columns:1fr 1fr 1fr; gap:1px;
+            background:rgba(255,255,255,0.04); margin:0;
+        }
+        #cluster-insight .ci-stat {
+            padding:10px 14px; background:rgba(12,12,16,0.97); text-align:center;
+        }
+        #cluster-insight .ci-stat-val {
+            font-size:16px; font-weight:600; color:rgba(255,255,255,0.85);
+        }
+        #cluster-insight .ci-stat-lbl {
+            font-size:8px; text-transform:uppercase; letter-spacing:0.1em;
+            color:rgba(255,255,255,0.3); margin-top:2px;
+        }
+        #cluster-insight .ci-section {
+            padding:12px 20px;
+        }
+        #cluster-insight .ci-section-title {
+            font-size:9px; font-weight:600; text-transform:uppercase;
+            letter-spacing:0.12em; color:rgba(255,255,255,0.25); margin-bottom:8px;
+        }
+        #cluster-insight .ci-king {
+            display:flex; align-items:center; gap:6px; padding:4px 0;
+        }
+        #cluster-insight .ci-king-dot {
+            width:4px; height:4px; border-radius:50%; flex-shrink:0;
+        }
+        #cluster-insight .ci-king-title {
+            font-size:11px; color:rgba(255,255,255,0.6);
+            white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+        }
+        #cluster-insight .ci-trend {
+            display:flex; align-items:flex-end; gap:2px; height:30px;
+        }
+        #cluster-insight .ci-trend-bar {
+            flex:1; border-radius:1px 1px 0 0; min-width:4px;
+        }
+        #cluster-insight .ci-conn {
+            display:inline-flex; align-items:center; gap:4px;
+            padding:3px 8px; border-radius:12px; font-size:10px;
+            margin-right:4px; margin-bottom:4px;
+        }
+
         /* === SIDE PANEL === */
         .side-panel {
             position:fixed; top:0; right:0; bottom:0;
@@ -287,6 +351,9 @@
     <div id="tt-abstract" class="tt-abstract"></div>
     <div id="tt-meta" class="tt-meta"></div>
 </div>
+
+<!-- Cluster Insight Card -->
+<div id="cluster-insight"></div>
 
 <!-- Side Panel -->
 <div class="side-panel" id="panel">
@@ -540,8 +607,8 @@ function makeLabels() {
         const fontSize = Math.round(10 + t * 8); // 10px → 18px
         d.innerHTML=`<div class="cl-name" style="font-size:${fontSize}px">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
         d.onclick=e=>{e.stopPropagation();openCluster(cl);};
-        d.onmouseenter=()=>{dimExcept(cl.id);showBubble(cl.id);};
-        d.onmouseleave=()=>{if(!activeCluster){dimExcept(null);hideBubbles();}};
+        d.onmouseenter=(e)=>{dimExcept(cl.id);showBubble(cl.id);showClusterInsight(cl,e);};
+        d.onmouseleave=()=>{if(!activeCluster){dimExcept(null);hideBubbles();}hideClusterInsight();};
         el.appendChild(d);
     });
 }
@@ -735,6 +802,102 @@ function clearSearch(){
     document.getElementById('search-x').style.display='none';
     document.getElementById('search-results').style.display='none';
     dimExcept(null);
+}
+
+// === CLUSTER INSIGHT CARD ===
+function showClusterInsight(cl, e) {
+    const card = document.getElementById('cluster-insight');
+    const totalPapers = mapData.metadata.paper_count;
+    const share = (cl.paper_count / totalPapers * 100).toFixed(1);
+
+    // King papers (top 3 by centrality)
+    const clPapers = allPapers.filter(p => p._cl.id === cl.id);
+    const kings = clPapers.slice().sort((a,b) => (b._centrality||0) - (a._centrality||0)).slice(0, 3);
+
+    // Trend: last 6 years
+    const yearCounts = {};
+    cl.papers.forEach(p => { if (p.year) yearCounts[p.year] = (yearCounts[p.year]||0) + 1; });
+    const years = Object.keys(yearCounts).sort().slice(-6);
+    const maxYearCount = Math.max(...years.map(y => yearCounts[y]), 1);
+
+    // Connections
+    const conns = (mapData.connections || [])
+        .filter(c => c.from === cl.id || c.to === cl.id)
+        .map(c => {
+            const otherId = c.from === cl.id ? c.to : c.from;
+            const other = mapData.clusters.find(x => x.id === otherId);
+            return other ? { cluster: other, strength: c.strength } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.strength - a.strength)
+        .slice(0, 3);
+
+    // Year range
+    const allYears = cl.papers.map(p => p.year).filter(Boolean);
+    const minYear = Math.min(...allYears);
+    const maxYear = Math.max(...allYears);
+
+    card.innerHTML = `
+        <div class="ci-header">
+            <div style="width:10px;height:10px;border-radius:50%;background:${cl.color};flex-shrink:0"></div>
+            <div class="ci-name">${cl.name}</div>
+        </div>
+        <div class="ci-desc">${cl.description ? cl.description.split('.').slice(0,2).join('.')+'.':''}</div>
+        <div class="ci-stats">
+            <div class="ci-stat">
+                <div class="ci-stat-val">${cl.paper_count.toLocaleString()}</div>
+                <div class="ci-stat-lbl">Papers</div>
+            </div>
+            <div class="ci-stat">
+                <div class="ci-stat-val" style="color:${cl.color}">${share}%</div>
+                <div class="ci-stat-lbl">Share</div>
+            </div>
+            <div class="ci-stat">
+                <div class="ci-stat-val">${minYear}–${maxYear}</div>
+                <div class="ci-stat-lbl">Span</div>
+            </div>
+        </div>
+        ${years.length > 1 ? `
+        <div class="ci-section" style="padding-bottom:8px">
+            <div class="ci-section-title">Trend</div>
+            <div class="ci-trend">
+                ${years.map(y => `<div class="ci-trend-bar" style="height:${Math.max(2,(yearCounts[y]/maxYearCount)*28)}px;background:${cl.color}60"></div>`).join('')}
+            </div>
+            <div style="display:flex;justify-content:space-between;margin-top:3px">
+                <span style="font-size:8px;color:rgba(255,255,255,0.2)">${years[0]}</span>
+                <span style="font-size:8px;color:rgba(255,255,255,0.2)">${years[years.length-1]}</span>
+            </div>
+        </div>` : ''}
+        <div class="ci-section">
+            <div class="ci-section-title">Key Papers</div>
+            ${kings.map(p => `<div class="ci-king"><div class="ci-king-dot" style="background:${cl.color}"></div><div class="ci-king-title">${p.title}</div></div>`).join('')}
+        </div>
+        ${conns.length ? `
+        <div class="ci-section" style="padding-bottom:16px">
+            <div class="ci-section-title">Connected Areas</div>
+            ${conns.map(c => `<span class="ci-conn" style="color:${c.cluster.color};border:1px solid ${c.cluster.color}30;background:${c.cluster.color}08"><span style="width:5px;height:5px;border-radius:50%;background:${c.cluster.color}"></span>${c.cluster.name}</span>`).join('')}
+        </div>` : ''}
+    `;
+
+    // Position near the label
+    const labelEl = document.querySelector(`.cl-label[data-cid="${cl.id}"]`);
+    if (labelEl) {
+        const rect = labelEl.getBoundingClientRect();
+        const cardW = 340;
+        let left = rect.right + 12;
+        let top = rect.top - 40;
+        // Keep on screen
+        if (left + cardW > innerWidth - 20) left = rect.left - cardW - 12;
+        if (top + 400 > innerHeight - 20) top = innerHeight - 420;
+        if (top < 20) top = 20;
+        card.style.left = left + 'px';
+        card.style.top = top + 'px';
+    }
+    card.style.display = 'block';
+}
+
+function hideClusterInsight() {
+    document.getElementById('cluster-insight').style.display = 'none';
 }
 
 // === MOUSE ===
@@ -938,6 +1101,7 @@ function openCluster(cl) {
     activeCluster=cl.id;
     dimExcept(cl.id);
     hideBubbles();
+    hideClusterInsight();
     drawClusterConnections(cl.id);
     const cx=(cl.center_x-0.5)*SPREAD, cy=(cl.center_y-0.5)*SPREAD;
     fly(cx, cy+40, 200);
@@ -1035,6 +1199,7 @@ function closePanel(){
     panelIsOpen = false;
     if(conLines)scene.remove(conLines);
     removeClusterConnections();
+    hideClusterInsight();
     activeCluster=null; dimExcept(null);
     hideBubbles();
     controls.autoRotate=true;
