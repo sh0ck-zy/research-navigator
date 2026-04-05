@@ -823,7 +823,10 @@ function openCluster(cl) {
         .sort((a, b) => b.strength - a.strength)
         .slice(0, 5);
 
-    const papers=allPapers.filter(p=>p._cl.id===cl.id).sort((a,b)=>(b.year||0)-(a.year||0)).slice(0,12);
+    // King papers: top 3 by centrality
+    const clPapers = allPapers.filter(p=>p._cl.id===cl.id);
+    const kings = clPapers.slice().sort((a,b)=>(b._centrality||0)-(a._centrality||0)).slice(0,3);
+    const papers = clPapers.sort((a,b)=>(b.year||0)-(a.year||0)).filter(p=>!kings.includes(p)).slice(0,9);
 
     const trendHtml = years.length > 1 ? `
         <div class="section-title" style="margin-top:24px"><span>Publication Trend</span></div>
@@ -868,7 +871,14 @@ function openCluster(cl) {
         ${trendHtml}
         ${connsHtml}
 
-        <div class="section-title" style="margin-top:24px"><span>Papers</span><span style="color:${cl.color}">${papers.length}</span></div>
+        <div class="section-title" style="margin-top:24px"><span>Key Papers</span><span style="color:${cl.color}">${kings.length}</span></div>
+        ${kings.map(p=>`<div class="nb-row" onclick="navP(${allPapers.indexOf(p)})" style="flex-direction:column;align-items:flex-start;gap:6px;padding:12px;margin-bottom:4px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.05);border-radius:10px">
+            <div style="display:flex;align-items:center;gap:8px;width:100%"><div style="width:8px;height:8px;border-radius:50%;background:${cl.color};flex-shrink:0"></div><div style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.8);line-height:1.35">${p.title}</div></div>
+            <div style="font-size:11px;color:rgba(255,255,255,0.3);line-height:1.5;padding-left:16px">${(p.abstract||'').slice(0,120)}${(p.abstract||'').length>120?'...':''}</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.2);padding-left:16px">${p.authors?p.authors.split(/,|and/).slice(0,2).map(s=>s.trim()).join(', '):''} ${p.year?'· '+p.year:''}</div>
+        </div>`).join('')}
+
+        <div class="section-title" style="margin-top:24px"><span>Recent Papers</span><span style="color:${cl.color}">${papers.length}</span></div>
         ${papers.map(p=>`<div class="nb-row" onclick="navP(${allPapers.indexOf(p)})"><div style="width:6px;height:6px;border-radius:50%;background:${cl.color};flex-shrink:0"></div><div style="flex:1;overflow:hidden"><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.35">${p.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:2px">${p.year||''}</div></div></div>`).join('')}
     `;
     document.getElementById('panel').classList.add('open');
