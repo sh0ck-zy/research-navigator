@@ -304,14 +304,6 @@
         .conn-item:hover { opacity:0.8; }
         .conn-bar { height:4px; border-radius:2px; min-width:20px; }
 
-        /* Minimap */
-        #minimap {
-            position:fixed; bottom:24px; right:24px; z-index:50;
-            width:180px; height:140px; border-radius:10px;
-            background:rgba(10,10,14,0.8); border:1px solid rgba(255,255,255,0.06);
-            backdrop-filter:blur(12px); overflow:hidden; pointer-events:auto; cursor:pointer;
-        }
-        #minimap canvas { width:100%; height:100%; }
     </style>
 </head>
 <body>
@@ -375,8 +367,6 @@
 <!-- Floating Paper Card -->
 <div id="paper-card"></div>
 
-<!-- Minimap -->
-<div id="minimap"><canvas id="minimap-canvas"></canvas></div>
 
 <script>
 let mapData, allPapers=[], scene, camera, renderer, controls, ptsMesh, ptsGeo;
@@ -415,7 +405,6 @@ async function boot() {
     makeLabels();
     makeFilters();
     makeStats();
-    drawMinimap();
     loop();
 
     renderer.domElement.addEventListener('mousemove', onMouse);
@@ -1221,36 +1210,6 @@ function fly(x,y,z){
     gsap.to(camera.position,{x,y,z,duration:1.8,ease:'expo.out'});
     gsap.to(controls.target,{x:z>350?0:x, y:z>350?0:y-20, z:0, duration:1.8,ease:'expo.out'});
 }
-
-// === MINIMAP ===
-function drawMinimap() {
-    const mc = document.getElementById('minimap-canvas');
-    mc.width = 180; mc.height = 140;
-    const mctx = mc.getContext('2d');
-    mctx.fillStyle = 'rgba(10,10,14,0.3)';
-    mctx.fillRect(0, 0, 180, 140);
-
-    mapData.clusters.forEach(cl => {
-        if (cl.id === -1) return;
-        const x = cl.center_x * 170 + 5;
-        const y = cl.center_y * 130 + 5;
-        const r = Math.sqrt(cl.paper_count) * 0.22;
-        mctx.beginPath();
-        mctx.arc(x, y, Math.max(2.5, r), 0, Math.PI * 2);
-        mctx.fillStyle = cl.color + '50';
-        mctx.fill();
-    });
-}
-
-document.getElementById('minimap').addEventListener('click', e => {
-    const rect = e.target.closest('#minimap').getBoundingClientRect();
-    const mx = (e.clientX - rect.left) / rect.width;
-    const my = (e.clientY - rect.top) / rect.height;
-    const wx = (mx - 0.5) * SPREAD;
-    const wy = (my - 0.5) * SPREAD;
-    fly(wx, wy + 20, 200);
-    controls.autoRotate = false;
-});
 
 function onRsz(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
 
