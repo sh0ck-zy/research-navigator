@@ -206,9 +206,14 @@
 </head>
 <body>
 
+<div id="loading" style="position:fixed;inset:0;z-index:999;background:#0a0a0a;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s">
+    <div style="font-family:'Playfair Display',serif;font-size:24px;color:rgba(255,255,255,0.8);margin-bottom:12px">The Observatory</div>
+    <div style="font-size:13px;color:rgba(255,255,255,0.3)">Mapping the research landscape...</div>
+</div>
+
 <div id="canvas-container"></div>
 
-<div id="ui">
+<div id="ui" style="opacity:0">
     <div class="top-bar">
         <div class="brand">
             <span class="brand-main"><b>The Observatory</b></span>
@@ -306,6 +311,36 @@ async function boot() {
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') { closePanel(); clearSearch(); }
         if (e.key === '/' && !panelIsOpen) { e.preventDefault(); document.getElementById('search').focus(); }
+    });
+
+    // Entrance animation
+    // Start with all points invisible
+    const opa = ptsGeo.attributes.opacity;
+    for (let i = 0; i < opa.array.length; i++) opa.array[i] = 0;
+    opa.needsUpdate = true;
+
+    // Fade out loading screen
+    const loadingEl = document.getElementById('loading');
+    loadingEl.style.opacity = '0';
+    setTimeout(() => loadingEl.style.display = 'none', 800);
+
+    // Fade in points over 1.5s
+    const startTime = performance.now();
+    function fadeInPoints() {
+        const elapsed = (performance.now() - startTime) / 1500;
+        const t = Math.min(1, elapsed);
+        for (let i = 0; i < opa.array.length; i++) opa.array[i] = t;
+        opa.needsUpdate = true;
+        if (t < 1) requestAnimationFrame(fadeInPoints);
+    }
+    setTimeout(fadeInPoints, 400);
+
+    // Fade in UI
+    gsap.to(document.getElementById('ui'), { opacity: 1, duration: 1.2, delay: 0.6 });
+    // Fade in labels
+    document.querySelectorAll('.cl-label').forEach((el, i) => {
+        el.style.opacity = '0';
+        gsap.to(el, { opacity: 1, duration: 0.8, delay: 1.0 + i * 0.05 });
     });
 }
 
