@@ -379,6 +379,7 @@ let conLines=null, hovIdx=-1, activeCluster=null;
 let cardPaper=null;
 let hasInteracted=false;
 let selectedIdx=-1, selectedOrigSize=0;
+let pushedPapers=[], pushProgress=0, pushDirection=0;
 const SPREAD = 600;
 
 async function boot() {
@@ -1065,6 +1066,24 @@ function selectPaper(p, idx) {
     sizeArr[idx] = selectedOrigSize * 4.5;
     ptsGeo.attributes.size.needsUpdate = true;
 
+    // Gravitational push: find 12 nearest neighbors and push outward
+    const PUSH_DIST = 18;
+    const posArr = ptsGeo.attributes.position.array;
+    const neighbors = allPapers
+        .map((q, i) => ({ i, d: Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2) }))
+        .filter(o => o.i !== idx)
+        .sort((a, b) => a.d - b.d)
+        .slice(0, 12);
+    pushedPapers = neighbors.map(({ i: ni }) => {
+        const ox = posArr[ni*3], oy = posArr[ni*3+1], oz = posArr[ni*3+2];
+        const dx = ox - p._x, dy = oy - p._y, dz = oz - p._z;
+        const len = Math.sqrt(dx*dx+dy*dy+dz*dz) || 1;
+        return { index:ni, origX:ox, origY:oy, origZ:oz,
+            targetX: ox+(dx/len)*PUSH_DIST, targetY: oy+(dy/len)*PUSH_DIST, targetZ: oz+(dz/len)*PUSH_DIST };
+    });
+    pushProgress = 0;
+    pushDirection = 1;
+
     // Centrality percentile
     const clPapers = allPapers.filter(q => q._cl.id === p._cl.id);
     const rank = clPapers.filter(q => (q._centrality||0) <= (p._centrality||0)).length;
@@ -1104,6 +1123,8 @@ function deselectPaper() {
     }
     selectedIdx = -1;
     cardPaper = null;
+    // Trigger push retraction (loop will lerp back)
+    pushDirection = -1;
     const ni = document.getElementById('node-info');
     ni.classList.remove('visible');
     setTimeout(() => { ni.style.display = 'none'; }, 250);
@@ -1266,6 +1287,28 @@ function loop(){
     if (edgesMesh) {
         const edgeOpacity = Math.max(0, Math.min(0.08, (250 - dist) / 200));
         edgesMesh.material.opacity = edgeOpacity;
+    }
+
+    // Gravitational push animation
+    if (pushedPapers.length > 0) {
+        pushProgress += (pushDirection > 0 ? 0.06 : -0.08);
+        pushProgress = Math.max(0, Math.min(1, pushProgress));
+        const posArr = ptsGeo.attributes.position.array;
+        const et = pushDirection > 0 ? (1 - Math.pow(1 - pushProgress, 3)) : pushProgress;
+        pushedPapers.forEach(pp => {
+            posArr[pp.index*3]   = pp.origX + (pp.targetX - pp.origX) * et;
+            posArr[pp.index*3+1] = pp.origY + (pp.targetY - pp.origY) * et;
+            posArr[pp.index*3+2] = pp.origZ + (pp.targetZ - pp.origZ) * et;
+        });
+        ptsGeo.attributes.position.needsUpdate = true;
+        if (pushProgress <= 0 && pushDirection < 0) {
+            pushedPapers.forEach(pp => {
+                posArr[pp.index*3]=pp.origX; posArr[pp.index*3+1]=pp.origY; posArr[pp.index*3+2]=pp.origZ;
+            });
+            ptsGeo.attributes.position.needsUpdate = true;
+            pushedPapers = [];
+            pushDirection = 0;
+        }
     }
 
     // Position node-info anchored to selected paper
