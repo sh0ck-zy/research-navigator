@@ -292,6 +292,25 @@
             font-size:11px; color:rgba(255,255,255,0.4); line-height:1.6;
         }
 
+        /* === KING PAPER LABELS === */
+        .king-label {
+            position:fixed; z-index:16;
+            transform:translate(-50%,-100%);
+            pointer-events:none;
+            font-size:10px; font-weight:500;
+            color:rgba(255,255,255,0.75);
+            background:rgba(0,0,0,0.55);
+            backdrop-filter:blur(4px);
+            padding:4px 10px;
+            border-radius:5px;
+            white-space:nowrap;
+            max-width:220px;
+            overflow:hidden;
+            text-overflow:ellipsis;
+            opacity:0; transition:opacity 0.5s;
+        }
+        .king-label.visible { opacity:1; }
+
         /* === CLUSTER CONTEXT CARD === */
         #cluster-context {
             position:fixed; top:80px; left:40px; z-index:85;
@@ -399,6 +418,7 @@ let cardPaper=null;
 let hasInteracted=false;
 let selectedIdx=-1, selectedOrigSize=0;
 let pushedPapers=[], pushProgress=0, pushDirection=0;
+let kingPapers=[], kingLabelEls=[];
 const SPREAD = 600;
 
 async function boot() {
@@ -1223,12 +1243,51 @@ function hideClusterContext() {
     setTimeout(() => { cc.style.display = 'none'; }, 350);
 }
 
+function showKingPapers(cl) {
+    hideKingPapers();
+    const clPapers = allPapers.map((p,i)=>({p,i})).filter(o=>o.p._cl.id===cl.id)
+        .sort((a,b)=>b.p._centrality-a.p._centrality).slice(0,3);
+    const sizeArr = ptsGeo.attributes.size.array;
+    const opaArr = ptsGeo.attributes.opacity.array;
+    clPapers.forEach(({p,i})=>{
+        kingPapers.push({index:i, origSize:sizeArr[i], origOpacity:opaArr[i]});
+        sizeArr[i] = (1.5 + p._centrality * 5.0) * 1.4 * 3;
+        opaArr[i] = 1.0;
+        const el = document.createElement('div');
+        el.className = 'king-label';
+        el.textContent = p.title.length > 45 ? p.title.slice(0,42)+'...' : p.title;
+        el.style.borderLeft = '2px solid '+cl.color;
+        document.body.appendChild(el);
+        requestAnimationFrame(()=>el.classList.add('visible'));
+        kingLabelEls.push({el, index:i});
+    });
+    ptsGeo.attributes.size.needsUpdate = true;
+    ptsGeo.attributes.opacity.needsUpdate = true;
+}
+
+function hideKingPapers() {
+    const sizeArr = ptsGeo.attributes.size.array;
+    const opaArr = ptsGeo.attributes.opacity.array;
+    kingPapers.forEach(kp=>{
+        sizeArr[kp.index]=kp.origSize;
+        opaArr[kp.index]=kp.origOpacity;
+    });
+    if(kingPapers.length){
+        ptsGeo.attributes.size.needsUpdate=true;
+        ptsGeo.attributes.opacity.needsUpdate=true;
+    }
+    kingPapers=[];
+    kingLabelEls.forEach(({el})=>el.remove());
+    kingLabelEls=[];
+}
+
 function exitCluster() {
     activeCluster = null;
     dimExcept(null);
     hideBubbles();
     removeClusterConnections();
     hideClusterContext();
+    hideKingPapers();
 }
 
 function zoomToCluster(cl) {
@@ -1239,6 +1298,7 @@ function zoomToCluster(cl) {
     hideClusterInsight();
     drawClusterConnections(cl.id);
     showClusterContext(cl);
+    showKingPapers(cl);
     controls.autoRotate = false;
 
     const cx = (cl.center_x - 0.5) * SPREAD;
@@ -1369,6 +1429,15 @@ function loop(){
         const edgeOpacity = Math.max(0, Math.min(0.08, (250 - dist) / 200));
         edgesMesh.material.opacity = edgeOpacity;
     }
+
+    // Position king paper labels
+    kingLabelEls.forEach(({el, index})=>{
+        const p=allPapers[index];
+        const v=new THREE.Vector3(p._x,p._y,p._z).project(camera);
+        el.style.left=(v.x*0.5+0.5)*innerWidth+'px';
+        el.style.top=((-v.y*0.5+0.5)*innerHeight-18)+'px';
+        el.style.display=v.z<1?'':'none';
+    });
 
     // Gravitational push animation
     if (pushedPapers.length > 0) {
