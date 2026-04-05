@@ -134,13 +134,13 @@
         }
         .cl-label:hover { transform:translate(-50%,-50%) scale(1.08); }
         .cl-label .cl-name {
-            font-size:10px; font-weight:500;
-            color:rgba(255,255,255,0.35);
+            font-weight:500;
+            color:rgba(255,255,255,0.6);
             text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,1);
             white-space:nowrap;
         }
-        .cl-label:hover .cl-name { color:rgba(255,255,255,0.85); }
-        .cl-label .cl-count { font-size:8px; color:rgba(255,255,255,0.12); margin-top:1px; }
+        .cl-label:hover .cl-name { color:rgba(255,255,255,0.95); }
+        .cl-label .cl-count { font-size:8px; color:rgba(255,255,255,0.3); margin-top:1px; }
         .cl-label.dim { opacity:0.1; }
 
         /* === TOOLTIP === */
@@ -481,13 +481,17 @@ function smoothHull(hull, iterations) {
 function makeLabels() {
     const el=document.getElementById('labels');
     el.innerHTML='';
+    const counts = mapData.clusters.filter(c=>c.id!==-1).map(c=>c.paper_count);
+    const minC = Math.min(...counts), maxC = Math.max(...counts);
     mapData.clusters.forEach(cl=>{
         if(cl.id===-1)return;
         const d=document.createElement('div');
         d.className='cl-label';
         d.dataset.cid=cl.id;
         d.style.pointerEvents='auto';
-        d.innerHTML=`<div class="cl-name">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
+        const t = maxC > minC ? (cl.paper_count - minC) / (maxC - minC) : 0.5;
+        const fontSize = Math.round(10 + t * 8); // 10px → 18px
+        d.innerHTML=`<div class="cl-name" style="font-size:${fontSize}px">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
         d.onclick=e=>{e.stopPropagation();openCluster(cl);};
         d.onmouseenter=()=>{dimExcept(cl.id);showBubble(cl.id);};
         d.onmouseleave=()=>{if(!activeCluster){dimExcept(null);hideBubbles();}};
