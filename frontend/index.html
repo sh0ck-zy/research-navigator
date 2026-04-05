@@ -547,6 +547,11 @@ function makeLabels() {
 }
 
 function updateLabels() {
+    const camDist = camera.position.distanceTo(controls.target);
+    const isLanding = camDist >= 420;
+    // Labels hidden during landing, fade in as we zoom in
+    const baseLabelOpacity = isLanding ? 0 : Math.max(0.5, Math.min(1, (420 - camDist) / 100));
+
     document.querySelectorAll('.cl-label').forEach(el=>{
         const cl=mapData.clusters.find(c=>c.id==el.dataset.cid);
         if(!cl)return;
@@ -557,12 +562,11 @@ function updateLabels() {
         ).project(camera);
         const x=(v.x*0.5+0.5)*innerWidth;
         const y=(-v.y*0.5+0.5)*innerHeight;
-        const camDist = camera.position.distanceTo(controls.target);
-        const labelOpacity = Math.max(0.5, Math.min(1, (500 - camDist) / 300));
         el.style.left=x+'px';
         el.style.top=y+'px';
-        el.style.display = v.z < 1 ? '' : 'none';
-        if(!el.style.opacity || el.style.opacity === '') el.style.opacity = labelOpacity;
+        el.style.display = (v.z < 1 && baseLabelOpacity > 0) ? '' : 'none';
+        // Only set opacity if not overridden by dimExcept
+        if(!activeCluster) el.style.opacity = baseLabelOpacity;
     });
 }
 
