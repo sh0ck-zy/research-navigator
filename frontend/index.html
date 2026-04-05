@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Observatory — Explore the world's research</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { background:#0a0a0a; color:#e8eaed; overflow:hidden; font-family:'Inter',sans-serif; -webkit-font-smoothing:antialiased; }
+
+        #canvas-container { position:fixed; inset:0; z-index:1; }
+
+        #ui { position:fixed; inset:0; z-index:10; pointer-events:none; display:flex; flex-direction:column; justify-content:space-between; }
+
+        /* === TOP NAV === */
+        .top-bar {
+            pointer-events:auto;
+            display:flex; align-items:center; justify-content:space-between;
+            padding:0 40px; height:56px;
+        }
+        .brand { display:flex; align-items:baseline; gap:6px; }
+        .brand-main { font-size:16px; font-weight:300; color:rgba(255,255,255,0.9); letter-spacing:-0.01em; }
+        .brand-main b { font-weight:700; }
+        .brand-sub { font-size:16px; font-weight:300; color:rgba(255,255,255,0.5); margin-left:4px; }
+        .nav-links { display:flex; gap:0; height:56px; }
+        .nav-link { padding:0 20px; font-size:14px; font-weight:400; color:rgba(255,255,255,0.45); display:flex; align-items:center; border-bottom:3px solid transparent; cursor:pointer; transition:color 0.2s; }
+        .nav-link:hover { color:rgba(255,255,255,0.8); }
+        .nav-link.active { color:#8ab4f8; border-bottom-color:#8ab4f8; }
+
+        /* === CENTER CONTENT === */
+        .center-content {
+            flex:1; display:flex; flex-direction:column;
+            align-items:center; justify-content:center;
+            padding-bottom:40px;
+            pointer-events:none;
+        }
+        .hero-title {
+            font-family:'Playfair Display',serif;
+            font-size:72px; font-weight:400;
+            color:rgba(255,255,255,0.92);
+            letter-spacing:-0.03em;
+            text-align:center;
+            line-height:1.05;
+            margin-bottom:16px;
+            pointer-events:none;
+            text-shadow: 0 4px 40px rgba(0,0,0,0.6);
+        }
+        .hero-sub {
+            font-size:15px; font-weight:300;
+            color:rgba(255,255,255,0.35);
+            text-align:center; max-width:520px;
+            line-height:1.6; margin-bottom:36px;
+            pointer-events:none;
+        }
+
+        /* Search */
+        .search-wrap { pointer-events:auto !important; position:relative; width:600px; margin-bottom:20px; }
+        .search-icon { position:absolute; left:20px; top:50%; transform:translateY(-50%); }
+        .search-input {
+            width:100%; padding:16px 50px 16px 52px;
+            border-radius:32px;
+            background:rgba(32,33,36,0.75);
+            border:1px solid rgba(255,255,255,0.08);
+            color:#e8eaed; font-size:16px; font-family:'Inter',sans-serif;
+            outline:none; backdrop-filter:blur(16px);
+            transition:all 0.3s;
+        }
+        .search-input::placeholder { color:rgba(255,255,255,0.28); }
+        .search-input:focus { border-color:rgba(138,180,248,0.3); box-shadow:0 8px 40px rgba(0,0,0,0.5); background:rgba(32,33,36,0.95); }
+        .search-x { position:absolute; right:20px; top:50%; transform:translateY(-50%); color:rgba(255,255,255,0.25); cursor:pointer; font-size:18px; display:none; pointer-events:auto; }
+
+        /* Search Results Dropdown */
+        .search-results {
+            position:absolute; top:62px; left:0; right:0;
+            background:rgba(20,20,24,0.96); border:1px solid rgba(255,255,255,0.08);
+            border-radius:16px; max-height:360px; overflow-y:auto; display:none;
+            backdrop-filter:blur(24px); box-shadow:0 20px 60px rgba(0,0,0,0.6);
+            z-index:100;
+        }
+        .search-results::-webkit-scrollbar { width:3px; }
+        .search-results::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+        .sr-header { padding:12px 20px; font-size:11px; color:rgba(255,255,255,0.25); letter-spacing:0.05em; border-bottom:1px solid rgba(255,255,255,0.04); }
+        .sr-item { padding:12px 20px; cursor:pointer; display:flex; align-items:center; gap:12px; transition:background 0.15s; }
+        .sr-item:hover { background:rgba(255,255,255,0.05); }
+        .sr-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+        .sr-info { flex:1; overflow:hidden; }
+        .sr-title { font-size:13px; color:rgba(255,255,255,0.75); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; line-height:1.4; }
+        .sr-meta { font-size:10px; color:rgba(255,255,255,0.25); margin-top:2px; }
+
+        /* Filters */
+        .filters { pointer-events:auto !important; display:flex; gap:8px; flex-wrap:wrap; justify-content:center; }
+        .filter-dd {
+            padding:8px 16px; border-radius:24px;
+            font-size:13px; font-weight:400;
+            border:1px solid rgba(255,255,255,0.1);
+            color:rgba(255,255,255,0.5);
+            background:rgba(255,255,255,0.03);
+            cursor:pointer; transition:all 0.2s;
+            display:flex; align-items:center; gap:6px;
+        }
+        .filter-dd:hover { background:rgba(255,255,255,0.07); color:rgba(255,255,255,0.8); }
+        .filter-dd.active { background:rgba(255,255,255,0.95); color:#111; border-color:transparent; }
+
+        /* === RIGHT STATS === */
+        .right-stats {
+            position:fixed; right:40px; top:50%; transform:translateY(-50%);
+            z-index:20; pointer-events:none;
+            display:flex; flex-direction:column; gap:12px;
+            align-items:flex-end;
+        }
+        .rs-label { font-size:12px; color:rgba(255,255,255,0.3); letter-spacing:0.02em; }
+        .rs-value { font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-left:8px; }
+
+        /* === BOTTOM === */
+        .bottom-hint {
+            pointer-events:none;
+            text-align:center; padding:16px;
+            font-size:12px; color:rgba(255,255,255,0.2);
+            font-family:monospace; letter-spacing:0.05em;
+        }
+
+        /* === CLUSTER LABELS on map === */
+        .cl-label {
+            position:absolute; z-index:15;
+            transform:translate(-50%,-50%);
+            text-align:center; cursor:pointer;
+            pointer-events:auto;
+            transition:opacity 0.4s, transform 0.4s;
+        }
+        .cl-label:hover { transform:translate(-50%,-50%) scale(1.08); }
+        .cl-label .cl-name {
+            font-size:10px; font-weight:500;
+            color:rgba(255,255,255,0.35);
+            text-shadow: 0 2px 20px rgba(0,0,0,1), 0 0 8px rgba(0,0,0,1);
+            white-space:nowrap;
+        }
+        .cl-label:hover .cl-name { color:rgba(255,255,255,0.85); }
+        .cl-label .cl-count { font-size:8px; color:rgba(255,255,255,0.12); margin-top:1px; }
+        .cl-label.dim { opacity:0.1; }
+
+        /* === TOOLTIP === */
+        #tooltip {
+            position:fixed; display:none; z-index:200;
+            background:rgba(18,18,22,0.94);
+            border:1px solid rgba(255,255,255,0.08);
+            border-radius:12px; padding:16px 20px;
+            max-width:320px; pointer-events:none;
+            backdrop-filter:blur(20px);
+            box-shadow:0 16px 48px rgba(0,0,0,0.6);
+        }
+
+        /* === SIDE PANEL === */
+        .side-panel {
+            position:fixed; top:0; right:0; bottom:0;
+            width:460px; z-index:80;
+            background:rgba(10,10,12,0.96);
+            backdrop-filter:blur(40px);
+            border-left:1px solid rgba(255,255,255,0.06);
+            transform:translateX(100%);
+            transition:transform 0.5s cubic-bezier(0.16,1,0.3,1);
+            overflow-y:auto; pointer-events:auto;
+        }
+        .side-panel.open { transform:translateX(0); }
+        .side-panel::-webkit-scrollbar { width:3px; }
+        .side-panel::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+
+        .panel-header {
+            padding:20px 24px; border-bottom:1px solid rgba(255,255,255,0.05);
+            display:flex; justify-content:space-between; align-items:center;
+            position:sticky; top:0; background:rgba(10,10,12,0.98); z-index:2;
+        }
+
+        .card-m { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:14px; }
+        .card-label { font-size:8px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25); margin-bottom:4px; }
+        .card-value { font-size:20px; font-weight:500; color:rgba(255,255,255,0.8); }
+        .section-title { font-size:10px; font-weight:600; text-transform:uppercase; letter-spacing:0.15em; color:rgba(255,255,255,0.2); margin-bottom:10px; display:flex; justify-content:space-between; }
+
+        .drop-cap::first-letter { float:left; font-size:3rem; line-height:0.8; padding-right:10px; padding-top:3px; font-family:'Playfair Display',serif; color:#fff; font-weight:700; }
+        .nb-row { display:flex; align-items:center; gap:10px; padding:10px 12px; border-radius:10px; cursor:pointer; transition:all 0.15s; }
+        .nb-row:hover { background:rgba(255,255,255,0.04); }
+
+        .trend-bar-wrap { display:flex; align-items:flex-end; gap:2px; height:50px; }
+        .trend-bar { background:currentColor; border-radius:2px 2px 0 0; min-width:8px; transition:height 0.3s; }
+        .trend-label { font-size:8px; color:rgba(255,255,255,0.2); text-align:center; margin-top:2px; }
+
+        .conn-item { display:flex; align-items:center; gap:8px; padding:6px 0; cursor:pointer; }
+        .conn-item:hover { opacity:0.8; }
+        .conn-bar { height:4px; border-radius:2px; min-width:20px; }
+
+        /* Minimap */
+        #minimap {
+            position:fixed; bottom:24px; right:24px; z-index:50;
+            width:150px; height:110px; border-radius:10px;
+            background:rgba(10,10,14,0.8); border:1px solid rgba(255,255,255,0.06);
+            backdrop-filter:blur(12px); overflow:hidden; pointer-events:auto; cursor:pointer;
+        }
+        #minimap canvas { width:100%; height:100%; }
+    </style>
+</head>
+<body>
+
+<div id="canvas-container"></div>
+
+<div id="ui">
+    <div class="top-bar">
+        <div class="brand">
+            <span class="brand-main"><b>The Observatory</b></span>
+            <span class="brand-sub">Research Explorer</span>
+        </div>
+        <div class="nav-links">
+            <a class="nav-link active">Explore</a>
+        </div>
+        <div style="width:40px"></div>
+    </div>
+
+    <div class="center-content" id="hero">
+        <h1 class="hero-title">Explore the world's<br>research</h1>
+        <p class="hero-sub">The Observatory maps the landscape of scientific knowledge, helping researchers see the shape of their field in seconds.</p>
+        <div class="search-wrap">
+            <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+            <input class="search-input" id="search" placeholder="Search for a cluster, paper or concept..." onfocus="onSearchFocus()" oninput="handleSearch(this.value)">
+            <span class="search-x" id="search-x" onclick="clearSearch()">&#x2715;</span>
+            <div class="search-results" id="search-results"></div>
+        </div>
+        <div class="filters" id="filters"></div>
+    </div>
+
+    <div class="bottom-hint" id="bottom-hint">Scroll to zoom &middot; Drag to rotate &middot; Click a cluster to explore</div>
+</div>
+
+<!-- Right stats panel -->
+<div class="right-stats" id="right-stats"></div>
+
+<!-- Cluster labels -->
+<div id="labels" style="position:fixed;inset:0;z-index:15;pointer-events:none;"></div>
+
+<!-- Tooltip -->
+<div id="tooltip">
+    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
+        <div id="tt-dot" style="width:6px;height:6px;border-radius:50%"></div>
+        <span id="tt-cluster" style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)"></span>
+    </div>
+    <div id="tt-title" style="font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:rgba(255,255,255,0.92);line-height:1.35;margin-bottom:6px"></div>
+    <div id="tt-meta" style="font-size:11px;color:rgba(255,255,255,0.3)"></div>
+</div>
+
+<!-- Side Panel -->
+<div class="side-panel" id="panel">
+    <div class="panel-header">
+        <span id="panel-breadcrumb" style="font-size:11px;color:rgba(255,255,255,0.25)"></span>
+        <button onclick="closePanel()" style="background:rgba(255,255,255,0.06);border:none;color:rgba(255,255,255,0.4);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background 0.2s" onmouseover="this.style.background='rgba(255,255,255,0.12)'" onmouseout="this.style.background='rgba(255,255,255,0.06)'">&times;</button>
+    </div>
+    <div id="panel-body" style="padding:24px"></div>
+</div>
+
+<!-- Minimap -->
+<div id="minimap"><canvas id="minimap-canvas"></canvas></div>
+
+<script>
+let mapData, allPapers=[], scene, camera, renderer, controls, ptsMesh, ptsGeo;
+let conLines=null, hovIdx=-1, activeCluster=null, panelIsOpen=false;
+const SPREAD = 600;
+
+async function boot() {
+    mapData = await (await fetch('data/map_data.json?t=' + Date.now())).json();
+
+    // Assign Z offsets per cluster for depth separation
+    const zOffsets = {};
+    mapData.clusters.forEach((cl,i) => { zOffsets[cl.id] = (Math.sin(i*1.3)*40) + (Math.cos(i*0.7)*30); });
+
+    mapData.clusters.forEach(cl => {
+        cl.papers.forEach(p => {
+            allPapers.push({
+                ...p, _cl:cl,
+                _x: (p.x - 0.5) * SPREAD,
+                _y: (p.y - 0.5) * SPREAD,
+                _z: (zOffsets[cl.id]||0) + (Math.random()-0.5)*35
+            });
+        });
+    });
+
+    initScene();
+    makePoints();
+    makeLabels();
+    makeFilters();
+    makeStats();
+    drawMinimap();
+    loop();
+
+    renderer.domElement.addEventListener('mousemove', onMouse);
+    renderer.domElement.addEventListener('click', onClk);
+    window.addEventListener('resize', onRsz);
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape') { closePanel(); clearSearch(); }
+        if (e.key === '/' && !panelIsOpen) { e.preventDefault(); document.getElementById('search').focus(); }
+    });
+}
+
+function initScene() {
+    scene = new THREE.Scene();
+    scene.fog = new THREE.FogExp2(0x0a0a0a, 0.0012);
+    camera = new THREE.PerspectiveCamera(50, innerWidth/innerHeight, 0.1, 3000);
+    camera.position.set(0, 80, 500);
+    renderer = new THREE.WebGLRenderer({ antialias:true });
+    renderer.setSize(innerWidth, innerHeight);
+    renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+    renderer.setClearColor(0x0a0a0a);
+    document.getElementById('canvas-container').appendChild(renderer.domElement);
+    controls = new THREE.OrbitControls(camera, renderer.domElement);
+    controls.enableDamping = true;
+    controls.dampingFactor = 0.04;
+    controls.autoRotate = true;
+    controls.autoRotateSpeed = 0.15;
+    controls.maxPolarAngle = Math.PI*0.72;
+    controls.minPolarAngle = Math.PI*0.28;
+    controls.minDistance = 60;
+    controls.maxDistance = 900;
+    controls.target.set(0, 0, 0);
+}
+
+function makePoints() {
+    const n = allPapers.length;
+    const pos=new Float32Array(n*3), col=new Float32Array(n*3), siz=new Float32Array(n), opa=new Float32Array(n);
+    const c = new THREE.Color();
+
+    allPapers.forEach((p,i) => {
+        pos[i*3]=p._x; pos[i*3+1]=p._y; pos[i*3+2]=p._z;
+        c.set(p._cl.color);
+        col[i*3]=c.r; col[i*3+1]=c.g; col[i*3+2]=c.b;
+        siz[i] = 2.0 + Math.random()*2.5;
+        opa[i] = 1.0;
+    });
+
+    ptsGeo = new THREE.BufferGeometry();
+    ptsGeo.setAttribute('position', new THREE.BufferAttribute(pos,3));
+    ptsGeo.setAttribute('color', new THREE.BufferAttribute(col,3));
+    ptsGeo.setAttribute('size', new THREE.BufferAttribute(siz,1));
+    ptsGeo.setAttribute('opacity', new THREE.BufferAttribute(opa,1));
+
+    const mat = new THREE.ShaderMaterial({
+        vertexShader:`
+            attribute float size;
+            attribute vec3 color;
+            attribute float opacity;
+            varying vec3 vC;
+            varying float vO;
+            void main(){
+                vC=color; vO=opacity;
+                vec4 mv=modelViewMatrix*vec4(position,1.0);
+                gl_PointSize=size*(350.0/-mv.z);
+                gl_Position=projectionMatrix*mv;
+            }`,
+        fragmentShader:`
+            varying vec3 vC;
+            varying float vO;
+            void main(){
+                float d=length(gl_PointCoord-vec2(0.5));
+                if(d>0.5)discard;
+                float core=smoothstep(0.5,0.1,d);
+                float glow=smoothstep(0.5,0.0,d)*0.2;
+                float alpha=(core*0.9+glow)*vO;
+                gl_FragColor=vec4(vC*(0.8+core*0.8), alpha);
+            }`,
+        transparent:true, depthWrite:false, blending:THREE.AdditiveBlending
+    });
+
+    ptsMesh = new THREE.Points(ptsGeo, mat);
+    scene.add(ptsMesh);
+}
+
+// === LABELS ===
+function makeLabels() {
+    const el=document.getElementById('labels');
+    el.innerHTML='';
+    mapData.clusters.forEach(cl=>{
+        if(cl.id===-1)return;
+        const d=document.createElement('div');
+        d.className='cl-label';
+        d.dataset.cid=cl.id;
+        d.style.pointerEvents='auto';
+        d.innerHTML=`<div class="cl-name">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
+        d.onclick=e=>{e.stopPropagation();openCluster(cl);};
+        d.onmouseenter=()=>dimExcept(cl.id);
+        d.onmouseleave=()=>{if(!activeCluster)dimExcept(null);};
+        el.appendChild(d);
+    });
+}
+
+function updateLabels() {
+    document.querySelectorAll('.cl-label').forEach(el=>{
+        const cl=mapData.clusters.find(c=>c.id==el.dataset.cid);
+        if(!cl)return;
+        const v=new THREE.Vector3(
+            (cl.center_x-0.5)*SPREAD,
+            (cl.center_y-0.5)*SPREAD,
+            (Math.sin(mapData.clusters.indexOf(cl)*1.3)*40)+(Math.cos(mapData.clusters.indexOf(cl)*0.7)*30)
+        ).project(camera);
+        const x=(v.x*0.5+0.5)*innerWidth;
+        const y=(-v.y*0.5+0.5)*innerHeight;
+        const camDist = camera.position.length();
+        const labelOpacity = Math.max(0, Math.min(1, (500 - camDist) / 150));
+        el.style.left=x+'px';
+        el.style.top=y+'px';
+        el.style.display = (v.z<1 && labelOpacity > 0) ? '' : 'none';
+        el.style.opacity = labelOpacity;
+    });
+}
+
+function dimExcept(cid) {
+    const o=ptsGeo.attributes.opacity, s=ptsGeo.attributes.size;
+    allPapers.forEach((p,i)=>{
+        if(cid===null) { o.array[i]=1.0; s.array[i]=2.0+Math.random()*2.5; }
+        else if(p._cl.id===cid) { o.array[i]=1.0; s.array[i]=3.5; }
+        else { o.array[i]=0.04; s.array[i]=0.8; }
+    });
+    o.needsUpdate=true; s.needsUpdate=true;
+
+    document.querySelectorAll('.cl-label').forEach(el=>{
+        if(cid===null)el.classList.remove('dim');
+        else el.classList.toggle('dim',parseInt(el.dataset.cid)!==cid);
+    });
+}
+
+// === FILTERS ===
+function makeFilters() {
+    const c=document.getElementById('filters');
+    const top = mapData.clusters.filter(x=>x.id!==-1).slice(0,6);
+    c.innerHTML = `<div class="filter-dd active" onclick="applyFilter(null,this)" style="background:rgba(255,255,255,0.9);color:#111;border-color:transparent">All Fields</div>` +
+        top.map(cl => `<div class="filter-dd" onclick="applyFilter(${cl.id},this)">${cl.name}</div>`).join('');
+}
+
+function applyFilter(cid, el) {
+    document.querySelectorAll('.filter-dd').forEach(f => {
+        f.classList.remove('active');
+        f.style.background = 'rgba(255,255,255,0.03)';
+        f.style.color = 'rgba(255,255,255,0.5)';
+        f.style.borderColor = '';
+    });
+    el.classList.add('active');
+    el.style.background = 'rgba(255,255,255,0.9)';
+    el.style.color = '#111';
+    el.style.borderColor = 'transparent';
+
+    activeCluster = cid;
+    dimExcept(cid);
+
+    if (cid !== null) {
+        const cl = mapData.clusters.find(c => c.id === cid);
+        if (cl) {
+            const cx = (cl.center_x - 0.5) * SPREAD;
+            const cy = (cl.center_y - 0.5) * SPREAD;
+            fly(cx, cy + 40, 200);
+            controls.autoRotate = false;
+        }
+    } else {
+        fly(0, 80, 500);
+        controls.autoRotate = true;
+    }
+}
+
+// === STATS ===
+function makeStats() {
+    const el=document.getElementById('right-stats');
+    const items = [
+        {label:'Research Overview', value:''},
+        {label:'Papers', value:mapData.metadata.paper_count.toLocaleString()},
+        {label:'Clusters', value:mapData.metadata.cluster_count},
+        {label:'Field', value:mapData.metadata.field},
+    ];
+    el.innerHTML = items.map(i =>
+        i.value ? `<div><span class="rs-label">${i.label}</span><span class="rs-value">${i.value}</span></div>`
+        : `<div style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:4px">${i.label}</div>`
+    ).join('');
+}
+
+// === SEARCH (enhanced with dropdown) ===
+function onSearchFocus() {}
+
+function handleSearch(t) {
+    t=t.toLowerCase().trim();
+    document.getElementById('search-x').style.display=t?'block':'none';
+
+    if(!t) {
+        dimExcept(null);
+        document.getElementById('search-results').style.display='none';
+        return;
+    }
+
+    // Dim non-matching points
+    const o=ptsGeo.attributes.opacity, s=ptsGeo.attributes.size;
+    const matches = [];
+    allPapers.forEach((p,i)=>{
+        const m=p.title.toLowerCase().includes(t)||p._cl.name.toLowerCase().includes(t)||(p.categories||'').toLowerCase().includes(t)||(p.authors||'').toLowerCase().includes(t);
+        o.array[i]=m?1.0:0.03;
+        s.array[i]=m?4.0:0.6;
+        if(m && matches.length < 15) matches.push({paper:p, index:i});
+    });
+    o.needsUpdate=true; s.needsUpdate=true;
+
+    // Show dropdown
+    const container = document.getElementById('search-results');
+    if (matches.length === 0) {
+        container.innerHTML = '<div style="padding:20px;text-align:center;font-size:13px;color:rgba(255,255,255,0.25)">No results found</div>';
+    } else {
+        const totalMatches = allPapers.filter((p) => p.title.toLowerCase().includes(t)||p._cl.name.toLowerCase().includes(t)||(p.categories||'').toLowerCase().includes(t)||(p.authors||'').toLowerCase().includes(t)).length;
+        container.innerHTML = `
+            <div class="sr-header">${totalMatches.toLocaleString()} results</div>
+            ${matches.map(({paper:p, index:i}) => `
+                <div class="sr-item" onmousedown="searchNavigate(${i})">
+                    <div class="sr-dot" style="background:${p._cl.color}"></div>
+                    <div class="sr-info">
+                        <div class="sr-title">${p.title}</div>
+                        <div class="sr-meta">${p._cl.name} &middot; ${p.year||''}</div>
+                    </div>
+                </div>
+            `).join('')}
+        `;
+    }
+    container.style.display = 'block';
+}
+
+function searchNavigate(i) {
+    const p = allPapers[i];
+    openPaper(p, i);
+    drawLines(i);
+    fly(p._x, p._y+20, p._z+100);
+    controls.autoRotate = false;
+    document.getElementById('search-results').style.display = 'none';
+}
+
+function clearSearch(){
+    document.getElementById('search').value='';
+    document.getElementById('search-x').style.display='none';
+    document.getElementById('search-results').style.display='none';
+    dimExcept(null);
+}
+
+// === MOUSE ===
+function onMouse(e) {
+    if (panelIsOpen) return;
+    const m=new THREE.Vector2((e.clientX/innerWidth)*2-1,-(e.clientY/innerHeight)*2+1);
+    const rc=new THREE.Raycaster();
+    rc.setFromCamera(m,camera);
+    rc.params.Points.threshold=2.5;
+    const hits=rc.intersectObject(ptsMesh).filter(h=>ptsGeo.attributes.opacity.array[h.index]>0.3);
+    const tt=document.getElementById('tooltip');
+    if(hits.length){
+        hovIdx=hits[0].index;
+        const p=allPapers[hovIdx];
+        document.getElementById('tt-dot').style.background=p._cl.color;
+        document.getElementById('tt-cluster').textContent=p._cl.name;
+        document.getElementById('tt-title').textContent=p.title;
+        const auth=p.authors?p.authors.split(/,|and/).slice(0,2).map(s=>s.trim()).join(', '):'';
+        document.getElementById('tt-meta').textContent=auth+(p.year?' \u00b7 '+p.year:'');
+        tt.style.display='block';
+        tt.style.left=Math.min(e.clientX+16,innerWidth-340)+'px';
+        tt.style.top=Math.min(e.clientY+16,innerHeight-110)+'px';
+        renderer.domElement.style.cursor='pointer';
+    } else {
+        hovIdx=-1; tt.style.display='none';
+        renderer.domElement.style.cursor='default';
+    }
+}
+
+function onClk() {
+    if(hovIdx<0)return;
+    const p=allPapers[hovIdx];
+    document.getElementById('tooltip').style.display='none';
+    openPaper(p,hovIdx);
+    drawLines(hovIdx);
+    fly(p._x, p._y+20, p._z+100);
+    controls.autoRotate=false;
+}
+
+// === LINES ===
+function drawLines(ci) {
+    if(conLines)scene.remove(conLines);
+    const ctr=allPapers[ci];
+    const nbs=allPapers.map((p,i)=>({p,i,d:Math.sqrt((p._x-ctr._x)**2+(p._y-ctr._y)**2+(p._z-ctr._z)**2)})).filter(o=>o.i!==ci).sort((a,b)=>a.d-b.d).slice(0,6);
+    const pos=[],cols=[];
+    const cc=new THREE.Color(ctr._cl.color);
+    nbs.forEach(({p})=>{const nc=new THREE.Color(p._cl.color);pos.push(ctr._x,ctr._y,ctr._z,p._x,p._y,p._z);cols.push(cc.r,cc.g,cc.b,nc.r,nc.g,nc.b);});
+    const g=new THREE.BufferGeometry();
+    g.setAttribute('position',new THREE.Float32BufferAttribute(pos,3));
+    g.setAttribute('color',new THREE.Float32BufferAttribute(cols,3));
+    conLines=new THREE.LineSegments(g,new THREE.LineBasicMaterial({vertexColors:true,transparent:true,opacity:0.2,blending:THREE.AdditiveBlending}));
+    scene.add(conLines);
+}
+
+// === PANEL: PAPER (enhanced) ===
+function openPaper(p,idx) {
+    panelIsOpen = true;
+    document.getElementById('panel-breadcrumb').innerHTML=`<span style="cursor:pointer;color:rgba(255,255,255,0.4)" onclick="closePanel()">Map</span> &rsaquo; <span style="cursor:pointer;color:${p._cl.color}" onclick="openCluster(mapData.clusters.find(c=>c.id===${p._cl.id}))">${p._cl.name}</span> &rsaquo; <span style="color:rgba(255,255,255,0.6)">Paper</span>`;
+
+    const nbs=allPapers.map((q,i)=>({q,i,d:Math.sqrt((q._x-p._x)**2+(q._y-p._y)**2+(q._z-p._z)**2)})).filter(o=>o.i!==idx).sort((a,b)=>a.d-b.d).slice(0,5);
+
+    document.getElementById('panel-body').innerHTML=`
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:16px">
+            <div style="width:8px;height:8px;border-radius:50%;background:${p._cl.color}"></div>
+            <span style="font-size:10px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:${p._cl.color}">${p._cl.name}</span>
+        </div>
+        <h2 style="font-family:'Playfair Display',serif;font-size:24px;font-weight:500;line-height:1.25;color:rgba(255,255,255,0.95);margin-bottom:20px">${p.title}</h2>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:24px">
+            <div class="card-m">
+                <div class="card-label">Authors</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.6);line-height:1.4">${p.authors?p.authors.split(/,|and/).slice(0,3).map(s=>s.trim()).join(', '):'&mdash;'}</div>
+            </div>
+            <div class="card-m">
+                <div class="card-label">Year</div>
+                <div class="card-value">${p.year||'&mdash;'}</div>
+            </div>
+            <div class="card-m">
+                <div class="card-label">Categories</div>
+                <div style="font-size:11px;color:rgba(255,255,255,0.45)">${p.categories||'&mdash;'}</div>
+            </div>
+        </div>
+
+        <div class="section-title"><span>Abstract</span></div>
+        <p class="drop-cap" style="font-family:'Playfair Display',serif;font-size:14px;color:rgba(255,255,255,0.5);line-height:1.75;margin-bottom:28px">${p.abstract||'No abstract.'}</p>
+
+        <div class="section-title"><span>Nearby Papers</span><span style="color:#8ab4f8">${nbs.length}</span></div>
+        ${nbs.map(({q,i})=>`<div class="nb-row" onclick="navP(${i})"><div style="width:6px;height:6px;border-radius:50%;background:${q._cl.color};flex-shrink:0"></div><div style="flex:1;overflow:hidden"><div style="font-size:12px;color:rgba(255,255,255,0.65);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${q.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:1px">${q._cl.name} &middot; ${q.year||''}</div></div></div>`).join('')}
+    `;
+    document.getElementById('panel').classList.add('open');
+}
+
+// === PANEL: CLUSTER (enhanced with trend + connections) ===
+function openCluster(cl) {
+    panelIsOpen = true;
+    activeCluster=cl.id;
+    dimExcept(cl.id);
+    const cx=(cl.center_x-0.5)*SPREAD, cy=(cl.center_y-0.5)*SPREAD;
+    fly(cx, cy+40, 200);
+    controls.autoRotate=false;
+
+    // Trend: papers per year
+    const yearCounts = {};
+    cl.papers.forEach(p => { if (p.year) yearCounts[p.year] = (yearCounts[p.year] || 0) + 1; });
+    const years = Object.keys(yearCounts).sort();
+    const maxCount = Math.max(...Object.values(yearCounts), 1);
+
+    // Connections
+    const conns = (mapData.connections || [])
+        .filter(c => c.from === cl.id || c.to === cl.id)
+        .map(c => {
+            const otherId = c.from === cl.id ? c.to : c.from;
+            const other = mapData.clusters.find(x => x.id === otherId);
+            return other ? { cluster: other, strength: c.strength } : null;
+        })
+        .filter(Boolean)
+        .sort((a, b) => b.strength - a.strength)
+        .slice(0, 5);
+
+    const papers=allPapers.filter(p=>p._cl.id===cl.id).sort((a,b)=>(b.year||0)-(a.year||0)).slice(0,12);
+
+    const trendHtml = years.length > 1 ? `
+        <div class="section-title" style="margin-top:24px"><span>Publication Trend</span></div>
+        <div class="trend-bar-wrap" style="color:${cl.color}">
+            ${years.slice(-10).map(y => `
+                <div style="flex:1;text-align:center">
+                    <div class="trend-bar" style="height:${(yearCounts[y] / maxCount) * 50}px"></div>
+                    <div class="trend-label">${y.slice(-2)}</div>
+                </div>
+            `).join('')}
+        </div>` : '';
+
+    const connsHtml = conns.length > 0 ? `
+        <div class="section-title" style="margin-top:24px"><span>Related Clusters</span></div>
+        ${conns.map(c => `
+            <div class="conn-item" onclick="openCluster(mapData.clusters.find(x=>x.id===${c.cluster.id}))">
+                <div style="width:8px;height:8px;border-radius:50%;background:${c.cluster.color};flex-shrink:0"></div>
+                <div style="flex:1;font-size:12px;color:rgba(255,255,255,0.6)">${c.cluster.name}</div>
+                <div class="conn-bar" style="width:${Math.max(20, c.strength * 500)}px;background:${c.cluster.color}40"></div>
+            </div>
+        `).join('')}` : '';
+
+    document.getElementById('panel-breadcrumb').innerHTML=`<span style="cursor:pointer;color:rgba(255,255,255,0.4)" onclick="closePanel()">Map</span> &rsaquo; <span style="color:${cl.color}">${cl.name}</span>`;
+    document.getElementById('panel-body').innerHTML=`
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
+            <div style="width:12px;height:12px;border-radius:50%;background:${cl.color}"></div>
+            <h2 style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:rgba(255,255,255,0.95)">${cl.name}</h2>
+        </div>
+        <p style="font-size:13px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:20px">${cl.description}</p>
+
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px">
+            <div class="card-m">
+                <div class="card-label">Papers</div>
+                <div class="card-value">${cl.paper_count.toLocaleString()}</div>
+            </div>
+            <div class="card-m">
+                <div class="card-label">Share</div>
+                <div class="card-value" style="color:${cl.color}">${(cl.paper_count/mapData.metadata.paper_count*100).toFixed(1)}%</div>
+            </div>
+        </div>
+
+        ${trendHtml}
+        ${connsHtml}
+
+        <div class="section-title" style="margin-top:24px"><span>Papers</span><span style="color:${cl.color}">${papers.length}</span></div>
+        ${papers.map(p=>`<div class="nb-row" onclick="navP(${allPapers.indexOf(p)})"><div style="width:6px;height:6px;border-radius:50%;background:${cl.color};flex-shrink:0"></div><div style="flex:1;overflow:hidden"><div style="font-size:12px;color:rgba(255,255,255,0.6);line-height:1.35">${p.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.2);margin-top:2px">${p.year||''}</div></div></div>`).join('')}
+    `;
+    document.getElementById('panel').classList.add('open');
+}
+
+function navP(i){
+    const p=allPapers[i];
+    document.getElementById('tooltip').style.display='none';
+    openPaper(p,i);
+    drawLines(i);
+    fly(p._x,p._y+20,p._z+100);
+}
+
+function closePanel(){
+    document.getElementById('panel').classList.remove('open');
+    panelIsOpen = false;
+    if(conLines)scene.remove(conLines);
+    activeCluster=null; dimExcept(null);
+    controls.autoRotate=true;
+    fly(0,80,500);
+    // Reset filter chips
+    document.querySelectorAll('.filter-dd').forEach((f,i) => {
+        if(i===0) { f.style.background='rgba(255,255,255,0.9)'; f.style.color='#111'; f.style.borderColor='transparent'; f.classList.add('active'); }
+        else { f.style.background='rgba(255,255,255,0.03)'; f.style.color='rgba(255,255,255,0.5)'; f.style.borderColor=''; f.classList.remove('active'); }
+    });
+}
+
+function fly(x,y,z){
+    gsap.to(camera.position,{x,y,z,duration:1.8,ease:'expo.out'});
+    gsap.to(controls.target,{x:z>350?0:x, y:z>350?0:y-20, z:0, duration:1.8,ease:'expo.out'});
+}
+
+// === MINIMAP ===
+function drawMinimap() {
+    const mc = document.getElementById('minimap-canvas');
+    mc.width = 150; mc.height = 110;
+    const mctx = mc.getContext('2d');
+    mctx.fillStyle = 'rgba(10,10,14,0.3)';
+    mctx.fillRect(0, 0, 150, 110);
+
+    mapData.clusters.forEach(cl => {
+        if (cl.id === -1) return;
+        const x = cl.center_x * 140 + 5;
+        const y = cl.center_y * 100 + 5;
+        const r = Math.sqrt(cl.paper_count) * 0.18;
+        mctx.beginPath();
+        mctx.arc(x, y, Math.max(2.5, r), 0, Math.PI * 2);
+        mctx.fillStyle = cl.color + '50';
+        mctx.fill();
+    });
+}
+
+document.getElementById('minimap').addEventListener('click', e => {
+    const rect = e.target.closest('#minimap').getBoundingClientRect();
+    const mx = (e.clientX - rect.left) / rect.width;
+    const my = (e.clientY - rect.top) / rect.height;
+    const wx = (mx - 0.5) * SPREAD;
+    const wy = (my - 0.5) * SPREAD;
+    fly(wx, wy + 20, 200);
+    controls.autoRotate = false;
+});
+
+function onRsz(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
+
+function loop(){
+    requestAnimationFrame(loop);
+    controls.update();
+    updateLabels();
+    // Fade hero based on zoom level
+    const dist = camera.position.length();
+    const heroOpacity = Math.max(0, Math.min(1, (dist - 300) / 150));
+    document.getElementById('hero').style.opacity = heroOpacity;
+    document.getElementById('right-stats').style.opacity = Math.max(0.3, heroOpacity);
+    renderer.render(scene,camera);
+}
+
+boot();
+</script>
+</body>
+</html>
