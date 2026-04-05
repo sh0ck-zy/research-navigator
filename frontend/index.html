@@ -382,6 +382,7 @@
 let mapData, allPapers=[], scene, camera, renderer, controls, ptsMesh, ptsGeo;
 let conLines=null, hovIdx=-1, activeCluster=null;
 let cardPaper=null;
+let hasInteracted=false;
 const SPREAD = 600;
 
 async function boot() {
@@ -419,6 +420,8 @@ async function boot() {
 
     renderer.domElement.addEventListener('mousemove', onMouse);
     renderer.domElement.addEventListener('click', onClk);
+    renderer.domElement.addEventListener('wheel', () => { hasInteracted = true; });
+    renderer.domElement.addEventListener('mousedown', () => { hasInteracted = true; });
     window.addEventListener('resize', onRsz);
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
@@ -485,7 +488,8 @@ function initScene() {
     controls.maxPolarAngle = Math.PI*0.72;
     controls.minPolarAngle = Math.PI*0.28;
     controls.minDistance = 60;
-    controls.maxDistance = 900;
+    controls.maxDistance = 600;
+    controls.zoomSpeed = 0.6;
     controls.target.set(0, 0, 0);
 }
 
@@ -1140,6 +1144,7 @@ function resetView() {
     activeCluster = null;
     dimExcept(null);
     hideBubbles();
+    hasInteracted = false;
     controls.autoRotate = true;
     fly(0, 80, 500);
     document.querySelectorAll('.filter-dd').forEach((f,i) => {
@@ -1297,18 +1302,17 @@ function loop(){
     requestAnimationFrame(loop);
     controls.update();
     updateLabels();
-    // Hero only visible at landing / max zoom-out (dist >= 420)
+    // Hero only visible at true max zoom-out AND no card open AND after resetView
     const dist = camera.position.distanceTo(controls.target);
-    const isLanding = dist >= 420;
     const heroEl = document.getElementById('hero');
-    const heroTarget = isLanding ? 1 : 0;
+    const showHero = !hasInteracted && dist >= 460;
+    const heroTarget = showHero ? 1 : 0;
     const heroCurrent = parseFloat(heroEl.style.opacity) || 0;
-    // Smooth transition
-    const heroNew = heroCurrent + (heroTarget - heroCurrent) * 0.1;
-    heroEl.style.opacity = heroNew;
+    const heroNew = heroCurrent + (heroTarget - heroCurrent) * 0.12;
+    heroEl.style.opacity = heroNew < 0.01 ? 0 : heroNew;
     heroEl.style.pointerEvents = heroNew > 0.5 ? '' : 'none';
-    // Hide stats when card is open (they overlap)
-    const statsOpacity = cardPaper ? 0 : (isLanding ? heroNew : 1);
+    // Stats: hide when card open or hero showing
+    const statsOpacity = cardPaper ? 0 : (showHero ? 0 : 1);
     document.getElementById('right-stats').style.opacity = statsOpacity;
 
     // Progressive edges: fade in when zoomed in
