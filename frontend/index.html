@@ -113,8 +113,10 @@
             display:flex; flex-direction:column; gap:12px;
             align-items:flex-end;
         }
-        .rs-label { font-size:12px; color:rgba(255,255,255,0.3); letter-spacing:0.02em; }
-        .rs-value { font-size:14px; font-weight:600; color:rgba(255,255,255,0.6); margin-left:8px; }
+        .rs-item { text-align:right; }
+        .rs-label { font-size:10px; color:rgba(255,255,255,0.3); letter-spacing:0.05em; text-transform:uppercase; }
+        .rs-value { font-size:18px; font-weight:600; color:rgba(255,255,255,0.7); display:block; margin-top:2px; }
+        .rs-value-sm { font-size:12px; font-weight:400; color:rgba(255,255,255,0.45); display:block; margin-top:2px; }
 
         /* === BOTTOM === */
         .bottom-hint {
@@ -582,16 +584,48 @@ function applyFilter(cid, el) {
 // === STATS ===
 function makeStats() {
     const el=document.getElementById('right-stats');
-    const items = [
-        {label:'Research Overview', value:''},
-        {label:'Papers', value:mapData.metadata.paper_count.toLocaleString()},
-        {label:'Clusters', value:mapData.metadata.cluster_count},
-        {label:'Field', value:mapData.metadata.field},
-    ];
-    el.innerHTML = items.map(i =>
-        i.value ? `<div><span class="rs-label">${i.label}</span><span class="rs-value">${i.value}</span></div>`
-        : `<div style="font-size:13px;font-weight:500;color:rgba(255,255,255,0.5);margin-bottom:4px">${i.label}</div>`
-    ).join('');
+    const validClusters = mapData.clusters.filter(c => c.id !== -1);
+    const largest = validClusters.reduce((a, b) => a.paper_count > b.paper_count ? a : b);
+    const smallest = validClusters.reduce((a, b) => a.paper_count < b.paper_count ? a : b);
+
+    // Find years range
+    const allYears = allPapers.map(p => p.year).filter(Boolean);
+    const minYear = Math.min(...allYears);
+    const maxYear = Math.max(...allYears);
+
+    // Find "hottest" cluster (most papers in the most recent year)
+    const recentYear = maxYear;
+    const hotCounts = {};
+    validClusters.forEach(cl => {
+        hotCounts[cl.id] = cl.papers.filter(p => p.year === recentYear).length;
+    });
+    const hottestId = Object.entries(hotCounts).sort((a,b) => b[1] - a[1])[0][0];
+    const hottest = validClusters.find(c => c.id === parseInt(hottestId));
+
+    el.innerHTML = `
+        <div class="rs-item">
+            <div class="rs-label">Papers mapped</div>
+            <div class="rs-value">${mapData.metadata.paper_count.toLocaleString()}</div>
+        </div>
+        <div class="rs-item">
+            <div class="rs-label">Research areas</div>
+            <div class="rs-value">${validClusters.length}</div>
+        </div>
+        <div class="rs-item">
+            <div class="rs-label">Largest area</div>
+            <div class="rs-value-sm">${largest.name}</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.25)">${largest.paper_count.toLocaleString()} papers</div>
+        </div>
+        <div class="rs-item">
+            <div class="rs-label">Trending in ${recentYear}</div>
+            <div class="rs-value-sm">${hottest.name}</div>
+            <div style="font-size:10px;color:rgba(255,255,255,0.25)">${hotCounts[hottestId]} new papers</div>
+        </div>
+        <div class="rs-item">
+            <div class="rs-label">Time span</div>
+            <div class="rs-value">${minYear}–${maxYear}</div>
+        </div>
+    `;
 }
 
 // === SEARCH (enhanced with dropdown) ===
