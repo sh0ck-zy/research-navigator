@@ -1127,11 +1127,17 @@ function loop(){
     requestAnimationFrame(loop);
     controls.update();
     updateLabels();
-    // Fade hero based on zoom level
+    // Hero only visible at landing / max zoom-out (dist >= 420)
     const dist = camera.position.distanceTo(controls.target);
-    const heroOpacity = Math.max(0, Math.min(1, (dist - 300) / 150));
-    document.getElementById('hero').style.opacity = heroOpacity;
-    document.getElementById('right-stats').style.opacity = Math.max(0.3, heroOpacity);
+    const isLanding = dist >= 420;
+    const heroEl = document.getElementById('hero');
+    const heroTarget = isLanding ? 1 : 0;
+    const heroCurrent = parseFloat(heroEl.style.opacity) || 0;
+    // Smooth transition
+    const heroNew = heroCurrent + (heroTarget - heroCurrent) * 0.1;
+    heroEl.style.opacity = heroNew;
+    heroEl.style.pointerEvents = heroNew > 0.5 ? '' : 'none';
+    document.getElementById('right-stats').style.opacity = isLanding ? heroNew : 1;
 
     // Progressive edges: fade in when zoomed in
     if (edgesMesh) {
