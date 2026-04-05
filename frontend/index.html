@@ -254,6 +254,7 @@
     <div class="center-content" id="hero">
         <h1 class="hero-title">Explore the world's<br>research</h1>
         <p class="hero-sub">The Observatory maps the landscape of scientific knowledge, helping researchers see the shape of their field in seconds.</p>
+        <p id="hero-context" style="font-size:13px;color:rgba(255,255,255,0.25);text-align:center;max-width:600px;line-height:1.6;margin-bottom:24px;pointer-events:none;opacity:0;transition:opacity 0.8s"></p>
         <div class="search-wrap">
             <svg class="search-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.35)" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
             <input class="search-input" id="search" placeholder="Search for a cluster, paper or concept..." onfocus="onSearchFocus()" oninput="handleSearch(this.value)">
@@ -341,6 +342,12 @@ async function boot() {
         if (e.key === '/' && !panelIsOpen) { e.preventDefault(); document.getElementById('search').focus(); }
     });
 
+    // Build context message
+    const validCl = mapData.clusters.filter(c => c.id !== -1).sort((a,b) => b.paper_count - a.paper_count);
+    const top3 = validCl.slice(0, 3).map(c => c.name);
+    const ctxEl = document.getElementById('hero-context');
+    ctxEl.textContent = `${mapData.metadata.paper_count.toLocaleString()} papers across ${validCl.length} research areas — the largest being ${top3[0]}, ${top3[1]}, and ${top3[2]}.`;
+
     // Entrance animation
     // Start with all points invisible
     const opa = ptsGeo.attributes.opacity;
@@ -365,6 +372,8 @@ async function boot() {
 
     // Fade in UI
     gsap.to(document.getElementById('ui'), { opacity: 1, duration: 1.2, delay: 0.6 });
+    // Fade in context message
+    gsap.to(ctxEl, { opacity: 1, duration: 1.0, delay: 1.4 });
     // Fade in labels
     document.querySelectorAll('.cl-label').forEach((el, i) => {
         el.style.opacity = '0';
