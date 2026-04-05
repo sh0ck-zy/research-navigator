@@ -249,6 +249,44 @@
             margin-right:4px; margin-bottom:4px;
         }
 
+        /* === FLOATING PAPER CARD === */
+        #paper-card {
+            position:fixed; bottom:24px; right:220px; z-index:85;
+            width:350px; max-height:70vh; overflow-y:auto;
+            background:rgba(12,12,16,0.97);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:16px;
+            backdrop-filter:blur(30px);
+            box-shadow:0 24px 80px rgba(0,0,0,0.8);
+            pointer-events:auto;
+            display:none; opacity:0; transform:translateY(12px);
+            transition:opacity 0.3s ease, transform 0.3s ease;
+        }
+        #paper-card.visible { opacity:1; transform:translateY(0); }
+        #paper-card::-webkit-scrollbar { width:3px; }
+        #paper-card::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+        #paper-card .pc-header {
+            padding:16px 20px 0; display:flex; align-items:center; gap:8px; position:relative;
+        }
+        #paper-card .pc-close {
+            position:absolute; top:12px; right:12px;
+            background:rgba(255,255,255,0.06); border:none; color:rgba(255,255,255,0.4);
+            width:28px; height:28px; border-radius:50%; cursor:pointer; font-size:14px;
+            display:flex; align-items:center; justify-content:center; transition:background 0.2s;
+        }
+        #paper-card .pc-close:hover { background:rgba(255,255,255,0.12); }
+        #paper-card .pc-body { padding:12px 20px 20px; }
+        #paper-card .pc-title {
+            font-family:'Playfair Display',serif; font-size:18px; font-weight:500;
+            color:rgba(255,255,255,0.95); line-height:1.3; margin:10px 0 8px;
+        }
+        #paper-card .pc-abstract {
+            font-size:11px; color:rgba(255,255,255,0.4); line-height:1.6; margin-bottom:12px;
+        }
+        #paper-card .pc-stats {
+            display:grid; grid-template-columns:1fr 1fr; gap:6px; margin-bottom:14px;
+        }
+
         /* === SIDE PANEL === */
         .side-panel {
             position:fixed; top:0; right:0; bottom:0;
@@ -354,6 +392,9 @@
 
 <!-- Cluster Insight Card -->
 <div id="cluster-insight"></div>
+
+<!-- Floating Paper Card -->
+<div id="paper-card"></div>
 
 <!-- Side Panel -->
 <div class="side-panel" id="panel">
