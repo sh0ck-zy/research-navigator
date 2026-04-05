@@ -328,6 +328,7 @@ async function boot() {
 
     initScene();
     makePoints();
+    makeEdges();
     makeLabels();
     makeFilters();
     makeStats();
@@ -1075,6 +1076,50 @@ document.getElementById('minimap').addEventListener('click', e => {
 
 function onRsz(){camera.aspect=innerWidth/innerHeight;camera.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight);}
 
+// === PROGRESSIVE EDGES (appear on zoom) ===
+let edgesMesh = null;
+
+function makeEdges() {
+    const pos = [], cols = [];
+    const K = 3; // edges per paper to K nearest neighbors in same cluster
+
+    // Group papers by cluster for efficiency
+    const byCluster = {};
+    allPapers.forEach((p, i) => {
+        if (!byCluster[p._cl.id]) byCluster[p._cl.id] = [];
+        byCluster[p._cl.id].push({ p, i });
+    });
+
+    Object.values(byCluster).forEach(papers => {
+        papers.forEach(({ p: paper, i: idx }) => {
+            // Find K nearest in same cluster
+            const dists = papers
+                .filter(o => o.i !== idx)
+                .map(o => ({ o, d: (o.p._x-paper._x)**2 + (o.p._y-paper._y)**2 + (o.p._z-paper._z)**2 }))
+                .sort((a, b) => a.d - b.d)
+                .slice(0, K);
+
+            const c1 = new THREE.Color(paper._cl.color);
+            dists.forEach(({ o }) => {
+                pos.push(paper._x, paper._y, paper._z, o.p._x, o.p._y, o.p._z);
+                cols.push(c1.r, c1.g, c1.b, c1.r, c1.g, c1.b);
+            });
+        });
+    });
+
+    const geo = new THREE.BufferGeometry();
+    geo.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    geo.setAttribute('color', new THREE.Float32BufferAttribute(cols, 3));
+    edgesMesh = new THREE.LineSegments(geo, new THREE.LineBasicMaterial({
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.0,
+        blending: THREE.AdditiveBlending,
+        depthWrite: false,
+    }));
+    scene.add(edgesMesh);
+}
+
 function loop(){
     requestAnimationFrame(loop);
     controls.update();
@@ -1084,6 +1129,13 @@ function loop(){
     const heroOpacity = Math.max(0, Math.min(1, (dist - 300) / 150));
     document.getElementById('hero').style.opacity = heroOpacity;
     document.getElementById('right-stats').style.opacity = Math.max(0.3, heroOpacity);
+
+    // Progressive edges: fade in when zoomed in
+    if (edgesMesh) {
+        const edgeOpacity = Math.max(0, Math.min(0.08, (250 - dist) / 200));
+        edgesMesh.material.opacity = edgeOpacity;
+    }
+
     renderer.render(scene,camera);
 }
 
