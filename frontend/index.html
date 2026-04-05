@@ -292,6 +292,22 @@
             font-size:11px; color:rgba(255,255,255,0.4); line-height:1.6;
         }
 
+        /* === CLUSTER CONTEXT CARD === */
+        #cluster-context {
+            position:fixed; top:80px; left:40px; z-index:85;
+            width:300px;
+            background:rgba(12,12,16,0.97);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:16px;
+            backdrop-filter:blur(30px);
+            box-shadow:0 24px 80px rgba(0,0,0,0.8);
+            pointer-events:auto;
+            display:none; opacity:0; transform:translateX(-12px);
+            transition:opacity 0.35s, transform 0.35s;
+            overflow:hidden;
+        }
+        #cluster-context.visible { opacity:1; transform:translateX(0); }
+
         .card-m { background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.06); border-radius:10px; padding:14px; }
         .card-label { font-size:8px; font-weight:600; text-transform:uppercase; letter-spacing:0.1em; color:rgba(255,255,255,0.25); margin-bottom:4px; }
         .card-value { font-size:20px; font-weight:500; color:rgba(255,255,255,0.8); }
@@ -368,6 +384,9 @@
 
 <!-- Cluster Insight Card -->
 <div id="cluster-insight"></div>
+
+<!-- Cluster Context Card -->
+<div id="cluster-context"></div>
 
 <!-- Node Info (anchored to selected paper) -->
 <div id="node-info"></div>
@@ -1136,12 +1155,10 @@ function openPaperCard(p, idx) { selectPaper(p, idx); }
 function closeCard() { deselectPaper(); }
 
 function resetView() {
-    closeCard();
+    deselectPaper();
+    exitCluster();
     removeClusterConnections();
     hideClusterInsight();
-    activeCluster = null;
-    dimExcept(null);
-    hideBubbles();
     hasInteracted = false;
     controls.autoRotate = true;
     fly(0, 80, 500);
@@ -1151,13 +1168,77 @@ function resetView() {
     });
 }
 
+// === CLUSTER CONTEXT ===
+function showClusterContext(cl) {
+    const cc = document.getElementById('cluster-context');
+    const totalPapers = mapData.metadata.paper_count;
+    const share = (cl.paper_count / totalPapers * 100).toFixed(1);
+    const desc = cl.description ? cl.description.split('.').slice(0,2).join('.')+'.' : '';
+    const kings = allPapers.filter(p=>p._cl.id===cl.id).sort((a,b)=>(b._centrality||0)-(a._centrality||0)).slice(0,3);
+
+    // Trend
+    const yearCounts = {};
+    cl.papers.forEach(p => { if(p.year) yearCounts[p.year]=(yearCounts[p.year]||0)+1; });
+    const years = Object.keys(yearCounts).sort().slice(-6);
+    const maxYC = Math.max(...years.map(y=>yearCounts[y]),1);
+
+    cc.innerHTML = `
+        <div style="padding:16px 20px 12px;display:flex;align-items:center;gap:10px">
+            <div style="width:10px;height:10px;border-radius:50%;background:${cl.color}"></div>
+            <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:#fff">${cl.name}</div>
+        </div>
+        <div style="padding:0 20px 12px;font-size:11px;color:rgba(255,255,255,0.35);line-height:1.5">${desc}</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:1px;background:rgba(255,255,255,0.04)">
+            <div style="padding:10px 14px;background:rgba(12,12,16,0.97);text-align:center">
+                <div style="font-size:16px;font-weight:600;color:rgba(255,255,255,0.85)">${cl.paper_count.toLocaleString()}</div>
+                <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-top:2px">Papers</div>
+            </div>
+            <div style="padding:10px 14px;background:rgba(12,12,16,0.97);text-align:center">
+                <div style="font-size:16px;font-weight:600;color:${cl.color}">${share}%</div>
+                <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-top:2px">Share</div>
+            </div>
+            <div style="padding:10px 14px;background:rgba(12,12,16,0.97);text-align:center">
+                <div style="font-size:16px;font-weight:600;color:rgba(255,255,255,0.85)">${years[0]||''}–${years[years.length-1]||''}</div>
+                <div style="font-size:8px;text-transform:uppercase;letter-spacing:0.1em;color:rgba(255,255,255,0.3);margin-top:2px">Span</div>
+            </div>
+        </div>
+        ${years.length>1?`<div style="padding:12px 20px 8px">
+            <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.25);margin-bottom:6px">Trend</div>
+            <div style="display:flex;align-items:flex-end;gap:2px;height:28px">
+                ${years.map(y=>`<div style="flex:1;border-radius:1px 1px 0 0;height:${Math.max(2,(yearCounts[y]/maxYC)*26)}px;background:${cl.color}60"></div>`).join('')}
+            </div>
+        </div>`:''}
+        <div style="padding:12px 20px 16px">
+            <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.25);margin-bottom:6px">Key Papers</div>
+            ${kings.map(p=>`<div style="font-size:11px;color:rgba(255,255,255,0.6);padding:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.title}</div>`).join('')}
+        </div>
+    `;
+    cc.style.display = 'block';
+    requestAnimationFrame(() => cc.classList.add('visible'));
+}
+
+function hideClusterContext() {
+    const cc = document.getElementById('cluster-context');
+    cc.classList.remove('visible');
+    setTimeout(() => { cc.style.display = 'none'; }, 350);
+}
+
+function exitCluster() {
+    activeCluster = null;
+    dimExcept(null);
+    hideBubbles();
+    removeClusterConnections();
+    hideClusterContext();
+}
+
 function zoomToCluster(cl) {
-    closeCard();
+    deselectPaper();
     activeCluster = cl.id;
     dimExcept(cl.id);
     showBubble(cl.id);
     hideClusterInsight();
     drawClusterConnections(cl.id);
+    showClusterContext(cl);
     controls.autoRotate = false;
 
     const cx = (cl.center_x - 0.5) * SPREAD;
