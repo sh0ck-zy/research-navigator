@@ -419,6 +419,7 @@ let hasInteracted=false;
 let selectedIdx=-1, selectedOrigSize=0;
 let pushedPapers=[], pushProgress=0, pushDirection=0;
 let kingPapers=[], kingLabelEls=[];
+let clusterZoomDist=0;
 const SPREAD = 600;
 
 async function boot() {
@@ -720,6 +721,7 @@ function makeFilters() {
 }
 
 function applyFilter(cid, el) {
+    clusterZoomDist = 0; // Prevent auto-exit from zoom-out check
     document.querySelectorAll('.filter-dd').forEach(f => {
         f.classList.remove('active');
         f.style.background = 'rgba(255,255,255,0.03)';
@@ -1283,6 +1285,7 @@ function hideKingPapers() {
 
 function exitCluster() {
     activeCluster = null;
+    clusterZoomDist = 0;
     dimExcept(null);
     hideBubbles();
     removeClusterConnections();
@@ -1314,7 +1317,7 @@ function zoomToCluster(cl) {
     const fovRad = (camera.fov/2) * Math.PI / 180;
     const camDist = Math.max(120, (radius / Math.tan(fovRad)) * 1.8);
 
-    gsap.to(camera.position, { x:cx, y:cy+camDist*0.3, z:cz+camDist, duration:1.8, ease:'expo.out' });
+    gsap.to(camera.position, { x:cx, y:cy+camDist*0.3, z:cz+camDist, duration:1.8, ease:'expo.out', onComplete:()=>{ clusterZoomDist=camDist; } });
     gsap.to(controls.target, { x:cx, y:cy, z:cz, duration:1.8, ease:'expo.out' });
 }
 
@@ -1428,6 +1431,11 @@ function loop(){
     if (edgesMesh) {
         const edgeOpacity = Math.max(0, Math.min(0.08, (250 - dist) / 200));
         edgesMesh.material.opacity = edgeOpacity;
+    }
+
+    // Auto-exit cluster on zoom-out
+    if (activeCluster !== null && clusterZoomDist > 0) {
+        if (dist > clusterZoomDist * 2.0) exitCluster();
     }
 
     // Position king paper labels
