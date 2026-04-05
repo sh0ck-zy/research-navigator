@@ -148,12 +148,38 @@
         /* === TOOLTIP === */
         #tooltip {
             position:fixed; display:none; z-index:200;
-            background:rgba(18,18,22,0.94);
-            border:1px solid rgba(255,255,255,0.08);
-            border-radius:12px; padding:16px 20px;
-            max-width:320px; pointer-events:none;
-            backdrop-filter:blur(20px);
-            box-shadow:0 16px 48px rgba(0,0,0,0.6);
+            background:rgba(14,14,18,0.96);
+            border:1px solid rgba(255,255,255,0.1);
+            border-radius:14px; padding:20px 22px;
+            width:380px; pointer-events:none;
+            backdrop-filter:blur(24px);
+            box-shadow:0 20px 60px rgba(0,0,0,0.7);
+        }
+        #tooltip .tt-cluster-bar {
+            display:flex; align-items:center; gap:8px;
+            padding-bottom:10px; margin-bottom:10px;
+            border-bottom:1px solid rgba(255,255,255,0.06);
+        }
+        #tooltip .tt-cluster-name {
+            font-size:11px; font-weight:600; letter-spacing:0.08em;
+            text-transform:uppercase;
+        }
+        #tooltip .tt-cluster-desc {
+            font-size:11px; color:rgba(255,255,255,0.3);
+            line-height:1.5; margin-bottom:14px;
+        }
+        #tooltip .tt-paper-title {
+            font-family:'Playfair Display',serif;
+            font-size:16px; font-weight:500;
+            color:rgba(255,255,255,0.92);
+            line-height:1.35; margin-bottom:8px;
+        }
+        #tooltip .tt-abstract {
+            font-size:12px; color:rgba(255,255,255,0.45);
+            line-height:1.6; margin-bottom:8px;
+        }
+        #tooltip .tt-meta {
+            font-size:10px; color:rgba(255,255,255,0.25);
         }
 
         /* === SIDE PANEL === */
@@ -248,12 +274,14 @@
 
 <!-- Tooltip -->
 <div id="tooltip">
-    <div style="display:flex;align-items:center;gap:6px;margin-bottom:6px">
-        <div id="tt-dot" style="width:6px;height:6px;border-radius:50%"></div>
-        <span id="tt-cluster" style="font-size:9px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.4)"></span>
+    <div class="tt-cluster-bar">
+        <div id="tt-dot" style="width:8px;height:8px;border-radius:50%;flex-shrink:0"></div>
+        <span id="tt-cluster" class="tt-cluster-name"></span>
     </div>
-    <div id="tt-title" style="font-family:'Playfair Display',serif;font-size:15px;font-weight:500;color:rgba(255,255,255,0.92);line-height:1.35;margin-bottom:6px"></div>
-    <div id="tt-meta" style="font-size:11px;color:rgba(255,255,255,0.3)"></div>
+    <div id="tt-cluster-desc" class="tt-cluster-desc"></div>
+    <div id="tt-title" class="tt-paper-title"></div>
+    <div id="tt-abstract" class="tt-abstract"></div>
+    <div id="tt-meta" class="tt-meta"></div>
 </div>
 
 <!-- Side Panel -->
@@ -740,13 +768,23 @@ function onMouse(e) {
         hovIdx=hits[0].index;
         const p=allPapers[hovIdx];
         document.getElementById('tt-dot').style.background=p._cl.color;
-        document.getElementById('tt-cluster').textContent=p._cl.name;
+        const ttCluster = document.getElementById('tt-cluster');
+        ttCluster.textContent=p._cl.name;
+        ttCluster.style.color=p._cl.color;
+        document.getElementById('tt-cluster-desc').textContent=p._cl.description ? p._cl.description.split('.').slice(0,1).join('.')+'.':'';
         document.getElementById('tt-title').textContent=p.title;
+        // Simplified abstract: first 2 sentences, max ~180 chars
+        const rawAbstract = (p.abstract||'').replace(/\n/g,' ').trim();
+        const sentences = rawAbstract.match(/[^.!?]+[.!?]+/g) || [];
+        let shortAbstract = sentences.slice(0,2).join(' ').trim();
+        if(shortAbstract.length > 180) shortAbstract = shortAbstract.slice(0,177) + '...';
+        if(!shortAbstract && rawAbstract) shortAbstract = rawAbstract.slice(0,177) + '...';
+        document.getElementById('tt-abstract').textContent=shortAbstract;
         const auth=p.authors?p.authors.split(/,|and/).slice(0,2).map(s=>s.trim()).join(', '):'';
-        document.getElementById('tt-meta').textContent=auth+(p.year?' \u00b7 '+p.year:'');
+        document.getElementById('tt-meta').textContent=auth+(p.year?' \u00b7 '+p.year:'')+(p.categories?' \u00b7 '+p.categories:'');
         tt.style.display='block';
-        tt.style.left=Math.min(e.clientX+16,innerWidth-340)+'px';
-        tt.style.top=Math.min(e.clientY+16,innerHeight-110)+'px';
+        tt.style.left=Math.min(e.clientX+20,innerWidth-400)+'px';
+        tt.style.top=Math.min(e.clientY+20,innerHeight-280)+'px';
         renderer.domElement.style.cursor='pointer';
 
         // Show bubble for this point's cluster
