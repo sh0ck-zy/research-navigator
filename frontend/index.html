@@ -37,7 +37,8 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
             <span class="brand-sub">Research Explorer</span>
         </div>
         <div class="nav-links">
-            <a class="nav-link active">Explore</a>
+            <a class="nav-link active" id="nav-explore" onclick="closeLibrary()">Explore</a>
+            <a class="nav-link" id="nav-library" onclick="openLibrary()">Library <span id="lib-count"></span></a>
         </div>
         <div style="width:40px"></div>
     </div>
@@ -100,6 +101,9 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
 
 <!-- Node Info (anchored to selected paper) -->
 <div id="node-info"></div>
+
+<!-- Library panel -->
+<div id="library-panel"></div>
 
 <script type="module" src="/src/main.js"></script>
 </body>

@@ -50,7 +50,7 @@ def fetch_papers(
     params = {
         "per_page": per_page,
         "sort": "cited_by_count:desc",
-        "select": "id,title,publication_year,cited_by_count,authorships,concepts,abstract_inverted_index",
+        "select": "id,title,publication_year,cited_by_count,authorships,concepts,abstract_inverted_index,doi,primary_location",
     }
 
     if query:
@@ -93,6 +93,10 @@ def fetch_papers(
                 if c.get("display_name")
             )
 
+            # DOI comes as a full URL; venue lives under primary_location.source
+            doi = (work.get("doi") or "").replace("https://doi.org/", "")
+            venue = ((work.get("primary_location") or {}).get("source") or {}).get("display_name") or ""
+
             papers.append({
                 "id": work.get("id", "").replace("https://openalex.org/", ""),
                 "title": work.get("title", "Untitled"),
@@ -101,6 +105,8 @@ def fetch_papers(
                 "year": work.get("publication_year"),
                 "cited_by_count": work.get("cited_by_count", 0),
                 "categories": categories,
+                "doi": doi,
+                "venue": venue,
             })
 
         cursor = data.get("meta", {}).get("next_cursor")

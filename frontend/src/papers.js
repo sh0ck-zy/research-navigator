@@ -94,9 +94,14 @@ export function selectPaper(p, idx) {
         </div>
         <div class="ni-body">
             <div class="ni-title">${p.title}</div>
-            <div class="ni-meta">${auth}${p.year ? ' · '+p.year : ''}${p.id ? ' · <a href="https://openalex.org/'+p.id+'" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.45);text-decoration:none">OpenAlex ↗</a>':''}</div>
+            <div class="ni-meta">${auth}${p.year ? ' · '+p.year : ''}${p.venue ? ' · '+p.venue : ''}</div>
             <div class="ni-centrality" style="background:${p._cl.color}15;color:${p._cl.color}">Top ${100-percentile}%</div>
             <div class="ni-abstract">${shortAbstract}</div>
+            <div class="ni-actions">
+                <button class="ni-act${state.savedIds.has(p.id) ? ' saved' : ''}" id="ni-save" data-idx="${idx}" onclick="toggleSave(${idx})">${state.savedIds.has(p.id) ? 'Saved ✓' : 'Save'}</button>
+                <button class="ni-act" onclick="copyCite(${idx}, this)">Cite</button>
+                <a class="ni-act" href="${p.doi ? 'https://doi.org/'+p.doi : 'https://openalex.org/'+p.id}" target="_blank" rel="noopener">Open ↗</a>
+            </div>
         </div>
     `;
     clearTimeout(_niHideTimeout);

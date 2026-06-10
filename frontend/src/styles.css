@@ -297,6 +297,74 @@ body { background:#0a0a0a; color:#e8eaed; overflow:hidden; font-family:'Inter',s
 #node-info .ni-abstract {
     font-size:11px; color:rgba(255,255,255,0.4); line-height:1.6;
 }
+#node-info .ni-actions {
+    display:flex; gap:8px; margin-top:14px;
+}
+.ni-act {
+    padding:7px 14px; border-radius:18px;
+    font-size:11px; font-weight:500; font-family:'Inter',sans-serif;
+    color:rgba(255,255,255,0.7);
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.1);
+    cursor:pointer; transition:all 0.2s; text-decoration:none;
+    display:inline-flex; align-items:center;
+}
+.ni-act:hover { background:rgba(255,255,255,0.12); color:#fff; }
+.ni-act.saved { color:#8ab4f8; border-color:rgba(138,180,248,0.4); background:rgba(138,180,248,0.1); }
+
+/* === LIBRARY PANEL === */
+#library-panel {
+    position:fixed; top:80px; right:40px; bottom:40px; z-index:90;
+    width:360px; max-height:calc(100vh - 120px);
+    background:rgba(12,12,16,0.97);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+    backdrop-filter:blur(30px);
+    box-shadow:0 24px 80px rgba(0,0,0,0.8);
+    pointer-events:auto; overflow:hidden;
+    display:none; opacity:0; transform:translateX(12px);
+    transition:opacity 0.3s, transform 0.3s;
+    flex-direction:column;
+}
+#library-panel.visible { opacity:1; transform:translateX(0); display:flex; }
+.lib-header {
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 20px 14px; border-bottom:1px solid rgba(255,255,255,0.06);
+}
+.lib-title { font-family:'Playfair Display',serif; font-size:20px; font-weight:500; color:#fff; }
+.lib-sub { font-size:12px; color:rgba(255,255,255,0.35); font-family:'Inter',sans-serif; margin-left:4px; }
+.lib-head-actions { display:flex; align-items:center; gap:10px; }
+.lib-export {
+    font-size:11px; font-weight:500; color:#8ab4f8; text-decoration:none;
+    padding:5px 12px; border-radius:14px; border:1px solid rgba(138,180,248,0.3);
+    background:rgba(138,180,248,0.08); transition:all 0.2s;
+}
+.lib-export:hover { background:rgba(138,180,248,0.16); }
+.lib-close {
+    background:rgba(255,255,255,0.06); border:none; color:rgba(255,255,255,0.4);
+    width:26px; height:26px; border-radius:50%; cursor:pointer; font-size:14px;
+    display:flex; align-items:center; justify-content:center; transition:background 0.2s;
+}
+.lib-close:hover { background:rgba(255,255,255,0.12); }
+.lib-body { overflow-y:auto; padding:8px 10px 14px; }
+.lib-body::-webkit-scrollbar { width:3px; }
+.lib-body::-webkit-scrollbar-thumb { background:rgba(255,255,255,0.06); border-radius:3px; }
+.lib-empty { padding:40px 20px; text-align:center; font-size:13px; color:rgba(255,255,255,0.3); line-height:1.7; }
+.lib-item {
+    display:flex; align-items:center; gap:10px;
+    padding:10px 10px; border-radius:10px; transition:background 0.15s;
+}
+.lib-item:hover { background:rgba(255,255,255,0.04); }
+.lib-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.lib-info { flex:1; overflow:hidden; cursor:pointer; }
+.lib-item-title { font-size:13px; color:rgba(255,255,255,0.8); line-height:1.35; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.lib-item-meta { font-size:10px; color:rgba(255,255,255,0.3); margin-top:2px; }
+.lib-remove {
+    background:transparent; border:none; color:rgba(255,255,255,0.25);
+    width:22px; height:22px; border-radius:50%; cursor:pointer; font-size:14px; flex-shrink:0;
+    transition:all 0.2s;
+}
+.lib-remove:hover { background:rgba(255,255,255,0.1); color:rgba(255,255,255,0.7); }
 
 /* === KING PAPER LABELS === */
 .king-label {

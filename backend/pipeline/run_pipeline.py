@@ -58,6 +58,7 @@ def write_active_field(field: dict, paths: dict):
     active = {
         "field": field["name"],
         "slug": field["slug"],
+        "raw_file": field["raw_file"],  # basename — api.py derives full paths from slug
         "papers_path": paths["data"],
         "embeddings_path": paths["embeddings"],
         "clusters_path": paths["clusters"],

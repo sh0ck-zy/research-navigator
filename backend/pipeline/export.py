@@ -120,6 +120,8 @@ def run(
             "year": year,
             "abstract": paper.get("abstract", "")[:500],
             "cited_by_count": paper.get("cited_by_count", 0),
+            "doi": paper.get("doi", ""),
+            "venue": paper.get("venue", ""),
             "x": round(float(norm_x[i]), 5),
             "y": round(float(norm_y[i]), 5),
             "categories": paper.get("categories", ""),

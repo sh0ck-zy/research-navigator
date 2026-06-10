@@ -36,4 +36,8 @@ export const state = {
     // Highlights importance WITHOUT hiding anything — all papers stay visible.
     lens: 'off',
     baseSizes: null,
+
+    // Library: set of saved paper ids (OpenAlex W-ids); ring markers on the map.
+    savedIds: new Set(),
+    savedRings: null,
 };

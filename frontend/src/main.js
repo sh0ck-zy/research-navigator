@@ -7,6 +7,7 @@ import { makeFilters, applyFilter } from './filters.js';
 import { makeStats } from './stats.js';
 import { buildPaperIndex, handleSearch, searchNavigate, clearSearch, onSearchFocus } from './search.js';
 import { computeBaseSizes, applyLens } from './lens.js';
+import { loadSaved, toggleSave, copyCite, openLibrary, closeLibrary } from './library.js';
 import { deselectPaper, closeCard } from './papers.js';
 import { navBack, resetView, updateNavContext } from './nav.js';
 import { onMouse, onClk } from './interactions.js';
@@ -17,6 +18,7 @@ import { loop } from './loop.js';
 Object.assign(window, {
     searchNavigate, handleSearch, applyFilter,
     deselectPaper, resetView, updateNavContext,
+    toggleSave, copyCite, openLibrary, closeLibrary,
 });
 
 async function boot() {
@@ -59,6 +61,7 @@ async function boot() {
     makeFilters();
     makeStats();
     loop();
+    loadSaved(); // fetch saved library + draw ring markers (scene is ready)
 
     state.renderer.domElement.addEventListener('mousemove', onMouse);
     state.renderer.domElement.addEventListener('click', onClk);
