@@ -46,6 +46,14 @@ export function loop(){
         el.style.display=v.z<1?'':'none';
     });
 
+    // Position bridge labels (neighbour-area names on inter-cluster links)
+    state.bridgeLabels.forEach(({el, pos})=>{
+        const v=pos.clone().project(state.camera);
+        el.style.left=(v.x*0.5+0.5)*innerWidth+'px';
+        el.style.top=(-v.y*0.5+0.5)*innerHeight+'px';
+        el.style.display=v.z<1?'':'none';
+    });
+
     // Gravitational push animation
     if (state.pushedPapers.length > 0) {
         state.pushProgress += (state.pushDirection > 0 ? 0.06 : -0.08);

@@ -32,6 +32,9 @@ export const state = {
     kingPapers: [],
     kingLabelEls: [],
 
+    // Bridge labels: neighbour-area names on inter-cluster links (approach, not enter)
+    bridgeLabels: [],
+
     // Lens: per-paper base point size driven by the active metric.
     // Highlights importance WITHOUT hiding anything — all papers stay visible.
     lens: 'off',

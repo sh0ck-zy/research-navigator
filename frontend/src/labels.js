@@ -18,7 +18,7 @@ export function makeLabels() {
         const fontSize = Math.round(10 + t * 8); // 10px → 18px
         d.innerHTML=`<div class="cl-name" style="font-size:${fontSize}px">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
         d.onclick=e=>{e.stopPropagation();state.hasInteracted=true;zoomToCluster(cl);};
-        d.onmouseenter=(e)=>{dimExcept(cl.id);showBubble(cl.id);showClusterInsight(cl,e);};
+        d.onmouseenter=(e)=>{document.getElementById('tooltip').style.display='none';dimExcept(cl.id);showBubble(cl.id);showClusterInsight(cl,e);};
         d.onmouseleave=()=>{if(!state.activeCluster){dimExcept(null);hideBubbles();}hideClusterInsight();};
         el.appendChild(d);
     });
@@ -54,7 +54,8 @@ export function dimExcept(cid) {
         const baseSize = state.baseSizes ? state.baseSizes[i] : (1.5 + p._centrality * 5.0);
         if(cid===null) { o.array[i]=1.0; s.array[i]=baseSize; }
         else if(p._cl.id===cid) { o.array[i]=1.0; s.array[i]=baseSize*1.4; }
-        else { o.array[i]=0.3; s.array[i]=baseSize*0.7; }
+        // "Approach, not enter": neighbours stay clearly visible (not near-zero)
+        else { o.array[i]=0.5; s.array[i]=baseSize*0.85; }
     });
     o.needsUpdate=true; s.needsUpdate=true;
 

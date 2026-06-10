@@ -81,16 +81,11 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
 <!-- Cluster labels -->
 <div id="labels" style="position:fixed;inset:0;z-index:15;pointer-events:none;"></div>
 
-<!-- Tooltip -->
+<!-- Hover tooltip (light: dot · title · year). Full detail is on click. -->
 <div id="tooltip">
-    <div class="tt-cluster-bar">
-        <div id="tt-dot" style="width:8px;height:8px;border-radius:50%;flex-shrink:0"></div>
-        <span id="tt-cluster" class="tt-cluster-name"></span>
-    </div>
-    <div id="tt-cluster-desc" class="tt-cluster-desc"></div>
-    <div id="tt-title" class="tt-paper-title"></div>
-    <div id="tt-abstract" class="tt-abstract"></div>
-    <div id="tt-meta" class="tt-meta"></div>
+    <div id="tt-dot"></div>
+    <span id="tt-title"></span>
+    <span id="tt-year"></span>
 </div>
 
 <!-- Cluster Insight Card -->

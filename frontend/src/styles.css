@@ -154,42 +154,23 @@ body { background:#0a0a0a; color:#e8eaed; overflow:hidden; font-family:'Inter',s
 .cl-label .cl-count { font-size:8px; color:rgba(255,255,255,0.3); margin-top:1px; }
 .cl-label.dim { opacity:0.1; }
 
-/* === TOOLTIP === */
+/* === HOVER TOOLTIP (light: dot · title · year) === */
 #tooltip {
     position:fixed; display:none; z-index:200;
+    align-items:center; gap:8px;
     background:rgba(14,14,18,0.96);
     border:1px solid rgba(255,255,255,0.1);
-    border-radius:14px; padding:20px 22px;
-    width:380px; pointer-events:none;
+    border-radius:8px; padding:8px 12px;
+    max-width:380px; pointer-events:none;
     backdrop-filter:blur(24px);
-    box-shadow:0 20px 60px rgba(0,0,0,0.7);
+    box-shadow:0 12px 40px rgba(0,0,0,0.6);
 }
-#tooltip .tt-cluster-bar {
-    display:flex; align-items:center; gap:8px;
-    padding-bottom:10px; margin-bottom:10px;
-    border-bottom:1px solid rgba(255,255,255,0.06);
+#tooltip #tt-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+#tooltip #tt-title {
+    font-size:12px; color:rgba(255,255,255,0.85);
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
 }
-#tooltip .tt-cluster-name {
-    font-size:11px; font-weight:600; letter-spacing:0.08em;
-    text-transform:uppercase;
-}
-#tooltip .tt-cluster-desc {
-    font-size:11px; color:rgba(255,255,255,0.3);
-    line-height:1.5; margin-bottom:14px;
-}
-#tooltip .tt-paper-title {
-    font-family:'Playfair Display',serif;
-    font-size:16px; font-weight:500;
-    color:rgba(255,255,255,0.92);
-    line-height:1.35; margin-bottom:8px;
-}
-#tooltip .tt-abstract {
-    font-size:12px; color:rgba(255,255,255,0.45);
-    line-height:1.6; margin-bottom:8px;
-}
-#tooltip .tt-meta {
-    font-size:10px; color:rgba(255,255,255,0.25);
-}
+#tooltip #tt-year { font-size:11px; color:rgba(255,255,255,0.3); flex-shrink:0; }
 
 /* === CLUSTER INSIGHT CARD === */
 #cluster-insight {
@@ -384,6 +365,22 @@ body { background:#0a0a0a; color:#e8eaed; overflow:hidden; font-family:'Inter',s
     opacity:0; transition:opacity 0.5s;
 }
 .king-label.visible { opacity:1; }
+
+/* === BRIDGE LABELS (neighbour areas, shown on approach) === */
+.bridge-label {
+    position:fixed; z-index:14;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    font-size:10px; font-weight:600;
+    letter-spacing:0.04em;
+    background:rgba(0,0,0,0.5);
+    backdrop-filter:blur(4px);
+    padding:3px 9px;
+    border-radius:11px;
+    white-space:nowrap;
+    opacity:0; transition:opacity 0.6s;
+}
+.bridge-label.visible { opacity:0.85; }
 
 /* === CLUSTER CONTEXT CARD === */
 #cluster-context {

@@ -148,6 +148,46 @@ export function removeClusterConnections() {
     if (clusterConLines) { state.scene.remove(clusterConLines); clusterConLines = null; }
 }
 
+// === BRIDGE LABELS (neighbour-area names at the midpoint of the strongest links) ===
+function clusterPos(cl) {
+    const zIdx = state.mapData.clusters.indexOf(cl);
+    return new THREE.Vector3(
+        (cl.center_x - 0.5) * SPREAD,
+        (cl.center_y - 0.5) * SPREAD,
+        (Math.sin(zIdx * 1.3) * 40) + (Math.cos(zIdx * 0.7) * 30),
+    );
+}
+
+export function buildBridgeLabels(clId) {
+    clearBridgeLabels();
+    const cl = state.mapData.clusters.find(c => c.id === clId);
+    if (!cl) return;
+    const from = clusterPos(cl);
+    const conns = (state.mapData.connections || [])
+        .filter(c => c.from === clId || c.to === clId)
+        .sort((a, b) => b.strength - a.strength)
+        .slice(0, 3);
+    conns.forEach(c => {
+        const otherId = c.from === clId ? c.to : c.from;
+        const other = state.mapData.clusters.find(x => x.id === otherId);
+        if (!other) return;
+        const to = clusterPos(other);
+        const mid = from.clone().lerp(to, 0.5);
+        const el = document.createElement('div');
+        el.className = 'bridge-label';
+        el.textContent = other.name;
+        el.style.color = other.color;
+        document.body.appendChild(el);
+        requestAnimationFrame(() => el.classList.add('visible'));
+        state.bridgeLabels.push({ el, pos: mid });
+    });
+}
+
+export function clearBridgeLabels() {
+    state.bridgeLabels.forEach(({ el }) => el.remove());
+    state.bridgeLabels = [];
+}
+
 // === CLUSTER CONTEXT ===
 export function showClusterContext(cl) {
     const cc = document.getElementById('cluster-context');
@@ -248,6 +288,7 @@ export function exitCluster() {
     dimExcept(null);
     hideBubbles();
     removeClusterConnections();
+    clearBridgeLabels();
     hideClusterContext();
     hideKingPapers();
 }
@@ -259,6 +300,7 @@ export function zoomToCluster(cl) {
     showBubble(cl.id);
     hideClusterInsight();
     drawClusterConnections(cl.id);
+    buildBridgeLabels(cl.id);
     showClusterContext(cl);
     state.controls.autoRotate = false;
     updateNavContext(); updateStats();

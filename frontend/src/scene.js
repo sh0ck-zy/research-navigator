@@ -17,10 +17,10 @@ export function initScene() {
     state.controls.enableDamping = true;
     state.controls.dampingFactor = 0.04;
     state.controls.autoRotate = true;
-    state.controls.autoRotateSpeed = 0.15;
+    state.controls.autoRotateSpeed = 0.06; // calmer ambient drift, less disorienting
     state.controls.maxPolarAngle = Math.PI*0.6;
     state.controls.minPolarAngle = Math.PI*0.4;
-    state.controls.minDistance = 60;
+    state.controls.minDistance = 28; // get close enough to reach small clusters
     state.controls.maxDistance = 600;
     state.controls.zoomSpeed = 0.6;
     state.controls.target.set(0, 0, 0);
@@ -57,7 +57,8 @@ export function makePoints() {
             void main(){
                 vC=color; vO=opacity;
                 vec4 mv=modelViewMatrix*vec4(position,1.0);
-                gl_PointSize=size*(350.0/-mv.z);
+                // Floor at 2px so no paper ever shrinks into nothing when zoomed out
+                gl_PointSize=max(size*(350.0/-mv.z), 2.0);
                 gl_Position=projectionMatrix*mv;
             }`,
         fragmentShader:`

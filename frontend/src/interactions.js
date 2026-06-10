@@ -27,32 +27,16 @@ export function onMouse(e) {
     if(hits.length){
         hovIdx=hits[0].index;
         const p=state.allPapers[hovIdx];
+        // Light hover: dot · title · year. The full card (abstract, actions) is on click.
         document.getElementById('tt-dot').style.background=p._cl.color;
-        const ttCluster = document.getElementById('tt-cluster');
-        ttCluster.textContent=p._cl.name;
-        ttCluster.style.color=p._cl.color;
-        document.getElementById('tt-cluster-desc').textContent=p._cl.description ? p._cl.description.split('.').slice(0,1).join('.')+'.':'';
         document.getElementById('tt-title').textContent=p.title;
-        // Simplified abstract: first 2 sentences, max ~180 chars
-        const rawAbstract = (p.abstract||'').replace(/\n/g,' ').trim();
-        const sentences = rawAbstract.match(/[^.!?]+[.!?]+/g) || [];
-        let shortAbstract = sentences.slice(0,2).join(' ').trim();
-        if(shortAbstract.length > 180) shortAbstract = shortAbstract.slice(0,177) + '...';
-        if(!shortAbstract && rawAbstract) shortAbstract = rawAbstract.slice(0,177) + '...';
-        document.getElementById('tt-abstract').textContent=shortAbstract;
-        const auth=p.authors?p.authors.split(/,|and/).slice(0,2).map(s=>s.trim()).join(', '):'';
-        document.getElementById('tt-meta').textContent=auth+(p.year?' · '+p.year:'')+(p.categories?' · '+p.categories:'');
-        tt.style.display='block';
-        // Position tooltip on opposite side of card to avoid overlap
-        const cardOpen = !!state.cardPaper;
-        const ttWidth = 380;
-        if (cardOpen) {
-            // Card is on the right — force tooltip to the left side
-            tt.style.left = Math.min(e.clientX + 20, innerWidth - ttWidth - 600) + 'px';
-        } else {
-            tt.style.left = Math.min(e.clientX + 20, innerWidth - ttWidth - 20) + 'px';
-        }
-        tt.style.top = Math.min(e.clientY + 20, innerHeight - 280) + 'px';
+        document.getElementById('tt-year').textContent=p.year || '';
+        // A cluster card and a paper tooltip never co-show
+        document.getElementById('cluster-insight').style.display='none';
+        tt.style.display='flex';
+        const ttW = Math.min(tt.offsetWidth || 320, 380);
+        tt.style.left = Math.min(e.clientX + 16, innerWidth - ttW - 16) + 'px';
+        tt.style.top = Math.min(e.clientY + 18, innerHeight - 48) + 'px';
         state.renderer.domElement.style.cursor='pointer';
 
         // Show bubble for this point's cluster
