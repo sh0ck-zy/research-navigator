@@ -1,0 +1,9 @@
+# Runtime-only deps for the deployed API (search + library + serving the build).
+# The pipeline deps (pandas, umap-learn, leidenalg, igraph, scikit-learn,
+# anthropic) are NOT needed at runtime and are omitted to keep the image lean.
+# torch is installed separately (CPU wheel) in the Dockerfile.
+numpy
+faiss-cpu
+sentence-transformers
+fastapi
+uvicorn[standard]

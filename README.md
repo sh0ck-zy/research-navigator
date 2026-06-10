@@ -48,6 +48,9 @@ npm run dev        # http://localhost:5173 (proxies /api to :8000)
 cd frontend && npm run build
 ```
 
+Deploy to Hugging Face Spaces (Docker): see [docs/deploy-hf-spaces.md](docs/deploy-hf-spaces.md).
+Switch corpus with `python backend/pipeline/run_pipeline.py --field neuro|ml`.
+
 ## Principles
 
 1. **Research before code.** Understand the problem deeply before building.

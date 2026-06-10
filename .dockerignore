@@ -1,0 +1,16 @@
+# Keep the build context small. Data files are COPYed explicitly in the
+# Dockerfile, so the broad data/ ignore here doesn't block them.
+.git
+.venv
+**/__pycache__
+**/*.pyc
+frontend/node_modules
+frontend/dist
+*.png
+data/raw/*.bak
+data/projections
+data/embeddings/ml_10k.npz
+data/raw/arxiv_ml_subset_10k.json
+data/clusters/ml_10k_leiden.json
+data/clusters/ml_10k_names.json
+data/library.db
