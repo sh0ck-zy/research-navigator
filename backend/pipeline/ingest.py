@@ -37,7 +37,7 @@ def reconstruct_abstract(inverted_index: dict) -> str:
 
 
 def fetch_papers(
-    concept_id: str = ML_CONCEPT_ID,
+    concept_ids: list[str] | None = None,
     query: str | None = None,
     target_count: int = 10000,
     per_page: int = 200,
@@ -56,7 +56,8 @@ def fetch_papers(
     if query:
         params["search"] = query
     else:
-        params["filter"] = f"concepts.id:{concept_id},type:article,has_abstract:true"
+        ids = "|".join(concept_ids or [ML_CONCEPT_ID])
+        params["filter"] = f"concepts.id:{ids},type:article,has_abstract:true"
 
     pbar = tqdm(total=target_count, desc="Fetching papers")
 
@@ -113,7 +114,12 @@ def fetch_papers(
     return papers[:target_count]
 
 
-def run(output_path: str, target_count: int = 10000, query: str | None = None):
+def run(
+    output_path: str,
+    target_count: int = 10000,
+    query: str | None = None,
+    concept_ids: list[str] | None = None,
+):
     output = Path(output_path)
     if output.exists():
         line_count = sum(1 for _ in open(output_path))
@@ -122,7 +128,7 @@ def run(output_path: str, target_count: int = 10000, query: str | None = None):
         return
 
     print(f"[ingest] Fetching ~{target_count} papers from OpenAlex...")
-    papers = fetch_papers(target_count=target_count, query=query)
+    papers = fetch_papers(target_count=target_count, query=query, concept_ids=concept_ids)
 
     output.parent.mkdir(parents=True, exist_ok=True)
     with open(output_path, "w") as f:

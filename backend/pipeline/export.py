@@ -52,6 +52,7 @@ def run(
     names_path: str,
     embeddings_path: str,
     output_path: str,
+    field_name: str = "Machine Learning",
 ):
     print("[export] Loading all data...")
 
@@ -98,8 +99,8 @@ def run(
         cid = cluster_ids[i]
         effective_cid = "other" if cid in other_ids else str(cid)
 
-        year = None
-        if "update_date" in paper and paper["update_date"]:
+        year = paper.get("year") if isinstance(paper.get("year"), int) else None
+        if year is None and "update_date" in paper and paper["update_date"]:
             try:
                 from datetime import datetime
                 ud = paper["update_date"]
@@ -118,6 +119,7 @@ def run(
             "authors": paper.get("authors", ""),
             "year": year,
             "abstract": paper.get("abstract", "")[:500],
+            "cited_by_count": paper.get("cited_by_count", 0),
             "x": round(float(norm_x[i]), 5),
             "y": round(float(norm_y[i]), 5),
             "categories": paper.get("categories", ""),
@@ -149,7 +151,7 @@ def run(
 
     output = {
         "metadata": {
-            "field": "Machine Learning",
+            "field": field_name,
             "paper_count": len(papers),
             "cluster_count": len(clusters_output),
             "generated_at": str(date.today()),

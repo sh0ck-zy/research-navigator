@@ -8,3 +8,6 @@ scikit-learn
 anthropic
 requests
 tqdm
+fastapi
+uvicorn[standard]
+faiss-cpu

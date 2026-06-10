@@ -23,7 +23,29 @@ clarity-research/
 │   ├── decisions/         # ADRs: every major decision, with context and reasoning
 │   └── playbook/          # Reusable methodology (launch, distribution, validation)
 ├── design/                # UI/UX explorations, mockups, prototypes
-└── src/                   # Code (when we get there)
+├── backend/
+│   ├── pipeline/          # OpenAlex ingest → embed → UMAP → Leiden → name → export
+│   └── api.py             # FastAPI: semantic search (FAISS) + serves the frontend
+├── frontend/              # The Observatory — Three.js map (Vite + ES modules)
+│   ├── src/               # scene, labels, clusters, papers, search, nav, stats, loop
+│   └── data/              # map_data.json produced by the pipeline (gitignored)
+└── data/                  # Pipeline caches: raw papers, embeddings, projections (gitignored)
+```
+
+## Running it
+
+```bash
+# Backend (terminal 1) — pipeline outputs must exist (python backend/pipeline/run_pipeline.py)
+source .venv/bin/activate
+uvicorn backend.api:app --port 8000
+
+# Frontend dev (terminal 2)
+cd frontend
+npm install
+npm run dev        # http://localhost:5173 (proxies /api to :8000)
+
+# Production: build once, then FastAPI serves everything at :8000
+cd frontend && npm run build
 ```
 
 ## Principles
