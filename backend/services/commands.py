@@ -11,9 +11,15 @@ recomputable data, so the event records that an embedding was set, never the
 vector itself (a 1.5 KB blob has no place in a JSON audit log).
 """
 import json
+import threading
 import uuid
 
 from backend import db
+
+# Serializes seq allocation across threads (foreground requests + background
+# jobs share one process). Every write goes through apply(), so one lock here
+# removes the events(project_id, seq) race entirely. Fine at one-user scale.
+_write_lock = threading.Lock()
 
 
 class CommandError(ValueError):
@@ -42,7 +48,7 @@ def apply(project_id: str, actor: str, command: dict, conn=None):
     if own_conn:
         conn = db.connect()
     try:
-        with conn:
+        with _write_lock, conn:
             seq = conn.execute(
                 "SELECT COALESCE(MAX(seq), 0) + 1 FROM events WHERE project_id = ?",
                 (project_id,),
@@ -118,6 +124,16 @@ def _add_papers(conn, project_id, cmd):
     for paper in cmd["papers"]:
         pid = paper.get("id") or uuid.uuid4().hex
         doi = (paper.get("doi") or "").lower().removeprefix("https://doi.org/") or None
+        # DOI dedup is enforced by a unique index; DOI-less papers (common for
+        # preprints in Zotero exports) fall through it, so match on title too.
+        if doi is None:
+            exists = conn.execute(
+                "SELECT 1 FROM papers WHERE project_id = ? AND doi IS NULL AND lower(title) = lower(?)",
+                (project_id, paper["title"]),
+            ).fetchone()
+            if exists:
+                duplicates.append(paper["title"])
+                continue
         cur = conn.execute(
             f"""INSERT INTO papers(id, project_id, {', '.join(PAPER_INSERT_FIELDS)})
                 VALUES (?, ?{', ?' * len(PAPER_INSERT_FIELDS)})

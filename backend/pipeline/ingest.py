@@ -18,22 +18,13 @@ from pathlib import Path
 import requests
 from tqdm import tqdm
 
+from backend.services.openalex import (
+    OPENALEX_WORKS,
+    USER_AGENT,
+    reconstruct_abstract,
+)
 
-OPENALEX_WORKS = "https://api.openalex.org/works"
 ML_CONCEPT_ID = "C119857082"
-USER_AGENT = "ClarityResearch/0.1 (mailto:clarity@example.com)"
-
-
-def reconstruct_abstract(inverted_index: dict) -> str:
-    """Reconstruct abstract text from OpenAlex inverted index format."""
-    if not inverted_index:
-        return ""
-    word_positions = []
-    for word, positions in inverted_index.items():
-        for pos in positions:
-            word_positions.append((pos, word))
-    word_positions.sort()
-    return " ".join(word for _, word in word_positions)
 
 
 def fetch_papers(

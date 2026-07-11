@@ -1,4 +1,13 @@
-import type { Health, Project, ProjectCreate } from "../types";
+import type {
+  Health,
+  ImportResult,
+  Job,
+  Paper,
+  Project,
+  ProjectCreate,
+  ReadStatus,
+  SearchResult,
+} from "../types";
 
 async function request<T>(path: string, init?: RequestInit): Promise<T> {
   const res = await fetch(path, {
@@ -33,4 +42,43 @@ export const api = {
 
   deleteProject: (id: string) =>
     request<void>(`/api/projects/${id}`, { method: "DELETE" }),
+
+  listPapers: (projectId: string, params?: { status?: string; tag?: string; q?: string }) => {
+    const qs = new URLSearchParams(
+      Object.entries(params ?? {}).filter(([, v]) => v) as [string, string][],
+    ).toString();
+    return request<{ papers: Paper[] }>(
+      `/api/projects/${projectId}/papers${qs ? `?${qs}` : ""}`,
+    ).then((r) => r.papers);
+  },
+
+  importFile: async (projectId: string, file: File): Promise<ImportResult> => {
+    const body = new FormData();
+    body.append("file", file);
+    const res = await fetch(`/api/projects/${projectId}/papers/import`, { method: "POST", body });
+    if (!res.ok) throw new Error((await res.json().catch(() => ({}))).detail ?? res.statusText);
+    return res.json();
+  },
+
+  addPaper: (projectId: string, body: { doi?: string; url?: string }) =>
+    request<Paper>(`/api/projects/${projectId}/papers`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+
+  updatePaper: (projectId: string, paperId: string, body: { read_status?: ReadStatus; tags?: string[] }) =>
+    request<Paper>(`/api/projects/${projectId}/papers/${paperId}`, {
+      method: "PATCH",
+      body: JSON.stringify(body),
+    }),
+
+  deletePaper: (projectId: string, paperId: string) =>
+    request<void>(`/api/projects/${projectId}/papers/${paperId}`, { method: "DELETE" }),
+
+  search: (projectId: string, q: string) =>
+    request<{ query: string; results: SearchResult[] }>(
+      `/api/projects/${projectId}/search?q=${encodeURIComponent(q)}`,
+    ).then((r) => r.results),
+
+  getJob: (jobId: string) => request<Job>(`/api/jobs/${jobId}`),
 };

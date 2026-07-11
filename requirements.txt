@@ -11,3 +11,6 @@ tqdm
 fastapi
 uvicorn[standard]
 faiss-cpu
+python-multipart
+bibtexparser==1.4.3
+rispy>=0.9,<1.0
