@@ -4,8 +4,8 @@ import { ProjectList } from "./pages/ProjectList";
 import { NewProject } from "./pages/NewProject";
 import { ProjectLayout } from "./pages/ProjectLayout";
 import { Library } from "./pages/Library";
+import { Board } from "./pages/Board";
 
-// The Board lands in CP5. Placeholder keeps the shell honest.
 export const router = createBrowserRouter([
   {
     element: <AppLayout />,
@@ -17,7 +17,7 @@ export const router = createBrowserRouter([
         element: <ProjectLayout />,
         children: [
           { path: "library", element: <Library /> },
-          { path: "board", element: <div className="py-8 text-neutral-500">Board — coming in CP5</div> },
+          { path: "board", element: <Board /> },
         ],
       },
     ],

@@ -68,3 +68,46 @@ export interface Job {
   progress_total: number;
   error: string | null;
 }
+
+export type BoardKind =
+  | "concept" | "claim" | "evidence_support" | "evidence_contradiction"
+  | "open_question" | "next_action";
+
+export type Provenance = "ai_suggested" | "user_created" | "user_edited";
+export type BoardStatus = "proposed" | "accepted" | "rejected";
+
+export interface BoardItemPaper {
+  paper_id: string;
+  title: string;
+  doi: string | null;
+  year: number | null;
+  authors: string | null;
+  quote: string | null;
+  quote_valid: boolean | null;
+}
+
+export interface BoardItem {
+  id: string;
+  project_id: string;
+  kind: BoardKind;
+  parent_id: string | null;
+  text: string;
+  provenance: Provenance;
+  status: BoardStatus;
+  generation_id: string | null;
+  position: number;
+  papers: BoardItemPaper[];
+}
+
+export interface BoardGenerationMeta {
+  id: string;
+  status: string;
+  token_usage: { input_tokens: number; output_tokens: number } | null;
+  dropped_items: number;
+  finished_at: string | null;
+}
+
+export interface BoardResponse {
+  items: BoardItem[];
+  last_generation: BoardGenerationMeta | null;
+}

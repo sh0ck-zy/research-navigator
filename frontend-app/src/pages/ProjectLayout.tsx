@@ -23,9 +23,17 @@ export function ProjectLayout() {
         </div>
       )}
 
-      <nav className="mt-5 flex gap-1 border-b border-neutral-200 dark:border-neutral-800">
+      <nav className="mt-5 flex items-center gap-1 border-b border-neutral-200 dark:border-neutral-800">
         <Tab to={`/projects/${id}/library`}>Library</Tab>
         <Tab to={`/projects/${id}/board`}>Board</Tab>
+        <span className="ml-auto flex gap-3 pb-1 text-xs text-neutral-400">
+          <a href={`/api/projects/${id}/export.bib`} className="hover:text-neutral-700 dark:hover:text-neutral-200">
+            Export .bib
+          </a>
+          <a href={`/api/projects/${id}/export.md`} className="hover:text-neutral-700 dark:hover:text-neutral-200">
+            Export board .md
+          </a>
+        </span>
       </nav>
 
       <div className="pt-6">

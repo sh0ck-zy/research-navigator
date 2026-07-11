@@ -28,10 +28,12 @@ def create_app() -> FastAPI:
             "board_generation_available": bool(os.environ.get("ANTHROPIC_API_KEY")),
         }
 
-    from backend.routers import jobs, papers, projects, search
+    from backend.routers import board, export, jobs, papers, projects, search
     app.include_router(projects.router)
     app.include_router(papers.router)
     app.include_router(search.router)
+    app.include_router(board.router)
+    app.include_router(export.router)
     app.include_router(jobs.router)
 
     # Production serves the built React app; during development run

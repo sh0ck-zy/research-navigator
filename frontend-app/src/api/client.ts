@@ -1,4 +1,7 @@
 import type {
+  BoardKind,
+  BoardResponse,
+  BoardStatus,
   Health,
   ImportResult,
   Job,
@@ -81,4 +84,27 @@ export const api = {
     ).then((r) => r.results),
 
   getJob: (jobId: string) => request<Job>(`/api/jobs/${jobId}`),
+
+  getBoard: (projectId: string) => request<BoardResponse>(`/api/projects/${projectId}/board`),
+
+  generateBoard: (projectId: string, paperIds?: string[]) =>
+    request<{ job_id: string }>(`/api/projects/${projectId}/board/generate`, {
+      method: "POST",
+      body: JSON.stringify(paperIds ? { paper_ids: paperIds } : {}),
+    }),
+
+  createBoardItem: (projectId: string, body: { kind: BoardKind; text: string; paper_ids?: string[] }) =>
+    request<{ id: string }>(`/api/projects/${projectId}/board/items`, {
+      method: "POST",
+      body: JSON.stringify(body),
+    }),
+
+  updateBoardItem: (projectId: string, itemId: string, body: { status?: BoardStatus; text?: string }) =>
+    request<{ ok: boolean }>(`/api/projects/${projectId}/board/items/${itemId}`, {
+      method: "PATCH",
+      body: JSON.stringify(body),
+    }),
+
+  deleteBoardItem: (projectId: string, itemId: string) =>
+    request<void>(`/api/projects/${projectId}/board/items/${itemId}`, { method: "DELETE" }),
 };
