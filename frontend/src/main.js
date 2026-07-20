@@ -1,4 +1,5 @@
 import './styles.css';
+import './nav.css';
 import { gsap } from 'gsap';
 import { state, SPREAD } from './state.js';
 import { initScene, makePoints, makeEdges, onRsz } from './scene.js';
@@ -12,6 +13,7 @@ import { deselectPaper, closeCard } from './papers.js';
 import { navBack, resetView, updateNavContext } from './nav.js';
 import { onMouse, onClk } from './interactions.js';
 import { loop } from './loop.js';
+import { openActiveClusterIntel, closeClusterIntel, createSpaceFromCluster } from './intel.js';
 
 // Dynamically generated HTML (search dropdown, filters, node-info, breadcrumb)
 // uses inline on* attributes, which resolve against window.
@@ -19,6 +21,7 @@ Object.assign(window, {
     searchNavigate, handleSearch, applyFilter,
     deselectPaper, resetView, updateNavContext,
     toggleSave, copyCite, openLibrary, closeLibrary,
+    openActiveClusterIntel, closeClusterIntel, createSpaceFromCluster,
 });
 
 async function boot() {
@@ -28,7 +31,7 @@ async function boot() {
     const meta = mapData.metadata;
     if (meta?.field && meta?.paper_count) {
         document.getElementById('hero-sub').textContent =
-            `${meta.paper_count.toLocaleString('en-US')} ${meta.field} papers, mapped by AI`;
+            `${meta.paper_count.toLocaleString('en-US')} papers · ${meta.field}, charted`;
     }
 
     // Assign Z offsets per cluster for depth separation
@@ -54,6 +57,19 @@ async function boot() {
 
     buildPaperIndex();
     computeBaseSizes('off'); // seed base star sizes before geometry is built
+
+    // Claimed territories: projects seeded from clusters (matched by name).
+    state.claimedProjects = {};
+    try {
+        const res = await fetch('/api/projects');
+        if (res.ok) {
+            const { projects } = await res.json();
+            projects.forEach(pr => {
+                const cl = mapData.clusters.find(c => c.name === pr.name);
+                if (cl) state.claimedProjects[cl.id] = pr;
+            });
+        }
+    } catch (e) { /* no backend — explore-only mode */ }
     initScene();
     makePoints();
     makeEdges();
@@ -70,7 +86,8 @@ async function boot() {
     window.addEventListener('resize', onRsz);
     document.addEventListener('keydown', e => {
         if (e.key === 'Escape') {
-            if (state.cardPaper) { closeCard(); }
+            if (state.intelOpen) { closeClusterIntel(); }
+            else if (state.cardPaper) { closeCard(); }
             else { resetView(); clearSearch(); }
         }
         if (e.key === '/') { e.preventDefault(); document.getElementById('search').focus(); }

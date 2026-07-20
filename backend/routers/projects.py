@@ -52,6 +52,64 @@ def create_project(body: ProjectCreate):
         return get_project_or_404(conn, project_id)
 
 
+class FromClusterCreate(BaseModel):
+    cluster_id: int
+    research_question: str = Field(min_length=1, max_length=2000)
+    name: str | None = Field(default=None, max_length=200)
+    max_papers: int = Field(default=300, ge=1, le=600)
+
+
+@router.post("/from-cluster", status_code=201)
+def create_project_from_cluster(body: FromClusterCreate):
+    """The galaxy → space bridge: seed a Research Space from a map cluster.
+
+    Papers come from the ML corpus with their precomputed MiniLM vectors
+    (L2-normalized on copy, same as scripts/seed_demo.py), so semantic
+    search works immediately and no enrichment job is needed.
+    """
+    from backend.services import galaxy
+
+    if body.cluster_id not in galaxy.cluster_ids():
+        raise HTTPException(404, f"cluster {body.cluster_id} not found")
+    cname = galaxy.cluster_name(body.cluster_id)
+    picked = galaxy.cluster_papers(body.cluster_id)[: body.max_papers]
+
+    project_id = uuid.uuid4().hex
+    commands.apply(project_id, "user", {
+        "type": "create_project",
+        "name": body.name or cname,
+        "research_question": body.research_question,
+        "hypothesis": None,
+        "scope_notes": (
+            f"Seeded from the Machine Learning galaxy — cluster "
+            f"'{cname}' ({len(picked)} most central papers)."
+        ),
+    })
+    rows = [{k: p[k] for k in commands.PAPER_INSERT_FIELDS} for p in picked]
+    result = commands.apply(project_id, "user", {"type": "add_papers", "papers": rows})
+
+    with closing(db.connect()) as conn:
+        db_rows = conn.execute(
+            "SELECT id, openalex_id FROM papers WHERE project_id = ?", (project_id,)
+        ).fetchall()
+    row_by_oa = {p["openalex_id"]: p["row"] for p in picked}
+    for r in db_rows:
+        row = row_by_oa.get(r["openalex_id"])
+        if row is None:
+            continue
+        commands.apply(project_id, "ai", {
+            "type": "update_paper", "paper_id": r["id"],
+            "embedding": galaxy.embedding_row(row).tobytes(),
+            "enrichment_status": "enriched",
+        })
+
+    return {
+        "project_id": project_id,
+        "paper_count": len(result["inserted"]),
+        "board_url": f"/app/projects/{project_id}/board",
+    }
+
+
 @router.get("/{project_id}")
 def get_project(project_id: str):
     with closing(db.connect()) as conn:

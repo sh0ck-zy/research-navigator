@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAV — three dances</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#08080b; color:#fff; font-family:'Inter',sans-serif; min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:60px 24px; }
+  h1 { font-family:'Playfair Display',serif; font-weight:500; font-size:32px; margin-bottom:8px; }
+  .sub { color:rgba(255,255,255,0.35); font-size:14px; font-weight:300; margin-bottom:56px; }
+  .cards { display:flex; gap:24px; flex-wrap:wrap; justify-content:center; }
+  a.card { display:block; width:300px; padding:28px; border:1px solid rgba(255,255,255,0.08); border-radius:16px; background:rgba(255,255,255,0.02); text-decoration:none; color:#fff; transition:all 0.35s cubic-bezier(0.22,1,0.36,1); }
+  a.card:hover { transform:translateY(-4px); border-color:rgba(255,255,255,0.2); background:rgba(255,255,255,0.04); }
+  .num { font-size:11px; color:rgba(255,255,255,0.25); letter-spacing:0.15em; margin-bottom:16px; }
+  .name { font-family:'Playfair Display',serif; font-size:22px; margin-bottom:4px; }
+  .tag { font-size:11px; color:rgba(255,255,255,0.4); text-transform:uppercase; letter-spacing:0.1em; margin-bottom:14px; }
+  .desc { font-size:13px; color:rgba(255,255,255,0.5); line-height:1.7; font-weight:300; }
+  .feel { margin-top:16px; font-size:11px; color:rgba(255,255,255,0.3); font-style:italic; }
+  .note { margin-top:48px; font-size:12px; color:rgba(255,255,255,0.25); }
+</style>
+</head>
+<body>
+  <h1>Three dances, one workflow</h1>
+  <p class="sub">Same data, same journey: locate → orient → claim → chart. Choose by feel.</p>
+  <div class="cards">
+    <a class="card" href="zoom.html">
+      <div class="num">A</div>
+      <div class="name">O Céu Contínuo</div>
+      <div class="tag">The map is home</div>
+      <div class="desc">You never leave the sky. The brief rises over the stars; claiming docks your chart as glass panels floating in the cosmos.</div>
+      <div class="feel">Feel: immersion. Risk: work-in-space can fight list work.</div>
+    </a>
+    <a class="card" href="journal.html">
+      <div class="num">B</div>
+      <div class="name">O Diário de Expedição</div>
+      <div class="tag">The expedition is home</div>
+      <div class="desc">A field report that becomes your workspace. The map is a plate you summon; claiming rewrites the document around your question.</div>
+      <div class="feel">Feel: a beautiful document that turns into your tool.</div>
+    </a>
+    <a class="card" href="duo.html">
+      <div class="num">C</div>
+      <div class="name">As Duas Metades</div>
+      <div class="tag">Two panes, one brain</div>
+      <div class="desc">Map on the left, work on the right, always. Hovering a school lights its papers; claiming turns the map into your progress board.</div>
+      <div class="feel">Feel: constant dialogue. No transitions, no mystery.</div>
+    </a>
+  </div>
+  <p class="note">Click around each one — the claim moment is the important part.</p>
+</body>
+</html>

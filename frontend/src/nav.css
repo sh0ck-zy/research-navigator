@@ -1,0 +1,171 @@
+/* ============================================================
+   NAV — visual language. Overrides styles.css (imported after).
+   Star-chart expedition instrument: serif voice, quiet chrome,
+   the map is the interface. Mechanics untouched.
+   ============================================================ */
+
+:root {
+    --ink: rgba(255,255,255,0.92);
+    --ink-dim: rgba(255,255,255,0.55);
+    --ink-faint: rgba(255,255,255,0.32);
+    --ink-ghost: rgba(255,255,255,0.18);
+    --card: rgba(9,9,13,0.94);
+    --line: rgba(255,255,255,0.07);
+    --serif: 'Playfair Display', serif;
+}
+
+body { background:#060608; color:var(--ink); }
+
+/* === CHROME: no top bar. A wordmark and one gesture. === */
+.top-bar { height:auto; padding:26px 32px; }
+.brand-main { font-family:var(--serif); font-size:22px; font-weight:500; letter-spacing:0.06em; color:var(--ink); }
+.brand-main b { font-weight:500; }
+.brand-sub { display:none; }
+#nav-spaces {
+    pointer-events:auto;
+    font-size:11px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-faint); text-decoration:none; transition:color 0.3s;
+}
+#nav-spaces:hover { color:var(--ink); }
+
+/* === HERO: the expedition question === */
+.hero-title {
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size:64px; letter-spacing:-0.01em; color:var(--ink);
+    margin-bottom:14px;
+}
+#hero-sub {
+    font-size:11px !important; font-weight:400 !important;
+    letter-spacing:0.22em; text-transform:uppercase;
+    color:var(--ink-ghost) !important;
+    margin-bottom:44px !important;
+}
+
+/* === OMNIBOX === */
+.search-wrap { width:560px; }
+.search-icon { left:22px; opacity:0.5; }
+.search-input {
+    padding:18px 50px 18px 52px;
+    border-radius:30px;
+    background:rgba(255,255,255,0.035);
+    border:1px solid rgba(255,255,255,0.09);
+    color:var(--ink); font-size:15px;
+    backdrop-filter:blur(20px);
+}
+.search-input::placeholder {
+    font-family:var(--serif); font-style:italic;
+    color:var(--ink-ghost); font-size:16px;
+}
+.search-input:focus {
+    border-color:rgba(255,255,255,0.28);
+    background:rgba(255,255,255,0.05);
+    box-shadow:0 12px 60px rgba(0,0,0,0.6);
+}
+
+/* === SEARCH RESULTS === */
+.search-results {
+    background:var(--card); border:1px solid var(--line);
+    border-radius:14px; top:66px;
+    box-shadow:0 24px 80px rgba(0,0,0,0.7);
+}
+.sr-header {
+    font-size:9px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--ink-ghost); border-bottom:1px solid var(--line);
+}
+.sr-title { color:var(--ink-dim); }
+
+/* === FILTERS: quiet micro-labels === */
+.filters { gap:6px; }
+.filter-dd {
+    padding:6px 13px; border-radius:18px;
+    font-size:10px; letter-spacing:0.08em; text-transform:uppercase;
+    border:1px solid rgba(255,255,255,0.07);
+    color:var(--ink-faint); background:transparent;
+}
+.filter-dd:hover { background:rgba(255,255,255,0.05); color:var(--ink); }
+.filter-dd.active { background:var(--ink); color:#0a0a0d; border-color:transparent; }
+
+/* === CLUSTER LABELS: star-chart typography === */
+.cl-label .cl-name {
+    font-family:var(--serif); font-weight:500; font-size:15px;
+    color:rgba(255,255,255,0.82);
+    background:none; backdrop-filter:none; padding:0;
+    text-shadow:0 0 18px rgba(6,6,8,1), 0 0 6px rgba(6,6,8,1), 0 2px 8px rgba(6,6,8,0.9);
+    letter-spacing:0.01em;
+}
+.cl-label:hover .cl-name { color:#fff; background:none; }
+.cl-label .cl-count {
+    font-size:8px; letter-spacing:0.18em; text-transform:uppercase;
+    color:var(--ink-ghost); margin-top:3px;
+    text-shadow:0 0 10px rgba(6,6,8,1);
+}
+.cl-label:hover { transform:translate(-50%,-50%) scale(1.06); }
+
+/* === CARDS: one material === */
+#tooltip, .search-results, #cluster-insight, #cluster-context,
+#node-info, #library-panel, .glass {
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:16px;
+    box-shadow:0 24px 80px rgba(0,0,0,0.75);
+}
+
+/* === KILL the Google-blue: warm neutral accents === */
+.nav-link.active { color:var(--ink); border-bottom-color:var(--ink); }
+.ni-act.saved { color:var(--ink); border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.08); }
+.lib-export { color:var(--ink-dim); border-color:var(--line); background:transparent; }
+.lib-export:hover { background:rgba(255,255,255,0.06); }
+
+/* === LENS BAR: quiet corner instrument === */
+#lens-bar {
+    bottom:28px; left:auto; right:32px; transform:none;
+    padding:4px 5px 4px 12px;
+    background:rgba(9,9,13,0.8); border:1px solid var(--line);
+    border-radius:20px; box-shadow:none;
+}
+.lens-label { font-size:8px; color:var(--ink-ghost); }
+.lens-btn { font-size:10px; padding:5px 11px; color:var(--ink-faint); }
+.lens-btn.active { color:#0a0a0d; background:var(--ink); }
+
+/* === RIGHT STATS: marginal notes === */
+.right-stats { right:32px; gap:18px; opacity:0.75; }
+.rs-label { font-size:8px; letter-spacing:0.2em; color:var(--ink-ghost); }
+.rs-value { font-family:var(--serif); font-size:22px; font-weight:500; color:var(--ink-dim); }
+.rs-value-sm { font-size:11px; color:var(--ink-faint); }
+
+/* === BOTTOM HINT === */
+.bottom-hint {
+    font-family:'Inter',sans-serif; font-size:10px;
+    letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--ink-ghost); padding:22px;
+}
+
+/* === KING + BRIDGE LABELS === */
+.king-label {
+    font-family:var(--serif); font-size:11px; font-weight:500;
+    color:rgba(255,255,255,0.85);
+    background:rgba(6,6,8,0.7); border-radius:8px;
+    backdrop-filter:blur(6px);
+}
+
+/* === TOOLTIP === */
+#tooltip { border-radius:10px; }
+#tt-title { font-size:12px; color:var(--ink); }
+
+/* === LABEL DOTS + micro-typography (appended) === */
+.cl-label .cl-dot {
+    width:6px; height:6px; border-radius:50%;
+    margin:0 auto 6px;
+}
+.cl-label:hover .cl-dot { transform:scale(1.5); }
+.cl-label .cl-dot { transition:transform 0.3s; }
+
+.bridge-label {
+    font-family:'Playfair Display',serif; font-weight:500; font-size:11px;
+    letter-spacing:0.02em;
+    background:rgba(6,6,8,0.65); border-radius:8px;
+    padding:4px 10px;
+}
+
+/* Insight + context card headers stay serif, quiet borders */
+#cluster-insight, #cluster-context, #node-info { border:1px solid var(--line); }

@@ -6,6 +6,8 @@ import { dimExcept } from './labels.js';
 import { deselectPaper } from './papers.js';
 import { updateNavContext } from './nav.js';
 import { updateStats } from './stats.js';
+import { closeClusterIntel } from './intel.js';
+import { enterChartMode, exitChartMode, isCharting } from './chart.js';
 
 // === CLUSTER INSIGHT CARD ===
 export function showClusterInsight(cl, e) {
@@ -232,6 +234,9 @@ export function showClusterContext(cl) {
             <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.12em;color:rgba(255,255,255,0.25);margin-bottom:6px">Key Papers</div>
             ${kings.map(p=>`<div style="font-size:11px;color:rgba(255,255,255,0.6);padding:3px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">${p.title}</div>`).join('')}
         </div>
+        <div style="padding:0 20px 16px">
+            <button onclick="openActiveClusterIntel()" style="width:100%;background:rgba(255,255,255,0.92);border:none;color:#111;padding:8px 0;border-radius:16px;font-size:12px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer">Cluster intelligence →</button>
+        </div>
     `;
     cc.style.display = 'block';
     requestAnimationFrame(() => cc.classList.add('visible'));
@@ -291,6 +296,8 @@ export function exitCluster() {
     clearBridgeLabels();
     hideClusterContext();
     hideKingPapers();
+    closeClusterIntel();
+    exitChartMode();
 }
 
 export function zoomToCluster(cl) {
@@ -320,4 +327,8 @@ export function zoomToCluster(cl) {
 
     gsap.to(state.camera.position, { x:cx, y:cy+camDist*0.3, z:cz+camDist, duration:1.8, ease:'expo.out', onComplete:()=>{ state.clusterZoomDist=camDist; } });
     gsap.to(state.controls.target, { x:cx, y:cy, z:cz, duration:1.8, ease:'expo.out' });
+
+    // Return dance: entering a claimed territory re-enters chart mode.
+    const claimed = state.claimedProjects && state.claimedProjects[cl.id];
+    if (claimed && !isCharting()) enterChartMode(claimed, cl);
 }

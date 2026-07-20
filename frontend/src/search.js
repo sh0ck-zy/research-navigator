@@ -26,6 +26,14 @@ export function handleSearch(t) {
         return;
     }
 
+    // Paper Zero: paste an arXiv id (or abs URL) and fly straight to the star.
+    const arxivMatch = t.match(/(\d{4}\.\d{4,5})(v\d+)?$/) || t.match(/arxiv\.org\/abs\/(\d{4}\.\d{4,5})/);
+    const arxivId = arxivMatch && (arxivMatch[1] || arxivMatch[0]);
+    if (arxivId && paperIdIndex[arxivId] !== undefined) {
+        searchNavigate(paperIdIndex[arxivId]);
+        return;
+    }
+
     // Local keyword search (always runs instantly)
     const tl = t.toLowerCase();
     const o = state.ptsGeo.attributes.opacity, s = state.ptsGeo.attributes.size;
@@ -53,7 +61,7 @@ export function handleSearch(t) {
 
 async function semanticSearch(q) {
     try {
-        const res = await fetch(`/api/search?q=${encodeURIComponent(q)}&k=15`);
+        const res = await fetch(`/api/galaxy/search?q=${encodeURIComponent(q)}&k=15`);
         if (!res.ok) return;
         const data = await res.json();
         if (q !== _lastSearchQuery) return; // stale

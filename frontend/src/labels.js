@@ -15,8 +15,8 @@ export function makeLabels() {
         d.dataset.cid=cl.id;
         d.style.pointerEvents='auto';
         const t = maxC > minC ? (cl.paper_count - minC) / (maxC - minC) : 0.5;
-        const fontSize = Math.round(10 + t * 8); // 10px → 18px
-        d.innerHTML=`<div class="cl-name" style="font-size:${fontSize}px">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
+        const fontSize = Math.round(14 + t * 12); // 14px → 26px
+        d.innerHTML=`<div class="cl-dot" style="background:${cl.color};box-shadow:0 0 12px ${cl.color}"></div><div class="cl-name" style="font-size:${fontSize}px">${cl.name}</div><div class="cl-count">${cl.paper_count.toLocaleString()} papers</div>`;
         d.onclick=e=>{e.stopPropagation();state.hasInteracted=true;zoomToCluster(cl);};
         d.onmouseenter=(e)=>{document.getElementById('tooltip').style.display='none';dimExcept(cl.id);showBubble(cl.id);showClusterInsight(cl,e);};
         d.onmouseleave=()=>{if(!state.activeCluster){dimExcept(null);hideBubbles();}hideClusterInsight();};

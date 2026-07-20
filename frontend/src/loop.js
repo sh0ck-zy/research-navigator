@@ -2,6 +2,7 @@ import * as THREE from 'three';
 import { state } from './state.js';
 import { updateLabels } from './labels.js';
 import { exitCluster } from './clusters.js';
+import { updateChartRing } from './chart.js';
 
 export function loop(){
     requestAnimationFrame(loop);
@@ -32,10 +33,13 @@ export function loop(){
         state.edgesMesh.material.opacity = edgeOpacity;
     }
 
-    // Auto-exit cluster on zoom-out
-    if (state.activeCluster !== null && state.clusterZoomDist > 0) {
+    // Auto-exit cluster on zoom-out (not while the intel page covers the map)
+    if (state.activeCluster !== null && state.clusterZoomDist > 0 && !state.intelOpen) {
         if (dist > state.clusterZoomDist * 2.0) exitCluster();
     }
+
+    // Territory ring follows the claimed cluster
+    updateChartRing(THREE);
 
     // Position king paper labels
     state.kingLabelEls.forEach(({el, index})=>{

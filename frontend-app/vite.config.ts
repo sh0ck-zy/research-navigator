@@ -5,6 +5,8 @@ import react from "@vitejs/plugin-react";
 // macOS localhost can resolve to ::1 first and miss a server bound to IPv4.
 export default defineConfig({
   plugins: [react()],
+  // Served under /app by backend/app.py — the galaxy owns /.
+  base: "/app/",
   server: {
     port: 5173,
     proxy: {

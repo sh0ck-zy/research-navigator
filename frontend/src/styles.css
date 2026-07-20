@@ -414,3 +414,39 @@ body { background:#0a0a0a; color:#e8eaed; overflow:hidden; font-family:'Inter',s
 .conn-item { display:flex; align-items:center; gap:8px; padding:6px 0; cursor:pointer; }
 .conn-item:hover { opacity:0.8; }
 .conn-bar { height:4px; border-radius:2px; min-width:20px; }
+
+/* Cluster Intelligence — docked, the map stays alive on the left */
+#cluster-intel {
+    position:fixed; top:0; right:0; bottom:0; width:620px; max-width:96vw; z-index:300; overflow-y:auto;
+    background:linear-gradient(to right, rgba(8,8,11,0) 0%, rgba(8,8,11,0.92) 8%, rgba(8,8,11,0.985) 22%);
+    backdrop-filter:blur(10px);
+    pointer-events:auto;
+    display:none; opacity:0; transform:translateX(40px);
+    transition:opacity 0.45s, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+#cluster-intel.visible { opacity:1; transform:translateX(0); }
+
+/* Chart mode — reading-list instrument, docked left over the living map */
+#chart-panel {
+    position:fixed; top:24px; left:24px; bottom:24px; width:380px; max-width:90vw; z-index:280;
+    background:rgba(10,10,14,0.88); border:1px solid rgba(255,255,255,0.09); border-radius:18px;
+    backdrop-filter:blur(30px); box-shadow:0 24px 80px rgba(0,0,0,0.7);
+    pointer-events:auto; overflow-y:auto;
+    display:none; opacity:0; transform:translateX(-24px);
+    transition:opacity 0.45s, transform 0.45s cubic-bezier(0.22,1,0.36,1);
+}
+#chart-panel.visible { opacity:1; transform:translateX(0); }
+#chart-panel::-webkit-scrollbar, #cluster-intel::-webkit-scrollbar { width:0; }
+.chart-rp { display:flex; gap:10px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer; align-items:flex-start; }
+.chart-rp .box { width:14px; height:14px; border:1px solid rgba(255,255,255,0.28); border-radius:4px; flex-shrink:0; margin-top:2px; transition:all 0.25s; }
+.chart-rp.done .box { background:var(--chart-cl, #4A9EFF); border-color:var(--chart-cl, #4A9EFF); }
+.chart-rp .t { font-size:12px; color:rgba(255,255,255,0.72); line-height:1.45; transition:color 0.25s; }
+.chart-rp.done .t { color:rgba(255,255,255,0.26); text-decoration:line-through; }
+
+/* Territory ring — DOM ring projected onto the claimed cluster */
+.territory-ring {
+    position:fixed; z-index:14; pointer-events:none;
+    border:1.5px solid; border-radius:50%;
+    transform:translate(-50%,-50%);
+    display:none;
+}

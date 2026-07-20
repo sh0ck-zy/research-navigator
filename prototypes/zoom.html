@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAV · A — O Céu Contínuo</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:#08080b; font-family:'Inter',sans-serif; color:#fff; }
+  #sky { position:fixed; inset:0; transition:transform 1.6s cubic-bezier(0.22,1,0.36,1), filter 1.6s cubic-bezier(0.22,1,0.36,1); }
+  #sky.dove { transform:scale(2.1); filter:blur(3px) brightness(0.55); }
+  #sky.claimed { transform:scale(1.35); filter:blur(1px) brightness(0.75); }
+
+  /* ENTRY */
+  #entry { position:fixed; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; transition:opacity 0.8s, transform 1.2s cubic-bezier(0.22,1,0.36,1); z-index:10; }
+  #entry.gone { opacity:0; transform:translateY(-60px) scale(0.92); pointer-events:none; }
+  #entry h1 { font-family:'Playfair Display',serif; font-size:56px; font-weight:500; letter-spacing:0.02em; margin-bottom:10px; }
+  #entry .sub { color:rgba(255,255,255,0.35); font-weight:300; font-size:15px; margin-bottom:44px; }
+  #omnibox { width:480px; max-width:86vw; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:28px; padding:16px 24px; font-size:15px; color:#fff; font-family:'Inter',sans-serif; outline:none; backdrop-filter:blur(20px); transition:border-color 0.3s; }
+  #omnibox:focus { border-color:rgba(255,255,255,0.3); }
+  #omnibox::placeholder { color:rgba(255,255,255,0.25); }
+  #hint { margin-top:16px; font-size:12px; color:rgba(255,255,255,0.3); cursor:pointer; border-bottom:1px dotted rgba(255,255,255,0.25); padding-bottom:1px; }
+  #hint:hover { color:rgba(255,255,255,0.6); }
+
+  /* BRIEF — rises over the sky */
+  #brief { position:fixed; left:50%; bottom:0; transform:translate(-50%,105%); width:680px; max-width:92vw; max-height:78vh; overflow-y:auto; background:rgba(12,12,17,0.82); border:1px solid rgba(255,255,255,0.1); border-bottom:none; border-radius:20px 20px 0 0; backdrop-filter:blur(30px); z-index:20; transition:transform 1.1s cubic-bezier(0.22,1,0.36,1); }
+  #brief.up { transform:translate(-50%,0); }
+  #brief.docked { transform:translate(-50%,0); opacity:0; pointer-events:none; transition:transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s; }
+  #brief::-webkit-scrollbar { width:0; }
+  .pad { padding:36px 40px 44px; }
+  .kicker { font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.3); margin-bottom:14px; }
+  .clname { font-family:'Playfair Display',serif; font-size:34px; font-weight:500; line-height:1.15; margin-bottom:10px; }
+  .clmeta { font-size:13px; color:rgba(255,255,255,0.4); margin-bottom:30px; }
+  .clmeta b { color:var(--cl); font-weight:600; }
+  .sect { font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin:26px 0 10px; }
+  .school { padding:12px 0; border-bottom:1px solid rgba(255,255,255,0.05); }
+  .school:last-child { border-bottom:none; }
+  .school .nm { font-size:14px; color:rgba(255,255,255,0.88); margin-bottom:2px; }
+  .school .ct { font-size:11px; color:rgba(255,255,255,0.35); }
+  .king { font-size:13px; color:rgba(255,255,255,0.65); padding:5px 0; line-height:1.5; }
+  .king a { color:inherit; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,0.25); }
+  .king span { color:rgba(255,255,255,0.3); font-size:11px; }
+  #claimBtn { margin-top:34px; width:100%; background:rgba(255,255,255,0.92); color:#0a0a0d; border:none; border-radius:24px; padding:15px; font-size:14px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer; transition:transform 0.25s, background 0.25s; }
+  #claimBtn:hover { transform:scale(1.015); background:#fff; }
+
+  /* CHART — glass panels floating in the sky */
+  .glass { background:rgba(12,12,17,0.78); border:1px solid rgba(255,255,255,0.1); border-radius:18px; backdrop-filter:blur(30px); }
+  #chartList { position:fixed; left:28px; top:28px; bottom:28px; width:360px; z-index:20; padding:26px; overflow-y:auto; transform:translateX(-115%); transition:transform 1s cubic-bezier(0.22,1,0.36,1) 0.35s; }
+  #chartList.in { transform:translateX(0); }
+  #chartList::-webkit-scrollbar { width:0; }
+  #q { font-family:'Playfair Display',serif; font-size:19px; line-height:1.4; margin-bottom:4px; }
+  #prog { font-size:11px; color:var(--cl); margin-bottom:22px; }
+  .rp { display:flex; gap:10px; padding:9px 0; border-bottom:1px solid rgba(255,255,255,0.05); cursor:pointer; align-items:flex-start; }
+  .rp:last-child { border:none; }
+  .rp .box { width:14px; height:14px; border:1px solid rgba(255,255,255,0.25); border-radius:4px; flex-shrink:0; margin-top:2px; transition:all 0.25s; }
+  .rp.done .box { background:var(--cl); border-color:var(--cl); }
+  .rp .t { font-size:12px; color:rgba(255,255,255,0.7); line-height:1.45; transition:color 0.25s; }
+  .rp.done .t { color:rgba(255,255,255,0.28); text-decoration:line-through; }
+  .rp .y { font-size:10px; color:rgba(255,255,255,0.25); margin-top:2px; }
+  #board { position:fixed; right:28px; bottom:28px; width:330px; z-index:20; padding:22px 24px; transform:translateY(130%); transition:transform 1s cubic-bezier(0.22,1,0.36,1) 0.6s; }
+  #board.in { transform:translateY(0); }
+  .chip { display:inline-block; font-size:11px; color:rgba(255,255,255,0.65); border:1px solid rgba(255,255,255,0.12); border-radius:14px; padding:5px 11px; margin:3px 2px; }
+  #back { position:fixed; top:24px; left:28px; z-index:30; font-size:11px; color:rgba(255,255,255,0.3); text-decoration:none; opacity:0; transition:opacity 0.5s 1.2s; }
+  #back.in { opacity:1; }
+  #back:hover { color:#fff; }
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<a id="back" href="index.html">← all dances</a>
+
+<div id="entry">
+  <h1>NAV</h1>
+  <p class="sub">Where are you going?</p>
+  <input id="omnibox" placeholder="Paste a paper, or describe a territory…">
+  <div id="hint">or try: efficient language model training</div>
+</div>
+
+<div id="brief"><div class="pad" id="briefBody"></div></div>
+<div id="chartList" class="glass"></div>
+<div id="board" class="glass"></div>
+
+<script src="data.js"></script>
+<script>
+const CL = DATA.color;
+document.documentElement.style.setProperty('--cl', CL);
+const cv = document.getElementById('sky'), cx = cv.getContext('2d');
+let W, H, stars = [], nebulae = [], claimed = [];
+
+function seed() {
+  W = cv.width = innerWidth; H = cv.height = innerHeight;
+  stars = Array.from({length: 700}, () => ({ x: Math.random()*W, y: Math.random()*H, r: Math.random()*1.1+0.2, tw: Math.random()*6.28, sp: 0.3+Math.random()*0.9 }));
+  nebulae = DATA.all_clusters.map((c, i) => {
+    const a = (i / DATA.all_clusters.length) * 6.28;
+    return { x: W/2 + Math.cos(a)*W*0.31*(0.7+Math.random()*0.5), y: H/2 + Math.sin(a)*H*0.3*(0.7+Math.random()*0.5), r: 60+Math.sqrt(c.paper_count)*3.2, color: c.color, main: c.id === 3 };
+  });
+}
+function draw(t) {
+  cx.clearRect(0,0,W,H);
+  for (const n of nebulae) {
+    const g = cx.createRadialGradient(n.x,n.y,0,n.x,n.y,n.r);
+    g.addColorStop(0, n.color + (n.main ? '2e' : '16'));
+    g.addColorStop(1, 'transparent');
+    cx.fillStyle = g; cx.beginPath(); cx.arc(n.x,n.y,n.r,0,6.28); cx.fill();
+  }
+  for (const s of stars) {
+    const a = 0.25 + 0.55*Math.abs(Math.sin(t*0.0006*s.sp + s.tw));
+    cx.fillStyle = `rgba(255,255,255,${a})`;
+    cx.beginPath(); cx.arc(s.x,s.y,s.r,0,6.28); cx.fill();
+  }
+  for (const p of claimed) {
+    const pulse = 2.2 + Math.sin(t*0.004 + p.o)*1.1;
+    cx.fillStyle = CL; cx.beginPath(); cx.arc(p.x,p.y,pulse,0,6.28); cx.fill();
+    cx.fillStyle = CL+'30'; cx.beginPath(); cx.arc(p.x,p.y,pulse*3,0,6.28); cx.fill();
+  }
+  requestAnimationFrame(draw);
+}
+seed(); requestAnimationFrame(draw);
+addEventListener('resize', seed);
+
+const main = nebulae => nebulae; // (lint noop)
+function dive() {
+  document.getElementById('entry').classList.add('gone');
+  document.getElementById('sky').classList.add('dove');
+  const c = DATA.cluster;
+  document.getElementById('briefBody').innerHTML = `
+    <div class="kicker">Territory · ${c.paper_count.toLocaleString()} papers</div>
+    <div class="clname">${c.name}</div>
+    <div class="clmeta">${c.year_min}–${c.year_max} · <b>+${Math.round((c.growth_recent||0)*100)}% recent growth</b></div>
+    <div class="sect">Schools of the territory</div>
+    ${c.sub_areas.map(s => `<div class="school"><div class="nm">${s.label}</div><div class="ct">${s.paper_count} papers · ${Math.round(s.recent_share*100)}% recent${s.recent_share >= 0.4 ? ' · ▲ hot' : ''}</div></div>`).join('')}
+    <div class="sect">Foundational papers</div>
+    ${c.king_papers.slice(0,4).map(k => `<div class="king"><a href="https://arxiv.org/abs/${k.id}" target="_blank">${k.title}</a> <span>${k.year||''}</span></div>`).join('')}
+    <button id="claimBtn">Claim this territory →</button>`;
+  document.getElementById('brief').classList.add('up');
+  document.getElementById('claimBtn').onclick = claim;
+}
+document.getElementById('hint').onclick = dive;
+document.getElementById('omnibox').addEventListener('keydown', e => { if (e.key === 'Enter') dive(); });
+
+function claim() {
+  const mainN = { x: W/2, y: H/2 };
+  claimed = DATA.papers.slice(0, 24).map((p, i) => {
+    const a = i * 2.4, r = 40 + i * 9;
+    return { x: mainN.x + Math.cos(a)*r, y: mainN.y + Math.sin(a)*r*0.7, o: i };
+  });
+  document.getElementById('brief').classList.add('docked');
+  document.getElementById('sky').classList.remove('dove');
+  document.getElementById('sky').classList.add('claimed');
+
+  const list = DATA.papers.slice(0, 14);
+  document.getElementById('chartList').innerHTML = `
+    <div class="kicker" style="margin-bottom:10px">Your expedition</div>
+    <div id="q">Can language models know when they are wrong?</div>
+    <div id="prog"><span id="doneN">0</span> of ${list.length} charted</div>
+    ${list.map((p,i) => `<div class="rp" data-i="${i}"><div class="box"></div><div><div class="t">${p.title}</div><div class="y">${p.year||''} · arxiv ${p.id}</div></div></div>`).join('')}`;
+  document.getElementById('board').innerHTML = `
+    <div class="kicker" style="margin-bottom:10px">Living board</div>
+    <span class="chip">RLHF & feedback</span><span class="chip">long-context training</span><span class="chip">distillation</span>
+    <div style="font-size:11px;color:rgba(255,255,255,0.3);margin-top:12px;font-style:italic">Claims and evidence gather here as you chart.</div>`;
+  requestAnimationFrame(() => {
+    document.getElementById('chartList').classList.add('in');
+    document.getElementById('board').classList.add('in');
+    document.getElementById('back').classList.add('in');
+  });
+  document.querySelectorAll('.rp').forEach(el => el.onclick = () => {
+    el.classList.toggle('done');
+    document.getElementById('doneN').textContent = document.querySelectorAll('.rp.done').length;
+  });
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAV · C — As Duas Metades</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html,body { height:100%; overflow:hidden; background:#08080b; font-family:'Inter',sans-serif; color:#fff; }
+  #mapPane { position:fixed; left:0; top:0; bottom:0; width:45%; border-right:1px solid rgba(255,255,255,0.07); }
+  #map { width:100%; height:100%; display:block; }
+  #mapLabel { position:absolute; left:24px; top:22px; font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:rgba(255,255,255,0.3); transition:color 0.5s; }
+  #mapProg { position:absolute; left:24px; bottom:22px; font-size:12px; color:var(--cl); opacity:0; transition:opacity 0.6s; }
+  #workPane { position:fixed; right:0; top:0; bottom:0; width:55%; overflow-y:auto; }
+  #workPane::-webkit-scrollbar { width:0; }
+  .pad { max-width:600px; margin:0 auto; padding:72px 40px 120px; }
+  .kicker { font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.3); }
+  h1 { font-family:'Playfair Display',serif; font-weight:500; font-size:36px; line-height:1.15; margin:14px 0 10px; }
+  .meta { font-size:12.5px; color:rgba(255,255,255,0.38); margin-bottom:34px; }
+  .meta b { color:var(--cl); font-weight:600; }
+  #omnibox { width:100%; background:rgba(255,255,255,0.04); border:1px solid rgba(255,255,255,0.12); border-radius:24px; padding:14px 20px; font-size:14px; color:#fff; font-family:'Inter',sans-serif; outline:none; margin-top:28px; }
+  #omnibox::placeholder { color:rgba(255,255,255,0.25); }
+  #hint { margin-top:14px; font-size:12px; color:rgba(255,255,255,0.3); cursor:pointer; }
+  #hint span { border-bottom:1px dotted rgba(255,255,255,0.25); }
+  #hint:hover { color:rgba(255,255,255,0.6); }
+  .sect { font-size:10px; letter-spacing:0.16em; text-transform:uppercase; color:rgba(255,255,255,0.28); margin:30px 0 8px; }
+  .school { padding:11px 14px; border-radius:10px; border:1px solid transparent; cursor:pointer; transition:all 0.25s; }
+  .school:hover, .school.lit { background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.09); }
+  .school .nm { font-size:14px; color:rgba(255,255,255,0.88); margin-bottom:2px; }
+  .school .ct { font-size:11px; color:rgba(255,255,255,0.35); }
+  .king { font-size:12.5px; color:rgba(255,255,255,0.6); padding:5px 0; line-height:1.5; }
+  .king a { color:inherit; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,0.25); }
+  .king span { color:rgba(255,255,255,0.3); font-size:10.5px; }
+  #claimBtn { margin-top:32px; width:100%; background:rgba(255,255,255,0.92); color:#0a0a0d; border:none; border-radius:22px; padding:14px; font-size:13.5px; font-weight:600; font-family:'Inter',sans-serif; cursor:pointer; transition:transform 0.25s; }
+  #claimBtn:hover { transform:scale(1.01); }
+  .rp { display:flex; gap:11px; padding:10px 14px; border-radius:10px; border:1px solid transparent; cursor:pointer; align-items:flex-start; transition:all 0.25s; }
+  .rp:hover, .rp.lit { background:rgba(255,255,255,0.04); border-color:rgba(255,255,255,0.09); }
+  .rp .box { width:14px; height:14px; border:1px solid rgba(255,255,255,0.28); border-radius:4px; flex-shrink:0; margin-top:2px; transition:all 0.25s; }
+  .rp.done .box { background:var(--cl); border-color:var(--cl); }
+  .rp .t { font-size:12.5px; color:rgba(255,255,255,0.72); line-height:1.45; transition:color 0.25s; }
+  .rp.done .t { color:rgba(255,255,255,0.26); text-decoration:line-through; }
+  #back { position:fixed; top:20px; left:46%; margin-left:16px; font-size:11px; color:rgba(255,255,255,0.3); text-decoration:none; z-index:60; }
+  #back:hover { color:#fff; }
+  .fade { transition:opacity 0.45s; }
+  .fade.out { opacity:0; }
+</style>
+</head>
+<body>
+<div id="mapPane">
+  <canvas id="map"></canvas>
+  <div id="mapLabel">Machine learning · 19 regions</div>
+  <div id="mapProg"></div>
+</div>
+<div id="workPane"><div class="pad" id="work"></div></div>
+<a id="back" href="index.html">← all dances</a>
+
+<script src="data.js"></script>
+<script>
+const CL = DATA.color;
+document.documentElement.style.setProperty('--cl', CL);
+const c = DATA.cluster;
+const cv = document.getElementById('map'), mx = cv.getContext('2d');
+const pane = document.getElementById('mapPane');
+let W, H, subNodes = [], claimedDots = [], litSub = -1, litPaper = -1, mode = 'explore', doneCount = 0;
+
+function layout() {
+  W = cv.width = pane.clientWidth * 2; H = cv.height = pane.clientHeight * 2;
+  // sub-area nodes positioned from the real brief landscape coords
+  subNodes = c.sub_areas.map((s, i) => ({
+    ...s,
+    x: W/2 + s.cx * W * 0.30,
+    y: H/2 - s.cy * H * 0.30,
+    r: 14 + Math.sqrt(s.paper_count) * 2.2,
+  }));
+  // claimed paper dots sprinkled around their sub-area
+  claimedDots = [];
+  const per = Math.ceil(24 / subNodes.length);
+  subNodes.forEach((n, si) => {
+    for (let j = 0; j < per; j++) {
+      const a = (si * 7 + j) * 2.4, r = 8 + j * 4;
+      claimedDots.push({ x: n.x + Math.cos(a)*r, y: n.y + Math.sin(a)*r*0.8, sub: si, idx: claimedDots.length });
+    }
+  });
+}
+
+function draw(t) {
+  mx.clearRect(0,0,W,H);
+  // background regions
+  DATA.all_clusters.forEach((cl, i) => {
+    if (cl.id === 3) return;
+    const a = (i / DATA.all_clusters.length) * 6.28;
+    const px = W/2 + Math.cos(a)*W*0.42, py = H/2 + Math.sin(a)*H*0.4;
+    mx.fillStyle = cl.color + '14';
+    mx.beginPath(); mx.arc(px, py, 30 + Math.sqrt(cl.paper_count)*2, 0, 6.28); mx.fill();
+  });
+  if (mode === 'explore') {
+    // territory mode: sub-areas as bubbles
+    subNodes.forEach((n, i) => {
+      const lit = i === litSub;
+      mx.strokeStyle = CL + (lit ? 'ff' : '50'); mx.lineWidth = lit ? 3 : 1.5;
+      mx.fillStyle = CL + (lit ? '30' : '12');
+      mx.beginPath(); mx.arc(n.x, n.y, n.r * (lit ? 1.15 : 1), 0, 6.28); mx.fill(); mx.stroke();
+      if (lit) {
+        mx.fillStyle = 'rgba(255,255,255,0.9)'; mx.font = '20px Inter';
+        mx.fillText(n.label, n.x + n.r + 12, n.y + 6);
+      }
+    });
+    mx.fillStyle = CL; mx.beginPath(); mx.arc(W/2, H/2, 5, 0, 6.28); mx.fill();
+  } else {
+    // claimed mode: your papers as stars; done = bright
+    claimedDots.forEach(d => {
+      const read = d.idx < doneCount * 2;
+      const lit = d.idx === litPaper;
+      const pulse = lit ? 3 + Math.sin(t*0.008)*2 : 0;
+      mx.fillStyle = read ? CL : 'rgba(255,255,255,0.18)';
+      mx.beginPath(); mx.arc(d.x, d.y, (read ? 3.4 : 2) + pulse, 0, 6.28); mx.fill();
+      if (read) { mx.fillStyle = CL+'25'; mx.beginPath(); mx.arc(d.x, d.y, 9 + pulse, 0, 6.28); mx.fill(); }
+    });
+    subNodes.forEach(n => {
+      mx.strokeStyle = CL + '30'; mx.lineWidth = 1;
+      mx.beginPath(); mx.arc(n.x, n.y, n.r, 0, 6.28); mx.stroke();
+    });
+  }
+  requestAnimationFrame(draw);
+}
+layout(); requestAnimationFrame(draw);
+addEventListener('resize', layout);
+
+const work = document.getElementById('work');
+
+/* BEAT 1+2: locate & orient */
+function brief() {
+  work.innerHTML = `
+    <div class="fade" id="fade">
+      <div class="kicker">Territory</div>
+      <h1>${c.name}</h1>
+      <div class="meta">${c.paper_count.toLocaleString()} papers · ${c.year_min}–${c.year_max} · <b>+${Math.round((c.growth_recent||0)*100)}% recent growth</b></div>
+      <div class="sect">Schools — hover to locate</div>
+      ${c.sub_areas.map((s, i) => `
+        <div class="school" data-i="${i}">
+          <div class="nm">${s.label}</div>
+          <div class="ct">${s.paper_count} papers · ${Math.round(s.recent_share*100)}% recent${s.recent_share >= 0.4 ? ' · ▲ hot' : ''}</div>
+        </div>`).join('')}
+      <div class="sect">Foundational papers</div>
+      ${c.king_papers.slice(0,4).map(k => `<div class="king"><a href="https://arxiv.org/abs/${k.id}" target="_blank">${k.title}</a> <span>${k.year||''}</span></div>`).join('')}
+      <button id="claimBtn">Claim this territory →</button>
+    </div>`;
+  document.querySelectorAll('.school').forEach(el => {
+    el.onmouseenter = () => { litSub = +el.dataset.i; };
+    el.onmouseleave = () => { litSub = -1; };
+  });
+  document.getElementById('claimBtn').onclick = claim;
+}
+
+function entry() {
+  work.innerHTML = `
+    <div class="fade">
+      <div class="kicker">NAV</div>
+      <h1>Find your<br>territory.</h1>
+      <input id="omnibox" placeholder="Paste a paper, or describe a territory…">
+      <div id="hint">or try: <span>efficient language model training</span></div>
+    </div>`;
+  document.getElementById('hint').onclick = brief;
+  document.getElementById('omnibox').addEventListener('keydown', e => { if (e.key === 'Enter') brief(); });
+}
+
+/* BEAT 3: claim — right becomes chart, map flips mode */
+function claim() {
+  mode = 'claimed';
+  document.getElementById('mapLabel').textContent = 'Your expedition · ' + c.name;
+  const list = DATA.papers.slice(0, 12);
+  work.innerHTML = `
+    <div class="fade" id="fade">
+      <div class="kicker">Your expedition</div>
+      <h1 style="font-size:26px">Can language models know when they are wrong?</h1>
+      <div class="meta"><span id="doneN">0</span> of ${list.length} charted — watch the map.</div>
+      <div class="sect">Reading list</div>
+      ${list.map((p, i) => `
+        <div class="rp" data-i="${i}">
+          <div class="box"></div>
+          <div><div class="t">${p.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.25);margin-top:2px">${p.year||''} · arxiv ${p.id}</div></div>
+        </div>`).join('')}
+      <div class="sect">Living board</div>
+      <div style="font-size:12px;color:rgba(255,255,255,0.3);font-style:italic">Claims and evidence gather here as you chart.</div>
+    </div>`;
+  const prog = document.getElementById('mapProg');
+  prog.style.opacity = 1;
+  const update = () => {
+    doneCount = document.querySelectorAll('.rp.done').length;
+    document.getElementById('doneN').textContent = doneCount;
+    prog.textContent = '● ' + (doneCount * 2) + ' papers charted';
+  };
+  document.querySelectorAll('.rp').forEach(el => {
+    el.onclick = () => { el.classList.toggle('done'); update(); };
+    el.onmouseenter = () => { litPaper = +el.dataset.i * 2; };
+    el.onmouseleave = () => { litPaper = -1; };
+  });
+}
+
+entry();
+</script>
+</body>
+</html>

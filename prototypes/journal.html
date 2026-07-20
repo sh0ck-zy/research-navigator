@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NAV · B — O Diário de Expedição</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { background:#0a0a0d; color:#fff; font-family:'Inter',sans-serif; min-height:100vh; }
+  .page { max-width:660px; margin:0 auto; padding:80px 28px 160px; }
+  .r { opacity:0; transform:translateY(18px); transition:opacity 0.9s cubic-bezier(0.22,1,0.36,1), transform 0.9s cubic-bezier(0.22,1,0.36,1); }
+  .r.in { opacity:1; transform:none; }
+  .kicker { font-size:10px; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.3); }
+  h1 { font-family:'Playfair Display',serif; font-weight:500; font-size:44px; line-height:1.12; margin:18px 0 14px; transition:opacity 0.6s; }
+  .dateline { font-size:12.5px; color:rgba(255,255,255,0.38); margin-bottom:44px; }
+  .dateline b { color:var(--cl); font-weight:600; }
+  p.lede { font-family:'Playfair Display',serif; font-size:19px; font-weight:400; line-height:1.65; color:rgba(255,255,255,0.82); margin-bottom:36px; }
+  sup { color:var(--cl); font-size:10px; cursor:pointer; }
+  sup:hover { text-decoration:underline; }
+  .figwrap { margin:40px 0; }
+  canvas.plate { width:100%; border-radius:10px; display:block; cursor:zoom-in; }
+  figcaption { font-size:11px; color:rgba(255,255,255,0.32); margin-top:10px; font-style:italic; }
+  h2 { font-family:'Playfair Display',serif; font-weight:500; font-size:24px; margin:52px 0 18px; }
+  .school { padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.06); }
+  .school:last-child { border:none; }
+  .school .nm { font-size:15px; color:rgba(255,255,255,0.9); margin-bottom:3px; }
+  .school .ct { font-size:12px; color:rgba(255,255,255,0.38); line-height:1.6; }
+  #claimRow { margin:64px 0; text-align:center; }
+  #claimBtn { background:none; border:1px solid rgba(255,255,255,0.25); color:#fff; border-radius:30px; padding:16px 42px; font-size:14px; font-family:'Playfair Display',serif; letter-spacing:0.04em; cursor:pointer; transition:all 0.4s; }
+  #claimBtn:hover { border-color:var(--cl); color:var(--cl); }
+  .sources { margin-top:70px; padding-top:26px; border-top:1px solid rgba(255,255,255,0.08); }
+  .src { font-size:11.5px; color:rgba(255,255,255,0.4); padding:4px 0; line-height:1.6; }
+  .src a { color:inherit; text-decoration:none; border-bottom:1px dotted rgba(255,255,255,0.2); }
+  .src b { color:var(--cl); font-weight:500; }
+
+  /* ENTRY state */
+  #entry { min-height:78vh; display:flex; flex-direction:column; justify-content:center; }
+  #omnibox { background:none; border:none; border-bottom:1px solid rgba(255,255,255,0.2); padding:12px 2px; font-size:22px; color:#fff; font-family:'Playfair Display',serif; outline:none; width:100%; transition:border-color 0.4s; }
+  #omnibox:focus { border-color:var(--cl); }
+  #omnibox::placeholder { color:rgba(255,255,255,0.22); font-style:italic; }
+  #hint { margin-top:18px; font-size:12px; color:rgba(255,255,255,0.3); cursor:pointer; }
+  #hint:hover { color:rgba(255,255,255,0.6); }
+  #hint span { border-bottom:1px dotted rgba(255,255,255,0.25); }
+
+  /* CLAIMED state */
+  .rp { display:flex; gap:12px; padding:11px 0; border-bottom:1px solid rgba(255,255,255,0.06); cursor:pointer; align-items:flex-start; }
+  .rp:last-child { border:none; }
+  .rp .box { width:15px; height:15px; border:1px solid rgba(255,255,255,0.3); border-radius:3px; flex-shrink:0; margin-top:2px; transition:all 0.3s; }
+  .rp.done .box { background:var(--cl); border-color:var(--cl); }
+  .rp .t { font-size:13.5px; color:rgba(255,255,255,0.75); line-height:1.5; transition:color 0.3s; }
+  .rp.done .t { color:rgba(255,255,255,0.26); text-decoration:line-through; }
+  #cornerMap { position:fixed; right:22px; bottom:22px; width:150px; height:150px; border-radius:50%; border:1px solid rgba(255,255,255,0.12); cursor:zoom-in; opacity:0; transform:scale(0.6); transition:all 0.8s cubic-bezier(0.22,1,0.36,1) 0.5s; background:#0a0a0d; }
+  #cornerMap.in { opacity:1; transform:scale(1); }
+  #cornerMap.big { width:min(560px,80vw); height:min(560px,80vw); right:50%; bottom:50%; transform:translate(50%,50%) scale(1); z-index:50; cursor:zoom-out; }
+  #back { position:fixed; top:22px; left:24px; font-size:11px; color:rgba(255,255,255,0.3); text-decoration:none; z-index:60; }
+  #back:hover { color:#fff; }
+</style>
+</head>
+<body>
+<a id="back" href="index.html">← all dances</a>
+<div class="page" id="page"></div>
+<canvas id="cornerMap" width="300" height="300"></canvas>
+
+<script src="data.js"></script>
+<script>
+const CL = DATA.color;
+document.documentElement.style.setProperty('--cl', CL);
+const page = document.getElementById('page');
+const c = DATA.cluster;
+
+function reveal() {
+  document.querySelectorAll('.r:not(.in)').forEach((el, i) => setTimeout(() => el.classList.add('in'), 120 + i * 130));
+}
+
+/* ---- mini map plate ---- */
+function drawPlate(cv, progress) {
+  const x = cv.getContext('2d'), W = cv.width, H = cv.height;
+  x.clearRect(0,0,W,H);
+  DATA.all_clusters.forEach((cl, i) => {
+    const a = (i / DATA.all_clusters.length) * 6.28;
+    const px = W/2 + Math.cos(a)*W*0.36, py = H/2 + Math.sin(a)*H*0.34;
+    const main = cl.id === 3;
+    x.fillStyle = cl.color + (main ? '50' : '1c');
+    x.beginPath(); x.arc(px, py, main ? 26 : 10 + Math.sqrt(cl.paper_count)*0.5, 0, 6.28); x.fill();
+    if (main) { x.strokeStyle = cl.color; x.lineWidth = 1; x.beginPath(); x.arc(px, py, 32, 0, 6.28); x.stroke(); }
+  });
+  if (progress) {
+    for (let i = 0; i < progress; i++) {
+      const a = i * 2.4;
+      x.fillStyle = CL;
+      x.beginPath(); x.arc(W/2 + Math.cos(a)*26, H/2 + Math.sin(a)*18, 2.2, 0, 6.28); x.fill();
+    }
+  }
+}
+
+/* ---- BEAT 1: entry ---- */
+function entry() {
+  page.innerHTML = `
+    <div id="entry">
+      <div class="r kicker">NAV · field instrument</div>
+      <h1 class="r">Where are you<br>going?</h1>
+      <div class="r" style="margin-top:36px"><input id="omnibox" placeholder="a paper, a territory, a question…"></div>
+      <div class="r" id="hint">or begin with the territory of <span>efficient language model training</span></div>
+      <div class="r figwrap" style="margin-top:64px">
+        <canvas class="plate" id="plate1" width="1200" height="360"></canvas>
+        <figcaption>Fig. 1 — the territory of machine learning. 10,000 papers, 19 regions. One is circled.</figcaption>
+      </div>
+    </div>`;
+  drawPlate(document.getElementById('plate1'));
+  reveal();
+  document.getElementById('hint').onclick = brief;
+  document.getElementById('omnibox').addEventListener('keydown', e => { if (e.key === 'Enter') brief(); });
+  document.getElementById('plate1').onclick = brief;
+}
+
+/* ---- BEAT 2: the field report ---- */
+function brief() {
+  const srcs = c.king_papers.slice(0, 4);
+  page.innerHTML = `
+    <div class="r kicker">Field report · machine learning</div>
+    <h1 class="r">${c.name}</h1>
+    <div class="r dateline">${c.paper_count.toLocaleString()} papers · ${c.year_min}–${c.year_max} · <b>+${Math.round((c.growth_recent||0)*100)}% recent growth</b></div>
+    <p class="r lede">${c.description}<sup onclick="document.getElementById('sources').scrollIntoView({behavior:'smooth'})">[1]</sup></p>
+    <div class="r figwrap">
+      <canvas class="plate" id="plate2" width="1200" height="500"></canvas>
+      <figcaption>Fig. 2 — the landscape. Five schools, sized by papers; the ringed region is where the movement is.</figcaption>
+    </div>
+    <h2 class="r">The schools</h2>
+    ${c.sub_areas.map((s, i) => `
+      <div class="r school">
+        <div class="nm">${s.label}</div>
+        <div class="ct">${s.paper_count} papers · ${Math.round(s.recent_share*100)}% recent${s.recent_share >= 0.4 ? ' · <b style="color:'+CL+'">currently active</b>' : ''}<sup>[${i+1}]</sup></div>
+      </div>`).join('')}
+    <div class="r" id="claimRow"><button id="claimBtn">Claim this territory</button></div>
+    <div class="r sources" id="sources">
+      <div class="kicker" style="margin-bottom:12px">Sources</div>
+      ${srcs.map((k, i) => `<div class="src"><b>[${i+1}]</b> <a href="https://arxiv.org/abs/${k.id}" target="_blank">${k.title}</a> (${k.year||'n.d.'})</div>`).join('')}
+    </div>`;
+  scrollTo(0,0);
+  drawPlate(document.getElementById('plate2'));
+  reveal();
+  document.getElementById('claimBtn').onclick = claim;
+}
+
+/* ---- BEAT 3: the flip — the document becomes yours ---- */
+function claim() {
+  const list = DATA.papers.slice(0, 12);
+  page.innerHTML = `
+    <div class="r kicker">Expedition № 1 · claimed territory</div>
+    <h1 class="r">Can language models know when they are wrong?</h1>
+    <div class="r dateline">Charting <b>${c.name}</b> · <span id="doneN">0</span> of ${list.length} read</div>
+    <h2 class="r">The reading list</h2>
+    <div class="r" style="font-size:12px;color:rgba(255,255,255,0.35);margin-bottom:14px;font-style:italic">Ranked by centrality to the territory. Check as you read — the corner map keeps score.</div>
+    ${list.map((p, i) => `
+      <div class="r rp" data-i="${i}">
+        <div class="box"></div>
+        <div><div class="t">${p.title}</div><div style="font-size:10.5px;color:rgba(255,255,255,0.28);margin-top:2px">${p.year||''} · arxiv ${p.id}</div></div>
+      </div>`).join('')}
+    <h2 class="r">Marginalia</h2>
+    <div class="r" style="font-size:13px;color:rgba(255,255,255,0.35);font-style:italic;line-height:1.7">
+      Your claims and evidence gather here as you read — each with its sources, each yours to accept or strike out.
+    </div>`;
+  scrollTo(0,0);
+  reveal();
+  const corner = document.getElementById('cornerMap');
+  drawPlate(corner, 0);
+  corner.classList.add('in');
+  corner.onclick = () => corner.classList.toggle('big');
+  let done = 0;
+  document.querySelectorAll('.rp').forEach(el => el.onclick = () => {
+    el.classList.toggle('done');
+    done += el.classList.contains('done') ? 1 : -1;
+    document.getElementById('doneN').textContent = done;
+    drawPlate(corner, done);
+  });
+}
+
+entry();
+</script>
+</body>
+</html>
