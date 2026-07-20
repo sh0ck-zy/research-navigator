@@ -1,60 +1,115 @@
-# Clarity Research
+# Clarity Research — NAV
 
-> Build the platform where the world does research.
+> Give every researcher the ability to navigate knowledge at expert speed.
 
-## What is this repo?
+## What is this repo
 
-This is not just code. This is the full knowledge base of a product from zero to launch — research, decisions, product definition, and code. Everything needed to understand **why** we built what we built, not just **what** we built.
+Not just code — the full knowledge base of a product from zero to launch: the
+research we did before building, the decisions (ADRs) with their reasoning, the
+product definition, and the working system. It's meant to explain **why** we
+built what we built, not only **what**.
+
+## The product (one line)
+
+**NAV is a knowledge-exploration universe with intelligence-powered research
+spaces.** One product at two zoom levels, like a map from Earth → street:
+
+```
+Field  →  Cluster  →  Research question  →  Your project
+   (explore, public)        (create, personal)
+```
+
+- **Galaxy** — the public, no-account discovery layer. Open the URL, see a
+  scientific field rendered as a navigable map, explore a cluster, receive
+  cluster intelligence. This is acquisition *and* value in one.
+- **Research Space** — the personal, persistent creation layer. Seeded from a
+  cluster, holds a Living Research Board. This is what you return to and pay for.
+
+The full rationale is in **[docs/decisions/011-nav-exploration-universe.md](docs/decisions/011-nav-exploration-universe.md)**
+(the accepted direction) and the first-session spec in
+**[docs/decisions/012-first-research-journey.md](docs/decisions/012-first-research-journey.md)**.
 
 ## Status
 
-**Stage:** Pre-product — defining what to build.
+**Stage:** NAV v0 in build. The galaxy (explore) and research spaces (create)
+are wired into one FastAPI server. Next differentiating work per ADR-011: the
+**Cluster Intelligence Page** — the precomputed "landscape of schools" screen.
 
 ## Structure
 
 ```
 clarity-research/
-├── research/              # Everything we learned before writing code
-│   ├── domain/            # How the research world works (workflows, tools, pain points)
-│   ├── product/           # Pain maps, feature candidates, user quotes
-│   ├── market/            # TAM, pricing, business models
-│   └── competitors/       # What exists, what works, what doesn't
+├── research/           # What we learned before writing code
+│   ├── domain/         # How the research world works (workflows, pain points)
+│   ├── product/        # Pain maps, feature candidates, user quotes
+│   ├── market/         # TAM, pricing, business models
+│   └── competitors/    # What exists, what works, what doesn't
 ├── docs/
-│   ├── decisions/         # ADRs: every major decision, with context and reasoning
-│   └── playbook/          # Reusable methodology (launch, distribution, validation)
-├── design/                # UI/UX explorations, mockups, prototypes
+│   ├── decisions/      # ADRs — every major decision, with context + reasoning
+│   ├── playbook/       # Reusable methodology (launch, distribution, validation)
+│   ├── research-navigator.md   # Research-spaces run/setup notes
+│   └── deploy-hf-spaces.md     # Hugging Face Spaces (Docker) deploy
 ├── backend/
-│   ├── pipeline/          # OpenAlex ingest → embed → UMAP → Leiden → name → export
-│   └── api.py             # FastAPI: semantic search (FAISS) + serves the frontend
-├── frontend/              # The Observatory — Three.js map (Vite + ES modules)
-│   ├── src/               # scene, labels, clusters, papers, search, nav, stats, loop
-│   └── data/              # map_data.json produced by the pipeline (gitignored)
-└── data/                  # Pipeline caches: raw papers, embeddings, projections (gitignored)
+│   ├── app.py          # NAV unified server: galaxy + spaces + /api (RUN THIS)
+│   ├── api.py          # Legacy standalone galaxy API (still the Docker CMD)
+│   ├── pipeline/       # OpenAlex ingest → embed → UMAP → Leiden → name → export
+│   ├── routers/        # projects, papers, board, search, export, jobs, galaxy
+│   ├── services/       # galaxy + supporting logic
+│   ├── scripts/        # build_cluster_briefs, seed/demo
+│   ├── citations.py    # BibTeX (mirror of galaxy/src/bibtex.js)
+│   └── db.py           # SQLite: projects, papers, board (navigator.db)
+├── galaxy/             # The Observatory — Three.js map (Vite + ES modules)
+│   ├── src/            # scene, clusters, papers, dock, camera, intel, search…
+│   └── data/           # map_data.json + cluster_briefs.json (gitignored)
+├── spaces/             # Research-spaces SPA — React + Vite + Tailwind (base /app/)
+│   └── src/            # ProjectList, Board, Library, NewProject…
+├── design/             # UI/UX explorations, mockups, screenshots
+├── prototypes/         # Standalone HTML experiments
+├── reference/          # Mined ideas + assets from the 4 predecessor projects
+└── data/               # Pipeline caches: raw, embeddings, projections (gitignored)
 ```
 
 ## Running it
 
 ```bash
-# Backend (terminal 1) — pipeline outputs must exist (python backend/pipeline/run_pipeline.py)
+# One process serves everything: galaxy at /, research spaces at /app, API at /api
 source .venv/bin/activate
-uvicorn backend.api:app --port 8000
+uvicorn backend.app:app --port 8000        # open http://localhost:8000
 
-# Frontend dev (terminal 2)
-cd frontend
-npm install
-npm run dev        # http://localhost:5173 (proxies /api to :8000)
-
-# Production: build once, then FastAPI serves everything at :8000
-cd frontend && npm run build
+# On a fresh machine, first build both frontends + regenerate map data:
+cd galaxy && npm install && npm run build && cd ..
+cd spaces && npm install && npm run build && cd ..
+python -m backend.pipeline.run_pipeline --field ml   # ingest → embed → UMAP → Leiden → map_data.json
+python -m backend.scripts.build_cluster_briefs       # cluster_briefs.json (structural, no LLM)
 ```
 
-Deploy to Hugging Face Spaces (Docker): see [docs/deploy-hf-spaces.md](docs/deploy-hf-spaces.md).
 Switch corpus with `python backend/pipeline/run_pipeline.py --field neuro|ml`.
+Deploy to Hugging Face Spaces (Docker): see [docs/deploy-hf-spaces.md](docs/deploy-hf-spaces.md).
+
+> **Note:** local dev runs `backend.app` (unified); the Dockerfile still ships
+> `backend.api` (galaxy-only). Reconcile before the next public deploy.
+
+## History
+
+This is the 5th and current iteration of a two-year idea. The earlier attempts
+live on GitHub (`sh0ck-zy/*`) and their reusable pieces are catalogued in
+[reference/](reference/README.md). Inside this repo, the build milestones are
+git tags:
+
+| Tag | What it marked |
+|-----|----------------|
+| `milestone/observatory-mvp`        | Vite refactor, library/BibTeX, HF deploy (Jun 2026) |
+| `milestone/research-navigator-pivot` | Project workspaces + Living Research Board (Jul 2026) |
+| `milestone/nav-galaxy-dance`       | Galaxy + spaces first unified (Jul 2026) |
+
+`main` is the working line (the former `experience-rebuild`).
 
 ## Principles
 
 1. **Research before code.** Understand the problem deeply before building.
-2. **Document decisions, not just outcomes.** Every major choice gets an ADR with context, options considered, and reasoning.
-3. **Researcher in control.** AI augments, never replaces. The human thinks, reads, writes.
+2. **Document decisions, not just outcomes.** Every major choice gets an ADR.
+3. **Researcher in control.** AI augments, never replaces — no uncited claims.
 4. **Launch ugly, iterate fast.** Perfect is the enemy of shipped.
-5. **One thing at a time.** No "Research OS". One killer feature, one launch, one audience.
+5. **One thing at a time.** One killer feature, one launch, one audience.
+</content>
+</invoke>
