@@ -7,7 +7,13 @@ __pycache__/
 data/embeddings/
 data/projections/
 data/clusters/
+data/raw/
+*.bak
 frontend/data/map_data.json
+frontend/data/cluster_briefs.json
+
+# AI code dumps / scratch
+gemini_code*.txt
 
 # OS
 .DS_Store
