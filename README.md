@@ -25,15 +25,23 @@ Field  →  Cluster  →  Research question  →  Your project
 - **Research Space** — the personal, persistent creation layer. Seeded from a
   cluster, holds a Living Research Board. This is what you return to and pay for.
 
-The full rationale is in **[docs/decisions/011-nav-exploration-universe.md](docs/decisions/011-nav-exploration-universe.md)**
-(the accepted direction) and the first-session spec in
-**[docs/decisions/012-first-research-journey.md](docs/decisions/012-first-research-journey.md)**.
+Two ADRs shape this, and **[ADR-013](docs/decisions/013-reconcile-two-threads.md)**
+explains how they fit:
+- **[ADR-011 "Beachhead, Preloaded Universe"](docs/decisions/011-beachhead-preloaded-universe.md)**
+  is the **operative V1 spec** — launch by mapping *one* subfield completely
+  (mechanistic interpretability), 2.5D not 3D, preloaded universe,
+  search-as-teleport, ruthless scope cuts.
+- **[ADR-011 "NAV — Knowledge Exploration Universe"](docs/decisions/011-nav-exploration-universe.md)**
+  is the **architecture vision** (galaxy ↔ spaces zoom continuum, Cluster
+  Intelligence Layer). First-session spec: **[ADR-012](docs/decisions/012-first-research-journey.md)**.
 
 ## Status
 
-**Stage:** NAV v0 in build. The galaxy (explore) and research spaces (create)
-are wired into one FastAPI server. Next differentiating work per ADR-011: the
-**Cluster Intelligence Page** — the precomputed "landscape of schools" screen.
+**Stage:** NAV v0 in build. Galaxy (explore) + research spaces (create) are wired
+into one FastAPI server; the built frontend is the substrate. Per the operative
+beachhead spec (ADR-011-beachhead + ADR-013), the next concrete moves are:
+build the **interp corpus** with `backend/pipeline/ingest_v2.py` (validated),
+flip the galaxy from **3D → 2.5D**, and ship per-cluster **AI briefs**.
 
 ## Structure
 
@@ -53,6 +61,7 @@ clarity-research/
 │   ├── app.py          # NAV unified server: galaxy + spaces + /api (RUN THIS)
 │   ├── api.py          # Legacy standalone galaxy API (still the Docker CMD)
 │   ├── pipeline/       # OpenAlex ingest → embed → UMAP → Leiden → name → export
+│   │                   #   + ingest_v2.py: interp corpus via citation snowball
 │   ├── routers/        # projects, papers, board, search, export, jobs, galaxy
 │   ├── services/       # galaxy + supporting logic
 │   ├── scripts/        # build_cluster_briefs, seed/demo
