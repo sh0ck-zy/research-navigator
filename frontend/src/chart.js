@@ -1,9 +1,11 @@
-import { state } from './state.js';
+// chart.js — chart mode: a claimed territory. The territory ring is glued to
+// the cluster in 3D; the reading list lives in the dock; each paper marked
+// read lights its star. The full workspace (/app) is one gesture, never a push.
 
-// Chart mode: a claimed territory. The cluster gets a territory ring, the
-// reading list docks left as an instrument, and each paper marked read
-// lights its star on the map. The full workspace (/app) is one gesture,
-// never a push.
+import { state } from './state.js';
+import { machine } from './machine.js';
+import { dock } from './dock.js';
+
 let chart = null;
 
 function clusterWorld(cl) {
@@ -43,7 +45,7 @@ export function updateChartRing(THREE) {
     el.style.display = c.z < 1 ? 'block' : 'none';
 }
 
-function lightStar(paperId, cl) {
+function lightStar(paperId) {
     const i = state.allPapers.findIndex(p => p.id === paperId);
     if (i < 0) return;
     const sizeArr = state.ptsGeo.attributes.size.array;
@@ -66,23 +68,27 @@ function unlightStars() {
     }
 }
 
-async function toggleRead(el, paper, cl) {
+async function toggleRead(el, paper) {
     const read = !el.classList.contains('done');
     el.classList.toggle('done', read);
     fetch(`/api/projects/${chart.projectId}/papers/${paper.id}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ read_status: read ? 'read' : 'unread' }),
-    });
-    if (read) lightStar(paper.openalex_id, cl);
-    document.getElementById('chart-done').textContent = document.querySelectorAll('.chart-rp.done').length;
+    }).catch(() => {});
+    if (read) lightStar(paper.openalex_id);
+    const done = document.getElementById('chart-done');
+    if (done) done.textContent = document.querySelectorAll('.chart-rp.done').length;
 }
 
-export async function enterChartMode(project, cl) {
-    exitChartMode();
-    const res = await fetch(`/api/projects/${project.project_id || project.id}/papers`);
-    const data = await res.json();
-    const papers = data.papers;
+export async function enterChartFx(project, cl) {
+    exitChartFx();
+    let papers = [];
+    try {
+        const res = await fetch(`/api/projects/${project.project_id || project.id}/papers`);
+        if (res.ok) papers = (await res.json()).papers;
+    } catch (e) { /* offline — show the territory without the list */ }
+
     chart = {
         projectId: project.project_id || project.id,
         boardUrl: project.board_url || `/app/projects/${project.project_id || project.id}/board`,
@@ -92,48 +98,40 @@ export async function enterChartMode(project, cl) {
     };
     ensureRing(cl);
 
-    const panel = document.getElementById('chart-panel');
-    panel.style.setProperty('--chart-cl', cl.color);
-    panel.innerHTML = `
-        <div style="padding:22px 22px 14px">
-            <div style="font-size:9px;font-weight:600;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.28);margin-bottom:8px">Your expedition</div>
-            <div style="font-family:'Playfair Display',serif;font-size:17px;line-height:1.4;color:#fff;margin-bottom:4px">${cl.name}</div>
-            <div style="font-size:11px;color:${cl.color};margin-bottom:16px"><span id="chart-done">${papers.filter(p => p.read_status === 'read').length}</span> of ${papers.length} charted</div>
-            <a href="${chart.boardUrl}" style="font-size:11px;color:rgba(255,255,255,0.4);text-decoration:none;border-bottom:1px dotted rgba(255,255,255,0.25)">Open full workspace →</a>
+    dock.show('chart', `
+        <div class="dock-header">
+            <div class="dock-kicker">Your expedition</div>
+            <div class="dock-title"><span class="dock-dot" style="background:${cl.color}"></span>${cl.name}</div>
+            <div class="dock-desc" style="color:${cl.color}"><span id="chart-done">${papers.filter(p => p.read_status === 'read').length}</span> of ${papers.length} charted</div>
         </div>
-        <div style="padding:0 22px 22px">
+        <div class="dock-actions">
+            <a class="dock-btn" href="${chart.boardUrl}">Open full workspace →</a>
+            <button class="dock-btn" id="dock-chart-intel">Territory intelligence</button>
+        </div>
+        <div class="dock-section">
+            <div class="dock-section-title">Reading list</div>
             ${papers.map(p => `
-                <div class="chart-rp ${p.read_status === 'read' ? 'done' : ''}" data-pid="${p.id}" data-oid="${p.openalex_id || ''}">
+                <div class="chart-rp ${p.read_status === 'read' ? 'done' : ''}" data-pid="${p.id}">
                     <div class="box"></div>
-                    <div><div class="t">${p.title}</div><div style="font-size:10px;color:rgba(255,255,255,0.25);margin-top:2px">${p.year || ''} · arxiv ${p.openalex_id || ''}</div></div>
+                    <div><div class="t">${p.title}</div><div class="m">${p.year || ''} · arxiv ${p.openalex_id || ''}</div></div>
                 </div>`).join('')}
-        </div>`;
-    panel.style.display = 'block';
-    requestAnimationFrame(() => panel.classList.add('visible'));
-
-    panel.querySelectorAll('.chart-rp').forEach(el => {
-        const paper = papers.find(p => p.id === el.dataset.pid);
-        el.onclick = () => toggleRead(el, paper, cl);
-        if (paper && paper.read_status === 'read') lightStar(paper.openalex_id, cl);
+        </div>
+    `);
+    document.getElementById('dock-chart-intel')?.addEventListener('click', () => machine.openIntel());
+    document.querySelectorAll('.chart-rp').forEach(el => {
+        const paper = papers.find(p => String(p.id) === el.dataset.pid);
+        if (!paper) return;
+        el.onclick = () => toggleRead(el, paper);
+        if (paper.read_status === 'read') lightStar(paper.openalex_id);
     });
-
-    state.chartMode = true;
 }
 
-export function exitChartMode() {
+export function exitChartFx() {
     if (!chart) return;
     unlightStars();
-    const panel = document.getElementById('chart-panel');
-    if (panel) {
-        panel.classList.remove('visible');
-        setTimeout(() => { panel.style.display = 'none'; }, 450);
-    }
     const ring = document.getElementById('territory-ring');
     if (ring) ring.style.display = 'none';
     chart = null;
-    state.chartMode = false;
 }
 
-export function isCharting() {
-    return !!chart;
-}
+export function isCharting() { return !!chart; }

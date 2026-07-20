@@ -4,17 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NAV — Chart the research</title>
-    <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-<body>
+<body data-mode="universe">
 
 <div id="loading" style="position:fixed;inset:0;z-index:999;background:#060608;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity 0.8s">
     <div style="font-family:'Playfair Display',serif;font-size:32px;letter-spacing:0.08em;color:rgba(255,255,255,0.85);margin-bottom:14px">NAV</div>
     <div style="font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.25)">Charting the territory…</div>
 </div>
 
-<!-- Mobile warning -->
 <div id="mobile-warning" style="display:none;position:fixed;inset:0;z-index:1000;background:#060608;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:40px">
     <div style="font-family:'Playfair Display',serif;font-size:30px;letter-spacing:0.08em;color:rgba(255,255,255,0.85);margin-bottom:18px">NAV</div>
     <div style="font-size:14px;color:rgba(255,255,255,0.4);line-height:1.7;max-width:320px">
@@ -32,18 +30,17 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
 
 <div id="ui" style="opacity:0">
     <div class="top-bar">
-        <div class="brand">
-            <span class="brand-main"><b>NAV</b></span>
+        <div class="brand"><span class="brand-main"><b>NAV</b></span></div>
+        <div class="top-links">
+            <a id="nav-library" href="#">Library<span id="lib-count"></span></a>
+            <a id="nav-spaces" href="/app">expeditions →</a>
         </div>
-        <a id="nav-spaces" href="/app">expeditions →</a>
     </div>
 
-    <!-- Back button + Breadcrumb -->
-    <div id="nav-context" style="pointer-events:auto;display:none;padding:0 40px;margin-top:-8px;align-items:center;gap:12px;">
-        <button id="back-btn" style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);padding:6px 14px;border-radius:20px;font-size:12px;font-family:'Inter',sans-serif;cursor:pointer;transition:all 0.2s;display:flex;align-items:center;gap:6px;">
-            <span style="font-size:14px">←</span> Back
-        </button>
-        <div id="breadcrumb" style="font-size:12px;color:rgba(255,255,255,0.3);font-family:'Inter',sans-serif;"></div>
+    <!-- Back button + breadcrumb (one level per step, always) -->
+    <div id="nav-context">
+        <button id="back-btn"><span>←</span> Back</button>
+        <div id="breadcrumb"></div>
     </div>
 
     <div class="center-content" id="hero">
@@ -58,7 +55,7 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
         <div class="filters" id="filters"></div>
     </div>
 
-    <div class="bottom-hint" id="bottom-hint">Scroll to zoom &middot; Drag to orbit &middot; Click a territory to enter</div>
+    <div class="bottom-hint" id="bottom-hint">Scroll to zoom &middot; Drag to orbit &middot; Click a territory to enter &middot; Esc to step back</div>
 </div>
 
 <!-- Lens: highlights importance without hiding any paper -->
@@ -70,36 +67,19 @@ if (/Mobi|Android|iPhone|iPad/i.test(navigator.userAgent) && window.innerWidth <
     <button class="lens-btn" data-lens="central">Central</button>
 </div>
 
-<!-- Right stats panel -->
-<div class="right-stats" id="right-stats"></div>
-
 <!-- Cluster labels -->
 <div id="labels" style="position:fixed;inset:0;z-index:15;pointer-events:none;"></div>
 
-<!-- Hover tooltip (light: dot · title · year). Full detail is on click. -->
+<!-- Hover tooltip (light: dot · title · year) -->
 <div id="tooltip">
     <div id="tt-dot"></div>
     <span id="tt-title"></span>
     <span id="tt-year"></span>
 </div>
 
-<!-- Cluster Insight Card -->
-<div id="cluster-insight"></div>
-
-<!-- Cluster Context Card -->
-<div id="cluster-context"></div>
-
-<!-- Cluster Intelligence Page -->
-<div id="cluster-intel"></div>
-
-<!-- Chart mode: reading-list instrument -->
-<div id="chart-panel"></div>
-
-<!-- Node Info (anchored to selected paper) -->
-<div id="node-info"></div>
-
-<!-- Library panel -->
-<div id="library-panel"></div>
+<!-- THE DOCK — the one panel. Cluster context, paper detail, territory
+     intelligence, reading list and library all live here. -->
+<div id="dock"><div class="dock-content"></div></div>
 
 <script type="module" src="/src/main.js"></script>
 </body>

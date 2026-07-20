@@ -1,61 +1,69 @@
+// loop.js — the render loop. Per-frame it: updates controls, lerps LOD
+// values toward the machine's targets, positions DOM labels anchored to 3D
+// points, runs the push animation, renders. It contains NO experience
+// decisions except the zoom-out auto-exit (a navigation gesture).
+
 import * as THREE from 'three';
 import { state } from './state.js';
+import { machine } from './machine.js';
+import { lodTargets, lodLive } from './scene.js';
 import { updateLabels } from './labels.js';
-import { exitCluster } from './clusters.js';
 import { updateChartRing } from './chart.js';
+import { distanceToTarget } from './camera.js';
 
-export function loop(){
+const LERP = 0.09;
+
+export function loop() {
     requestAnimationFrame(loop);
     state.controls.update();
-    updateLabels();
-    // Hero only visible at true max zoom-out AND no card open AND after resetView
-    const dist = state.camera.position.distanceTo(state.controls.target);
-    const heroEl = document.getElementById('hero');
-    const showHero = !state.hasInteracted && dist >= 460 && state.activeCluster === null && state.selectedIdx < 0;
-    const heroTarget = showHero ? 1 : 0;
-    const heroCurrent = parseFloat(heroEl.style.opacity) || 0;
-    const heroNew = heroCurrent + (heroTarget - heroCurrent) * 0.12;
-    heroEl.style.opacity = heroNew < 0.01 ? 0 : heroNew;
-    heroEl.style.pointerEvents = (heroNew > 0.5 && showHero) ? '' : 'none';
-    // Hide all interactive children when hero is not showing to unblock canvas
-    if (heroNew < 0.01) {
-        heroEl.style.visibility = 'hidden';
-    } else {
-        heroEl.style.visibility = '';
-    }
-    // Stats: hide when card open or hero showing
-    const statsOpacity = state.cardPaper ? 0 : (showHero ? 0 : 1);
-    document.getElementById('right-stats').style.opacity = statsOpacity;
 
-    // Progressive edges: fade in when zoomed in
+    // --- LOD lerp ---
+    const mat = state.ptsMesh && state.ptsMesh.material;
+    if (mat) {
+        lodLive.starAlpha += (lodTargets.starAlpha - lodLive.starAlpha) * LERP;
+        lodLive.starSize += (lodTargets.starSize - lodLive.starSize) * LERP;
+        mat.uniforms.uAlphaScale.value = lodLive.starAlpha;
+        mat.uniforms.uSizeScale.value = lodLive.starSize;
+    }
+    lodLive.nebula += (lodTargets.nebula - lodLive.nebula) * LERP;
+    const { clusterId } = machine.get();
+    Object.entries(state.nebulae).forEach(([cid, sprite]) => {
+        const isActive = parseInt(cid) === clusterId;
+        const target = lodLive.nebula * (isActive ? 1.5 : 1.0);
+        sprite.material.opacity += (target - sprite.material.opacity) * LERP;
+    });
     if (state.edgesMesh) {
-        const edgeOpacity = Math.max(0, Math.min(0.08, (250 - dist) / 200));
-        state.edgesMesh.material.opacity = edgeOpacity;
+        lodLive.edges += (lodTargets.edges - lodLive.edges) * LERP;
+        state.edgesMesh.material.opacity = lodLive.edges;
     }
 
-    // Auto-exit cluster on zoom-out (not while the intel page covers the map)
-    if (state.activeCluster !== null && state.clusterZoomDist > 0 && !state.intelOpen) {
-        if (dist > state.clusterZoomDist * 2.0) exitCluster();
+    updateLabels();
+    updateHero();
+
+    // Auto-exit: zooming far out of a territory pops back to the universe.
+    const m = machine.get();
+    const dist = distanceToTarget();
+    if ((m.mode === 'cluster' || m.mode === 'chart') && state.clusterZoomDist > 0) {
+        if (dist > state.clusterZoomDist * 2.2) machine.back();
     }
 
-    // Territory ring follows the claimed cluster
     updateChartRing(THREE);
 
-    // Position king paper labels
-    state.kingLabelEls.forEach(({el, index})=>{
-        const p=state.allPapers[index];
-        const v=new THREE.Vector3(p._x,p._y,p._z).project(state.camera);
-        el.style.left=(v.x*0.5+0.5)*innerWidth+'px';
-        el.style.top=((-v.y*0.5+0.5)*innerHeight-18)+'px';
-        el.style.display=v.z<1?'':'none';
+    // King paper labels
+    state.kingLabelEls.forEach(({ el, index }) => {
+        const p = state.allPapers[index];
+        const v = new THREE.Vector3(p._x, p._y, p._z).project(state.camera);
+        el.style.left = (v.x * 0.5 + 0.5) * innerWidth + 'px';
+        el.style.top = ((-v.y * 0.5 + 0.5) * innerHeight - 18) + 'px';
+        el.style.display = v.z < 1 ? '' : 'none';
     });
 
-    // Position bridge labels (neighbour-area names on inter-cluster links)
-    state.bridgeLabels.forEach(({el, pos})=>{
-        const v=pos.clone().project(state.camera);
-        el.style.left=(v.x*0.5+0.5)*innerWidth+'px';
-        el.style.top=(-v.y*0.5+0.5)*innerHeight+'px';
-        el.style.display=v.z<1?'':'none';
+    // Bridge labels
+    state.bridgeLabels.forEach(({ el, pos }) => {
+        const v = pos.clone().project(state.camera);
+        el.style.left = (v.x * 0.5 + 0.5) * innerWidth + 'px';
+        el.style.top = (-v.y * 0.5 + 0.5) * innerHeight + 'px';
+        el.style.display = v.z < 1 ? '' : 'none';
     });
 
     // Gravitational push animation
@@ -65,14 +73,14 @@ export function loop(){
         const posArr = state.ptsGeo.attributes.position.array;
         const et = state.pushDirection > 0 ? (1 - Math.pow(1 - state.pushProgress, 3)) : state.pushProgress;
         state.pushedPapers.forEach(pp => {
-            posArr[pp.index*3]   = pp.origX + (pp.targetX - pp.origX) * et;
-            posArr[pp.index*3+1] = pp.origY + (pp.targetY - pp.origY) * et;
-            posArr[pp.index*3+2] = pp.origZ + (pp.targetZ - pp.origZ) * et;
+            posArr[pp.index * 3] = pp.origX + (pp.targetX - pp.origX) * et;
+            posArr[pp.index * 3 + 1] = pp.origY + (pp.targetY - pp.origY) * et;
+            posArr[pp.index * 3 + 2] = pp.origZ + (pp.targetZ - pp.origZ) * et;
         });
         state.ptsGeo.attributes.position.needsUpdate = true;
         if (state.pushProgress <= 0 && state.pushDirection < 0) {
             state.pushedPapers.forEach(pp => {
-                posArr[pp.index*3]=pp.origX; posArr[pp.index*3+1]=pp.origY; posArr[pp.index*3+2]=pp.origZ;
+                posArr[pp.index * 3] = pp.origX; posArr[pp.index * 3 + 1] = pp.origY; posArr[pp.index * 3 + 2] = pp.origZ;
             });
             state.ptsGeo.attributes.position.needsUpdate = true;
             state.pushedPapers = [];
@@ -80,21 +88,26 @@ export function loop(){
         }
     }
 
-    // Position node-info anchored to selected paper
-    if (state.selectedIdx >= 0) {
-        const sp = state.allPapers[state.selectedIdx];
-        const v = new THREE.Vector3(sp._x, sp._y, sp._z).project(state.camera);
-        const sx = (v.x * 0.5 + 0.5) * innerWidth;
-        const sy = (-v.y * 0.5 + 0.5) * innerHeight;
-        const ni = document.getElementById('node-info');
-        let left = sx + 24, top = sy - 20;
-        if (left + 320 > innerWidth - 20) left = sx - 344;
-        if (top + 300 > innerHeight - 20) top = innerHeight - 320;
-        if (top < 20) top = 20;
-        ni.style.left = left + 'px';
-        ni.style.top = top + 'px';
-        ni.style.display = v.z > 1 ? 'none' : 'block';
-    }
+    state.renderer.render(state.scene, state.camera);
+}
 
-    state.renderer.render(state.scene,state.camera);
+// Hero: only in universe mode, at the establishing distance, before the
+// user has grabbed the map. Outside universe mode it vanishes immediately.
+function updateHero() {
+    const heroEl = document.getElementById('hero');
+    const m = machine.get();
+    if (m.mode !== 'universe') {
+        if (heroEl.style.visibility !== 'hidden') {
+            heroEl.style.opacity = '0';
+            heroEl.style.visibility = 'hidden';
+            heroEl.style.pointerEvents = 'none';
+        }
+        return;
+    }
+    const show = !state.hasInteracted && distanceToTarget() >= 440;
+    const cur = parseFloat(heroEl.style.opacity) || 0;
+    const next = cur + ((show ? 1 : 0) - cur) * 0.12;
+    heroEl.style.opacity = next < 0.01 ? 0 : next;
+    heroEl.style.pointerEvents = (next > 0.5 && show) ? '' : 'none';
+    heroEl.style.visibility = next < 0.01 ? 'hidden' : '';
 }

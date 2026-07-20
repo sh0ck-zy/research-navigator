@@ -1,5 +1,8 @@
-// Shared mutable state for the Observatory frontend.
-// Modules read and write these fields directly; nothing here owns behavior.
+// Shared DATA for the NAV galaxy frontend.
+// This module holds data and Three.js object handles only — no behavior.
+// All experience state (mode, active cluster, selected paper) lives in
+// machine.js. Modules read state freely; they never decide WHAT the
+// experience is doing — that is the machine's job.
 
 export const SPREAD = 600;
 
@@ -7,7 +10,7 @@ export const state = {
     mapData: null,
     allPapers: [],
 
-    // Three.js core objects (set by initScene/makePoints/makeEdges)
+    // Three.js core objects (set by scene.js)
     scene: null,
     camera: null,
     renderer: null,
@@ -15,13 +18,11 @@ export const state = {
     ptsMesh: null,
     ptsGeo: null,
     edgesMesh: null,
+    nebulae: {},        // clusterId -> THREE.Sprite (LOD glow, always present)
 
-    // Interaction state
-    activeCluster: null,
-    cardPaper: null,
-    selectedIdx: -1,
+    // Interaction helpers (render-level, not experience-level)
     hasInteracted: false,
-    clusterZoomDist: 0,
+    clusterZoomDist: 0, // camera distance at which the active cluster was framed
 
     // Gravitational push animation (selected paper's neighbors)
     pushedPapers: [],
@@ -32,15 +33,17 @@ export const state = {
     kingPapers: [],
     kingLabelEls: [],
 
-    // Bridge labels: neighbour-area names on inter-cluster links (approach, not enter)
+    // Bridge labels: neighbour-area names on inter-cluster links
     bridgeLabels: [],
 
-    // Lens: per-paper base point size driven by the active metric.
-    // Highlights importance WITHOUT hiding anything — all papers stay visible.
+    // Lens: per-paper base point size driven by the active metric
     lens: 'off',
     baseSizes: null,
 
-    // Library: set of saved paper ids (OpenAlex W-ids); ring markers on the map.
+    // Library: set of saved paper ids; gold ring markers on the map
     savedIds: new Set(),
     savedRings: null,
+
+    // Claimed territories: clusterId -> project (from the API)
+    claimedProjects: {},
 };
