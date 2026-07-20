@@ -1,45 +1,25 @@
-import { state, SPREAD } from './state.js';
-import { fly, hideBubbles } from './scene.js';
-import { dimExcept } from './labels.js';
-import { updateNavContext } from './nav.js';
-import { updateStats } from './stats.js';
+// filters.js — quick-jump territory pills on the landing hero.
+// They express intent; the machine does the rest.
+
+import { state } from './state.js';
+import { machine } from './machine.js';
 
 export function makeFilters() {
-    const c=document.getElementById('filters');
-    const top = state.mapData.clusters.filter(x=>x.id!==-1).slice(0,6);
-    c.innerHTML = `<div class="filter-dd active" onclick="applyFilter(null,this)" style="background:rgba(255,255,255,0.9);color:#111;border-color:transparent">All Fields</div>` +
-        top.map(cl => `<div class="filter-dd" onclick="applyFilter(${cl.id},this)">${cl.name}</div>`).join('');
+    const c = document.getElementById('filters');
+    const top = state.mapData.clusters.filter(x => x.id !== -1).slice(0, 6);
+    c.innerHTML = `<div class="filter-dd active" data-cid="">All Fields</div>` +
+        top.map(cl => `<div class="filter-dd" data-cid="${cl.id}">${cl.name}</div>`).join('');
+    c.querySelectorAll('.filter-dd').forEach(el => {
+        el.addEventListener('click', () => {
+            state.hasInteracted = true;
+            c.querySelectorAll('.filter-dd').forEach(f => f.classList.remove('active'));
+            el.classList.add('active');
+            if (el.dataset.cid === '') machine.reset();
+            else machine.enterCluster(parseInt(el.dataset.cid));
+        });
+    });
 }
 
-export function applyFilter(cid, el) {
-    state.hasInteracted = true;
-    state.clusterZoomDist = 0; // Prevent auto-exit from zoom-out check
-    document.querySelectorAll('.filter-dd').forEach(f => {
-        f.classList.remove('active');
-        f.style.background = 'rgba(255,255,255,0.03)';
-        f.style.color = 'rgba(255,255,255,0.5)';
-        f.style.borderColor = '';
-    });
-    el.classList.add('active');
-    el.style.background = 'rgba(255,255,255,0.9)';
-    el.style.color = '#111';
-    el.style.borderColor = 'transparent';
-
-    state.activeCluster = cid;
-    dimExcept(cid);
-    hideBubbles();
-
-    if (cid !== null) {
-        const cl = state.mapData.clusters.find(c => c.id === cid);
-        if (cl) {
-            const cx = (cl.center_x - 0.5) * SPREAD;
-            const cy = (cl.center_y - 0.5) * SPREAD;
-            fly(cx, cy + 40, 200);
-            state.controls.autoRotate = false;
-        }
-    } else {
-        fly(0, 80, 500);
-        state.controls.autoRotate = true;
-    }
-    updateNavContext(); updateStats();
+export function resetFilters() {
+    document.querySelectorAll('.filter-dd').forEach((f, i) => f.classList.toggle('active', i === 0));
 }
