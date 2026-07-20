@@ -1,5 +1,10 @@
+// intel.js — the Cluster Intelligence Page, rendered as the dock's wide
+// content. The map stays alive behind it (dimmed) — intelligence is read
+// WITH the territory in view, not instead of it.
+
 import { state } from './state.js';
-import { enterChartMode } from './chart.js';
+import { machine } from './machine.js';
+import { dock } from './dock.js';
 
 let briefs = null;
 
@@ -10,14 +15,6 @@ async function loadBriefs() {
     return briefs;
 }
 
-const S = {
-    section: 'font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.28);margin:28px 0 10px',
-    card: 'background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:14px 16px',
-    paperRow: 'font-size:12px;color:rgba(255,255,255,0.6);padding:4px 0;line-height:1.5',
-    paperLink: 'color:inherit;text-decoration:none;border-bottom:1px dotted rgba(255,255,255,0.25)',
-    meta: 'font-size:10px;color:rgba(255,255,255,0.3)',
-};
-
 function fmtGrowth(g) {
     if (g === null || g === undefined) return '—';
     const pct = Math.round(g * 100);
@@ -26,18 +23,18 @@ function fmtGrowth(g) {
 
 function landscapeHtml(cl, subAreas) {
     if (!subAreas.length) return '';
-    const W = 640, H = 380;
+    const W = 560, H = 330;
     const maxN = Math.max(...subAreas.map(s => s.paper_count));
     const nodes = subAreas.map(s => {
-        const r = 26 + 34 * Math.sqrt(s.paper_count / maxN);
-        const x = W / 2 + s.cx * (W / 2 - 90);
-        const y = H / 2 - s.cy * (H / 2 - 70);
+        const r = 24 + 30 * Math.sqrt(s.paper_count / maxN);
+        const x = W / 2 + s.cx * (W / 2 - 80);
+        const y = H / 2 - s.cy * (H / 2 - 60);
         const hot = s.recent_share >= 0.4;
         return { ...s, r, x, y, hot };
     });
     return `
-    <div style="${S.section}">The landscape <span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(255,255,255,0.18)">— structural, from embeddings</span></div>
-    <div style="position:relative;width:${W}px;height:${H}px;margin:0 auto">
+    <div class="intel-section">The landscape <span class="intel-note">— structural, from embeddings</span></div>
+    <div class="intel-landscape" style="width:${W}px;height:${H}px">
         <svg width="${W}" height="${H}" style="position:absolute;inset:0">
             ${nodes.map(n => `<line x1="${W / 2}" y1="${H / 2}" x2="${n.x}" y2="${n.y}" stroke="${cl.color}30" stroke-width="1"/>`).join('')}
         </svg>
@@ -55,15 +52,15 @@ function landscapeHtml(cl, subAreas) {
 function subAreasHtml(cl, subAreas) {
     if (!subAreas.length) return '';
     return `
-    <div style="${S.section}">Sub-areas</div>
+    <div class="intel-section">Sub-areas</div>
     ${subAreas.map(s => `
-        <div style="${S.card};margin-bottom:8px">
-            <div style="display:flex;justify-content:space-between;align-items:baseline">
-                <div style="font-size:13px;color:rgba(255,255,255,0.85)">${s.label}</div>
-                <div style="${S.meta}">${s.paper_count} papers · ${Math.round(s.recent_share * 100)}% recent</div>
+        <div class="intel-card">
+            <div class="intel-card-head">
+                <div class="intel-card-title">${s.label}</div>
+                <div class="intel-meta">${s.paper_count} papers · ${Math.round(s.recent_share * 100)}% recent</div>
             </div>
             ${s.top_papers.map(p => `
-                <div style="${S.paperRow}"><a style="${S.paperLink}" href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener">${p.title}</a> <span style="${S.meta}">${p.year || ''}</span></div>
+                <div class="intel-paper"><a href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener">${p.title}</a> <span class="intel-meta">${p.year || ''}</span></div>
             `).join('')}
         </div>`).join('')}`;
 }
@@ -71,12 +68,12 @@ function subAreasHtml(cl, subAreas) {
 function kingsHtml(cl, kings) {
     if (!kings.length) return '';
     return `
-    <div style="${S.section}">Foundational papers <span style="text-transform:none;letter-spacing:0;font-weight:400;color:rgba(255,255,255,0.18)">— by network centrality</span></div>
+    <div class="intel-section">Foundational papers <span class="intel-note">— by network centrality</span></div>
     ${kings.map((p, i) => `
-        <div style="${S.paperRow};display:flex;gap:10px">
+        <div class="intel-paper king">
             <span style="color:${cl.color};flex-shrink:0">${i + 1}.</span>
-            <span><a style="${S.paperLink}" href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener">${p.title}</a>
-            <span style="${S.meta}"> — ${(p.authors || '').split(' and ')[0]}${(p.authors || '').includes(' and ') ? ' et al.' : ''}${p.year ? ', ' + p.year : ''}</span></span>
+            <span><a href="https://arxiv.org/abs/${p.id}" target="_blank" rel="noopener">${p.title}</a>
+            <span class="intel-meta"> — ${(p.authors || '').split(',')[0]}${(p.authors || '').includes(',') ? ' et al.' : ''}${p.year ? ', ' + p.year : ''}</span></span>
         </div>`).join('')}`;
 }
 
@@ -86,80 +83,59 @@ function trendHtml(cl, brief) {
     if (years.length < 2) return '';
     const max = Math.max(...years.map(y => hist[y]), 1);
     return `
-    <div style="${S.section}">Movement</div>
-    <div style="display:flex;align-items:flex-end;gap:3px;height:44px;padding:0 2px">
-        ${years.map(y => `<div title="${y}: ${hist[y]}" style="flex:1;border-radius:2px 2px 0 0;height:${Math.max(2, (hist[y] / max) * 42)}px;background:${cl.color}${y >= brief.year_max - 1 ? '' : '55'}"></div>`).join('')}
+    <div class="intel-section">Movement</div>
+    <div class="intel-trend">
+        ${years.map(y => `<div title="${y}: ${hist[y]}" style="height:${Math.max(2, (hist[y] / max) * 42)}px;background:${cl.color}${y >= brief.year_max - 1 ? '' : '55'}"></div>`).join('')}
     </div>
-    <div style="display:flex;justify-content:space-between;${S.meta};margin-top:4px"><span>${years[0]}</span><span>${years[years.length - 1]}</span></div>`;
+    <div class="intel-trend-years"><span>${years[0]}</span><span>${years[years.length - 1]}</span></div>`;
 }
 
-export async function openClusterIntel(cl) {
+export async function openIntelFx(cl) {
     const data = await loadBriefs();
     const brief = data.clusters[String(cl.id)];
-    if (!brief) return;
-    const el = document.getElementById('cluster-intel');
+    if (!brief) { machine.back(); return; }
+    const claimed = state.claimedProjects && state.claimedProjects[cl.id];
 
-    el.innerHTML = `
-    <div style="padding:56px 40px 120px">
-        <div style="display:flex;justify-content:space-between;align-items:flex-start">
-            <div>
-                <div style="display:flex;align-items:center;gap:10px">
-                    <div style="width:12px;height:12px;border-radius:50%;background:${cl.color}"></div>
-                    <div style="font-family:'Playfair Display',serif;font-size:32px;font-weight:500;color:#fff">${brief.name}</div>
-                </div>
-                <div style="font-size:12px;color:rgba(255,255,255,0.35);margin-top:8px">
-                    ${brief.paper_count.toLocaleString()} papers · ${brief.year_min}–${brief.year_max} ·
-                    <span style="color:${cl.color}">${fmtGrowth(brief.growth_recent)} recent growth</span>
-                </div>
+    dock.show('intel', `
+    <div class="intel-page">
+        <div class="dock-header">
+            <div class="dock-kicker">Territory intelligence</div>
+            <div class="dock-title intel"><span class="dock-dot" style="background:${cl.color}"></span>${brief.name}</div>
+            <div class="dock-desc">
+                ${brief.paper_count.toLocaleString()} papers · ${brief.year_min}–${brief.year_max} ·
+                <span style="color:${cl.color}">${fmtGrowth(brief.growth_recent)} recent growth</span>
             </div>
-            <button onclick="closeClusterIntel()" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:rgba(255,255,255,0.5);width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:14px;flex-shrink:0">✕</button>
+            <div class="dock-abstract">${brief.description}</div>
         </div>
-        <div style="font-size:13px;color:rgba(255,255,255,0.5);line-height:1.7;margin-top:16px;max-width:640px">${brief.description}</div>
 
         ${landscapeHtml(cl, brief.sub_areas)}
         ${trendHtml(cl, brief)}
         ${subAreasHtml(cl, brief.sub_areas)}
         ${kingsHtml(cl, brief.king_papers)}
 
-        <div style="${S.section}">Schools · Debates · Open questions</div>
-        <div style="${S.card};font-size:12px;color:rgba(255,255,255,0.3);font-style:italic">
+        <div class="intel-section">Schools · Debates · Open questions</div>
+        <div class="intel-card" style="font-style:italic;color:rgba(255,255,255,0.3);font-size:12px">
             Analyst pass pending — an LLM brief of schools of thought, live debates and open
             questions lands in v0.1. Everything above is computed directly from the corpus.
         </div>
 
-        <div style="${S.section}">Make it yours</div>
-        <div style="${S.card};border-color:${cl.color}40">
-            <div style="font-size:14px;color:rgba(255,255,255,0.85);margin-bottom:4px">Create a Research Space</div>
-            <div style="font-size:12px;color:rgba(255,255,255,0.4);line-height:1.6;margin-bottom:12px">
+        ${claimed ? '' : `
+        <div class="intel-section">Make it yours</div>
+        <div class="intel-card" style="border-color:${cl.color}40">
+            <div class="intel-claim-title">Create a Research Space</div>
+            <div class="intel-claim-sub">
                 Seed a workspace with the ${Math.min(300, brief.paper_count)} most central papers of
-                <b style="color:rgba(255,255,255,0.7)">${brief.name}</b> — semantic search and the Living Board included.
+                <b>${brief.name}</b> — semantic search and the Living Board included.
             </div>
-            <input id="intel-question" placeholder="Your research question — e.g. Can models know when they are wrong?"
-                style="width:100%;box-sizing:border-box;background:rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 12px;font-size:13px;color:#fff;font-family:'Inter',sans-serif;outline:none;margin-bottom:10px">
-            <div style="display:flex;align-items:center;gap:12px">
-                <button id="intel-create" onclick="createSpaceFromCluster(${cl.id})"
-                    style="background:rgba(255,255,255,0.92);border:none;color:#111;padding:9px 18px;border-radius:20px;font-size:13px;font-weight:600;font-family:'Inter',sans-serif;cursor:pointer">
-                    Create Research Space →
-                </button>
-                <span id="intel-status" style="font-size:11px;color:rgba(255,255,255,0.35)"></span>
+            <input id="intel-question" class="intel-input" placeholder="Your research question — e.g. Can models know when they are wrong?">
+            <div class="intel-claim-row">
+                <button id="intel-create" class="dock-btn-primary">Create Research Space →</button>
+                <span id="intel-status" class="intel-meta"></span>
             </div>
-        </div>
-    </div>`;
-    el.style.display = 'block';
-    requestAnimationFrame(() => el.classList.add('visible'));
-    state.intelOpen = true;
-}
+        </div>`}
+    </div>`, { wide: true });
 
-export function openActiveClusterIntel() {
-    const cl = state.mapData.clusters.find(c => c.id === state.activeCluster);
-    if (cl) openClusterIntel(cl);
-}
-
-export function closeClusterIntel() {
-    const el = document.getElementById('cluster-intel');
-    el.classList.remove('visible');
-    setTimeout(() => { el.style.display = 'none'; }, 350);
-    state.intelOpen = false;
+    document.getElementById('intel-create')?.addEventListener('click', () => createSpaceFromCluster(cl.id));
 }
 
 export async function createSpaceFromCluster(clusterId) {
@@ -184,14 +160,9 @@ export async function createSpaceFromCluster(clusterId) {
         if (!res.ok) throw new Error(await res.text());
         const data = await res.json();
         status.textContent = `${data.paper_count} papers seeded — the territory is yours.`;
-        // Claim happens in the sky: no redirect. The ring, the instrument,
-        // the stars that light as you read. /app stays one gesture away.
-        const cl = state.mapData.clusters.find(c => c.id === clusterId);
-        state.claimedProjects = state.claimedProjects || {};
         state.claimedProjects[clusterId] = { id: data.project_id, board_url: data.board_url };
         setTimeout(() => {
-            closeClusterIntel();
-            enterChartMode({ project_id: data.project_id, board_url: data.board_url }, cl);
+            machine.enterChart({ project_id: data.project_id, board_url: data.board_url });
         }, 700);
     } catch (e) {
         btn.disabled = false;
