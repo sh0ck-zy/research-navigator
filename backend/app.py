@@ -1,8 +1,8 @@
 """NAV — unified app: galaxy (explore) + research spaces (create).
 
-    /         The galaxy (frontend/dist) — the landing page, no account
-    /data/*   Map data + cluster briefs (frontend/data)
-    /app/*    Research spaces SPA (frontend-app/dist, built with base /app/)
+    /         The galaxy (galaxy/dist) — the landing page, no account
+    /data/*   Map data + cluster briefs (galaxy/data)
+    /app/*    Research spaces SPA (spaces/dist, built with base /app/)
     /api/*    Projects/papers/board/search/export/jobs + /api/galaxy/*
 
 Run with: uvicorn backend.app:app --port 8000
@@ -18,9 +18,9 @@ from fastapi.staticfiles import StaticFiles
 from backend import db
 
 ROOT = Path(__file__).resolve().parent.parent
-APP_DIST = ROOT / "frontend-app" / "dist"
-GALAXY_DIST = ROOT / "frontend" / "dist"
-GALAXY_DATA = ROOT / "frontend" / "data"
+APP_DIST = ROOT / "spaces" / "dist"
+GALAXY_DIST = ROOT / "galaxy" / "dist"
+GALAXY_DATA = ROOT / "galaxy" / "data"
 
 
 def create_app() -> FastAPI:

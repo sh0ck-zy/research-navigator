@@ -1,4 +1,4 @@
-"""BibTeX generation — mirror of frontend/src/bibtex.js (keep both in sync).
+"""BibTeX generation — mirror of galaxy/src/bibtex.js (keep both in sync).
 
 Used by the /api/library/export.bib endpoint so the whole saved library can be
 downloaded as a .bib file. Per-paper "Cite" in the UI is generated client-side.

@@ -1,6 +1,6 @@
 # Deploy to Hugging Face Spaces (Docker)
 
-The app is one FastAPI server that serves the API, the built frontend, and the
+The app is one FastAPI server that serves the API, the built galaxy, and the
 data. It needs ~150 MB RAM + the embedding model (baked into the image at build).
 
 **You do the HF login/creation** (I can't create accounts). Everything else is ready:
@@ -39,11 +39,11 @@ when pushing to the Space. From the repo root:
 # point a remote at your Space (uses git-lfs for the big files)
 git remote add space https://huggingface.co/spaces/<you>/observatory
 git lfs install
-git lfs track "*.npz" "*.jsonl" "frontend/data/map_data.json"
+git lfs track "*.npz" "*.jsonl" "galaxy/data/map_data.json"
 
 # force-add the runtime data the Dockerfile COPYs (overrides .gitignore)
 git add -f \
-  frontend/data/map_data.json \
+  galaxy/data/map_data.json \
   data/embeddings/neuro_10k.npz \
   data/raw/neuro_10k.jsonl \
   data/clusters/neuro_10k_leiden.json \

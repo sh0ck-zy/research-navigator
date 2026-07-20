@@ -40,7 +40,7 @@ def _load():
     emb_norm = embeddings / norms
 
     # Per-cluster UMAP centroid + centrality (1 = center, 0 = edge), matching
-    # the frontend's distance-to-center definition.
+    # the galaxy's distance-to-center definition.
     centrality = np.zeros(len(papers), dtype=np.float32)
     for cid in {c for c in leiden}:
         idx = np.array([i for i, c in enumerate(leiden) if c == cid])

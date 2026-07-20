@@ -12,7 +12,7 @@ the pivot away from the galaxy Observatory (which stays on the
 pip install -r requirements.txt
 
 # Frontend deps + build
-cd frontend-app && npm install && npm run build && cd ..
+cd spaces && npm install && npm run build && cd ..
 ```
 
 ## Run (single process — serves the built app)
@@ -25,11 +25,11 @@ uvicorn backend.app:app --port 8000
 The DB (`data/navigator.db`) is created by migrations on first start. It is
 gitignored — each machine keeps its own projects.
 
-### Dev mode (hot-reload frontend)
+### Dev mode (hot-reload galaxy)
 
 ```sh
 uvicorn backend.app:app --port 8000        # terminal 1 (API)
-cd frontend-app && npm run dev              # terminal 2 → http://localhost:5173
+cd spaces && npm run dev              # terminal 2 → http://localhost:5173
 ```
 
 Vite proxies `/api` to `127.0.0.1:8000` (must be `127.0.0.1`, not `localhost`

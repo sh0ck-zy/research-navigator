@@ -1,5 +1,5 @@
 """
-Step 5: Export all processed data into a single JSON for the frontend.
+Step 5: Export all processed data into a single JSON for the galaxy.
 """
 import json
 import numpy as np
@@ -178,5 +178,5 @@ if __name__ == "__main__":
         clusters_path="data/clusters/ml_10k_leiden.json",
         names_path="data/clusters/ml_10k_names.json",
         embeddings_path="data/embeddings/ml_10k.npz",
-        output_path="frontend/data/map_data.json",
+        output_path="galaxy/data/map_data.json",
     )

@@ -20,7 +20,7 @@ from backend.citations import bibtex_for_many
 # ── Paths ────────────────────────────────────────────────────────────────────
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
-FRONTEND_DIR = ROOT / "frontend"
+FRONTEND_DIR = ROOT / "galaxy"
 
 # The pipeline records which corpus is live in data/active_field.json.
 # Paths are derived from the slug + DATA_DIR (never absolute) so this works
@@ -202,9 +202,9 @@ def library_export():
     )
 
 
-# ── Serve frontend ───────────────────────────────────────────────────────────
-# Production serves the Vite build (frontend/dist); during development run
-# `npm run dev` in frontend/ instead (it proxies /api here and serves data/ itself).
+# ── Serve galaxy ───────────────────────────────────────────────────────────
+# Production serves the Vite build (galaxy/dist); during development run
+# `npm run dev` in galaxy/ instead (it proxies /api here and serves data/ itself).
 DIST_DIR = FRONTEND_DIR / "dist"
 SERVE_DIR = DIST_DIR if DIST_DIR.exists() else FRONTEND_DIR
 

@@ -1,7 +1,7 @@
 """Build cluster briefs for the ML galaxy — structural intelligence, no LLM.
 
-Generates frontend/data/cluster_briefs.json, consumed by the Cluster
-Intelligence Page (frontend/src/intel.js). Everything here is computed from
+Generates galaxy/data/cluster_briefs.json, consumed by the Cluster
+Intelligence Page (galaxy/src/intel.js). Everything here is computed from
 the corpus: sub-areas (k-means over embeddings, labelled by distinctive
 title terms), movement trends (per-year rates), king papers (UMAP
 centrality). Schools/debates/open_questions are null — they wait for the
@@ -18,7 +18,7 @@ import numpy as np
 from backend import db
 from backend.services import galaxy
 
-OUT = db.ROOT / "frontend" / "data" / "cluster_briefs.json"
+OUT = db.ROOT / "galaxy" / "data" / "cluster_briefs.json"
 
 STOP = set("""
 the a an and or of in on for to with from by at as is are was were be been

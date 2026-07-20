@@ -4,8 +4,8 @@
 .venv
 **/__pycache__
 **/*.pyc
-frontend/node_modules
-frontend/dist
+galaxy/node_modules
+galaxy/dist
 *.png
 data/raw/*.bak
 data/projections

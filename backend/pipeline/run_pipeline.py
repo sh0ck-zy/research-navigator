@@ -49,7 +49,7 @@ def field_paths(field: dict) -> dict:
         "projections": str(ROOT / "data" / "projections" / f"{slug}_umap.npy"),
         "clusters": str(ROOT / "data" / "clusters" / f"{slug}_leiden.json"),
         "names": str(ROOT / "data" / "clusters" / f"{slug}_names.json"),
-        "export": str(ROOT / "frontend" / "data" / "map_data.json"),
+        "export": str(ROOT / "galaxy" / "data" / "map_data.json"),
     }
 
 
@@ -108,7 +108,7 @@ def main():
         run_name(paths["embeddings"], paths["data"], paths["clusters"], paths["names"])
         print()
 
-    # Step 5: Export for frontend
+    # Step 5: Export for galaxy
     run_export(paths["data"], paths["projections"], paths["clusters"], paths["names"],
                paths["embeddings"], paths["export"], field_name=field["name"])
     print()
