@@ -1,5 +1,5 @@
 {
-  "_doc": "Hard gate (a): every landmark with tier='core' MUST be present in the corpus. tier='adjacent' papers are reported but do NOT block — they are model-editing/knowledge-localization work that neighbours interp rather than constituting it (Joao's call, 2026-07-21). Match by arxiv_id (authoritative: OpenAlex's arXiv landing-page mapping is reliable even on records whose title metadata is corrupted) OR normalized-title substring. is_seed=true means it anchors ingest_v3 (guaranteed present); is_seed=false tests real coverage via forward/foundational expansion.",
+  "_doc": "WEB-PUB CANARY (added 2026-07-21): entries with source_class=web_pub_* exist to catch a specific failure class — field-central publications that are absent from OpenAlex. web_pub_doiless = Transformer Circuits Thread, no DOI, structurally invisible to a DOI/arXiv-keyed source; web_pub_doi = Distill, which DOES have DOIs and acts as the control. If the doiless set is missing while the doi set is present, the gap is the source, not the field. These are expected to FAIL gate (a) until Semantic Scholar ingestion lands. || Hard gate (a): every landmark with tier='core' MUST be present in the corpus. tier='adjacent' papers are reported but do NOT block — they are model-editing/knowledge-localization work that neighbours interp rather than constituting it (Joao's call, 2026-07-21). Match by arxiv_id (authoritative: OpenAlex's arXiv landing-page mapping is reliable even on records whose title metadata is corrupted) OR normalized-title substring. is_seed=true means it anchors ingest_v3 (guaranteed present); is_seed=false tests real coverage via forward/foundational expansion.",
   "_tiers": {
     "core": "must be present — gate (a) fails if any is missing",
     "adjacent": "reported only — model editing / knowledge localization, not interp core"
@@ -20,6 +20,21 @@
 
     {"arxiv_id": "2012.14913", "title": "Transformer Feed-Forward Layers Are Key-Value Memories", "is_seed": true, "tier": "adjacent"},
     {"arxiv_id": "2104.08696", "title": "Knowledge Neurons in Pretrained Transformers", "is_seed": false, "tier": "adjacent"},
-    {"arxiv_id": "2210.07229", "title": "Mass-Editing Memory in a Transformer", "is_seed": false, "tier": "adjacent"}
+    {"arxiv_id": "2210.07229", "title": "Mass-Editing Memory in a Transformer", "is_seed": false, "tier": "adjacent"},
+
+    {"arxiv_id": null, "title": "A Mathematical Framework for Transformer Circuits", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2021, "url": "https://transformer-circuits.pub/2021/framework/index.html"},
+    {"arxiv_id": null, "title": "Softmax Linear Units", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2022, "url": "https://transformer-circuits.pub/2022/solu/index.html"},
+    {"arxiv_id": null, "title": "Towards Monosemanticity: Decomposing Language Models With Dictionary Learning", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2023, "url": "https://transformer-circuits.pub/2023/monosemantic-features/index.html"},
+    {"arxiv_id": null, "title": "Scaling Monosemanticity: Extracting Interpretable Features from Claude 3 Sonnet", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2024, "url": "https://transformer-circuits.pub/2024/scaling-monosemanticity/index.html"},
+    {"arxiv_id": null, "title": "Sparse Crosscoders for Cross-Layer Features and Model Diffing", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2024, "url": "https://transformer-circuits.pub/2024/crosscoders/index.html"},
+    {"arxiv_id": null, "title": "Circuit Tracing: Revealing Computational Graphs in Language Models", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2025, "url": "https://transformer-circuits.pub/2025/attribution-graphs/methods.html"},
+    {"arxiv_id": null, "title": "On the Biology of a Large Language Model", "is_seed": false, "tier": "core", "source_class": "web_pub_doiless", "venue": "transformer-circuits.pub", "year": 2025, "url": "https://transformer-circuits.pub/2025/attribution-graphs/biology.html"},
+
+    {"arxiv_id": null, "title": "Zoom In: An Introduction to Circuits", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2020, "doi": "10.23915/distill.00024.001", "url": "https://distill.pub/2020/circuits/zoom-in/"},
+    {"arxiv_id": null, "title": "Curve Detectors", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2020, "doi": "10.23915/distill.00024.003", "url": "https://distill.pub/2020/circuits/curve-detectors/"},
+    {"arxiv_id": null, "title": "Multimodal Neurons in Artificial Neural Networks", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2021, "doi": "10.23915/distill.00030", "url": "https://distill.pub/2021/multimodal-neurons"},
+    {"arxiv_id": null, "title": "Activation Atlas", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2019, "doi": "10.23915/distill.00015", "url": "https://distill.pub/2019/activation-atlas"},
+    {"arxiv_id": null, "title": "The Building Blocks of Interpretability", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2018, "doi": "10.23915/distill.00010", "url": "https://distill.pub/2018/building-blocks"},
+    {"arxiv_id": null, "title": "Feature Visualization", "is_seed": false, "tier": "core", "source_class": "web_pub_doi", "venue": "Distill", "year": 2017, "doi": "10.23915/distill.00007", "url": "https://distill.pub/2017/feature-visualization"}
   ]
 }

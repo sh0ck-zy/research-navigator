@@ -61,8 +61,11 @@ def main():
                           "in_pool_cites": (hit.get("_in_corpus_cites") if hit else None),
                           "indeg": (hit["_indeg"] if hit else None),
                           "rank": (rank_of.get(hit["id"]) if hit else None)})
-    core = [x for x in lm_report if x["tier"] == "core"]
-    adj = [x for x in lm_report if x["tier"] != "core"]
+    # web-pub canaries are broken out so the DOI-less failure class is legible
+    # rather than averaged into a single gate number
+    canary = [x for x in lm_report if str(x.get("source_class", "")).startswith("web_pub")]
+    core = [x for x in lm_report if x["tier"] == "core" and x not in canary]
+    adj = [x for x in lm_report if x["tier"] != "core" and x not in canary]
     present = sum(1 for x in lm_report if x["present"])
     core_present = sum(1 for x in core if x["present"])
     adj_present = sum(1 for x in adj if x["present"])
@@ -88,6 +91,9 @@ def main():
         "landmarks_core_present": f"{core_present}/{len(core)}",
         "landmarks_adjacent_present": f"{adj_present}/{len(adj)}",
         "gate_a_pass": core_present == len(core),
+        "webpub_canary": {"present": sum(1 for x in canary if x["present"]), "total": len(canary),
+                          "doiless_present": sum(1 for x in canary if x["present"] and x.get("source_class") == "web_pub_doiless"),
+                          "doiless_total": sum(1 for x in canary if x.get("source_class") == "web_pub_doiless")},
         "landmarks": lm_report,
         "top_by_in_corpus_cites": top_out,
     }
@@ -101,6 +107,16 @@ def main():
     for x in core:
         flag = "OK  " if x["present"] else "MISS"
         print(f"  [{flag}] {x['arxiv_id']:>11}  rank={x['rank']}  indeg={x['indeg']}  {x['title'][:46]}")
+    if canary:
+        doiless = [x for x in canary if x.get("source_class") == "web_pub_doiless"]
+        withdoi = [x for x in canary if x.get("source_class") == "web_pub_doi"]
+        cp = sum(1 for x in canary if x["present"])
+        print(f"\nWEB-PUB CANARY: {cp}/{len(canary)}  "
+              f"(DOI-less {sum(1 for x in doiless if x['present'])}/{len(doiless)}, "
+              f"with-DOI {sum(1 for x in withdoi if x['present'])}/{len(withdoi)})")
+        for x in canary:
+            flag = "OK  " if x["present"] else "MISS"
+            print(f"  [{flag}] {x.get('source_class','?'):<16} {x['title'][:52]}")
     print(f"\nadjacent tier (report only): {adj_present}/{len(adj)}")
     for x in adj:
         flag = "ok  " if x["present"] else "--  "

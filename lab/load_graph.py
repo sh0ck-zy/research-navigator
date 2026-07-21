@@ -16,6 +16,7 @@ Usage:
 """
 import argparse
 import json
+from collections import Counter
 import shutil
 from pathlib import Path
 
@@ -87,16 +88,24 @@ def load(run_id="ingest_v2", reset=False, corpus=None, db_path=None):
         conn.execute(f"CREATE (p:Paper {{{props}}})", parameters=params)
 
     # ── edges (already filtered to in-corpus targets by ingest_v2) ──
+    # CITES.source is per-EDGE, not per-run: an edge can come from OpenAlex or from
+    # the S2 supplement. `_edge_source` maps target id -> provider; anything not
+    # listed predates the S2 supplement and is OpenAlex.
     n_edges = 0
+    src_counts = Counter()
     for p in papers:
+        esrc = p.get("_edge_source") or {}
         for tgt in p.get("edges", []):
             if tgt in ids:
+                src = esrc.get(tgt, "openalex")
                 conn.execute(
                     "MATCH (a:Paper {id:$a}), (b:Paper {id:$b}) "
-                    "CREATE (a)-[:CITES {source:'openalex', run_id:$run}]->(b)",
-                    parameters={"a": p["id"], "b": tgt, "run": run_id},
+                    "CREATE (a)-[:CITES {source:$src, run_id:$run}]->(b)",
+                    parameters={"a": p["id"], "b": tgt, "src": src, "run": run_id},
                 )
                 n_edges += 1
+                src_counts[src] += 1
+    print(f"CITES by source: {dict(src_counts)}")
 
     # ── SIMILAR edges (L2 similarity stage; absent until run_l2 has run) ──
     n_sim = 0
