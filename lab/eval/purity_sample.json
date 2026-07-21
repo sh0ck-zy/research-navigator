@@ -1,0 +1,1031 @@
+{
+  "_doc": "Build lab/eval/purity_sample.json \u2014 hard gate (b).\n\nClassification rule (stated so it can be argued with):\n  core     = mechanistic / inner-structure interpretability: circuits, features,\n             neurons, activation-space geometry, probing internals, lens methods,\n             causal localization inside the model.\n  adjacent = interpretability but not mechanistic: post-hoc input attribution\n             (LIME/SHAP/IG/LRP/CAM), XAI surveys, position papers, and pure\n             model-editing methods/evals (edit as a capability, not a finding).\n  off      = not interpretability at all (base-model releases, benchmarks,\n             other fields), or a corrupted OpenAlex record.\n\nNOTE: this topical rule differs slightly from the landmark tiering in\nlandmarks.json \u2014 there Joao tiered FFN Key-Value Memories and Knowledge Neurons\nas 'adjacent' for gate (a). Topically they are mechanistic-internals work, so\nthey count as core here. Flagged rather than silently reconciled.\n",
+  "samples": {
+    "0.08": {
+      "keep_threshold": 0.08,
+      "n": 50,
+      "counts": {
+        "core": 34,
+        "adjacent": 13,
+        "off": 3
+      },
+      "core_pct": 68.0,
+      "gate_b_pass": true,
+      "items": [
+        {
+          "rank": 1,
+          "id": "W2606347107",
+          "arxiv_id": "1704.01444",
+          "year": 2017,
+          "in_corpus_cites": 116,
+          "title": "Learning to Generate Reviews and Discovering Sentiment",
+          "class": "core",
+          "why": "sentiment neuron \u2014 first single-unit feature discovery in a language model"
+        },
+        {
+          "rank": 2,
+          "id": "W4281657280",
+          "arxiv_id": "2202.05262",
+          "year": 2022,
+          "in_corpus_cites": 90,
+          "title": "Locating and Editing Factual Associations in GPT",
+          "class": "core",
+          "why": "ROME: causal tracing localizes factual associations to specific MLP layers"
+        },
+        {
+          "rank": 3,
+          "id": "W4308023630",
+          "arxiv_id": "2211.00593",
+          "year": 2022,
+          "in_corpus_cites": 41,
+          "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+          "class": "core",
+          "why": "IOI: a full circuit reverse-engineered in GPT-2 small"
+        },
+        {
+          "rank": 4,
+          "id": "W4386839891",
+          "arxiv_id": "2309.08600",
+          "year": 2023,
+          "in_corpus_cites": 35,
+          "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+          "class": "core",
+          "why": "sparse autoencoders recover monosemantic features from the residual stream"
+        },
+        {
+          "rank": 5,
+          "id": "W2946417913",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 34,
+          "title": "BERT Rediscovers the Classical NLP Pipeline",
+          "class": "core",
+          "why": "layer-wise probing shows BERT internally reconstructs the classical NLP pipeline"
+        },
+        {
+          "rank": 6,
+          "id": "W4316135772",
+          "arxiv_id": "2301.05217",
+          "year": 2023,
+          "in_corpus_cites": 32,
+          "title": "Progress measures for grokking via mechanistic interpretability",
+          "class": "core",
+          "why": "mechanistic account of grokking via Fourier-basis circuits"
+        },
+        {
+          "rank": 7,
+          "id": "W4297412003",
+          "arxiv_id": "2209.11895",
+          "year": 2022,
+          "in_corpus_cites": 31,
+          "title": "In-context Learning and Induction Heads",
+          "class": "core",
+          "why": "induction heads identified as the mechanism behind in-context learning"
+        },
+        {
+          "rank": 8,
+          "id": "W4296932880",
+          "arxiv_id": "2209.10652",
+          "year": 2022,
+          "in_corpus_cites": 29,
+          "title": "Toy Models of Superposition",
+          "class": "core",
+          "why": "superposition/polysemanticity \u2014 the theory SAE work is built on"
+        },
+        {
+          "rank": 9,
+          "id": "W1951216520",
+          "arxiv_id": "1506.02078",
+          "year": 2015,
+          "in_corpus_cites": 29,
+          "title": "Visualizing and Understanding Recurrent Networks",
+          "class": "core",
+          "why": "interpretable individual cells in RNNs; ancestor of neuron-level interp"
+        },
+        {
+          "rank": 10,
+          "id": "W2962862931",
+          "arxiv_id": null,
+          "year": 2024,
+          "in_corpus_cites": 29,
+          "title": "On a Method to Measure Supervised Multiclass Model\u2019s Interpretability: Application to Degradation Diagnosis (Short Paper)",
+          "class": "off",
+          "why": "industrial degradation diagnosis (Dagstuhl); reaches rank 10 only through corrupted OpenAlex reference links \u2014 cbc=13417 is impossible for this venue"
+        },
+        {
+          "rank": 11,
+          "id": "W4307413986",
+          "arxiv_id": "2210.13382",
+          "year": 2022,
+          "in_corpus_cites": 28,
+          "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+          "class": "core",
+          "why": "probes recover a linear world model inside Othello-GPT"
+        },
+        {
+          "rank": 12,
+          "id": "W4385572928",
+          "arxiv_id": null,
+          "year": 2022,
+          "in_corpus_cites": 28,
+          "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+          "class": "core",
+          "why": "mechanistic account of how FFN updates promote concepts in vocabulary space"
+        },
+        {
+          "rank": 13,
+          "id": "W4306313145",
+          "arxiv_id": "2210.07229",
+          "year": 2022,
+          "in_corpus_cites": 28,
+          "title": "Mass-Editing Memory in a Transformer",
+          "class": "adjacent",
+          "why": "MEMIT: mass model editing \u2014 uses localization but ships an editing method, not an interp finding"
+        },
+        {
+          "rank": 14,
+          "id": "W2594475271",
+          "arxiv_id": "1702.08608",
+          "year": 2017,
+          "in_corpus_cites": 26,
+          "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+          "class": "adjacent",
+          "why": "position paper on what interpretability should mean; no model internals"
+        },
+        {
+          "rank": 15,
+          "id": "W2964204621",
+          "arxiv_id": null,
+          "year": 2018,
+          "in_corpus_cites": 24,
+          "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties",
+          "class": "core",
+          "why": "probing sentence embeddings for linguistic properties (probing lineage)"
+        },
+        {
+          "rank": 16,
+          "id": "W4385571791",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 23,
+          "title": "Analyzing Transformers in Embedding Space",
+          "class": "core",
+          "why": "projects transformer parameters into embedding space to read them directly"
+        },
+        {
+          "rank": 17,
+          "id": "W2946794439",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 22,
+          "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+          "class": "core",
+          "why": "head-level analysis showing specialized vs prunable attention heads"
+        },
+        {
+          "rank": 18,
+          "id": "W2516809705",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 20,
+          "title": "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+          "class": "adjacent",
+          "why": "LIME: post-hoc input attribution, treats the model as a black box"
+        },
+        {
+          "rank": 19,
+          "id": "W2963400886",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 17,
+          "title": "What Is One Grain of Sand in the Desert? Analyzing Individual Neurons in Deep NLP Models",
+          "class": "core",
+          "why": "analysis of what individual neurons encode in deep NLP models"
+        },
+        {
+          "rank": 20,
+          "id": "W2963483561",
+          "arxiv_id": "1711.11279",
+          "year": 2017,
+          "in_corpus_cites": 17,
+          "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with\\n Concept Activation Vectors (TCAV)",
+          "class": "core",
+          "why": "TCAV: concept vectors in activation space; direct ancestor of steering vectors"
+        },
+        {
+          "rank": 21,
+          "id": "W4387355345",
+          "arxiv_id": "2310.01405",
+          "year": 2023,
+          "in_corpus_cites": 16,
+          "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+          "class": "core",
+          "why": "RepE: reads and controls population-level internal representations"
+        },
+        {
+          "rank": 22,
+          "id": "W4327526719",
+          "arxiv_id": "2303.08112",
+          "year": 2023,
+          "in_corpus_cites": 16,
+          "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+          "class": "core",
+          "why": "tuned lens: decoding predictions from intermediate layers"
+        },
+        {
+          "rank": 23,
+          "id": "W3159900299",
+          "arxiv_id": null,
+          "year": 2021,
+          "in_corpus_cites": 16,
+          "title": "Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals",
+          "class": "core",
+          "why": "amnesic probing: causal intervention removing a probed property"
+        },
+        {
+          "rank": 24,
+          "id": "W4288351520",
+          "arxiv_id": "1905.06316",
+          "year": 2019,
+          "in_corpus_cites": 16,
+          "title": "What do you learn from context? Probing for sentence structure in\\n contextualized word representations",
+          "class": "core",
+          "why": "structural probing of contextualized representations"
+        },
+        {
+          "rank": 25,
+          "id": "W2962772482",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 15,
+          "title": "A survey of methods for explaining black box models",
+          "class": "adjacent",
+          "why": "survey of black-box explanation methods (XAI, not mechanistic)"
+        },
+        {
+          "rank": 26,
+          "id": "W4367628394",
+          "arxiv_id": "2304.14997",
+          "year": 2023,
+          "in_corpus_cites": 15,
+          "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+          "class": "core",
+          "why": "ACDC: automated circuit discovery"
+        },
+        {
+          "rank": 27,
+          "id": "W2605409611",
+          "arxiv_id": "1704.02685",
+          "year": 2017,
+          "in_corpus_cites": 14,
+          "title": "Learning Important Features Through Propagating Activation Differences",
+          "class": "adjacent",
+          "why": "DeepLIFT: activation-difference input attribution"
+        },
+        {
+          "rank": 28,
+          "id": "W2788403449",
+          "arxiv_id": null,
+          "year": 2018,
+          "in_corpus_cites": 14,
+          "title": "Anchors: High-Precision Model-Agnostic Explanations",
+          "class": "adjacent",
+          "why": "Anchors: rule-based post-hoc explanations"
+        },
+        {
+          "rank": 29,
+          "id": "W4379928343",
+          "arxiv_id": "2306.03341",
+          "year": 2023,
+          "in_corpus_cites": 13,
+          "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+          "class": "core",
+          "why": "inference-time intervention along a truth direction in activation space"
+        },
+        {
+          "rank": 30,
+          "id": "W2970820321",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 13,
+          "title": "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+          "class": "core",
+          "why": "layer-wise evolution of representations inside the transformer"
+        },
+        {
+          "rank": 31,
+          "id": "W2618851150",
+          "arxiv_id": "1705.07874",
+          "year": 2017,
+          "in_corpus_cites": 13,
+          "title": "A Unified Approach to Interpreting Model Predictions",
+          "class": "adjacent",
+          "why": "SHAP: unified input-attribution framework"
+        },
+        {
+          "rank": 32,
+          "id": "W3117576675",
+          "arxiv_id": null,
+          "year": 2021,
+          "in_corpus_cites": 12,
+          "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+          "class": "core",
+          "why": "FFN layers as key-value memories \u2014 mechanistic analysis of FFN internals"
+        },
+        {
+          "rank": 33,
+          "id": "W4387561538",
+          "arxiv_id": "2310.06824",
+          "year": 2023,
+          "in_corpus_cites": 12,
+          "title": "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets",
+          "class": "core",
+          "why": "linear truth directions in activation space (Geometry of Truth)"
+        },
+        {
+          "rank": 34,
+          "id": "W4327550249",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 12,
+          "title": "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+          "class": "off",
+          "why": "ESMFold protein structure prediction; enters via generic language-model citations"
+        },
+        {
+          "rank": 35,
+          "id": "W1825675169",
+          "arxiv_id": "1506.06579",
+          "year": 2015,
+          "in_corpus_cites": 12,
+          "title": "Understanding Neural Networks Through Deep Visualization",
+          "class": "core",
+          "why": "feature visualization of DNN units via activation maximization"
+        },
+        {
+          "rank": 36,
+          "id": "W3101609372",
+          "arxiv_id": null,
+          "year": 2017,
+          "in_corpus_cites": 12,
+          "title": "Interpretable explanations of black boxes by meaningful perturbation",
+          "class": "adjacent",
+          "why": "perturbation-based saliency for black-box models"
+        },
+        {
+          "rank": 37,
+          "id": "W2799124508",
+          "arxiv_id": "1805.01070",
+          "year": 2018,
+          "in_corpus_cites": 12,
+          "title": "What you can cram into a single vector: Probing sentence embeddings for\\n linguistic properties",
+          "class": "core",
+          "why": "probing sentence embeddings (duplicate OpenAlex record of the same paper)"
+        },
+        {
+          "rank": 38,
+          "id": "W4378976798",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 11,
+          "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neural Networks",
+          "class": "core",
+          "why": "survey specifically of methods for interpreting inner structures of DNNs"
+        },
+        {
+          "rank": 39,
+          "id": "W4389520380",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 10,
+          "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+          "class": "core",
+          "why": "mechanism of factual recall through attention and MLP sublayers"
+        },
+        {
+          "rank": 40,
+          "id": "W4282980384",
+          "arxiv_id": "2206.06520",
+          "year": 2022,
+          "in_corpus_cites": 10,
+          "title": "Memory-Based Model Editing at Scale",
+          "class": "adjacent",
+          "why": "SERAC: memory-based model editing at scale"
+        },
+        {
+          "rank": 41,
+          "id": "W2657631929",
+          "arxiv_id": null,
+          "year": 2017,
+          "in_corpus_cites": 10,
+          "title": "Methods for interpreting and understanding deep neural networks",
+          "class": "adjacent",
+          "why": "survey of XAI methods for understanding DNNs"
+        },
+        {
+          "rank": 42,
+          "id": "W4386566901",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 10,
+          "title": "Understanding Transformer Memorization Recall Through Idioms",
+          "class": "core",
+          "why": "mechanism of memorization recall in transformers, traced through idioms"
+        },
+        {
+          "rank": 43,
+          "id": "W4368304611",
+          "arxiv_id": "2305.01610",
+          "year": 2023,
+          "in_corpus_cites": 10,
+          "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+          "class": "core",
+          "why": "sparse probing to find neurons encoding specific concepts"
+        },
+        {
+          "rank": 44,
+          "id": "W2562979205",
+          "arxiv_id": "1612.08220",
+          "year": 2016,
+          "in_corpus_cites": 9,
+          "title": "Understanding Neural Networks through Representation Erasure",
+          "class": "core",
+          "why": "representation erasure to attribute behaviour to internal units"
+        },
+        {
+          "rank": 45,
+          "id": "W2923014074",
+          "arxiv_id": null,
+          "year": 2018,
+          "in_corpus_cites": 9,
+          "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+          "class": "off",
+          "why": "GLUE benchmark \u2014 evaluation infrastructure, not interpretability"
+        },
+        {
+          "rank": 46,
+          "id": "W4385574113",
+          "arxiv_id": null,
+          "year": 2022,
+          "in_corpus_cites": 9,
+          "title": "Calibrating Factual Knowledge in Pretrained Language Models",
+          "class": "adjacent",
+          "why": "calibrating/editing factual knowledge in pretrained LMs"
+        },
+        {
+          "rank": 47,
+          "id": "W4315881234",
+          "arxiv_id": "2301.04213",
+          "year": 2023,
+          "in_corpus_cites": 9,
+          "title": "Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models",
+          "class": "core",
+          "why": "tests whether localization actually informs editing \u2014 a mechanistic claim under test"
+        },
+        {
+          "rank": 48,
+          "id": "W4362598605",
+          "arxiv_id": "2304.00740",
+          "year": 2023,
+          "in_corpus_cites": 9,
+          "title": "Inspecting and Editing Knowledge Representations in Language Models",
+          "class": "core",
+          "why": "REMEDI: inspecting and editing knowledge representations directly"
+        },
+        {
+          "rank": 49,
+          "id": "W2195388612",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 9,
+          "title": "Explaining nonlinear classification decisions with deep Taylor decomposition",
+          "class": "adjacent",
+          "why": "deep Taylor decomposition input attribution"
+        },
+        {
+          "rank": 50,
+          "id": "W4394743141",
+          "arxiv_id": null,
+          "year": 2024,
+          "in_corpus_cites": 8,
+          "title": "Evaluating the Ripple Effects of Knowledge Editing in Language Models",
+          "class": "adjacent",
+          "why": "evaluation of ripple effects of knowledge editing"
+        }
+      ]
+    },
+    "0.05": {
+      "keep_threshold": 0.05,
+      "n": 50,
+      "counts": {
+        "core": 35,
+        "adjacent": 11,
+        "off": 4
+      },
+      "core_pct": 70.0,
+      "gate_b_pass": true,
+      "items": [
+        {
+          "rank": 1,
+          "id": "W2606347107",
+          "arxiv_id": "1704.01444",
+          "year": 2017,
+          "in_corpus_cites": 192,
+          "title": "Learning to Generate Reviews and Discovering Sentiment",
+          "class": "core",
+          "why": "sentiment neuron \u2014 first single-unit feature discovery in a language model"
+        },
+        {
+          "rank": 2,
+          "id": "W4281657280",
+          "arxiv_id": "2202.05262",
+          "year": 2022,
+          "in_corpus_cites": 115,
+          "title": "Locating and Editing Factual Associations in GPT",
+          "class": "core",
+          "why": "ROME: causal tracing localizes factual associations to specific MLP layers"
+        },
+        {
+          "rank": 3,
+          "id": "W2282821441",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 59,
+          "title": "\"Why Should I Trust You?\"",
+          "class": "adjacent",
+          "why": "LIME: post-hoc input attribution, black-box"
+        },
+        {
+          "rank": 4,
+          "id": "W1951216520",
+          "arxiv_id": "1506.02078",
+          "year": 2015,
+          "in_corpus_cites": 53,
+          "title": "Visualizing and Understanding Recurrent Networks",
+          "class": "core",
+          "why": "interpretable individual cells in RNNs"
+        },
+        {
+          "rank": 5,
+          "id": "W4322718191",
+          "arxiv_id": "2302.13971",
+          "year": 2023,
+          "in_corpus_cites": 45,
+          "title": "LLaMA: Open and Efficient Foundation Language Models",
+          "class": "off",
+          "why": "LLaMA model release; enters as a universally cited base model"
+        },
+        {
+          "rank": 6,
+          "id": "W4308023630",
+          "arxiv_id": "2211.00593",
+          "year": 2022,
+          "in_corpus_cites": 44,
+          "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+          "class": "core",
+          "why": "IOI: a full circuit reverse-engineered in GPT-2 small"
+        },
+        {
+          "rank": 7,
+          "id": "W2946417913",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 43,
+          "title": "BERT Rediscovers the Classical NLP Pipeline",
+          "class": "core",
+          "why": "layer-wise probing shows BERT reconstructs the classical NLP pipeline"
+        },
+        {
+          "rank": 8,
+          "id": "W4307413986",
+          "arxiv_id": "2210.13382",
+          "year": 2022,
+          "in_corpus_cites": 42,
+          "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+          "class": "core",
+          "why": "probes recover a linear world model inside Othello-GPT"
+        },
+        {
+          "rank": 9,
+          "id": "W4297412003",
+          "arxiv_id": "2209.11895",
+          "year": 2022,
+          "in_corpus_cites": 40,
+          "title": "In-context Learning and Induction Heads",
+          "class": "core",
+          "why": "induction heads as the mechanism behind in-context learning"
+        },
+        {
+          "rank": 10,
+          "id": "W2962862931",
+          "arxiv_id": null,
+          "year": 2024,
+          "in_corpus_cites": 39,
+          "title": "On a Method to Measure Supervised Multiclass Model\u2019s Interpretability: Application to Degradation Diagnosis (Short Paper)",
+          "class": "off",
+          "why": "industrial degradation diagnosis; corrupted OpenAlex record acting as a reference magnet"
+        },
+        {
+          "rank": 11,
+          "id": "W4386839891",
+          "arxiv_id": "2309.08600",
+          "year": 2023,
+          "in_corpus_cites": 37,
+          "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+          "class": "core",
+          "why": "sparse autoencoders recover monosemantic features"
+        },
+        {
+          "rank": 12,
+          "id": "W2594633041",
+          "arxiv_id": "1703.01365",
+          "year": 2017,
+          "in_corpus_cites": 36,
+          "title": "Axiomatic Attribution for Deep Networks",
+          "class": "adjacent",
+          "why": "Integrated Gradients input attribution"
+        },
+        {
+          "rank": 13,
+          "id": "W4316135772",
+          "arxiv_id": "2301.05217",
+          "year": 2023,
+          "in_corpus_cites": 35,
+          "title": "Progress measures for grokking via mechanistic interpretability",
+          "class": "core",
+          "why": "mechanistic account of grokking via Fourier-basis circuits"
+        },
+        {
+          "rank": 14,
+          "id": "W1787224781",
+          "arxiv_id": null,
+          "year": 2015,
+          "in_corpus_cites": 35,
+          "title": "On Pixel-Wise Explanations for Non-Linear Classifier Decisions by Layer-Wise Relevance Propagation",
+          "class": "adjacent",
+          "why": "layer-wise relevance propagation attribution"
+        },
+        {
+          "rank": 15,
+          "id": "W4385572928",
+          "arxiv_id": null,
+          "year": 2022,
+          "in_corpus_cites": 34,
+          "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+          "class": "core",
+          "why": "how FFN updates promote concepts in vocabulary space"
+        },
+        {
+          "rank": 16,
+          "id": "W2594475271",
+          "arxiv_id": "1702.08608",
+          "year": 2017,
+          "in_corpus_cites": 34,
+          "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+          "class": "adjacent",
+          "why": "position paper on what interpretability should mean"
+        },
+        {
+          "rank": 17,
+          "id": "W4296932880",
+          "arxiv_id": "2209.10652",
+          "year": 2022,
+          "in_corpus_cites": 33,
+          "title": "Toy Models of Superposition",
+          "class": "core",
+          "why": "superposition/polysemanticity theory"
+        },
+        {
+          "rank": 18,
+          "id": "W2946794439",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 30,
+          "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+          "class": "core",
+          "why": "attention-head specialization analysis"
+        },
+        {
+          "rank": 19,
+          "id": "W4306313145",
+          "arxiv_id": "2210.07229",
+          "year": 2022,
+          "in_corpus_cites": 30,
+          "title": "Mass-Editing Memory in a Transformer",
+          "class": "adjacent",
+          "why": "MEMIT mass editing"
+        },
+        {
+          "rank": 20,
+          "id": "W2964204621",
+          "arxiv_id": null,
+          "year": 2018,
+          "in_corpus_cites": 30,
+          "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties",
+          "class": "core",
+          "why": "probing sentence embeddings for linguistic properties"
+        },
+        {
+          "rank": 21,
+          "id": "W2970862333",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 29,
+          "title": "Designing and Interpreting Probes with Control Tasks",
+          "class": "core",
+          "why": "control tasks \u2014 probe methodology: is the probe reading the model or learning the task?"
+        },
+        {
+          "rank": 22,
+          "id": "W2964159778",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 29,
+          "title": "Visualizing and Understanding Neural Models in NLP",
+          "class": "core",
+          "why": "visualizing internal representations of neural NLP models"
+        },
+        {
+          "rank": 23,
+          "id": "W2963400886",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 28,
+          "title": "What Is One Grain of Sand in the Desert? Analyzing Individual Neurons in Deep NLP Models",
+          "class": "core",
+          "why": "individual neuron analysis in deep NLP models"
+        },
+        {
+          "rank": 24,
+          "id": "W3152884768",
+          "arxiv_id": null,
+          "year": 2022,
+          "in_corpus_cites": 27,
+          "title": "Knowledge Neurons in Pretrained Transformers",
+          "class": "core",
+          "why": "knowledge neurons: localizing factual knowledge to specific units"
+        },
+        {
+          "rank": 25,
+          "id": "W2515741950",
+          "arxiv_id": "1608.04207",
+          "year": 2016,
+          "in_corpus_cites": 26,
+          "title": "Fine-grained Analysis of Sentence Embeddings Using Auxiliary Prediction Tasks",
+          "class": "core",
+          "why": "auxiliary-prediction probing of sentence embeddings"
+        },
+        {
+          "rank": 26,
+          "id": "W2963503967",
+          "arxiv_id": "1811.01157",
+          "year": 2018,
+          "in_corpus_cites": 25,
+          "title": "Identifying and Controlling Important Neurons in Neural Machine\\n Translation",
+          "class": "core",
+          "why": "identifying and causally controlling important neurons in NMT"
+        },
+        {
+          "rank": 27,
+          "id": "W1915485278",
+          "arxiv_id": null,
+          "year": 2015,
+          "in_corpus_cites": 25,
+          "title": "Understanding deep image representations by inverting them",
+          "class": "core",
+          "why": "inverting deep image representations to see what a layer retains"
+        },
+        {
+          "rank": 28,
+          "id": "W4385571791",
+          "arxiv_id": null,
+          "year": 2023,
+          "in_corpus_cites": 24,
+          "title": "Analyzing Transformers in Embedding Space",
+          "class": "core",
+          "why": "reading transformer parameters in embedding space"
+        },
+        {
+          "rank": 29,
+          "id": "W2906152891",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 24,
+          "title": "Analysis Methods in Neural Language Processing: A Survey",
+          "class": "core",
+          "why": "survey of analysis/probing methods for neural NLP models"
+        },
+        {
+          "rank": 30,
+          "id": "W2516809705",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 24,
+          "title": "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+          "class": "adjacent",
+          "why": "LIME (duplicate OpenAlex record)"
+        },
+        {
+          "rank": 31,
+          "id": "W2962772482",
+          "arxiv_id": null,
+          "year": 2019,
+          "in_corpus_cites": 22,
+          "title": "A survey of methods for explaining black box models",
+          "class": "adjacent",
+          "why": "survey of black-box explanation methods"
+        },
+        {
+          "rank": 32,
+          "id": "W2605409611",
+          "arxiv_id": "1704.02685",
+          "year": 2017,
+          "in_corpus_cites": 22,
+          "title": "Learning Important Features Through Propagating Activation Differences",
+          "class": "adjacent",
+          "why": "DeepLIFT attribution"
+        },
+        {
+          "rank": 33,
+          "id": "W2295107390",
+          "arxiv_id": null,
+          "year": 2016,
+          "in_corpus_cites": 22,
+          "title": "Learning Deep Features for Discriminative Localization",
+          "class": "adjacent",
+          "why": "CAM: class activation mapping saliency"
+        },
+        {
+          "rank": 34,
+          "id": "W4387355345",
+          "arxiv_id": "2310.01405",
+          "year": 2023,
+          "in_corpus_cites": 21,
+          "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+          "class": "core",
+          "why": "RepE: reading and controlling internal representations"
+        },
+        {
+          "rank": 35,
+          "id": "W3117576675",
+          "arxiv_id": null,
+          "year": 2021,
+          "in_corpus_cites": 20,
+          "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+          "class": "core",
+          "why": "FFN layers as key-value memories"
+        },
+        {
+          "rank": 36,
+          "id": "W4379928343",
+          "arxiv_id": "2306.03341",
+          "year": 2023,
+          "in_corpus_cites": 19,
+          "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+          "class": "core",
+          "why": "inference-time intervention on a truth direction"
+        },
+        {
+          "rank": 37,
+          "id": "W4384918448",
+          "arxiv_id": "2307.09288",
+          "year": 2023,
+          "in_corpus_cites": 19,
+          "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+          "class": "off",
+          "why": "Llama 2 model release; universally cited base model"
+        },
+        {
+          "rank": 38,
+          "id": "W1825675169",
+          "arxiv_id": "1506.06579",
+          "year": 2015,
+          "in_corpus_cites": 19,
+          "title": "Understanding Neural Networks Through Deep Visualization",
+          "class": "core",
+          "why": "deep visualization of DNN units"
+        },
+        {
+          "rank": 39,
+          "id": "W2963483561",
+          "arxiv_id": "1711.11279",
+          "year": 2017,
+          "in_corpus_cites": 19,
+          "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with\\n Concept Activation Vectors (TCAV)",
+          "class": "core",
+          "why": "TCAV concept activation vectors"
+        },
+        {
+          "rank": 40,
+          "id": "W3082665562",
+          "arxiv_id": null,
+          "year": 2020,
+          "in_corpus_cites": 18,
+          "title": "Understanding the role of individual units in a deep neural network",
+          "class": "core",
+          "why": "network-dissection lineage: the causal role of individual units"
+        },
+        {
+          "rank": 41,
+          "id": "W2963996492",
+          "arxiv_id": null,
+          "year": 2015,
+          "in_corpus_cites": 18,
+          "title": "Object Detectors Emerge in Deep Scene CNNs",
+          "class": "core",
+          "why": "object detectors emerge in CNN units \u2014 unit-level interpretability"
+        },
+        {
+          "rank": 42,
+          "id": "W4327526719",
+          "arxiv_id": "2303.08112",
+          "year": 2023,
+          "in_corpus_cites": 17,
+          "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+          "class": "core",
+          "why": "tuned lens decoding of intermediate layers"
+        },
+        {
+          "rank": 43,
+          "id": "W3159900299",
+          "arxiv_id": null,
+          "year": 2021,
+          "in_corpus_cites": 17,
+          "title": "Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals",
+          "class": "core",
+          "why": "amnesic probing with causal intervention"
+        },
+        {
+          "rank": 44,
+          "id": "W2799124508",
+          "arxiv_id": "1805.01070",
+          "year": 2018,
+          "in_corpus_cites": 17,
+          "title": "What you can cram into a single vector: Probing sentence embeddings for\\n linguistic properties",
+          "class": "core",
+          "why": "probing sentence embeddings (duplicate record)"
+        },
+        {
+          "rank": 45,
+          "id": "W4288351520",
+          "arxiv_id": "1905.06316",
+          "year": 2019,
+          "in_corpus_cites": 17,
+          "title": "What do you learn from context? Probing for sentence structure in\\n contextualized word representations",
+          "class": "core",
+          "why": "structural probing for sentence structure in contextual embeddings"
+        },
+        {
+          "rank": 46,
+          "id": "W2562979205",
+          "arxiv_id": "1612.08220",
+          "year": 2016,
+          "in_corpus_cites": 16,
+          "title": "Understanding Neural Networks through Representation Erasure",
+          "class": "core",
+          "why": "representation erasure attribution to internal units"
+        },
+        {
+          "rank": 47,
+          "id": "W2923014074",
+          "arxiv_id": null,
+          "year": 2018,
+          "in_corpus_cites": 16,
+          "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+          "class": "off",
+          "why": "GLUE benchmark \u2014 evaluation infrastructure"
+        },
+        {
+          "rank": 48,
+          "id": "W4367628394",
+          "arxiv_id": "2304.14997",
+          "year": 2023,
+          "in_corpus_cites": 16,
+          "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+          "class": "core",
+          "why": "ACDC automated circuit discovery"
+        },
+        {
+          "rank": 49,
+          "id": "W2657631929",
+          "arxiv_id": null,
+          "year": 2017,
+          "in_corpus_cites": 16,
+          "title": "Methods for interpreting and understanding deep neural networks",
+          "class": "adjacent",
+          "why": "survey of XAI methods"
+        },
+        {
+          "rank": 50,
+          "id": "W3101609372",
+          "arxiv_id": null,
+          "year": 2017,
+          "in_corpus_cites": 16,
+          "title": "Interpretable explanations of black boxes by meaningful perturbation",
+          "class": "adjacent",
+          "why": "perturbation-based saliency"
+        }
+      ]
+    }
+  }
+}

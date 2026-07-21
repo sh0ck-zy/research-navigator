@@ -1,0 +1,25 @@
+{
+  "_doc": "Hard gate (a): every landmark with tier='core' MUST be present in the corpus. tier='adjacent' papers are reported but do NOT block — they are model-editing/knowledge-localization work that neighbours interp rather than constituting it (Joao's call, 2026-07-21). Match by arxiv_id (authoritative: OpenAlex's arXiv landing-page mapping is reliable even on records whose title metadata is corrupted) OR normalized-title substring. is_seed=true means it anchors ingest_v3 (guaranteed present); is_seed=false tests real coverage via forward/foundational expansion.",
+  "_tiers": {
+    "core": "must be present — gate (a) fails if any is missing",
+    "adjacent": "reported only — model editing / knowledge localization, not interp core"
+  },
+  "landmarks": [
+    {"arxiv_id": "2209.10652", "title": "Toy Models of Superposition", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2209.11895", "title": "In-context Learning and Induction Heads", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2211.00593", "title": "Interpretability in the Wild", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2202.05262", "title": "Locating and Editing Factual Associations in GPT", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2301.05217", "title": "Progress measures for grokking via mechanistic interpretability", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2210.13382", "title": "Emergent World Representations", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2309.08600", "title": "Sparse Autoencoders Find Highly Interpretable Features", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "2310.01405", "title": "Representation Engineering", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "1704.01444", "title": "Learning to Generate Reviews and Discovering Sentiment", "is_seed": true, "tier": "core"},
+    {"arxiv_id": "1610.01644", "title": "Understanding intermediate layers using linear classifier probes", "is_seed": false, "tier": "core"},
+    {"arxiv_id": "2305.01610", "title": "Finding Neurons in a Haystack", "is_seed": false, "tier": "core"},
+    {"arxiv_id": "2304.14997", "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability", "is_seed": false, "tier": "core"},
+
+    {"arxiv_id": "2012.14913", "title": "Transformer Feed-Forward Layers Are Key-Value Memories", "is_seed": true, "tier": "adjacent"},
+    {"arxiv_id": "2104.08696", "title": "Knowledge Neurons in Pretrained Transformers", "is_seed": false, "tier": "adjacent"},
+    {"arxiv_id": "2210.07229", "title": "Mass-Editing Memory in a Transformer", "is_seed": false, "tier": "adjacent"}
+  ]
+}

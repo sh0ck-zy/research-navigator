@@ -38,3 +38,9 @@ data/navigator.db-shm
 
 # TS incremental build cache
 spaces/tsconfig.tsbuildinfo
+data/graph*
+
+# Knowledge Lab — regenerable artifacts
+data/processed/
+lab/out/
+/lib/

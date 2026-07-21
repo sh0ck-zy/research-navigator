@@ -1,0 +1,663 @@
+{
+  "corpus": "data/raw/interp_corpus_v3.jsonl",
+  "papers": 635,
+  "pct_with_edge": 97.8,
+  "in_corpus_edges": 1842,
+  "years": {
+    "2014": 3,
+    "2015": 8,
+    "2016": 13,
+    "2017": 27,
+    "2018": 43,
+    "2019": 41,
+    "2020": 48,
+    "2021": 40,
+    "2022": 51,
+    "2023": 147,
+    "2024": 107,
+    "2025": 83,
+    "2026": 24
+  },
+  "venues": [
+    [
+      "?",
+      197
+    ],
+    [
+      "arXiv (Cornell University)",
+      177
+    ],
+    [
+      "bioRxiv (Cold Spring Harbor Laboratory)",
+      15
+    ],
+    [
+      "Proceedings of the AAAI Conference on Artificial Intelligence",
+      14
+    ],
+    [
+      "Qeios",
+      9
+    ],
+    [
+      "Transactions of the Association for Computational Linguistics",
+      8
+    ],
+    [
+      "Proceedings of the National Academy of Sciences",
+      8
+    ],
+    [
+      "Zenodo (CERN European Organization for Nuclear Research)",
+      4
+    ]
+  ],
+  "landmarks_present": "13/15",
+  "landmarks_core_present": "11/12",
+  "landmarks_adjacent_present": "2/3",
+  "gate_a_pass": false,
+  "landmarks": [
+    {
+      "arxiv_id": "2209.10652",
+      "title": "Toy Models of Superposition",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 34,
+      "indeg": 29,
+      "rank": 18
+    },
+    {
+      "arxiv_id": "2209.11895",
+      "title": "In-context Learning and Induction Heads",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 74,
+      "indeg": 31,
+      "rank": 4
+    },
+    {
+      "arxiv_id": "2211.00593",
+      "title": "Interpretability in the Wild",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 45,
+      "indeg": 41,
+      "rank": 6
+    },
+    {
+      "arxiv_id": "2202.05262",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 151,
+      "indeg": 90,
+      "rank": 2
+    },
+    {
+      "arxiv_id": "2301.05217",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 46,
+      "indeg": 32,
+      "rank": 9
+    },
+    {
+      "arxiv_id": "2210.13382",
+      "title": "Emergent World Representations",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 50,
+      "indeg": 28,
+      "rank": 8
+    },
+    {
+      "arxiv_id": "2309.08600",
+      "title": "Sparse Autoencoders Find Highly Interpretable Features",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 37,
+      "indeg": 35,
+      "rank": 12
+    },
+    {
+      "arxiv_id": "2310.01405",
+      "title": "Representation Engineering",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 46,
+      "indeg": 16,
+      "rank": 19
+    },
+    {
+      "arxiv_id": "1704.01444",
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "is_seed": true,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 315,
+      "indeg": 116,
+      "rank": 1
+    },
+    {
+      "arxiv_id": "1610.01644",
+      "title": "Understanding intermediate layers using linear classifier probes",
+      "is_seed": false,
+      "tier": "core",
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    },
+    {
+      "arxiv_id": "2305.01610",
+      "title": "Finding Neurons in a Haystack",
+      "is_seed": false,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 10,
+      "indeg": 10,
+      "rank": 63
+    },
+    {
+      "arxiv_id": "2304.14997",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "is_seed": false,
+      "tier": "core",
+      "present": true,
+      "in_corpus_cites": 16,
+      "indeg": 15,
+      "rank": 35
+    },
+    {
+      "arxiv_id": "2012.14913",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "is_seed": true,
+      "tier": "adjacent",
+      "present": true,
+      "in_corpus_cites": 29,
+      "indeg": 12,
+      "rank": 26
+    },
+    {
+      "arxiv_id": "2104.08696",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "is_seed": false,
+      "tier": "adjacent",
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    },
+    {
+      "arxiv_id": "2210.07229",
+      "title": "Mass-Editing Memory in a Transformer",
+      "is_seed": false,
+      "tier": "adjacent",
+      "present": true,
+      "in_corpus_cites": 38,
+      "indeg": 28,
+      "rank": 15
+    }
+  ],
+  "top_by_in_corpus_cites": [
+    {
+      "id": "W2606347107",
+      "arxiv_id": "1704.01444",
+      "year": 2017,
+      "in_corpus_cites": 315,
+      "indeg": 116,
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "abstract": "We explore the properties of byte-level recurrent language models. When given sufficient amounts of capacity, training data, and compute time, the representations learned by these models include disentangled features corresponding to high-level concepts. Specifically, we find a single unit which performs sentiment anal"
+    },
+    {
+      "id": "W4281657280",
+      "arxiv_id": "2202.05262",
+      "year": 2022,
+      "in_corpus_cites": 151,
+      "indeg": 90,
+      "title": "Locating and Editing Factual Associations in GPT",
+      "abstract": "We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual pred"
+    },
+    {
+      "id": "W4297412003",
+      "arxiv_id": "2209.11895",
+      "year": 2022,
+      "in_corpus_cites": 74,
+      "indeg": 31,
+      "title": "In-context Learning and Induction Heads",
+      "abstract": "\"Induction heads\" are attention heads that implement a simple algorithm to complete token sequences like [A][B] ... [A] -&gt; [B]. In this work, we present preliminary and indirect evidence for a hypothesis that induction heads might constitute the mechanism for the majority of all \"in-context learning\" in large transf"
+    },
+    {
+      "id": "W1951216520",
+      "arxiv_id": "1506.02078",
+      "year": 2015,
+      "in_corpus_cites": 72,
+      "indeg": 29,
+      "title": "Visualizing and Understanding Recurrent Networks",
+      "abstract": "Recurrent Neural Networks (RNNs), and specifically a variant with Long Short-Term Memory (LSTM), are enjoying renewed interest as a result of successful applications in a wide range of machine learning problems that involve sequential data. However, while LSTMs provide exceptional results in practice, the source of the"
+    },
+    {
+      "id": "W2946417913",
+      "arxiv_id": null,
+      "year": 2019,
+      "in_corpus_cites": 72,
+      "indeg": 34,
+      "title": "BERT Rediscovers the Classical NLP Pipeline",
+      "abstract": "Pre-trained text encoders have rapidly advanced the state of the art on many NLP tasks. We focus on one such model, BERT, and aim to quantify where linguistic information is captured within the network. We find that the model represents the steps of the traditional NLP pipeline in an interpretable and localizable way, "
+    },
+    {
+      "id": "W2923014074",
+      "arxiv_id": null,
+      "year": 2018,
+      "in_corpus_cites": 70,
+      "indeg": 9,
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "abstract": "Human ability to understand language is general, flexible, and robust. In contrast, most NLU models above the word level are designed for a specific task and struggle with out-of-domain data. If we aspire to develop models with understanding beyond the detection of superficial correspondences between inputs and outputs"
+    },
+    {
+      "id": "W2963310665",
+      "arxiv_id": null,
+      "year": 2018,
+      "in_corpus_cites": 62,
+      "indeg": 4,
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "abstract": "Human ability to understand language is general, flexible, and robust. In contrast, most NLU models above the word level are designed for a specific task and struggle with out-of-domain data. If we aspire to develop models with understanding beyond the detection of superficial correspondences between inputs and outputs"
+    },
+    {
+      "id": "W4307413986",
+      "arxiv_id": "2210.13382",
+      "year": 2022,
+      "in_corpus_cites": 50,
+      "indeg": 28,
+      "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+      "abstract": "Language models show a surprising range of capabilities, but the source of their apparent competence is unclear. Do these networks just memorize a collection of surface statistics, or do they rely on internal representations of the process that generates the sequences they see? We investigate this question by applying "
+    },
+    {
+      "id": "W2946794439",
+      "arxiv_id": null,
+      "year": 2019,
+      "in_corpus_cites": 50,
+      "indeg": 22,
+      "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+      "abstract": "Multi-head self-attention is a key component of the Transformer, a state-of-the-art architecture for neural machine translation. In this work we evaluate the contribution made by individual attention heads in the encoder to the overall performance of the model and analyze the roles played by them. We find that the most"
+    },
+    {
+      "id": "W4316135772",
+      "arxiv_id": "2301.05217",
+      "year": 2023,
+      "in_corpus_cites": 46,
+      "indeg": 32,
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "abstract": "Neural networks often exhibit emergent behavior, where qualitatively new capabilities arise from scaling up the amount of parameters, training data, or training steps. One approach to understanding emergence is to find continuous \\textit{progress measures} that underlie the seemingly discontinuous qualitative changes. "
+    },
+    {
+      "id": "W4387355345",
+      "arxiv_id": "2310.01405",
+      "year": 2023,
+      "in_corpus_cites": 46,
+      "indeg": 16,
+      "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+      "abstract": "In this paper, we identify and characterize the emerging area of representation engineering (RepE), an approach to enhancing the transparency of AI systems that draws on insights from cognitive neuroscience. RepE places population-level representations, rather than neurons or circuits, at the center of analysis, equipp"
+    },
+    {
+      "id": "W4308023630",
+      "arxiv_id": "2211.00593",
+      "year": 2022,
+      "in_corpus_cites": 45,
+      "indeg": 41,
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap b"
+    },
+    {
+      "id": "W2962862931",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 44,
+      "indeg": 29,
+      "title": "On a Method to Measure Supervised Multiclass Model\u2019s Interpretability: Application to Degradation Diagnosis (Short Paper)",
+      "abstract": "In an industrial maintenance context, degradation diagnosis is the problem of determining the current level of degradation of operating machines based on measurements. With the emergence of Machine Learning techniques, such a problem can now be solved by training a degradation model offline and by using it online. Whil"
+    },
+    {
+      "id": "W3098267758",
+      "arxiv_id": null,
+      "year": 2020,
+      "in_corpus_cites": 41,
+      "indeg": 6,
+      "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+      "abstract": "The remarkable success of pretrained language models has motivated the study of what kinds of knowledge these models learn during pretraining. Reformulating tasks as fillin-the-blanks problems (e.g., cloze tests) is a natural approach for gauging such knowledge, however, its usage is limited by the manual effort and gu"
+    },
+    {
+      "id": "W2964204621",
+      "arxiv_id": null,
+      "year": 2018,
+      "in_corpus_cites": 40,
+      "indeg": 24,
+      "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties",
+      "abstract": "Although much effort has recently been devoted to training high-quality sentence embeddings, we still have a poor understanding of what they are capturing. \"Downstream\" tasks, often based on sentence classification, are commonly used to evaluate the quality of sentence representations. The complexity of the tasks makes"
+    },
+    {
+      "id": "W4385572928",
+      "arxiv_id": null,
+      "year": 2022,
+      "in_corpus_cites": 38,
+      "indeg": 28,
+      "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+      "abstract": "Transformer-based language models (LMs) are at the core of modern NLP, but their internal prediction construction process is opaque and largely not understood. In this work, we make a substantial step towards unveiling this underlying prediction process, by reverse-engineering the operation of the feed-forward network "
+    },
+    {
+      "id": "W4306313145",
+      "arxiv_id": "2210.07229",
+      "year": 2022,
+      "in_corpus_cites": 38,
+      "indeg": 28,
+      "title": "Mass-Editing Memory in a Transformer",
+      "abstract": "Recent work has shown exciting promise in updating large language models with new memories, so as to replace obsolete information or add specialized knowledge. However, this line of work is predominantly limited to updating single associations. We develop MEMIT, a method for directly updating a language model with many"
+    },
+    {
+      "id": "W4386839891",
+      "arxiv_id": "2309.08600",
+      "year": 2023,
+      "in_corpus_cites": 37,
+      "indeg": 35,
+      "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "abstract": "One of the roadblocks to a better understanding of neural networks' internals is \\textit{polysemanticity}, where neurons appear to activate in multiple, semantically distinct contexts. Polysemanticity prevents us from identifying concise, human-understandable explanations for what neural networks are doing internally. "
+    },
+    {
+      "id": "W2594475271",
+      "arxiv_id": "1702.08608",
+      "year": 2017,
+      "in_corpus_cites": 37,
+      "indeg": 26,
+      "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+      "abstract": "As machine learning systems become ubiquitous, there has been a surge of interest in interpretable machine learning: systems that provide explanation for their outputs. These explanations are often used to qualitatively assess other criteria such as safety or non-discrimination. However, despite the interest in interpr"
+    },
+    {
+      "id": "W4296932880",
+      "arxiv_id": "2209.10652",
+      "year": 2022,
+      "in_corpus_cites": 34,
+      "indeg": 29,
+      "title": "Toy Models of Superposition",
+      "abstract": "Demonstrates that hallucination in neural networks is a structural consequence of ungoverned superposition. Introduces a governance filter operating on the Gram matrix of the weight matrix that eliminates 100% of false-positive activations across all tested sparsity regimes (a toy-model feasibility result; true-positiv"
+    },
+    {
+      "id": "W4379928343",
+      "arxiv_id": "2306.03341",
+      "year": 2023,
+      "in_corpus_cites": 31,
+      "indeg": 13,
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the \"truthfulness\" of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performa"
+    },
+    {
+      "id": "W4288351520",
+      "arxiv_id": "1905.06316",
+      "year": 2019,
+      "in_corpus_cites": 31,
+      "indeg": 16,
+      "title": "What do you learn from context? Probing for sentence structure in\\n contextualized word representations",
+      "abstract": "Contextualized representation models such as ELMo (Peters et al., 2018a) and\\nBERT (Devlin et al., 2018) have recently achieved state-of-the-art results on a\\ndiverse array of downstream NLP tasks. Building on recent token-level probing\\nwork, we introduce a novel edge probing task design and construct a broad suite\\no"
+    },
+    {
+      "id": "W3117576675",
+      "arxiv_id": null,
+      "year": 2021,
+      "in_corpus_cites": 29,
+      "indeg": 12,
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "abstract": "Feed-forward layers constitute two-thirds of a transformer model's parameters, yet their role in the network remains under-explored. We show that feed-forward layers in transformerbased language models operate as key-value memories, where each key correlates with textual patterns in the training examples, and each valu"
+    },
+    {
+      "id": "W2516809705",
+      "arxiv_id": null,
+      "year": 2016,
+      "in_corpus_cites": 29,
+      "indeg": 20,
+      "title": "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+      "abstract": "Despite widespread adoption in NLP, machine learning models remain mostly black boxes. Understanding the reasons behind predictions is, however, quite important in assessing trust in a model. Trust is fundamental if one plans to take action based on a prediction, or when choosing whether or not to deploy a new model. I"
+    },
+    {
+      "id": "W4385571791",
+      "arxiv_id": null,
+      "year": 2023,
+      "in_corpus_cites": 28,
+      "indeg": 23,
+      "title": "Analyzing Transformers in Embedding Space",
+      "abstract": "Understanding Transformer-based models has attracted significant attention, as they lie at the heart of recent technological advances across machine learning. While most interpretability methods rely on running models over inputs, recent work has shown that a zero-pass approach, where parameters are interpreted directl"
+    },
+    {
+      "id": "W2963400886",
+      "arxiv_id": null,
+      "year": 2019,
+      "in_corpus_cites": 28,
+      "indeg": 17,
+      "title": "What Is One Grain of Sand in the Desert? Analyzing Individual Neurons in Deep NLP Models",
+      "abstract": "Despite the remarkable evolution of deep neural networks in natural language processing (NLP), their interpretability remains a challenge. Previous work largely focused on what these models learn at the representation level. We break this analysis down further and study individual dimensions (neurons) in the vector rep"
+    },
+    {
+      "id": "W3007672467",
+      "arxiv_id": "2002.08909",
+      "year": 2020,
+      "in_corpus_cites": 27,
+      "indeg": 2,
+      "title": "REALM: Retrieval-Augmented Language Model Pre-Training",
+      "abstract": "Language model pre-training has been shown to capture a surprising amount of world knowledge, crucial for NLP tasks such as question answering. However, this knowledge is stored implicitly in the parameters of a neural network, requiring ever-larger networks to cover more facts. To capture knowledge in a more modular a"
+    },
+    {
+      "id": "W2605409611",
+      "arxiv_id": "1704.02685",
+      "year": 2017,
+      "in_corpus_cites": 26,
+      "indeg": 14,
+      "title": "Learning Important Features Through Propagating Activation Differences",
+      "abstract": "The purported \"black box\" nature of neural networks is a barrier to adoption in applications where interpretability is essential. Here we present DeepLIFT (Deep Learning Important FeaTures), a method for decomposing the output prediction of a neural network on a specific input by backpropagating the contributions of al"
+    },
+    {
+      "id": "W1825675169",
+      "arxiv_id": "1506.06579",
+      "year": 2015,
+      "in_corpus_cites": 26,
+      "indeg": 12,
+      "title": "Understanding Neural Networks Through Deep Visualization",
+      "abstract": "Recent years have produced great advances in training large, deep neural networks (DNNs), including notable successes in training convolutional neural networks (convnets) to recognize natural images. However, our understanding of how these models work, especially what computations they perform at intermediate layers, h"
+    },
+    {
+      "id": "W2947012833",
+      "arxiv_id": "1905.11833",
+      "year": 2019,
+      "in_corpus_cites": 25,
+      "indeg": 2,
+      "title": "Interpreting and improving natural-language processing (in machines) with natural language-processing (in the brain)",
+      "abstract": "Neural networks models for NLP are typically implemented without the explicit encoding of language rules and yet they are able to break one performance record after another. This has generated a lot of research interest in interpreting the representations learned by these networks. We propose here a novel interpretatio"
+    },
+    {
+      "id": "W2562979205",
+      "arxiv_id": "1612.08220",
+      "year": 2016,
+      "in_corpus_cites": 24,
+      "indeg": 9,
+      "title": "Understanding Neural Networks through Representation Erasure",
+      "abstract": "While neural networks have been successfully applied to many natural language processing tasks, they come at the cost of interpretability. In this paper, we propose a general methodology to analyze and interpret decisions from a neural model by observing the effects on the model of erasing various parts of the represen"
+    },
+    {
+      "id": "W2753738274",
+      "arxiv_id": null,
+      "year": 2017,
+      "in_corpus_cites": 24,
+      "indeg": 1,
+      "title": "beta-VAE: Learning Basic Visual Concepts with a Constrained Variational Framework",
+      "abstract": "Learning an interpretable factorised representation of the independent data generative factors of the world without supervision is an important precursor for the development of artificial intelligence that is able to learn and reason in the same way that humans do. We introduce beta-VAE, a new state-of-the-art framewor"
+    },
+    {
+      "id": "W2799124508",
+      "arxiv_id": "1805.01070",
+      "year": 2018,
+      "in_corpus_cites": 24,
+      "indeg": 12,
+      "title": "What you can cram into a single vector: Probing sentence embeddings for\\n linguistic properties",
+      "abstract": "Although much effort has recently been devoted to training high-quality\\nsentence embeddings, we still have a poor understanding of what they are\\ncapturing. \"Downstream\" tasks, often based on sentence classification, are\\ncommonly used to evaluate the quality of sentence representations. The\\ncomplexity of the tasks m"
+    },
+    {
+      "id": "W2962772482",
+      "arxiv_id": null,
+      "year": 2019,
+      "in_corpus_cites": 23,
+      "indeg": 15,
+      "title": "A survey of methods for explaining black box models",
+      "abstract": "In recent years, many accurate decision support systems have been constructed as black boxes, that is as systems that hide their internal logic to the user. This lack of explanation constitutes both a practical and an ethical issue. The literature reports many approaches aimed at overcoming this crucial weakness, somet"
+    },
+    {
+      "id": "W2963226019",
+      "arxiv_id": "1606.03657",
+      "year": 2016,
+      "in_corpus_cites": 22,
+      "indeg": 2,
+      "title": "InfoGAN: Interpretable Representation Learning by Information Maximizing\\n Generative Adversarial Nets",
+      "abstract": "This paper describes InfoGAN, an information-theoretic extension to the\\nGenerative Adversarial Network that is able to learn disentangled\\nrepresentations in a completely unsupervised manner. InfoGAN is a generative\\nadversarial network that also maximizes the mutual information between a small\\nsubset of the latent v"
+    },
+    {
+      "id": "W3159900299",
+      "arxiv_id": null,
+      "year": 2021,
+      "in_corpus_cites": 22,
+      "indeg": 16,
+      "title": "Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals",
+      "abstract": "Abstract A growing body of work makes use of probing in order to investigate the working of neural models, often considered black boxes. Recently, an ongoing debate emerged surrounding the limitations of the probing paradigm. In this work, we point out the inability to infer behavioral conclusions from probing results,"
+    },
+    {
+      "id": "W2805516822",
+      "arxiv_id": "1806.01261",
+      "year": 2018,
+      "in_corpus_cites": 21,
+      "indeg": 0,
+      "title": "Relational inductive biases, deep learning, and graph networks",
+      "abstract": "Artificial intelligence (AI) has undergone a renaissance recently, making major progress in key domains such as vision, language, control, and decision-making. This has been due, in part, to cheap data and cheap compute resources, which have fit the natural strengths of deep learning. However, many defining characteris"
+    },
+    {
+      "id": "W2434741482",
+      "arxiv_id": "1606.03657",
+      "year": 2016,
+      "in_corpus_cites": 20,
+      "indeg": 2,
+      "title": "InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets",
+      "abstract": "This paper describes InfoGAN, an information-theoretic extension to the Generative Adversarial Network that is able to learn disentangled representations in a completely unsupervised manner. InfoGAN is a generative adversarial network that also maximizes the mutual information between a small subset of the latent varia"
+    },
+    {
+      "id": "W2963483561",
+      "arxiv_id": "1711.11279",
+      "year": 2017,
+      "in_corpus_cites": 20,
+      "indeg": 17,
+      "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with\\n Concept Activation Vectors (TCAV)",
+      "abstract": "The interpretation of deep learning models is a challenge due to their size,\\ncomplexity, and often opaque internal state. In addition, many systems, such as\\nimage classifiers, operate on low-level features rather than high-level\\nconcepts. To address these challenges, we introduce Concept Activation Vectors\\n(CAVs), "
+    },
+    {
+      "id": "W4388786517",
+      "arxiv_id": "2311.08576",
+      "year": 2023,
+      "in_corpus_cites": 19,
+      "indeg": 0,
+      "title": "Towards Evaluating AI Systems for Moral Status Using Self-Reports",
+      "abstract": "As AI systems become more advanced and widely deployed, there will likely be increasing debate over whether AI systems could have conscious experiences, desires, or other states of potential moral significance. It is important to inform these discussions with empirical evidence to the extent possible. We argue that und"
+    },
+    {
+      "id": "W4298181573",
+      "arxiv_id": "2209.14375",
+      "year": 2022,
+      "in_corpus_cites": 18,
+      "indeg": 3,
+      "title": "Improving alignment of dialogue agents via targeted human judgements",
+      "abstract": "We present Sparrow, an information-seeking dialogue agent trained to be more helpful, correct, and harmless compared to prompted language model baselines. We use reinforcement learning from human feedback to train our models with two new additions to help human raters judge agent behaviour. First, to make our agent mor"
+    },
+    {
+      "id": "W4282980384",
+      "arxiv_id": "2206.06520",
+      "year": 2022,
+      "in_corpus_cites": 18,
+      "indeg": 10,
+      "title": "Memory-Based Model Editing at Scale",
+      "abstract": "Even the largest neural networks make errors, and once-correct predictions can become invalid as the world changes. Model editors make local updates to the behavior of base (pre-trained) models to inject updated knowledge or correct undesirable behaviors. Existing model editors have shown promise, but also suffer from "
+    },
+    {
+      "id": "W2991265431",
+      "arxiv_id": "1911.12246",
+      "year": 2019,
+      "in_corpus_cites": 18,
+      "indeg": 1,
+      "title": "Do Attention Heads in BERT Track Syntactic Dependencies?",
+      "abstract": "We investigate the extent to which individual attention heads in pretrained transformer language models, such as BERT and RoBERTa, implicitly capture syntactic dependency relations. We employ two methods---taking the maximum attention weight and computing the maximum spanning tree---to extract implicit dependency relat"
+    },
+    {
+      "id": "W2195388612",
+      "arxiv_id": null,
+      "year": 2016,
+      "in_corpus_cites": 18,
+      "indeg": 9,
+      "title": "Explaining nonlinear classification decisions with deep Taylor decomposition",
+      "abstract": "Nonlinear methods such as Deep Neural Networks (DNNs) are the gold standard for various challenging machine learning problems such as image recognition. Although these methods perform impressively well, they have a significant disadvantage, the lack of transparency, limiting the interpretability of the solution and thu"
+    },
+    {
+      "id": "W2962816513",
+      "arxiv_id": null,
+      "year": 2018,
+      "in_corpus_cites": 18,
+      "indeg": 4,
+      "title": "Pathologies of Neural Models Make Interpretations Difficult",
+      "abstract": "One way to interpret neural model predictions is to highlight the most important input features-for example, a heatmap visualization over the words in an input sentence. In existing interpretation methods for NLP, a word's importance is determined by either input perturbation-measuring the decrease in model confidence "
+    },
+    {
+      "id": "W2970820321",
+      "arxiv_id": null,
+      "year": 2019,
+      "in_corpus_cites": 17,
+      "indeg": 13,
+      "title": "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+      "abstract": "Elena Voita, Rico Sennrich, Ivan Titov. Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing (EMNLP-IJCNLP). 2019."
+    },
+    {
+      "id": "W2618851150",
+      "arxiv_id": "1705.07874",
+      "year": 2017,
+      "in_corpus_cites": 17,
+      "indeg": 13,
+      "title": "A Unified Approach to Interpreting Model Predictions",
+      "abstract": "Understanding why a model makes a certain prediction can be as crucial as the prediction's accuracy in many applications. However, the highest accuracy for large modern datasets is often achieved by complex models that even experts struggle to interpret, such as ensemble or deep learning models, creating a tension betw"
+    },
+    {
+      "id": "W4327526719",
+      "arxiv_id": "2303.08112",
+      "year": 2023,
+      "in_corpus_cites": 17,
+      "indeg": 16,
+      "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+      "abstract": "We analyze transformers from the perspective of iterative inference, seeking to understand how model predictions are refined layer by layer. To do so, we train an affine probe for each block in a frozen pretrained model, making it possible to decode every hidden state into a distribution over the vocabulary. Our method"
+    },
+    {
+      "id": "W2657631929",
+      "arxiv_id": null,
+      "year": 2017,
+      "in_corpus_cites": 17,
+      "indeg": 10,
+      "title": "Methods for interpreting and understanding deep neural networks",
+      "abstract": "This paper provides an entry point to the problem of interpreting a deep neural network model and explaining its predictions. It is based on a tutorial given at ICASSP 2017. As a tutorial paper, the set of methods covered here is not exhaustive, but sufficiently representative to discuss a number of questions in interp"
+    },
+    {
+      "id": "W3101609372",
+      "arxiv_id": null,
+      "year": 2017,
+      "in_corpus_cites": 17,
+      "indeg": 12,
+      "title": "Interpretable explanations of black boxes by meaningful perturbation",
+      "abstract": "As machine learning algorithms are increasingly applied to high impact yet high risk tasks, such as medical diagnosis or autonomous driving, it is critical that researchers can explain how such algorithms arrived at their predictions. In recent years, a number of image saliency methods have been developed to summarize "
+    }
+  ]
+}

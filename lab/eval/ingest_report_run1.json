@@ -1,0 +1,643 @@
+{
+  "corpus": "/Users/joao/Projects/clarity-research/data/raw/interp_corpus_v3.jsonl",
+  "papers": 116,
+  "pct_with_edge": 90.5,
+  "in_corpus_edges": 168,
+  "years": {
+    "2016": 1,
+    "2017": 1,
+    "2018": 4,
+    "2019": 1,
+    "2020": 3,
+    "2021": 5,
+    "2022": 8,
+    "2023": 33,
+    "2024": 28,
+    "2025": 21,
+    "2026": 11
+  },
+  "venues": [
+    [
+      "arXiv (Cornell University)",
+      47
+    ],
+    [
+      "?",
+      26
+    ],
+    [
+      "Qeios",
+      5
+    ],
+    [
+      "bioRxiv (Cold Spring Harbor Laboratory)",
+      4
+    ],
+    [
+      "Entropy",
+      3
+    ],
+    [
+      "Zenodo (CERN European Organization for Nuclear Research)",
+      3
+    ],
+    [
+      "Proceedings of the National Academy of Sciences",
+      2
+    ],
+    [
+      "Frontiers in Artificial Intelligence",
+      2
+    ]
+  ],
+  "landmarks_present": "11/15",
+  "landmarks": [
+    {
+      "arxiv_id": "2209.10652",
+      "title": "Toy Models of Superposition",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 33,
+      "indeg": 12,
+      "rank": 9
+    },
+    {
+      "arxiv_id": "2209.11895",
+      "title": "In-context Learning and Induction Heads",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 74,
+      "indeg": 4,
+      "rank": 3
+    },
+    {
+      "arxiv_id": "2211.00593",
+      "title": "Interpretability in the Wild",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 45,
+      "indeg": 13,
+      "rank": 4
+    },
+    {
+      "arxiv_id": "2202.05262",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 151,
+      "indeg": 14,
+      "rank": 2
+    },
+    {
+      "arxiv_id": "2301.05217",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 46,
+      "indeg": 9,
+      "rank": 6
+    },
+    {
+      "arxiv_id": "2210.13382",
+      "title": "Emergent World Representations",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 50,
+      "indeg": 6,
+      "rank": 5
+    },
+    {
+      "arxiv_id": "2309.08600",
+      "title": "Sparse Autoencoders Find Highly Interpretable Features",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 37,
+      "indeg": 18,
+      "rank": 7
+    },
+    {
+      "arxiv_id": "2012.14913",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "is_seed": true,
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    },
+    {
+      "arxiv_id": "2310.01405",
+      "title": "Representation Engineering",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 46,
+      "indeg": 2,
+      "rank": 8
+    },
+    {
+      "arxiv_id": "1704.01444",
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "is_seed": true,
+      "present": true,
+      "in_corpus_cites": 315,
+      "indeg": 12,
+      "rank": 1
+    },
+    {
+      "arxiv_id": "1610.01644",
+      "title": "Understanding intermediate layers using linear classifier probes",
+      "is_seed": false,
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    },
+    {
+      "arxiv_id": "2104.08696",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "is_seed": false,
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    },
+    {
+      "arxiv_id": "2305.01610",
+      "title": "Finding Neurons in a Haystack",
+      "is_seed": false,
+      "present": true,
+      "in_corpus_cites": 10,
+      "indeg": 4,
+      "rank": 14
+    },
+    {
+      "arxiv_id": "2304.14997",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "is_seed": false,
+      "present": true,
+      "in_corpus_cites": 15,
+      "indeg": 7,
+      "rank": 11
+    },
+    {
+      "arxiv_id": "2210.07229",
+      "title": "Mass-Editing Memory in a Transformer",
+      "is_seed": false,
+      "present": false,
+      "in_corpus_cites": null,
+      "indeg": null,
+      "rank": null
+    }
+  ],
+  "top_by_in_corpus_cites": [
+    {
+      "id": "W2606347107",
+      "arxiv_id": "1704.01444",
+      "year": 2017,
+      "in_corpus_cites": 315,
+      "indeg": 12,
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "abstract": "We explore the properties of byte-level recurrent language models. When given sufficient amounts of capacity, training data, and compute time, the representations learned by these models include disentangled features corresponding to high-level concepts. Specifically, we find a single unit which performs sentiment anal"
+    },
+    {
+      "id": "W4281657280",
+      "arxiv_id": "2202.05262",
+      "year": 2022,
+      "in_corpus_cites": 151,
+      "indeg": 14,
+      "title": "Locating and Editing Factual Associations in GPT",
+      "abstract": "We analyze the storage and recall of factual associations in autoregressive transformer language models, finding evidence that these associations correspond to localized, directly-editable computations. We first develop a causal intervention for identifying neuron activations that are decisive in a model's factual pred"
+    },
+    {
+      "id": "W4297412003",
+      "arxiv_id": "2209.11895",
+      "year": 2022,
+      "in_corpus_cites": 74,
+      "indeg": 4,
+      "title": "In-context Learning and Induction Heads",
+      "abstract": "\"Induction heads\" are attention heads that implement a simple algorithm to complete token sequences like [A][B] ... [A] -&gt; [B]. In this work, we present preliminary and indirect evidence for a hypothesis that induction heads might constitute the mechanism for the majority of all \"in-context learning\" in large transf"
+    },
+    {
+      "id": "W4307413986",
+      "arxiv_id": "2210.13382",
+      "year": 2022,
+      "in_corpus_cites": 50,
+      "indeg": 6,
+      "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+      "abstract": "Language models show a surprising range of capabilities, but the source of their apparent competence is unclear. Do these networks just memorize a collection of surface statistics, or do they rely on internal representations of the process that generates the sequences they see? We investigate this question by applying "
+    },
+    {
+      "id": "W4316135772",
+      "arxiv_id": "2301.05217",
+      "year": 2023,
+      "in_corpus_cites": 46,
+      "indeg": 9,
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "abstract": "Neural networks often exhibit emergent behavior, where qualitatively new capabilities arise from scaling up the amount of parameters, training data, or training steps. One approach to understanding emergence is to find continuous \\textit{progress measures} that underlie the seemingly discontinuous qualitative changes. "
+    },
+    {
+      "id": "W4387355345",
+      "arxiv_id": "2310.01405",
+      "year": 2023,
+      "in_corpus_cites": 46,
+      "indeg": 2,
+      "title": "Its Alive: AI Independence Without Human Prompting",
+      "abstract": "In this paper, we identify and characterize the emerging area of representation engineering (RepE), an approach to enhancing the transparency of AI systems that draws on insights from cognitive neuroscience. RepE places population-level representations, rather than neurons or circuits, at the center of analysis, equipp"
+    },
+    {
+      "id": "W4308023630",
+      "arxiv_id": "2211.00593",
+      "year": 2022,
+      "in_corpus_cites": 45,
+      "indeg": 13,
+      "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+      "abstract": "Research in mechanistic interpretability seeks to explain behaviors of machine learning models in terms of their internal components. However, most previous work either focuses on simple behaviors in small models, or describes complicated behaviors in larger models with broad strokes. In this work, we bridge this gap b"
+    },
+    {
+      "id": "W4386839891",
+      "arxiv_id": "2309.08600",
+      "year": 2023,
+      "in_corpus_cites": 37,
+      "indeg": 18,
+      "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+      "abstract": "One of the roadblocks to a better understanding of neural networks' internals is \\textit{polysemanticity}, where neurons appear to activate in multiple, semantically distinct contexts. Polysemanticity prevents us from identifying concise, human-understandable explanations for what neural networks are doing internally. "
+    },
+    {
+      "id": "W4296932880",
+      "arxiv_id": "2209.10652",
+      "year": 2022,
+      "in_corpus_cites": 33,
+      "indeg": 12,
+      "title": "Governance Architecture for Neural Network Superposition: A Structural Solution to Hallucination via Routing and Interference Filtering",
+      "abstract": "Demonstrates that hallucination in neural networks is a structural consequence of ungoverned superposition. Introduces a governance filter operating on the Gram matrix of the weight matrix that eliminates 100% of false-positive activations across all tested sparsity regimes (a toy-model feasibility result; true-positiv"
+    },
+    {
+      "id": "W4379928343",
+      "arxiv_id": "2306.03341",
+      "year": 2023,
+      "in_corpus_cites": 31,
+      "indeg": 5,
+      "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+      "abstract": "We introduce Inference-Time Intervention (ITI), a technique designed to enhance the \"truthfulness\" of large language models (LLMs). ITI operates by shifting model activations during inference, following a set of directions across a limited number of attention heads. This intervention significantly improves the performa"
+    },
+    {
+      "id": "W4327526719",
+      "arxiv_id": "2303.08112",
+      "year": 2023,
+      "in_corpus_cites": 17,
+      "indeg": 3,
+      "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+      "abstract": "We analyze transformers from the perspective of iterative inference, seeking to understand how model predictions are refined layer by layer. To do so, we train an affine probe for each block in a frozen pretrained model, making it possible to decode every hidden state into a distribution over the vocabulary. Our method"
+    },
+    {
+      "id": "W4387561538",
+      "arxiv_id": "2310.06824",
+      "year": 2023,
+      "in_corpus_cites": 15,
+      "indeg": 2,
+      "title": "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations of True/False Datasets",
+      "abstract": "Large Language Models (LLMs) have impressive capabilities, but are prone to outputting falsehoods. Recent work has developed techniques for inferring whether a LLM is telling the truth by training probes on the LLM's internal activations. However, this line of work is controversial, with some authors pointing out failu"
+    },
+    {
+      "id": "W4367628394",
+      "arxiv_id": "2304.14997",
+      "year": 2023,
+      "in_corpus_cites": 15,
+      "indeg": 7,
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "abstract": "Through considerable effort and intuition, several recent works have reverse-engineered nontrivial behaviors of transformer models. This paper systematizes the mechanistic interpretability process they followed. First, researchers choose a metric and dataset that elicit the desired model behavior. Then, they apply acti"
+    },
+    {
+      "id": "W4394743141",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 11,
+      "indeg": 1,
+      "title": "Evaluating the Ripple Effects of Knowledge Editing in Language Models",
+      "abstract": "Abstract Modern language models capture a large body of factual knowledge. However, some facts can be incorrectly induced or become obsolete over time, resulting in factually incorrect generations. This has led to the development of various editing methods that allow updating facts encoded by the model. Evaluation of t"
+    },
+    {
+      "id": "W4315881234",
+      "arxiv_id": "2301.04213",
+      "year": 2023,
+      "in_corpus_cites": 11,
+      "indeg": 1,
+      "title": "Does Localization Inform Editing? Surprising Differences in Causality-Based Localization vs. Knowledge Editing in Language Models",
+      "abstract": "Language models learn a great quantity of factual information during pretraining, and recent work localizes this information to specific model weights like mid-layer MLP weights. In this paper, we find that we can change how a fact is stored in a model by editing weights that are in a different location than where exis"
+    },
+    {
+      "id": "W4368304611",
+      "arxiv_id": "2305.01610",
+      "year": 2023,
+      "in_corpus_cites": 10,
+      "indeg": 4,
+      "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+      "abstract": "Despite rapid adoption and deployment of large language models (LLMs), the internal computations of these models remain opaque and poorly understood. In this work, we seek to understand how high-level human-interpretable features are represented within the internal neuron activations of LLMs. We train $k$-sparse linear"
+    },
+    {
+      "id": "W4388514540",
+      "arxiv_id": "2311.03658",
+      "year": 2023,
+      "in_corpus_cites": 8,
+      "indeg": 2,
+      "title": "The Linear Representation Hypothesis and the Geometry of Large Language Models",
+      "abstract": "Informally, the 'linear representation hypothesis' is the idea that high-level concepts are represented linearly as directions in some representation space. In this paper, we address two closely related questions: What does \"linear representation\" actually mean? And, how do we make sense of geometric notions (e.g., cos"
+    },
+    {
+      "id": "W4389518382",
+      "arxiv_id": null,
+      "year": 2023,
+      "in_corpus_cites": 7,
+      "indeg": 4,
+      "title": "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
+      "abstract": "How do sequence models represent their decision-making process? Prior work suggests that Othello-playing neural network learned nonlinear models of the board state (Li et al., 2023a). In this work, we provide evidence of a closely related linear representation of the board. In particular, we show that probing for \"my c"
+    },
+    {
+      "id": "W4367694478",
+      "arxiv_id": "2305.00586",
+      "year": 2023,
+      "in_corpus_cites": 6,
+      "indeg": 0,
+      "title": "How does GPT-2 compute greater-than?: Interpreting mathematical abilities in a pre-trained language model",
+      "abstract": "Pre-trained language models can be surprisingly adept at tasks they were not explicitly trained on, but how they implement these capabilities is poorly understood. In this paper, we investigate the basic mathematical abilities often acquired by pre-trained language models. Concretely, we use mechanistic interpretabilit"
+    },
+    {
+      "id": "W4316116432",
+      "arxiv_id": "2301.04709",
+      "year": 2023,
+      "in_corpus_cites": 6,
+      "indeg": 3,
+      "title": "Causal Abstraction: A Theoretical Foundation for Mechanistic Interpretability",
+      "abstract": "Causal abstraction provides a theoretical foundation for mechanistic interpretability, the field concerned with providing intelligible algorithms that are faithful simplifications of the known, but opaque low-level details of black box AI models. Our contributions are (1) generalizing the theory of causal abstraction f"
+    },
+    {
+      "id": "W4379925099",
+      "arxiv_id": "2306.03819",
+      "year": 2023,
+      "in_corpus_cites": 6,
+      "indeg": 1,
+      "title": "LEACE: Perfect linear concept erasure in closed form",
+      "abstract": "Concept erasure aims to remove specified features from an embedding. It can improve fairness (e.g. preventing a classifier from using gender or race) and interpretability (e.g. removing a concept to observe changes in model behavior). We introduce LEAst-squares Concept Erasure (LEACE), a closed-form method which provab"
+    },
+    {
+      "id": "W4300485620",
+      "arxiv_id": "1602.03616",
+      "year": 2016,
+      "in_corpus_cites": 6,
+      "indeg": 1,
+      "title": "Multifaceted Feature Visualization: Uncovering the Different Types of\\n Features Learned By Each Neuron in Deep Neural Networks",
+      "abstract": "We can better understand deep neural networks by identifying which features\\neach of their neurons have learned to detect. To do so, researchers have\\ncreated Deep Visualization techniques including activation maximization, which\\nsynthetically generates inputs (e.g. images) that maximally activate each\\nneuron. A limi"
+    },
+    {
+      "id": "W4367832894",
+      "arxiv_id": "2304.14767",
+      "year": 2023,
+      "in_corpus_cites": 5,
+      "indeg": 0,
+      "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+      "abstract": "Transformer-based language models (LMs) are known to capture factual knowledge in their parameters. While previous work looked into where factual associations are stored, only little is known about how they are retrieved internally during inference. We investigate this question through the lens of information flow. Giv"
+    },
+    {
+      "id": "W4389519056",
+      "arxiv_id": null,
+      "year": 2023,
+      "in_corpus_cites": 5,
+      "indeg": 1,
+      "title": "A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis",
+      "abstract": "Mathematical reasoning in large language models (LMs) has garnered significant attention in recent work, but there is a limited understanding of how these models process and store information related to arithmetic tasks within their architecture. In order to improve our understanding of this aspect of language models, "
+    },
+    {
+      "id": "W3170470779",
+      "arxiv_id": null,
+      "year": 2021,
+      "in_corpus_cites": 5,
+      "indeg": 4,
+      "title": "Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors",
+      "abstract": "Transformer networks have revolutionized NLP representation learning since they were introduced. Though a great effort has been made to explain the representation in transformers, it is widely recognized that our understanding is not sufficient. One important reason is that there lack enough visualization tools for det"
+    },
+    {
+      "id": "W4309874180",
+      "arxiv_id": "2211.12312",
+      "year": 2022,
+      "in_corpus_cites": 5,
+      "indeg": 2,
+      "title": "Interpreting Neural Networks through the Polytope Lens",
+      "abstract": "Mechanistic interpretability aims to explain what a neural network has learned at a nuts-and-bolts level. What are the fundamental primitives of neural network representations? Previous mechanistic descriptions have used individual neurons or their linear combinations to understand the representations a network has lea"
+    },
+    {
+      "id": "W4407820212",
+      "arxiv_id": null,
+      "year": 2025,
+      "in_corpus_cites": 5,
+      "indeg": 4,
+      "title": "Genome modeling and design across all domains of life with Evo 2",
+      "abstract": "Abstract All of life encodes information with DNA. While tools for sequencing, synthesis, and editing of genomic code have transformed biological research, intelligently composing new biological systems would also require a deep understanding of the immense complexity encoded by genomes. We introduce Evo 2, a biologica"
+    },
+    {
+      "id": "W4281390462",
+      "arxiv_id": "2205.10343",
+      "year": 2022,
+      "in_corpus_cites": 5,
+      "indeg": 3,
+      "title": "Towards Understanding Grokking: An Effective Theory of Representation Learning",
+      "abstract": "We aim to understand grokking, a phenomenon where models generalize long after overfitting their training set. We present both a microscopic analysis anchored by an effective theory and a macroscopic analysis of phase diagrams describing learning performance across hyperparameters. We find that generalization originate"
+    },
+    {
+      "id": "W4399455238",
+      "arxiv_id": "2406.04093",
+      "year": 2024,
+      "in_corpus_cites": 5,
+      "indeg": 3,
+      "title": "Scaling and evaluating sparse autoencoders",
+      "abstract": "Sparse autoencoders provide a promising unsupervised approach for extracting interpretable features from a language model by reconstructing activations from a sparse bottleneck layer. Since language models learn many concepts, autoencoders need to be very large to recover all relevant features. However, studying the pr"
+    },
+    {
+      "id": "W4390467836",
+      "arxiv_id": null,
+      "year": 2023,
+      "in_corpus_cites": 4,
+      "indeg": 0,
+      "title": "Seeing Is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability",
+      "abstract": "We introduce Brain-Inspired Modular Training (BIMT), a method for making neural networks more modular and interpretable. Inspired by brains, BIMT embeds neurons in a geometric space and augments the loss function with a cost proportional to the length of each neuron connection. This is inspired by the idea of minimum c"
+    },
+    {
+      "id": "W4384115502",
+      "arxiv_id": "2307.05471",
+      "year": 2023,
+      "in_corpus_cites": 4,
+      "indeg": 1,
+      "title": "Scale Alone Does not Improve Mechanistic Interpretability in Vision Models",
+      "abstract": "In light of the recent widespread adoption of AI systems, understanding the internal information processing of neural networks has become increasingly critical. Most recently, machine vision has seen remarkable progress by scaling neural networks to unprecedented levels in dataset and model size. We here ask whether th"
+    },
+    {
+      "id": "W4404783416",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 4,
+      "indeg": 3,
+      "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+      "abstract": "Tom Lieberum, Senthooran Rajamanoharan, Arthur Conmy, Lewis Smith, Nicolas Sonnerat, Vikrant Varma, Janos Kramar, Anca Dragan, Rohin Shah, Neel Nanda. Proceedings of the 7th BlackboxNLP Workshop: Analyzing and Interpreting Neural Networks for NLP. 2024."
+    },
+    {
+      "id": "W4378473790",
+      "arxiv_id": "2305.14699",
+      "year": 2023,
+      "in_corpus_cites": 4,
+      "indeg": 0,
+      "title": "Can Transformers Learn to Solve Problems Recursively?",
+      "abstract": "Neural networks have in recent years shown promise for helping software engineers write programs and even formally verify them. While semantic information plays a crucial part in these processes, it remains unclear to what degree popular neural architectures like transformers are capable of modeling that information. T"
+    },
+    {
+      "id": "W4379258923",
+      "arxiv_id": "2306.00802",
+      "year": 2023,
+      "in_corpus_cites": 4,
+      "indeg": 2,
+      "title": "Birth of a Transformer: A Memory Viewpoint",
+      "abstract": "Large language models based on transformers have achieved great empirical successes. However, as they are deployed more widely, there is a growing need to better understand their internal mechanisms in order to make them more reliable. These models appear to store vast amounts of knowledge from their training data, and"
+    },
+    {
+      "id": "W4386081218",
+      "arxiv_id": "2308.10248",
+      "year": 2023,
+      "in_corpus_cites": 4,
+      "indeg": 1,
+      "title": "Steering Language Models With Activation Engineering",
+      "abstract": "Prompt engineering and finetuning aim to maximize language model performance on a given metric (like toxicity reduction). However, these methods do not fully elicit a model's capabilities. To reduce this gap, we introduce activation engineering: the inference-time modification of activations in order to control (or ste"
+    },
+    {
+      "id": "W4402670703",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 4,
+      "indeg": 1,
+      "title": "Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models",
+      "abstract": "Recently, retrieval augmentation and tool augmentation have demonstrated a remarkable capability to expand the internal memory boundaries of language models (LMs) by providing external context.However, internal memory and external context inevitably clash, leading to knowledge conflicts within LMs.In this paper, we aim"
+    },
+    {
+      "id": "W4303449241",
+      "arxiv_id": "2210.01892",
+      "year": 2022,
+      "in_corpus_cites": 4,
+      "indeg": 2,
+      "title": "Polysemanticity and Capacity in Neural Networks",
+      "abstract": "Individual neurons in neural networks often represent a mixture of unrelated features. This phenomenon, called polysemanticity, can make interpreting neural networks more difficult and so we aim to understand its causes. We propose doing so through the lens of feature \\emph{capacity}, which is the fractional dimension "
+    },
+    {
+      "id": "W4393336283",
+      "arxiv_id": "2403.19647",
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 1,
+      "title": "Sparse Feature Circuits: Discovering and Editing Interpretable Causal Graphs in Language Models",
+      "abstract": "We introduce methods for discovering and applying sparse feature circuits. These are causally implicated subnetworks of human-interpretable features for explaining language model behaviors. Circuits identified in prior work consist of polysemantic and difficult-to-interpret units like attention heads or neurons, render"
+    },
+    {
+      "id": "W4398888709",
+      "arxiv_id": "2405.14860",
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 1,
+      "title": "Not All Language Model Features Are One-Dimensionally Linear",
+      "abstract": "Recent work has proposed that language models perform computation by manipulating one-dimensional representations of concepts (\"features\") in activation space. In contrast, we explore whether some language model representations may be inherently multi-dimensional. We begin by developing a rigorous definition of irreduc"
+    },
+    {
+      "id": "W4403315440",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 1,
+      "title": "Explaining AI through mechanistic interpretability",
+      "abstract": "Abstract Recent work in explainable artificial intelligence (XAI) attempts to render opaque AI systems understandable through a divide-and-conquer strategy. However, this fails to illuminate how trained AI systems work as a whole . Precisely this kind of functional understanding is needed, though, to satisfy important "
+    },
+    {
+      "id": "W4413312092",
+      "arxiv_id": null,
+      "year": 2025,
+      "in_corpus_cites": 3,
+      "indeg": 1,
+      "title": "Sparse autoencoders uncover biologically interpretable features in protein language model representations",
+      "abstract": "Foundation models in biology-particularly protein language models (PLMs)-have enabled ground-breaking predictions in protein structure, function, and beyond. However, the \"black-box\" nature of these representations limits transparency and explainability, posing challenges for human-AI collaboration and leaving open que"
+    },
+    {
+      "id": "W4395065622",
+      "arxiv_id": "2404.14082",
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 0,
+      "title": "Mechanistic Interpretability for AI Safety -- A Review",
+      "abstract": "Understanding AI systems' inner workings is critical for ensuring value alignment and safety. This review explores mechanistic interpretability: reverse engineering the computational mechanisms and representations learned by neural networks into human-understandable algorithms and concepts to provide a granular, causal"
+    },
+    {
+      "id": "W4319453780",
+      "arxiv_id": "2302.03025",
+      "year": 2023,
+      "in_corpus_cites": 3,
+      "indeg": 2,
+      "title": "A Toy Model of Universality: Reverse Engineering How Networks Learn Group Operations",
+      "abstract": "Universality is a key hypothesis in mechanistic interpretability -- that different models learn similar features and circuits when trained on similar tasks. In this work, we study the universality hypothesis by examining how small neural networks learn to implement group composition. We present a novel algorithm by whi"
+    },
+    {
+      "id": "W4384918485",
+      "arxiv_id": "2307.09458",
+      "year": 2023,
+      "in_corpus_cites": 3,
+      "indeg": 0,
+      "title": "Does Circuit Analysis Interpretability Scale? Evidence from Multiple Choice Capabilities in Chinchilla",
+      "abstract": "\\emph{Circuit analysis} is a promising technique for understanding the internal mechanisms of language models. However, existing analyses are done in small models far from the state of the art. To address this, we present a case study of circuit analysis in the 70B Chinchilla model, aiming to test the scalability of ci"
+    },
+    {
+      "id": "W4387929831",
+      "arxiv_id": "2310.15154",
+      "year": 2023,
+      "in_corpus_cites": 3,
+      "indeg": 0,
+      "title": "Linear Representations of Sentiment in Large Language Models",
+      "abstract": "Sentiment is a pervasive feature in natural language text, yet it is an open question how sentiment is represented within Large Language Models (LLMs). In this study, we reveal that across a range of models, sentiment is represented linearly: a single direction in activation space mostly captures the feature across a r"
+    },
+    {
+      "id": "W4399836657",
+      "arxiv_id": "2406.11944",
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 3,
+      "title": "Transcoders Find Interpretable LLM Feature Circuits",
+      "abstract": "A key goal in mechanistic interpretability is circuit analysis: finding sparse subgraphs of models corresponding to specific behaviors or capabilities. However, MLP sublayers make fine-grained circuit analysis on transformer-based language models difficult. In particular, interpretable features -- such as those found b"
+    },
+    {
+      "id": "W4399795398",
+      "arxiv_id": "2406.11717",
+      "year": 2024,
+      "in_corpus_cites": 3,
+      "indeg": 2,
+      "title": "External Invariants: A Cryptographic Trust Architecture for Institutional AI Inference",
+      "abstract": "Conversational large language models are fine-tuned for both instruction-following and safety, resulting in models that obey benign requests but refuse harmful ones. While this refusal behavior is widespread across chat models, its underlying mechanisms remain poorly understood. In this work, we show that refusal is me"
+    },
+    {
+      "id": "W4390833744",
+      "arxiv_id": "2401.06102",
+      "year": 2024,
+      "in_corpus_cites": 2,
+      "indeg": 0,
+      "title": "Patchscopes: A Unifying Framework for Inspecting Hidden Representations of Language Models",
+      "abstract": "Understanding the internal representations of large language models (LLMs) can help explain models' behavior and verify their alignment with human values. Given the capabilities of LLMs in generating human-understandable text, we propose leveraging the model itself to explain its internal representations in natural lan"
+    },
+    {
+      "id": "W4390820828",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 2,
+      "indeg": 0,
+      "title": "Real sparks of artificial intelligence and the importance of inner interpretability",
+      "abstract": "The present paper looks at one of the most thorough articles on the intelligence of GPT, research conducted by engineers at Microsoft. Although there is a great deal of value in their work, I will argue that, for familiar philosophical reasons, their methodology, 'Black-box Interpretability', is wrongheaded. But there "
+    },
+    {
+      "id": "W4404420622",
+      "arxiv_id": null,
+      "year": 2024,
+      "in_corpus_cites": 2,
+      "indeg": 1,
+      "title": "InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders",
+      "abstract": "A bstract Protein language models (PLMs) have demonstrated remarkable success in protein modeling and design, yet their internal mechanisms for predicting structure and function remain poorly understood. Here we present a systematic approach to extract and analyze interpretable features from PLMs using sparse autoencod"
+    }
+  ]
+}

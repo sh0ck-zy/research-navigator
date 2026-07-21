@@ -1,0 +1,640 @@
+{
+  "run_id": "l2_th008",
+  "papers": 635,
+  "stats": {
+    "run_id": "l2_th008",
+    "corpus": "/Users/joao/Projects/clarity-research/data/raw/interp_corpus_v3.jsonl",
+    "papers": 635,
+    "params": {
+      "k": 15,
+      "resolution": 1.0,
+      "sub_resolution": 1.5,
+      "model": "all-MiniLM-L6-v2",
+      "sim_min": 0.3
+    },
+    "similar_edges": 9435,
+    "cite_edges": 1842,
+    "clusters": 8,
+    "modularity_embedding_knn": 0.5144875135800622,
+    "modularity_citation": 0.564105937877785,
+    "citation_clusters": 23,
+    "ari_embedding_vs_citation": 0.10383202625419176,
+    "silhouette_embedding": 0.061819981783628464,
+    "blend": {
+      "pagerank": 0.5,
+      "in_corpus_cites": 0.35,
+      "emb_centrality": 0.15
+    },
+    "cluster_sizes": {
+      "5": 44,
+      "6": 35,
+      "3": 91,
+      "0": 137,
+      "1": 124,
+      "2": 121,
+      "4": 63,
+      "7": 20
+    }
+  },
+  "centrality_summary": {
+    "betweenness": {
+      "median_rank": 8,
+      "mean_rank": 24.9,
+      "in_top_50": 9,
+      "in_top_10pct": 10,
+      "worst_rank": 137
+    },
+    "cited_by_count": {
+      "median_rank": 164,
+      "mean_rank": 165.5,
+      "in_top_50": 0,
+      "in_top_10pct": 0,
+      "worst_rank": 293
+    },
+    "emb_centrality": {
+      "median_rank": 194,
+      "mean_rank": 245.3,
+      "in_top_50": 2,
+      "in_top_10pct": 2,
+      "worst_rank": 603
+    },
+    "hits_authority": {
+      "median_rank": 11,
+      "mean_rank": 19.2,
+      "in_top_50": 10,
+      "in_top_10pct": 11,
+      "worst_rank": 60
+    },
+    "in_corpus_cites": {
+      "median_rank": 7,
+      "mean_rank": 12.2,
+      "in_top_50": 11,
+      "in_top_10pct": 11,
+      "worst_rank": 43
+    },
+    "pagerank": {
+      "median_rank": 15,
+      "mean_rank": 23.9,
+      "in_top_50": 10,
+      "in_top_10pct": 10,
+      "worst_rank": 85
+    },
+    "recency_velocity": {
+      "median_rank": 160,
+      "mean_rank": 160.6,
+      "in_top_50": 0,
+      "in_top_10pct": 0,
+      "worst_rank": 287
+    },
+    "centrality": {
+      "median_rank": 22,
+      "mean_rank": 30.5,
+      "in_top_50": 9,
+      "in_top_10pct": 9,
+      "worst_rank": 78
+    }
+  },
+  "best_metric_by_mean_landmark_rank": "in_corpus_cites",
+  "landmarks": [
+    {
+      "arxiv_id": "2209.10652",
+      "title": "Toy Models of Superposition",
+      "tier": "core",
+      "present": true,
+      "betweenness": 8,
+      "cited_by_count": 180,
+      "emb_centrality": 603,
+      "hits_authority": 11,
+      "in_corpus_cites": 10,
+      "pagerank": 14,
+      "recency_velocity": 184,
+      "centrality": 78
+    },
+    {
+      "arxiv_id": "2209.11895",
+      "title": "In-context Learning and Induction Heads",
+      "tier": "core",
+      "present": true,
+      "betweenness": 7,
+      "cited_by_count": 142,
+      "emb_centrality": 265,
+      "hits_authority": 8,
+      "in_corpus_cites": 7,
+      "pagerank": 17,
+      "recency_velocity": 131,
+      "centrality": 22
+    },
+    {
+      "arxiv_id": "2211.00593",
+      "title": "Interpretability in the Wild",
+      "tier": "core",
+      "present": true,
+      "betweenness": 5,
+      "cited_by_count": 171,
+      "emb_centrality": 43,
+      "hits_authority": 3,
+      "in_corpus_cites": 3,
+      "pagerank": 15,
+      "recency_velocity": 174,
+      "centrality": 4
+    },
+    {
+      "arxiv_id": "2202.05262",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "tier": "core",
+      "present": true,
+      "betweenness": 2,
+      "cited_by_count": 100,
+      "emb_centrality": 44,
+      "hits_authority": 1,
+      "in_corpus_cites": 2,
+      "pagerank": 3,
+      "recency_velocity": 93,
+      "centrality": 1
+    },
+    {
+      "arxiv_id": "2301.05217",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "tier": "core",
+      "present": true,
+      "betweenness": 11,
+      "cited_by_count": 164,
+      "emb_centrality": 353,
+      "hits_authority": 6,
+      "in_corpus_cites": 6,
+      "pagerank": 28,
+      "recency_velocity": 150,
+      "centrality": 41
+    },
+    {
+      "arxiv_id": "2210.13382",
+      "title": "Emergent World Representations",
+      "tier": "core",
+      "present": true,
+      "betweenness": 12,
+      "cited_by_count": 158,
+      "emb_centrality": 441,
+      "hits_authority": 31,
+      "in_corpus_cites": 11,
+      "pagerank": 10,
+      "recency_velocity": 161,
+      "centrality": 47
+    },
+    {
+      "arxiv_id": "2309.08600",
+      "title": "Sparse Autoencoders Find Highly Interpretable Features",
+      "tier": "core",
+      "present": true,
+      "betweenness": 6,
+      "cited_by_count": 176,
+      "emb_centrality": 194,
+      "hits_authority": 38,
+      "in_corpus_cites": 4,
+      "pagerank": 13,
+      "recency_velocity": 160,
+      "centrality": 11
+    },
+    {
+      "arxiv_id": "2310.01405",
+      "title": "Representation Engineering",
+      "tier": "core",
+      "present": true,
+      "betweenness": 22,
+      "cited_by_count": 157,
+      "emb_centrality": 142,
+      "hits_authority": 60,
+      "in_corpus_cites": 21,
+      "pagerank": 31,
+      "recency_velocity": 141,
+      "centrality": 16
+    },
+    {
+      "arxiv_id": "1704.01444",
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "tier": "core",
+      "present": true,
+      "betweenness": 1,
+      "cited_by_count": 74,
+      "emb_centrality": 75,
+      "hits_authority": 4,
+      "in_corpus_cites": 1,
+      "pagerank": 1,
+      "recency_velocity": 90,
+      "centrality": 2
+    },
+    {
+      "arxiv_id": "1610.01644",
+      "title": "Understanding intermediate layers using linear classifier probes",
+      "tier": "core",
+      "present": false
+    },
+    {
+      "arxiv_id": "2305.01610",
+      "title": "Finding Neurons in a Haystack",
+      "tier": "core",
+      "present": true,
+      "betweenness": 137,
+      "cited_by_count": 293,
+      "emb_centrality": 133,
+      "hits_authority": 24,
+      "in_corpus_cites": 43,
+      "pagerank": 85,
+      "recency_velocity": 287,
+      "centrality": 49
+    },
+    {
+      "arxiv_id": "2304.14997",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "tier": "core",
+      "present": true,
+      "betweenness": 63,
+      "cited_by_count": 205,
+      "emb_centrality": 405,
+      "hits_authority": 25,
+      "in_corpus_cites": 26,
+      "pagerank": 46,
+      "recency_velocity": 196,
+      "centrality": 65
+    },
+    {
+      "arxiv_id": "2012.14913",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "tier": "adjacent",
+      "present": true,
+      "betweenness": 19,
+      "cited_by_count": 204,
+      "emb_centrality": 13,
+      "hits_authority": 86,
+      "in_corpus_cites": 32,
+      "pagerank": 25,
+      "recency_velocity": 240,
+      "centrality": 7
+    },
+    {
+      "arxiv_id": "2104.08696",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "tier": "adjacent",
+      "present": false
+    },
+    {
+      "arxiv_id": "2210.07229",
+      "title": "Mass-Editing Memory in a Transformer",
+      "tier": "adjacent",
+      "present": true,
+      "betweenness": 43,
+      "cited_by_count": 165,
+      "emb_centrality": 252,
+      "hits_authority": 2,
+      "in_corpus_cites": 13,
+      "pagerank": 34,
+      "recency_velocity": 168,
+      "centrality": 33
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "size": 137,
+      "n_subclusters": 8,
+      "years_median": 2023,
+      "keywords": [
+        "language",
+        "models",
+        "probing",
+        "large",
+        "knowledge",
+        "reasoning",
+        "representations",
+        "sentence"
+      ],
+      "top_papers": [
+        {
+          "title": "What do you learn from context? Probing for sentence structure in\\n contextualiz",
+          "year": 2019,
+          "centrality": 0.961
+        },
+        {
+          "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings fo",
+          "year": 2018,
+          "centrality": 0.959
+        },
+        {
+          "title": "BERT Rediscovers the Classical NLP Pipeline",
+          "year": 2019,
+          "centrality": 0.954
+        },
+        {
+          "title": "The Geometry of Truth: Emergent Linear Structure in Large Language Model Represe",
+          "year": 2023,
+          "centrality": 0.937
+        },
+        {
+          "title": "Visualizing and Understanding Recurrent Networks",
+          "year": 2015,
+          "centrality": 0.934
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "size": 124,
+      "n_subclusters": 8,
+      "years_median": 2023,
+      "keywords": [
+        "intelligence",
+        "artificial",
+        "large",
+        "interpretability",
+        "models",
+        "explainable",
+        "model",
+        "language"
+      ],
+      "top_papers": [
+        {
+          "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GP",
+          "year": 2022,
+          "centrality": 0.978
+        },
+        {
+          "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+          "year": 2023,
+          "centrality": 0.931
+        },
+        {
+          "title": "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+          "year": 2016,
+          "centrality": 0.914
+        },
+        {
+          "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+          "year": 2017,
+          "centrality": 0.909
+        },
+        {
+          "title": "A survey of methods for explaining black box models",
+          "year": 2019,
+          "centrality": 0.884
+        }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "size": 121,
+      "n_subclusters": 9,
+      "years_median": 2022,
+      "keywords": [
+        "deep",
+        "networks",
+        "neural",
+        "learning",
+        "interpretability",
+        "understanding",
+        "interpretable",
+        "visual"
+      ],
+      "top_papers": [
+        {
+          "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with\\n Concept",
+          "year": 2017,
+          "centrality": 0.946
+        },
+        {
+          "title": "Understanding Neural Networks Through Deep Visualization",
+          "year": 2015,
+          "centrality": 0.932
+        },
+        {
+          "title": "Learning Important Features Through Propagating Activation Differences",
+          "year": 2017,
+          "centrality": 0.932
+        },
+        {
+          "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neu",
+          "year": 2023,
+          "centrality": 0.922
+        },
+        {
+          "title": "This Looks Like That: Deep Learning for Interpretable Image Recognition",
+          "year": 2018,
+          "centrality": 0.92
+        }
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "size": 91,
+      "n_subclusters": 9,
+      "years_median": 2023,
+      "keywords": [
+        "transformer",
+        "transformers",
+        "models",
+        "language",
+        "attention",
+        "analyzing",
+        "forward",
+        "feed"
+      ],
+      "top_papers": [
+        {
+          "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the V",
+          "year": 2022,
+          "centrality": 0.978
+        },
+        {
+          "title": "Analyzing Transformers in Embedding Space",
+          "year": 2023,
+          "centrality": 0.974
+        },
+        {
+          "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+          "year": 2021,
+          "centrality": 0.96
+        },
+        {
+          "title": "In-context Learning and Induction Heads",
+          "year": 2022,
+          "centrality": 0.922
+        },
+        {
+          "title": "Eliciting Latent Predictions from Transformers with the Tuned Lens",
+          "year": 2023,
+          "centrality": 0.921
+        }
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "size": 63,
+      "n_subclusters": 8,
+      "years_median": 2024,
+      "keywords": [
+        "sparse",
+        "protein",
+        "autoencoders",
+        "interpretable",
+        "language",
+        "model",
+        "structure",
+        "models"
+      ],
+      "top_papers": [
+        {
+          "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+          "year": 2023,
+          "centrality": 0.943
+        },
+        {
+          "title": "Evolutionary-scale prediction of atomic-level protein structure with a language ",
+          "year": 2023,
+          "centrality": 0.922
+        },
+        {
+          "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+          "year": 2023,
+          "centrality": 0.88
+        },
+        {
+          "title": "DNABERT: pre-trained Bidirectional Encoder Representations from Transformers mod",
+          "year": 2021,
+          "centrality": 0.877
+        },
+        {
+          "title": "Transformer protein language models are unsupervised structure learners",
+          "year": 2020,
+          "centrality": 0.848
+        }
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "size": 44,
+      "n_subclusters": 10,
+      "years_median": 2020,
+      "keywords": [
+        "sentiment",
+        "analysis",
+        "reviews",
+        "detection",
+        "based",
+        "task",
+        "semeval",
+        "affect"
+      ],
+      "top_papers": [
+        {
+          "title": "Learning to Generate Reviews and Discovering Sentiment",
+          "year": 2017,
+          "centrality": 0.982
+        },
+        {
+          "title": "Ensemble of Generative and Discriminative Techniques for Sentiment Analysis of M",
+          "year": 2014,
+          "centrality": 0.876
+        },
+        {
+          "title": "Inferring Networks of Substitutable and Complementary Products",
+          "year": 2015,
+          "centrality": 0.742
+        },
+        {
+          "title": "Machine Reading Tea Leaves: Automatically Evaluating Topic Coherence and Topic M",
+          "year": 2014,
+          "centrality": 0.726
+        },
+        {
+          "title": "Linear Representations of Sentiment in Large Language Models",
+          "year": 2023,
+          "centrality": 0.714
+        }
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "size": 35,
+      "n_subclusters": 9,
+      "years_median": 2023,
+      "keywords": [
+        "editing",
+        "knowledge",
+        "large",
+        "models",
+        "language",
+        "factual",
+        "edit",
+        "model"
+      ],
+      "top_papers": [
+        {
+          "title": "Locating and Editing Factual Associations in GPT",
+          "year": 2022,
+          "centrality": 0.988
+        },
+        {
+          "title": "Memory-Based Model Editing at Scale",
+          "year": 2022,
+          "centrality": 0.922
+        },
+        {
+          "title": "Editing Large Language Models: Problems, Methods, and Opportunities",
+          "year": 2023,
+          "centrality": 0.915
+        },
+        {
+          "title": "Mass-Editing Memory in a Transformer",
+          "year": 2022,
+          "centrality": 0.909
+        },
+        {
+          "title": "Evaluating the Ripple Effects of Knowledge Editing in Language Models",
+          "year": 2024,
+          "centrality": 0.908
+        }
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "size": 20,
+      "n_subclusters": 6,
+      "years_median": 2020,
+      "keywords": [
+        "generation",
+        "music",
+        "conditional",
+        "iterative",
+        "generative",
+        "text",
+        "emotion",
+        "given"
+      ],
+      "top_papers": [
+        {
+          "title": "Toward Controlled Generation of Text",
+          "year": 2017,
+          "centrality": 0.851
+        },
+        {
+          "title": "Plug &amp; Play Generative Networks: Conditional Iterative Generation of Images ",
+          "year": 2017,
+          "centrality": 0.842
+        },
+        {
+          "title": "Plug & Play Generative Networks: Conditional Iterative Generation of Images in L",
+          "year": 2016,
+          "centrality": 0.717
+        },
+        {
+          "title": "Generating Sentences by Editing Prototypes",
+          "year": 2018,
+          "centrality": 0.717
+        },
+        {
+          "title": "Learning to Generate Music With Sentiment",
+          "year": 2021,
+          "centrality": 0.693
+        }
+      ]
+    }
+  ]
+}

@@ -28,6 +28,47 @@ from pathlib import Path
 import requests
 
 OPENALEX = "https://api.openalex.org/works"
+S2 = "https://api.semanticscholar.org/graph/v1"
+
+
+def s2_survey_refs(arxiv_id, session, ckpt_dir=None):
+    """Reference DOIs of a survey via Semantic Scholar.
+
+    OpenAlex does not index reference lists of arXiv-only records (the seed
+    surveys come back with referenced_works: 0), so the snowball seeds
+    resolve through S2, which has full arXiv coverage. Without an API key
+    (env S2_API_KEY) the shared pool 429s often — the per-survey cache in
+    ckpt_dir makes retries cheap.
+    """
+    cache = ckpt_dir / f"s2_seed_{arxiv_id}.json" if ckpt_dir else None
+    if cache and cache.exists():
+        d = json.loads(cache.read_text())
+        return d["title"], d["dois"]
+    import os
+    key = os.environ.get("S2_API_KEY")
+    headers = {"x-api-key": key} if key else {}
+    for attempt in range(10):
+        r = session.get(f"{S2}/paper/arXiv:{arxiv_id}",
+                        params={"fields": "title,references.externalIds"},
+                        headers=headers, timeout=60)
+        if r.status_code == 429:
+            wait = min(2 ** attempt * 5, 120)
+            print(f"  [s2 429] waiting {wait}s... (tip: S2_API_KEY env avoids this)")
+            time.sleep(wait)
+            continue
+        r.raise_for_status()
+        d = r.json()
+        dois = []
+        for ref in d.get("references") or []:
+            ext = ref.get("externalIds") or {}
+            if ext.get("DOI"):
+                dois.append(ext["DOI"].lower())
+            elif ext.get("ArXiv"):
+                dois.append(f"10.48550/arxiv.{ext['ArXiv'].lower()}")
+        if cache:
+            cache.write_text(json.dumps({"title": d.get("title"), "dois": dois}))
+        return d.get("title"), dois
+    raise RuntimeError("Semantic Scholar unreachable after retries")
 
 # --- Seed surveys: the field's own curated maps (arXiv IDs) ---
 SEED_ARXIV_IDS = [
@@ -126,6 +167,36 @@ class OpenAlex:
                 time.sleep(5)
         raise RuntimeError("OpenAlex unreachable after retries")
 
+    def get_one(self, path):
+        """Single-work lookup: GET /works/{doi-or-id}. 404 -> None."""
+        for attempt in range(6):
+            try:
+                r = self.s.get(f"{OPENALEX}/{path}", params={**self.params, "select": FIELDS}, timeout=60)
+                if r.status_code == 429:
+                    wait = min(2 ** attempt * 5, 120)
+                    print(f"  [429] waiting {wait}s...")
+                    time.sleep(wait)
+                    continue
+                if r.status_code == 404:
+                    return None
+                r.raise_for_status()
+                return r.json()
+            except requests.RequestException as e:
+                print(f"  [net] {e}; retrying...")
+                time.sleep(5)
+        raise RuntimeError("OpenAlex unreachable after retries")
+
+    def batch_by_dois(self, dois):
+        """Fetch up to 50 works per call by DOI (pipe-OR filter)."""
+        out = []
+        for i in range(0, len(dois), 50):
+            chunk = dois[i:i + 50]
+            data = self.get(filter="doi:" + "|".join(chunk),
+                            per_page=50, select=FIELDS)
+            out.extend(data.get("results", []))
+            time.sleep(0.15)
+        return out
+
     def batch_by_ids(self, openalex_ids):
         """Fetch up to 50 works per call by OpenAlex ID."""
         out = []
@@ -170,19 +241,17 @@ def main():
         seed_refs = json.loads(seed_path.read_text())
         print(f"[1] seeds cached ({len(seed_refs)} referenced works)")
     else:
-        print("[1] resolving seed surveys...")
-        seed_works = []
+        print("[1] resolving seed surveys via Semantic Scholar...")
+        s2 = requests.Session()
+        seed_dois = set()
         for ax in SEED_ARXIV_IDS:
-            data = oa.get(filter=f"ids:https://arxiv.org/abs/{ax}", select=FIELDS)
-            res = data.get("results", [])
-            if res:
-                w = res[0]
-                print(f"  seed: {w['title'][:70]} ({len(w.get('referenced_works') or [])} refs)")
-                seed_works.append(w)
-            time.sleep(0.3)
-        seed_refs = sorted({r for w in seed_works
-                            for r in (w.get("referenced_works") or [])})
-        seed_refs = [r.replace("https://openalex.org/", "") for r in seed_refs]
+            title, dois = s2_survey_refs(ax, s2, ck)
+            print(f"  seed: {(title or ax)[:70]} ({len(dois)} refs with DOI/arXiv)")
+            seed_dois.update(dois)
+            time.sleep(1)
+        works = oa.batch_by_dois(sorted(seed_dois))
+        print(f"  resolved {len(works)}/{len(seed_dois)} references in OpenAlex")
+        seed_refs = sorted({w["id"].replace("https://openalex.org/", "") for w in works})
         checkpoint(seed_path, seed_refs)
 
     # ---------- Stage 2: snowball ----------
