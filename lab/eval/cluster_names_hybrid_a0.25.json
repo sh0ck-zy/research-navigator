@@ -1,0 +1,163 @@
+{
+  "run_id": "hybrid_a0.25",
+  "alpha": 0.25,
+  "source_run": "l2_th005_clean",
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "name": "Factual Knowledge & Editing",
+      "nameable": true,
+      "why_not": null,
+      "size": 144,
+      "n_subclusters": 12,
+      "top_terms": [
+        "knowledge",
+        "language",
+        "editing"
+      ],
+      "exemplars": [
+        "Locating and Editing Factual Associations in GPT",
+        "LLaMA: Open and Efficient Foundation Language Models",
+        "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary ",
+        "Knowledge Neurons in Pretrained Transformers",
+        "Mass-Editing Memory in a Transformer"
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "name": "Attribution & Feature Visualization",
+      "nameable": true,
+      "why_not": null,
+      "size": 125,
+      "n_subclusters": 10,
+      "top_terms": [
+        "deep",
+        "networks",
+        "neural"
+      ],
+      "exemplars": [
+        "\"Why Should I Trust You?\"",
+        "Axiomatic Attribution for Deep Networks",
+        "Towards A Rigorous Science of Interpretable Machine Learning",
+        "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+        "On Pixel-Wise Explanations for Non-Linear Classifier Decisions by Layer-Wise Relevance Pro"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "name": "Latent Representations & Safety",
+      "nameable": true,
+      "why_not": null,
+      "size": 117,
+      "n_subclusters": 13,
+      "top_terms": [
+        "large",
+        "language",
+        "intelligence"
+      ],
+      "exemplars": [
+        "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+        "Representation Engineering: A Top-Down Approach to AI Transparency",
+        "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations o",
+        "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+        "Discovering Latent Knowledge in Language Models Without Supervision"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "name": "BERT-Era Probing",
+      "nameable": true,
+      "why_not": null,
+      "size": 108,
+      "n_subclusters": 10,
+      "top_terms": [
+        "bert",
+        "probing",
+        "sentence"
+      ],
+      "exemplars": [
+        "BERT Rediscovers the Classical NLP Pipeline",
+        "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can ",
+        "Designing and Interpreting Probes with Control Tasks",
+        "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguist",
+        "Visualizing and Understanding Neural Models in NLP"
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "name": "Circuits & Superposition",
+      "nameable": true,
+      "why_not": null,
+      "size": 99,
+      "n_subclusters": 11,
+      "top_terms": [
+        "language",
+        "large",
+        "learning"
+      ],
+      "exemplars": [
+        "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+        "In-context Learning and Induction Heads",
+        "Progress measures for grokking via mechanistic interpretability",
+        "Toy Models of Superposition",
+        "Towards Automated Circuit Discovery for Mechanistic Interpretability"
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "name": "Sparse Autoencoders / Bio-LMs",
+      "nameable": false,
+      "why_not": "two unrelated themes fused: SAE/dictionary-learning work and protein/DNA language models. Only a conjunction names it.",
+      "size": 56,
+      "n_subclusters": 8,
+      "top_terms": [
+        "protein",
+        "sparse",
+        "autoencoders"
+      ],
+      "exemplars": [
+        "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+        "Biological structure and function emerge from scaling unsupervised learning to 250 million",
+        "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+        "RoFormer: Enhanced transformer with Rotary Position Embedding",
+        "ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning"
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "name": "Multimodal & Architecture Misc",
+      "nameable": false,
+      "why_not": "grab-bag: ViT, wav2vec, speech, pose estimation, layer-norm analysis. No shared subject beyond 'transformer-adjacent'.",
+      "size": 33,
+      "n_subclusters": 7,
+      "top_terms": [
+        "recognition",
+        "multimodal",
+        "image"
+      ],
+      "exemplars": [
+        "Analyzing Transformers in Embedding Space",
+        "Transformer Feed-Forward Layers Are Key-Value Memories",
+        "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+        "Language Models Represent Space and Time",
+        "wav2vec 2.0: A Framework for Self-Supervised Learning of Speech Representations"
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "name": "(singleton)",
+      "nameable": false,
+      "why_not": "one paper, infant psychology.",
+      "size": 1,
+      "n_subclusters": 1,
+      "top_terms": [
+        "helpers",
+        "hinderers",
+        "replication"
+      ],
+      "exemplars": [
+        "Probing the Strength of Infants' Preference for Helpers over Hinderers: Two Replication At"
+      ]
+    }
+  ]
+}
