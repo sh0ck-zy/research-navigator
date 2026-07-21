@@ -125,3 +125,64 @@ python lab/freeze_clustering.py --alpha 0.25 --run-id hybrid_a0.25
 Positions in the scatter are the existing UMAP-of-embeddings layout, so it also
 shows how the hybrid partition sits against pure semantic space — the clusters
 are deliberately not clean blobs.
+
+---
+
+# Layout addendum — coordinates from the hybrid graph (2026-07-21)
+
+Clustering, names and colours untouched. Only positions changed.
+
+The old canvas encoded two metrics at once: positions from UMAP-over-MiniLM
+(semantic) and colours from the α=0.25 hybrid partition. That is ARI 0.154 made
+visible. Both candidate layouts were computed from the **same fused graph the
+clusters came from** (`CITES + 0.25·SIMILAR`, 9,757 weighted edges):
+
+- **n2v** — weighted random walks (10/node, length 40, window 5) → PPMI
+  co-occurrence → truncated SVD to 32d → UMAP to 2d. This is DeepWalk /
+  node2vec(p=q=1) in matrix-factorisation form: same objective, no gensim
+  dependency, deterministic for a fixed seed.
+- **drl** — igraph DrL (OpenOrd family), weighted, fixed seed.
+
+## Do territories read spatially?
+
+| layout | kNN purity (local) | silhouette 2D (global) | centroid acc (territorial) | **territory** |
+|---|---|---|---|---|
+| semantic UMAP (before) | 0.557 | **−0.035** | 0.530 | 0.523 |
+| hybrid node2vec→UMAP | **0.753** | 0.120 | 0.720 | 0.678 |
+| **hybrid DrL (chosen)** | 0.730 | **0.318** | **0.734** | **0.707** |
+
+Three complementary reads, because they disagree and picking one would have
+picked the wrong layout: *kNN purity* asks "are my 2D neighbours my clustermates",
+*silhouette* asks "are the clusters separated regions", *centroid accuracy* asks
+"is each point closest to its own cluster's centre". `territory` is their mean
+(silhouette rescaled to [0,1]) and is what selects.
+
+**Answer: yes, decisively.** The old layout's 2D silhouette was **negative
+(−0.035)** — clusters were, on average, closer to *other* clusters' points than
+their own. That is the numeric form of "colours sprayed over a canvas that
+doesn't agree with them". Both hybrid layouts fix it; DrL by the widest margin
+(−0.035 → **0.318**), and it also gets 73% of papers nearest their own cluster
+centre, up from 53%.
+
+n2v edges DrL on *local* purity (0.753 vs 0.730) — its neighbourhoods are slightly
+tidier — but DrL wins on both global measures, and for a map read as territories
+that is what matters. Selection is `territory` in `lab/layout_hybrid.py`; switching
+to n2v is `--method n2v --run-id ...`.
+
+## Frozen
+
+`run_id='hybrid_a0.25_drl'` on all 683 nodes in `data/graph_v3_clean`
+(`layout_x`/`layout_y` replaced; `cluster_id`/`subcluster_id` unchanged from
+`hybrid_a0.25`). Coordinates also saved standalone in
+`lab/eval/layout_hybrid_a0.25_drl.json`.
+
+| artifact | where |
+|---|---|
+| annotated scatter, new layout | `lab/out/hybrid_scatter_hybrid_a0.25_drl.html` |
+| before/after side by side | `lab/out/layout_sidebyside_hybrid_a0.25_drl.html` |
+| coordinates + scores | `lab/eval/layout_hybrid_a0.25_drl.json` |
+| code | `lab/layout_hybrid.py` |
+
+```bash
+python lab/layout_hybrid.py --method both --freeze
+```
