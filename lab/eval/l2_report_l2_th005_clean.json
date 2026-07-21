@@ -1,0 +1,624 @@
+{
+  "run_id": "l2_th005_clean",
+  "papers": 683,
+  "stats": {
+    "run_id": "l2_th005_clean",
+    "corpus": "/Users/joao/Projects/clarity-research/data/raw/interp_corpus_v3_clean.jsonl",
+    "papers": 683,
+    "params": {
+      "k": 15,
+      "resolution": 1.0,
+      "sub_resolution": 1.5,
+      "model": "all-MiniLM-L6-v2",
+      "sim_min": 0.3
+    },
+    "similar_edges": 10165,
+    "cite_edges": 2663,
+    "clusters": 8,
+    "modularity_embedding_knn": 0.5117775320212821,
+    "modularity_citation": 0.5225762650736792,
+    "citation_clusters": 18,
+    "ari_embedding_vs_citation": 0.1539329934866934,
+    "silhouette_embedding": 0.06028623506426811,
+    "official_centrality": "in_corpus_cites",
+    "normalize_centrality": false,
+    "cluster_sizes": {
+      "1": 128,
+      "4": 81,
+      "5": 70,
+      "3": 95,
+      "0": 141,
+      "6": 60,
+      "2": 107,
+      "7": 1
+    }
+  },
+  "centrality_summary": {
+    "betweenness": {
+      "median_rank": 9,
+      "mean_rank": 54.1,
+      "in_top_50": 9,
+      "in_top_10pct": 9,
+      "worst_rank": 277
+    },
+    "cited_by_count": {
+      "median_rank": 244,
+      "mean_rank": 235.7,
+      "in_top_50": 0,
+      "in_top_10pct": 0,
+      "worst_rank": 374
+    },
+    "emb_centrality": {
+      "median_rank": 240,
+      "mean_rank": 269.5,
+      "in_top_50": 1,
+      "in_top_10pct": 1,
+      "worst_rank": 530
+    },
+    "hits_authority": {
+      "median_rank": 47,
+      "mean_rank": 57.2,
+      "in_top_50": 8,
+      "in_top_10pct": 9,
+      "worst_rank": 218
+    },
+    "in_corpus_cites": {
+      "median_rank": 14,
+      "mean_rank": 48.2,
+      "in_top_50": 9,
+      "in_top_10pct": 9,
+      "worst_rank": 231
+    },
+    "pagerank": {
+      "median_rank": 31,
+      "mean_rank": 52.6,
+      "in_top_50": 8,
+      "in_top_10pct": 9,
+      "worst_rank": 162
+    },
+    "recency_velocity": {
+      "median_rank": 240,
+      "mean_rank": 239.7,
+      "in_top_50": 0,
+      "in_top_10pct": 0,
+      "worst_rank": 396
+    },
+    "centrality": {
+      "median_rank": 14,
+      "mean_rank": 48.2,
+      "in_top_50": 9,
+      "in_top_10pct": 9,
+      "worst_rank": 231
+    }
+  },
+  "best_metric_by_mean_landmark_rank": "in_corpus_cites",
+  "landmarks": [
+    {
+      "arxiv_id": "2209.10652",
+      "title": "Toy Models of Superposition",
+      "tier": "core",
+      "present": true,
+      "betweenness": 8,
+      "cited_by_count": 257,
+      "emb_centrality": 342,
+      "hits_authority": 20,
+      "in_corpus_cites": 14,
+      "pagerank": 21,
+      "recency_velocity": 271,
+      "centrality": 14
+    },
+    {
+      "arxiv_id": "2209.11895",
+      "title": "In-context Learning and Induction Heads",
+      "tier": "core",
+      "present": true,
+      "betweenness": 6,
+      "cited_by_count": 216,
+      "emb_centrality": 240,
+      "hits_authority": 11,
+      "in_corpus_cites": 6,
+      "pagerank": 11,
+      "recency_velocity": 207,
+      "centrality": 6
+    },
+    {
+      "arxiv_id": "2211.00593",
+      "title": "Interpretability in the Wild",
+      "tier": "core",
+      "present": true,
+      "betweenness": 4,
+      "cited_by_count": 249,
+      "emb_centrality": 35,
+      "hits_authority": 8,
+      "in_corpus_cites": 4,
+      "pagerank": 22,
+      "recency_velocity": 258,
+      "centrality": 4
+    },
+    {
+      "arxiv_id": "2202.05262",
+      "title": "Locating and Editing Factual Associations in GPT",
+      "tier": "core",
+      "present": true,
+      "betweenness": 1,
+      "cited_by_count": 157,
+      "emb_centrality": 80,
+      "hits_authority": 1,
+      "in_corpus_cites": 1,
+      "pagerank": 1,
+      "recency_velocity": 146,
+      "centrality": 1
+    },
+    {
+      "arxiv_id": "2301.05217",
+      "title": "Progress measures for grokking via mechanistic interpretability",
+      "tier": "core",
+      "present": true,
+      "betweenness": 9,
+      "cited_by_count": 244,
+      "emb_centrality": 394,
+      "hits_authority": 10,
+      "in_corpus_cites": 12,
+      "pagerank": 33,
+      "recency_velocity": 225,
+      "centrality": 12
+    },
+    {
+      "arxiv_id": "2210.13382",
+      "title": "Emergent World Representations",
+      "tier": "core",
+      "present": true,
+      "betweenness": 7,
+      "cited_by_count": 239,
+      "emb_centrality": 530,
+      "hits_authority": 29,
+      "in_corpus_cites": 8,
+      "pagerank": 6,
+      "recency_velocity": 240,
+      "centrality": 8
+    },
+    {
+      "arxiv_id": "2309.08600",
+      "title": "Sparse Autoencoders Find Highly Interpretable Features",
+      "tier": "core",
+      "present": true,
+      "betweenness": 5,
+      "cited_by_count": 252,
+      "emb_centrality": 238,
+      "hits_authority": 49,
+      "in_corpus_cites": 11,
+      "pagerank": 17,
+      "recency_velocity": 239,
+      "centrality": 11
+    },
+    {
+      "arxiv_id": "2310.01405",
+      "title": "Representation Engineering",
+      "tier": "core",
+      "present": true,
+      "betweenness": 21,
+      "cited_by_count": 238,
+      "emb_centrality": 235,
+      "hits_authority": 89,
+      "in_corpus_cites": 24,
+      "pagerank": 31,
+      "recency_velocity": 214,
+      "centrality": 24
+    },
+    {
+      "arxiv_id": "1704.01444",
+      "title": "Learning to Generate Reviews and Discovering Sentiment",
+      "tier": "core",
+      "present": true,
+      "betweenness": 31,
+      "cited_by_count": 122,
+      "emb_centrality": 284,
+      "hits_authority": 218,
+      "in_corpus_cites": 231,
+      "pagerank": 134,
+      "recency_velocity": 145,
+      "centrality": 231
+    },
+    {
+      "arxiv_id": "1610.01644",
+      "title": "Understanding intermediate layers using linear classifier probes",
+      "tier": "core",
+      "present": true,
+      "betweenness": 277,
+      "cited_by_count": 193,
+      "emb_centrality": 197,
+      "hits_authority": 151,
+      "in_corpus_cites": 151,
+      "pagerank": 130,
+      "recency_velocity": 251,
+      "centrality": 151
+    },
+    {
+      "arxiv_id": "2305.01610",
+      "title": "Finding Neurons in a Haystack",
+      "tier": "core",
+      "present": true,
+      "betweenness": 202,
+      "cited_by_count": 374,
+      "emb_centrality": 187,
+      "hits_authority": 53,
+      "in_corpus_cites": 78,
+      "pagerank": 162,
+      "recency_velocity": 396,
+      "centrality": 78
+    },
+    {
+      "arxiv_id": "2304.14997",
+      "title": "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+      "tier": "core",
+      "present": true,
+      "betweenness": 78,
+      "cited_by_count": 287,
+      "emb_centrality": 472,
+      "hits_authority": 47,
+      "in_corpus_cites": 38,
+      "pagerank": 63,
+      "recency_velocity": 284,
+      "centrality": 38
+    },
+    {
+      "arxiv_id": "2012.14913",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "tier": "adjacent",
+      "present": true,
+      "betweenness": 14,
+      "cited_by_count": 286,
+      "emb_centrality": 8,
+      "hits_authority": 88,
+      "in_corpus_cites": 30,
+      "pagerank": 19,
+      "recency_velocity": 330,
+      "centrality": 30
+    },
+    {
+      "arxiv_id": "2104.08696",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "tier": "adjacent",
+      "present": true,
+      "betweenness": 17,
+      "cited_by_count": 169,
+      "emb_centrality": 130,
+      "hits_authority": 2,
+      "in_corpus_cites": 10,
+      "pagerank": 14,
+      "recency_velocity": 160,
+      "centrality": 10
+    },
+    {
+      "arxiv_id": "2210.07229",
+      "title": "Mass-Editing Memory in a Transformer",
+      "tier": "adjacent",
+      "present": true,
+      "betweenness": 53,
+      "cited_by_count": 245,
+      "emb_centrality": 539,
+      "hits_authority": 4,
+      "in_corpus_cites": 15,
+      "pagerank": 49,
+      "recency_velocity": 249,
+      "centrality": 15
+    }
+  ],
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "size": 141,
+      "n_subclusters": 8,
+      "years_median": 2023,
+      "keywords": [
+        "networks",
+        "deep",
+        "neural",
+        "learning",
+        "image",
+        "understanding",
+        "visual",
+        "representations"
+      ],
+      "top_papers": [
+        {
+          "title": "Axiomatic Attribution for Deep Networks",
+          "year": 2017,
+          "centrality": 41.0
+        },
+        {
+          "title": "Emergent World Representations: Exploring a Sequence Model Trained on a Syntheti",
+          "year": 2022,
+          "centrality": 40.0
+        },
+        {
+          "title": "Progress measures for grokking via mechanistic interpretability",
+          "year": 2023,
+          "centrality": 34.0
+        },
+        {
+          "title": "Toy Models of Superposition",
+          "year": 2022,
+          "centrality": 31.0
+        },
+        {
+          "title": "Visualizing and Understanding Neural Models in NLP",
+          "year": 2016,
+          "centrality": 23.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "size": 128,
+      "n_subclusters": 7,
+      "years_median": 2023,
+      "keywords": [
+        "knowledge",
+        "language",
+        "models",
+        "editing",
+        "large",
+        "factual",
+        "reasoning",
+        "model"
+      ],
+      "top_papers": [
+        {
+          "title": "Locating and Editing Factual Associations in GPT",
+          "year": 2022,
+          "centrality": 118.0
+        },
+        {
+          "title": "Knowledge Neurons in Pretrained Transformers",
+          "year": 2022,
+          "centrality": 39.0
+        },
+        {
+          "title": "Mass-Editing Memory in a Transformer",
+          "year": 2022,
+          "centrality": 29.0
+        },
+        {
+          "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understa",
+          "year": 2018,
+          "centrality": 19.0
+        },
+        {
+          "title": "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+          "year": 2023,
+          "centrality": 19.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "size": 107,
+      "n_subclusters": 8,
+      "years_median": 2024,
+      "keywords": [
+        "language",
+        "large",
+        "models",
+        "bias",
+        "llms",
+        "model",
+        "llm",
+        "human"
+      ],
+      "top_papers": [
+        {
+          "title": "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+          "year": 2023,
+          "centrality": 19.0
+        },
+        {
+          "title": "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling",
+          "year": 2023,
+          "centrality": 9.0
+        },
+        {
+          "title": "Man is to Computer Programmer as Woman is to Homemaker? Debiasing Word Embedding",
+          "year": 2016,
+          "centrality": 6.0
+        },
+        {
+          "title": "Predictive power of word surprisal for reading times is a linear function of lan",
+          "year": 2018,
+          "centrality": 6.0
+        },
+        {
+          "title": "Talking about Large Language Models",
+          "year": 2024,
+          "centrality": 6.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "size": 95,
+      "n_subclusters": 7,
+      "years_median": 2022,
+      "keywords": [
+        "interpretability",
+        "explanations",
+        "explainable",
+        "artificial",
+        "intelligence",
+        "machine",
+        "learning",
+        "review"
+      ],
+      "top_papers": [
+        {
+          "title": "\"Why Should I Trust You?\"",
+          "year": 2016,
+          "centrality": 48.0
+        },
+        {
+          "title": "Interpretability in the Wild: a Circuit for Indirect Object Identification in GP",
+          "year": 2022,
+          "centrality": 42.0
+        },
+        {
+          "title": "Towards A Rigorous Science of Interpretable Machine Learning",
+          "year": 2017,
+          "centrality": 27.0
+        },
+        {
+          "title": "\u201cWhy Should I Trust You?\u201d: Explaining the Predictions of Any Classifier",
+          "year": 2016,
+          "centrality": 25.0
+        },
+        {
+          "title": "Representation Engineering: A Top-Down Approach to AI Transparency",
+          "year": 2023,
+          "centrality": 21.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "size": 81,
+      "n_subclusters": 10,
+      "years_median": 2023,
+      "keywords": [
+        "transformer",
+        "transformers",
+        "attention",
+        "memory",
+        "llama",
+        "language",
+        "models",
+        "analyzing"
+      ],
+      "top_papers": [
+        {
+          "title": "LLaMA: Open and Efficient Foundation Language Models",
+          "year": 2023,
+          "centrality": 43.0
+        },
+        {
+          "title": "In-context Learning and Induction Heads",
+          "year": 2022,
+          "centrality": 40.0
+        },
+        {
+          "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the V",
+          "year": 2022,
+          "centrality": 40.0
+        },
+        {
+          "title": "Analyzing Transformers in Embedding Space",
+          "year": 2023,
+          "centrality": 31.0
+        },
+        {
+          "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the",
+          "year": 2019,
+          "centrality": 27.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "size": 70,
+      "n_subclusters": 8,
+      "years_median": 2019,
+      "keywords": [
+        "bert",
+        "sentence",
+        "probing",
+        "embeddings",
+        "representations",
+        "analysis",
+        "semantic",
+        "tasks"
+      ],
+      "top_papers": [
+        {
+          "title": "BERT Rediscovers the Classical NLP Pipeline",
+          "year": 2019,
+          "centrality": 40.0
+        },
+        {
+          "title": "Designing and Interpreting Probes with Control Tasks",
+          "year": 2019,
+          "centrality": 26.0
+        },
+        {
+          "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings fo",
+          "year": 2018,
+          "centrality": 26.0
+        },
+        {
+          "title": "Visualizing and Understanding Recurrent Networks",
+          "year": 2015,
+          "centrality": 20.0
+        },
+        {
+          "title": "Analysis Methods in Neural Language Processing: A Survey",
+          "year": 2019,
+          "centrality": 19.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "size": 60,
+      "n_subclusters": 7,
+      "years_median": 2024,
+      "keywords": [
+        "sparse",
+        "protein",
+        "autoencoders",
+        "structure",
+        "language",
+        "interpretable",
+        "model",
+        "models"
+      ],
+      "top_papers": [
+        {
+          "title": "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+          "year": 2023,
+          "centrality": 37.0
+        },
+        {
+          "title": "Biological structure and function emerge from scaling unsupervised learning to 2",
+          "year": 2021,
+          "centrality": 13.0
+        },
+        {
+          "title": "Evolutionary-scale prediction of atomic-level protein structure with a language ",
+          "year": 2023,
+          "centrality": 13.0
+        },
+        {
+          "title": "Identifying and Controlling Important Neurons in Neural Machine Translation",
+          "year": 2018,
+          "centrality": 11.0
+        },
+        {
+          "title": "Finding Neurons in a Haystack: Case Studies with Sparse Probing",
+          "year": 2023,
+          "centrality": 9.0
+        }
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "size": 1,
+      "n_subclusters": 1,
+      "years_median": 2015,
+      "keywords": [],
+      "top_papers": [
+        {
+          "title": "Probing the Strength of Infants' Preference for Helpers over Hinderers: Two Repl",
+          "year": 2015,
+          "centrality": 0.0
+        }
+      ]
+    }
+  ]
+}

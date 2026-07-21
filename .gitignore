@@ -44,3 +44,13 @@ data/graph*
 data/processed/
 lab/out/
 /lib/
+
+# ...but the interp corpora + seed audit ARE tracked (expensive to regenerate:
+# ~10 min of OpenAlex/arXiv API). Multi-MB candidate checkpoints stay out.
+!data/raw/
+data/raw/*
+!data/raw/interp_corpus_v3*.jsonl
+!data/raw/.ckpt_v3/
+data/raw/.ckpt_v3/*
+!data/raw/.ckpt_v3/seeds.json
+!data/raw/.ckpt_v3/seed_resolution.json

@@ -49,7 +49,7 @@ def main():
     lm = json.loads((EVAL / "landmarks.json").read_text())["landmarks"]
     by_ax = {r.get("arxiv_id"): r for r in rows if r.get("arxiv_id")}
     ntitles = {norm(r["title"]): r for r in rows}
-    ranking = sorted(rows, key=lambda r: -(r["_indeg"] + (r.get("_in_corpus_cites") or 0)))
+    ranking = sorted(rows, key=lambda r: -r["_indeg"])
     rank_of = {r["id"]: i + 1 for i, r in enumerate(ranking)}
     lm_report = []
     for L in lm:
@@ -58,7 +58,7 @@ def main():
             nt = norm(L["title"])
             hit = next((r for k, r in ntitles.items() if nt and (nt in k or k in nt)), None)
         lm_report.append({**L, "tier": L.get("tier", "core"), "present": bool(hit),
-                          "in_corpus_cites": (hit.get("_in_corpus_cites") if hit else None),
+                          "in_pool_cites": (hit.get("_in_corpus_cites") if hit else None),
                           "indeg": (hit["_indeg"] if hit else None),
                           "rank": (rank_of.get(hit["id"]) if hit else None)})
     core = [x for x in lm_report if x["tier"] == "core"]
@@ -68,9 +68,14 @@ def main():
     adj_present = sum(1 for x in adj if x["present"])
 
     # ── top-N by in-corpus cites (HARD GATE b input) ──
-    top = sorted(rows, key=lambda r: -(r.get("_in_corpus_cites") or 0))[:args.top]
+    # NB: rank by `_indeg` (citations from papers INSIDE the final corpus), not by
+    # ingest_v3's `_in_corpus_cites`, which counts citations within the whole
+    # CANDIDATE POOL. The two diverge badly — generic ML background (GLUE, LLaMA)
+    # is heavily cited across the pool but barely inside the corpus, so pool-cites
+    # ranking made the purity sample look far more polluted than the corpus is.
+    top = sorted(rows, key=lambda r: -r["_indeg"])[:args.top]
     top_out = [{"id": r["id"], "arxiv_id": r.get("arxiv_id"), "year": r["year"],
-                "in_corpus_cites": r.get("_in_corpus_cites"), "indeg": r["_indeg"],
+                "in_pool_cites": r.get("_in_corpus_cites"), "indeg": r["_indeg"],
                 "title": r["title"], "abstract": (r.get("abstract") or "")[:320]}
                for r in top]
 
@@ -95,11 +100,11 @@ def main():
     print(f"\nHARD GATE (a) — core landmarks: {core_present}/{len(core)}  → {verdict}")
     for x in core:
         flag = "OK  " if x["present"] else "MISS"
-        print(f"  [{flag}] {x['arxiv_id']:>11}  rank={x['rank']}  icc={x['in_corpus_cites']}  {x['title'][:46]}")
+        print(f"  [{flag}] {x['arxiv_id']:>11}  rank={x['rank']}  indeg={x['indeg']}  {x['title'][:46]}")
     print(f"\nadjacent tier (report only): {adj_present}/{len(adj)}")
     for x in adj:
         flag = "ok  " if x["present"] else "--  "
-        print(f"  [{flag}] {x['arxiv_id']:>11}  rank={x['rank']}  icc={x['in_corpus_cites']}  {x['title'][:46]}")
+        print(f"  [{flag}] {x['arxiv_id']:>11}  rank={x['rank']}  indeg={x['indeg']}  {x['title'][:46]}")
     print(f"\nTop-{args.top} by in-corpus cites saved → lab/eval/ingest_report.json (classify for purity gate b)")
 
 

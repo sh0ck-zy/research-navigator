@@ -1,0 +1,27 @@
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[l2] corpus interp_corpus_v3_clean.jsonl: 683 papers
+Loading weights:   0%|          | 0/103 [00:00<?, ?it/s]Loading weights: 100%|██████████| 103/103 [00:00<00:00, 16838.69it/s]
+[1mBertModel LOAD REPORT[0m from: sentence-transformers/all-MiniLM-L6-v2
+Key                     | Status     |  | 
+------------------------+------------+--+-
+embeddings.position_ids | UNEXPECTED |  | 
+
+Notes:
+- UNEXPECTED:	can be ignored when loading from different task/architecture; not ok if you expect identical arch.
+Batches:   0%|          | 0/11 [00:00<?, ?it/s]Batches:   9%|▉         | 1/11 [00:00<00:02,  4.93it/s]Batches:  18%|█▊        | 2/11 [00:00<00:01,  6.01it/s]Batches:  27%|██▋       | 3/11 [00:00<00:01,  6.12it/s]Batches:  36%|███▋      | 4/11 [00:00<00:01,  6.43it/s]Batches:  45%|████▌     | 5/11 [00:00<00:00,  6.61it/s]Batches:  55%|█████▍    | 6/11 [00:00<00:00,  6.77it/s]Batches:  64%|██████▎   | 7/11 [00:01<00:00,  6.84it/s]Batches:  73%|███████▎  | 8/11 [00:01<00:00,  6.90it/s]Batches:  82%|████████▏ | 9/11 [00:01<00:00,  7.03it/s]Batches:  91%|█████████ | 10/11 [00:01<00:00,  7.60it/s]Batches: 100%|██████████| 11/11 [00:01<00:00,  7.19it/s]
+/Users/joao/Projects/clarity-research/lab/run_l2.py:149: RuntimeWarning: More than 30% of hub or authority scores are zeros. The presence of zero values indicates that the solution is not unique, thus the returned result may not be meaningful. Location: src/centrality/hub_authority.c:81
+  hits_auth = np.asarray(gcite.hub_score()) if gcite.ecount() else np.zeros(n)
+/Users/joao/Projects/clarity-research/lab/run_l2.py:151: RuntimeWarning: More than 30% of hub or authority scores are zeros. The presence of zero values indicates that the solution is not unique, thus the returned result may not be meaningful. Location: src/centrality/hub_authority.c:81
+  hits_auth = np.asarray(gcite.authority_score())
+/Users/joao/Projects/clarity-research/.venv/lib/python3.14/site-packages/umap/umap_.py:1952: UserWarning: n_jobs value 1 overridden to 1 by setting random_state. Use no seed for parallelism.
+  warn(
+[embed] (683, 384) → /Users/joao/Projects/clarity-research/data/embeddings/interp_l2_th005_clean.npz
+[similar] 10165 directed kNN edges (k=15, cos>=0.3), 7777 undirected
+[cluster] 8 clusters (Leiden res=1.0), modularity=0.512, sizes=[(0, 141), (1, 128), (2, 107), (3, 95), (4, 81), (5, 70), (6, 60), (7, 1)]
+[cluster] citation-graph Leiden: 18 clusters, modularity=0.523 | ARI(emb,cites)=0.154 | silhouette(emb)=0.060
+[centrality] official = in_corpus_cites (raw) → [0.000, 118.000]; 7 candidates kept in scores
+[layout] UMAP → x[-0.1,7.7] y[3.6,10.0]
+[save] enriched corpus → /Users/joao/Projects/clarity-research/data/processed/interp_l2_th005_clean.jsonl
+corpus: 683 papers, 2663 in-corpus edges
+schema applied from schema.cypher
+loaded → 683 Paper nodes, 2663 CITES, 10165 SIMILAR  (db: /Users/joao/Projects/clarity-research/data/graph_v3_clean)

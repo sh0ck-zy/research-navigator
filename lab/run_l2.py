@@ -33,15 +33,14 @@ import numpy as np
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-# ── the OFFICIAL blend promoted to Paper.centrality ──────────────────────────
-# PROVISIONAL — percentile-rank blend, deliberately simple and yours to change.
-# Weights must sum to 1. Each component is percentile-ranked within the corpus
-# first, so no single heavy-tailed metric dominates.
-PROVISIONAL_BLEND = {
-    "pagerank": 0.50,
-    "in_corpus_cites": 0.35,
-    "emb_centrality": 0.15,
-}
+# ── what gets promoted to the Paper.centrality column ────────────────────────
+# Joao's call (2026-07-21): no blend. in_corpus_cites is the official metric —
+# it beat PageRank, HITS, betweenness and the provisional blend on landmark
+# ranking, and emb_centrality (which measures typicality, not importance) was
+# dragging the blend down. Every other metric stays a candidate in Paper.scores,
+# emb_centrality included; blend exploration is his, not this script's.
+OFFICIAL_CENTRALITY = "in_corpus_cites"
+NORMALIZE_CENTRALITY = False  # True → percentile-rank into [0,1] instead of the raw value
 
 
 def pct_rank(vals):
@@ -168,10 +167,12 @@ def main():
         "hits_authority": hits_auth, "emb_centrality": emb_cent,
         "recency_velocity": recency_velocity, "cited_by_count": cbc,
     }
-    ranks = {k2: pct_rank(v) for k2, v in metrics.items()}
-    centrality = sum(w * ranks[k2] for k2, w in PROVISIONAL_BLEND.items())
-    print(f"[centrality] blend={PROVISIONAL_BLEND} → centrality in "
-          f"[{centrality.min():.3f}, {centrality.max():.3f}]")
+    centrality = (pct_rank(metrics[OFFICIAL_CENTRALITY]) if NORMALIZE_CENTRALITY
+                  else metrics[OFFICIAL_CENTRALITY].astype(float))
+    print(f"[centrality] official = {OFFICIAL_CENTRALITY}"
+          f"{' (percentile)' if NORMALIZE_CENTRALITY else ' (raw)'} → "
+          f"[{centrality.min():.3f}, {centrality.max():.3f}]; "
+          f"{len(metrics)} candidates kept in scores")
 
     # ── layout: UMAP ─────────────────────────────────────────────────────────
     import umap
@@ -213,7 +214,8 @@ def main():
         "modularity_citation": gcite_u.modularity(cite_clusters),
         "citation_clusters": len(set(cite_clusters)),
         "ari_embedding_vs_citation": ari, "silhouette_embedding": sil,
-        "blend": PROVISIONAL_BLEND,
+        "official_centrality": OFFICIAL_CENTRALITY,
+        "normalize_centrality": NORMALIZE_CENTRALITY,
         "cluster_sizes": dict(Counter(cluster_id)),
     }
     (ROOT / "lab" / "eval" / f"l2_stats_{args.run_id}.json").write_text(json.dumps(stats, indent=2))

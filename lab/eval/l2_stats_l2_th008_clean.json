@@ -1,0 +1,33 @@
+{
+  "run_id": "l2_th008_clean",
+  "corpus": "/Users/joao/Projects/clarity-research/data/raw/interp_corpus_v3_clean008.jsonl",
+  "papers": 508,
+  "params": {
+    "k": 15,
+    "resolution": 1.0,
+    "sub_resolution": 1.5,
+    "model": "all-MiniLM-L6-v2",
+    "sim_min": 0.3
+  },
+  "similar_edges": 7543,
+  "cite_edges": 1540,
+  "clusters": 9,
+  "modularity_embedding_knn": 0.47832941399845824,
+  "modularity_citation": 0.5385396131523942,
+  "citation_clusters": 22,
+  "ari_embedding_vs_citation": 0.16565470574391244,
+  "silhouette_embedding": 0.06734136492013931,
+  "official_centrality": "in_corpus_cites",
+  "normalize_centrality": false,
+  "cluster_sizes": {
+    "1": 85,
+    "5": 65,
+    "4": 70,
+    "3": 71,
+    "0": 93,
+    "2": 72,
+    "6": 36,
+    "8": 1,
+    "7": 15
+  }
+}

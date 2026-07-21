@@ -270,6 +270,9 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--out", default="data/raw/interp_corpus_v3.jsonl")
     ap.add_argument("--ckpt-dir", default="data/raw/.ckpt_v3")
+    ap.add_argument("--candidates", default=None,
+                    help="candidates json to filter (default: <ckpt-dir>/candidates.json); "
+                         "point at candidates_clean.json to filter the hygiened pool")
     ap.add_argument("--mailto", default=None)
     ap.add_argument("--stats", action="store_true")
     ap.add_argument("--keep-threshold", type=float, default=0.34)
@@ -320,7 +323,7 @@ def main():
     print(f"[1] {len(seeds)} seed records for {len(SEEDS)} seed papers")
 
     # 2 · expand (backward refs of seeds + forward citers of seeds)
-    cp = ck / "candidates.json"
+    cp = Path(args.candidates) if args.candidates else ck / "candidates.json"
     if cp.exists():
         works = json.loads(cp.read_text())
         print(f"[2] candidates cached ({len(works)})")

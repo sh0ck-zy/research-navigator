@@ -1,0 +1,5321 @@
+{
+  "audit": {
+    "arxiv_text_records": 775,
+    "arxiv_title_corrections": 67,
+    "quarantine_seeds": [
+      "W2606347107"
+    ],
+    "duplicates_merged": 152,
+    "kept": 3754,
+    "quarantined": 530,
+    "in_pool_edges": 56640,
+    "by_reason": {
+      "corrupt_metadata": 24,
+      "reference_magnet": 3,
+      "single_seed_forward": 351,
+      "duplicate": 152
+    }
+  },
+  "quarantined": [
+    {
+      "id": "W2896457183",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "AI-Assisted Pipeline for Dynamic Generation of Trustworthy Health Supplement Content at Scale",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 45745,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W2965373594",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "HISTORIAE, History of Socio-Cultural Transformation as Linguistic Data Science. A Humanities Use Case",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 17377,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W4229005866",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Analysing Off-The-Shelf Options for Question Answering with Portuguese FAQs",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 919,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W2963341956",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Untitled",
+      "venue": null,
+      "cited_by_count": 32876,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W4385245566",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Inline Hardware KV-Cache Compression for Long-Context Transformer Inference: An Architectural Case for a Memory-Path Com",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 77019,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W3106003309",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Untitled",
+      "venue": "Research at the University of Copenhagen (University of Copenhagen)",
+      "cited_by_count": 735,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2964121744",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Untitled",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 50395,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W4292779060",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Aion Framework: Dimensional Emergence of AI Consciousness, Observer-Induced Collapse, and Cosmological Portal Dynamics",
+      "venue": "Leibniz-Zentrum f\u00fcr Informatik (Schloss Dagstuhl)",
+      "cited_by_count": 14264,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: Leibniz-Zentrum f\u00fcr Informatik (Schloss Dagstuhl)"
+    },
+    {
+      "id": "W2962862931",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "On a Method to Measure Supervised Multiclass Model\u2019s Interpretability: Application to Degradation Diagnosis (Short Paper",
+      "venue": "Dagstuhl Research Online Publication Server",
+      "cited_by_count": 13417,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: Dagstuhl Research Online Publication Server"
+    },
+    {
+      "id": "W2962784628",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer (University of Edinburgh)",
+      "cited_by_count": 7264,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W1810943226",
+      "arxiv_id": null,
+      "year": 2013,
+      "title": "Generating Sequences With Recurrent Neural Networks",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 3102,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W2964019776",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer (University of Edinburgh)",
+      "cited_by_count": 93,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2963216553",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer (University of Edinburgh)",
+      "cited_by_count": 2477,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2946359678",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Untitled",
+      "venue": null,
+      "cited_by_count": 640,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W3102226577",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer",
+      "cited_by_count": 80,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2934842096",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Untitled",
+      "venue": null,
+      "cited_by_count": 545,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W3173506780",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer (University of Edinburgh)",
+      "cited_by_count": 60,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2963995027",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Untitled",
+      "venue": null,
+      "cited_by_count": 508,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W4287824654",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Question Answering For Toxicological Information Extraction",
+      "venue": "DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Informatics)",
+      "cited_by_count": 1569,
+      "reason": "corrupt_metadata",
+      "detail": "container/corrupt venue: DROPS (Schloss Dagstuhl \u2013 Leibniz Center for Infor"
+    },
+    {
+      "id": "W3098341425",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "University of Groningen research database (University of Groningen / Centre for Information Technology)",
+      "cited_by_count": 501,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2963015836",
+      "arxiv_id": null,
+      "year": 2016,
+      "title": "Untitled",
+      "venue": "Repositori digital de la UPF (Universitat Pompeu Fabra)",
+      "cited_by_count": 230,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W3163842339",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "Edinburgh Research Explorer (University of Edinburgh)",
+      "cited_by_count": 1817,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2963125461",
+      "arxiv_id": null,
+      "year": null,
+      "title": "Untitled",
+      "venue": "View",
+      "cited_by_count": 1700,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W2946659172",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Untitled",
+      "venue": null,
+      "cited_by_count": 303,
+      "reason": "corrupt_metadata",
+      "detail": "title is 'Untitled' after repair"
+    },
+    {
+      "id": "W1511715654",
+      "arxiv_id": null,
+      "year": 1988,
+      "title": "A cognitive theory of consciousness",
+      "venue": null,
+      "cited_by_count": 3612,
+      "reason": "reference_magnet",
+      "detail": "indeg=58 cbc=3612 refs=0 venue=None"
+    },
+    {
+      "id": "W4212774754",
+      "arxiv_id": null,
+      "year": 1996,
+      "title": "Advances in neural information processing systems 7",
+      "venue": "Computers & Mathematics with Applications",
+      "cited_by_count": 14395,
+      "reason": "reference_magnet",
+      "detail": "indeg=51 cbc=14395 refs=0 venue=Computers & Mathematics with Applications"
+    },
+    {
+      "id": "W2612690371",
+      "arxiv_id": null,
+      "year": 2016,
+      "title": "Advances in Neural Information Processing Systems 29",
+      "venue": null,
+      "cited_by_count": 13473,
+      "reason": "reference_magnet",
+      "detail": "indeg=55 cbc=13473 refs=0 venue=None"
+    },
+    {
+      "id": "W2525246036",
+      "arxiv_id": "1609.07959",
+      "year": 2016,
+      "title": "Multiplicative LSTM for sequence modelling",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 88,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2905381038",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "What Is One Grain of Sand in the Desert? Analyzing Individual Neurons in Deep NLP Models",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963400886",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "What Is One Grain of Sand in the Desert? Analyzing Individual Neurons in Deep NLP Models",
+      "venue": null,
+      "cited_by_count": 129,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2981731882",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Explainable Artificial Intelligence (XAI): Concepts, taxonomies, opportunities and challenges toward responsible AI",
+      "venue": "Information Fusion",
+      "cited_by_count": 9247,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4406800520",
+      "arxiv_id": null,
+      "year": 2025,
+      "title": "The rise and potential of large language model based agents: a survey",
+      "venue": "Science China Information Sciences",
+      "cited_by_count": 443,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3144239152",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Low-N protein engineering with data-efficient deep learning",
+      "venue": "Nature Methods",
+      "cited_by_count": 423,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2990283237",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Analysis of Explainers of Black Box Deep Neural Networks for Computer Vision: A Survey",
+      "venue": "Machine Learning and Knowledge Extraction",
+      "cited_by_count": 392,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3082665562",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Understanding the role of individual units in a deep neural network",
+      "venue": "Proceedings of the National Academy of Sciences",
+      "cited_by_count": 380,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4389977189",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "A survey of GPT-3 family large language models including ChatGPT and GPT-4",
+      "venue": "Natural Language Processing Journal",
+      "cited_by_count": 323,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2898435572",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Deep Semantic Feature Learning for Software Defect Prediction",
+      "venue": "IEEE Transactions on Software Engineering",
+      "cited_by_count": 317,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963088785",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Character-Level Language Modeling with Deeper Self-Attention",
+      "venue": null,
+      "cited_by_count": 300,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3015322406",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Challenges in Building Intelligent Open-domain Dialog Systems",
+      "venue": "ACM Transactions on Information Systems",
+      "cited_by_count": 295,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3010694149",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Zoom In: An Introduction to Circuits",
+      "venue": "Distill",
+      "cited_by_count": 265,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3099098707",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "A Gentle Introduction to Reinforcement Learning and its Application in Different Fields",
+      "venue": "IEEE Access",
+      "cited_by_count": 247,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3169823389",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Sentiment Analysis for Fake News Detection",
+      "venue": "Electronics",
+      "cited_by_count": 230,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2786715987",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "A Survey of Methods for Explaining Black Box Models",
+      "venue": "ACM Computing Surveys",
+      "cited_by_count": 205,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2791506524",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Emotion Recognition on Twitter: Comparative Study and Training a Unison Model",
+      "venue": "IEEE Transactions on Affective Computing",
+      "cited_by_count": 188,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4386897466",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "From attribution maps to human-understandable explanations through Concept Relevance Propagation",
+      "venue": "Nature Machine Intelligence",
+      "cited_by_count": 156,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963580443",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Learning to Compose Task-Specific Tree Structures",
+      "venue": null,
+      "cited_by_count": 151,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3032781902",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Inductive transfer learning for molecular activity prediction: Next-Gen QSAR Models with MolPMoFiT",
+      "venue": "Journal of Cheminformatics",
+      "cited_by_count": 139,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2938284053",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Deep learning convolutional neural network (CNN) With Gaussian mixture model for predicting pancreatic cancer",
+      "venue": "Multimedia Tools and Applications",
+      "cited_by_count": 134,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2811018197",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Explainable Outfit Recommendation with Joint Outfit Matching and Comment Generation",
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "cited_by_count": 127,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3135427360",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "<scp>Canine</scp>: Pre-training an Efficient Tokenization-Free Encoder for Language Representation",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 122,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2969350772",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "PrivFT: Private and Fast Text Classification With Homomorphic Encryption",
+      "venue": "IEEE Access",
+      "cited_by_count": 95,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4384211302",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Efficient Methods for Natural Language Processing: A Survey",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 95,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4315490823",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "MBi-GRUMCONV: A novel Multi Bi-GRU and Multi CNN-Based deep learning model for social media sentiment analysis",
+      "venue": "Journal of Cloud Computing Advances Systems and Applications",
+      "cited_by_count": 84,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2919816947",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Deep Learning for Cognitive Neuroscience",
+      "venue": "The Cognitive Neurosciences",
+      "cited_by_count": 66,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3099104041",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Anomaly Detection in Operating System Logs with Deep Learning-Based Sentiment Analysis",
+      "venue": "IEEE Transactions on Dependable and Secure Computing",
+      "cited_by_count": 65,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4282927263",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Deep learning frameworks for protein\u2013protein interaction prediction",
+      "venue": "Computational and Structural Biotechnology Journal",
+      "cited_by_count": 59,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3021173516",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Beneath the Tip of the Iceberg: Current Challenges and New Directions in Sentiment Analysis Research",
+      "venue": "IEEE Transactions on Affective Computing",
+      "cited_by_count": 56,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2789464212",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Stock Market Prediction with Deep Learning: A Character-based Neural Language Model for Event-based Trading",
+      "venue": null,
+      "cited_by_count": 55,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3200488740",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Monophonic Music Generation With a Given Emotion Using Conditional Variational Autoencoder",
+      "venue": "IEEE Access",
+      "cited_by_count": 36,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4378907299",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Emotion Classification in Texts Over Graph Neural Networks: Semantic Representation is Better Than Syntactic",
+      "venue": "IEEE Access",
+      "cited_by_count": 28,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2967289914",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Learning to see stuff",
+      "venue": "Current Opinion in Behavioral Sciences",
+      "cited_by_count": 61,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2904867915",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Chemlistem: chemical named entity recognition using recurrent neural networks",
+      "venue": "Journal of Cheminformatics",
+      "cited_by_count": 53,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2809427307",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Deep neural network architecture for sentiment analysis and emotion identification of Twitter messages",
+      "venue": "Multimedia Tools and Applications",
+      "cited_by_count": 52,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3022228835",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Deep Learning-Based Sentiment Classification: A Comparative Survey",
+      "venue": "IEEE Access",
+      "cited_by_count": 52,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3004257458",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Deep detector classifier (DeepDC) for moving objects segmentation and classification in video surveillance",
+      "venue": "IET Image Processing",
+      "cited_by_count": 42,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2803933017",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Deep Reinforcement Learning for Sequence-to-Sequence Models",
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "cited_by_count": 41,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2999590422",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "The rationality of the digital governmentality",
+      "venue": "Journal for Cultural Research",
+      "cited_by_count": 35,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3173759686",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Unsupervised Opinion Summarization with Content Planning",
+      "venue": null,
+      "cited_by_count": 33,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2994791944",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "An Efficient Language-Independent Acoustic Emotion Classification System",
+      "venue": "Arabian Journal for Science and Engineering",
+      "cited_by_count": 32,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3105178602",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Dependency-based syntax-aware word representations",
+      "venue": "Artificial Intelligence",
+      "cited_by_count": 26,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2762009853",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Low-Rank RNN Adaptation for Context-Aware Language Modeling",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 21,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963739429",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Emotional Text Generation Based on Cross-Domain Sentiment Transfer",
+      "venue": "IEEE Access",
+      "cited_by_count": 21,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2800398254",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Machine intelligence: a chimera",
+      "venue": "AI & Society",
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3014920826",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Penalized multiple distribution selection method for imbalanced data classification",
+      "venue": "Knowledge-Based Systems",
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4241940531",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Curve Detectors",
+      "venue": "Distill",
+      "cited_by_count": 18,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4403217489",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Predicting subjective ratings of affect and comprehensibility with text features: a reader response study of narrative p",
+      "venue": "Frontiers in Psychology",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2996952890",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Sentiment Bias in Predictive Text Recommendations Results in Biased Writing",
+      "venue": "Canada Human-Computer Communications Society",
+      "cited_by_count": 29,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3040817338",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Explaining the Attributes of a Deep Learning Based Intrusion Detection System for Industrial Control Networks",
+      "venue": "Sensors",
+      "cited_by_count": 23,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2993654181",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Major\u2013Minor Long Short-Term Memory for Word-Level Language Model",
+      "venue": "IEEE Transactions on Neural Networks and Learning Systems",
+      "cited_by_count": 22,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3197369495",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Noise-aware Method with Type Constraint Pattern for Neural Relation Extraction",
+      "venue": "IEEE Transactions on Knowledge and Data Engineering",
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3004385696",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Hope Speech Detection: A Computational Analysis of the Voice of Peace",
+      "venue": "Frontiers in artificial intelligence and applications",
+      "cited_by_count": 15,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2996472470",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Using BERT for Checking the Polarity of Movie Reviews",
+      "venue": "International Journal of Computer Applications",
+      "cited_by_count": 14,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3160783353",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Niederschlags-Abfluss-Modellierung mit Long Short-Term Memory (LSTM)",
+      "venue": "\u00d6sterreichische Wasser- und Abfallwirtschaft",
+      "cited_by_count": 12,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4316015028",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Data-driven Cross-lingual Syntax: An Agreement Study with Massively Multilingual Models",
+      "venue": "Computational Linguistics",
+      "cited_by_count": 12,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3209855825",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Sentence encoding for Dialogue Act classification",
+      "venue": "Natural Language Engineering",
+      "cited_by_count": 11,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3200247363",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Explainable Natural Language Processing",
+      "venue": "Synthesis lectures on human language technologies",
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4391259755",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Comparative Analysis of Machine Learning Algorithms for Sentiment Classification in Amazon Reviews",
+      "venue": "Highlights in Business Economics and Management",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3184661957",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Modified dense convolutional networks based emotion detection from speech using its paralinguistic features",
+      "venue": "Multimedia Tools and Applications",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2800063768",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Bootstrap Domain-Specific Sentiment Classifiers from Unlabeled Corpora",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 11,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3008272038",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "User review helpfulness assessment based on sentiment analysis",
+      "venue": "The Electronic Library",
+      "cited_by_count": 11,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3033051246",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "The Digital Age and Its Discontents: Critical Reflections in Education",
+      "venue": "Helsinki University Press eBooks",
+      "cited_by_count": 9,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3183425369",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Authorship Identification of Electronic Texts",
+      "venue": "IEEE Access",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2972447203",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "<i>Tabula</i>Nearly<i>Rasa:</i>Probing the Linguistic Knowledge of Character-level Neural Language Models Trained on Uns",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3193816295",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Recent Trends of Fake News Detection: A Review",
+      "venue": "Lecture notes in electrical engineering",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2972779381",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Twitter Sentiment Analysis in Under-Resourced Languages using Byte-Level Recurrent Neural Model",
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4386295915",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Predictive event segmentation and representation with neural networks: A self-supervised model assessed by psychological",
+      "venue": "Cognitive Systems Research",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4393266729",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Predicting word vectors for microtext",
+      "venue": "Expert Systems",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3188781449",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Similarity Score Model for Aspect Category Detection",
+      "venue": "International Journal of Advanced Computer Science and Applications",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2890007211",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Using the Tsetlin Machine to Learn Human-Interpretable Rules for High-Accuracy Text Categorization With Medical Applicat",
+      "venue": "IEEE Access",
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3118834615",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Deflated reputation using multiplicative long short-term memory neural networks",
+      "venue": "Future Generation Computer Systems",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3119902693",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Moderating probability distributions for unrepresented uncertainty: Application to sentiment analysis via deep learning",
+      "venue": "Communication in Statistics- Theory and Methods",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3161436300",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Tag-Enhanced Dynamic Compositional Neural Network over arbitrary tree structure for sentence representation",
+      "venue": "Expert Systems with Applications",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3006409004",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Customer Emotions Recognition Using Facial and Textual Review",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3154537295",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Hierarchical Self-Attention Hybrid Sparse Networks for Document Classification",
+      "venue": "Mathematical Problems in Engineering",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3216961700",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Emotion Detection using Social Media Data",
+      "venue": "International Journal for Research in Applied Science and Engineering Technology",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3035647179",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Creating Semantic Representations",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3113219314",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Extractive Opinion Summarization in Quantized Transformer Spaces",
+      "venue": "Transactions of the Association for Computational Linguistics",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3124037805",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Low-Dimensional Manifolds Support Multiplexed Integrations in Recurrent Neural Networks",
+      "venue": "Neural Computation",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2842511635",
+      "arxiv_id": "1807.03748",
+      "year": 2018,
+      "title": "Representation Learning with Contrastive Predictive Coding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3770,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2616028256",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "DeepXplore",
+      "venue": null,
+      "cited_by_count": 1256,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4366208220",
+      "arxiv_id": "2304.07193",
+      "year": 2023,
+      "title": "DINOv2: Learning Robust Visual Features without Supervision",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1053,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2880875857",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Contextual String Embeddings for Sequence Labeling",
+      "venue": "International Conference on Computational Linguistics",
+      "cited_by_count": 1010,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2973727699",
+      "arxiv_id": "1909.08053",
+      "year": 2019,
+      "title": "Megatron-LM: Training Multi-Billion Parameter Language Models Using Model Parallelism",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 828,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2805744755",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "SemEval-2018 Task 1: Affect in Tweets",
+      "venue": null,
+      "cited_by_count": 750,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2618625858",
+      "arxiv_id": "1705.10843",
+      "year": 2017,
+      "title": "Objective-Reinforced Generative Adversarial Networks (ORGAN) for Sequence Generation Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 499,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2973379954",
+      "arxiv_id": "1909.08593",
+      "year": 2019,
+      "title": "Fine-Tuning Language Models from Human Preferences",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 394,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2784121710",
+      "arxiv_id": "1801.06146",
+      "year": 2018,
+      "title": "Universal Language Model Fine-tuning for Text Classification",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 342,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3047279638",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Exposing the Fingerprint: Dissecting the Impact of the Wireless Channel on Radio Fingerprinting",
+      "venue": null,
+      "cited_by_count": 301,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2555428947",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Unsupervised Pretraining for Sequence to Sequence Learning",
+      "venue": null,
+      "cited_by_count": 259,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952607215",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Persuasion for Good: Towards a Personalized Persuasive Dialogue System for Social Good",
+      "venue": null,
+      "cited_by_count": 214,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3085190015",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "GeDi: Generative Discriminator Guided Sequence Generation",
+      "venue": null,
+      "cited_by_count": 211,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2792376130",
+      "arxiv_id": "1803.08240",
+      "year": 2018,
+      "title": "An Analysis of Neural Language Modeling at Multiple Scales",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 143,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2808279976",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Compiler fuzzing through deep learning",
+      "venue": null,
+      "cited_by_count": 143,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2922523190",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "The emergence of number and syntax units in",
+      "venue": null,
+      "cited_by_count": 118,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952087428",
+      "arxiv_id": "1906.04329.pdf",
+      "year": 2019,
+      "title": "Federated Learning for Emoji Prediction in a Mobile Keyboard",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 112,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2781256610",
+      "arxiv_id": "1712.06148",
+      "year": 2017,
+      "title": "Generating and designing DNA with deep generative models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 111,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2910830936",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "SEDAT: Sentiment and Emotion Detection in Arabic Text Using CNN-LSTM Deep Learning",
+      "venue": null,
+      "cited_by_count": 110,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3169661950",
+      "arxiv_id": "2106.00750",
+      "year": 2021,
+      "title": "Unsupervised Representation Learning for Time Series with Temporal Neighborhood Coding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 104,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2786685006",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Learning General Purpose Distributed Sentence Representations via Large Scale Multi-task Learning",
+      "venue": "PolyPublie (\u00c9cole Polytechnique de Montr\u00e9al)",
+      "cited_by_count": 101,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3013843954",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Generating Sentiment-Preserving Fake Online Reviews Using Neural Language Models and Their Human- and Machine-Based Dete",
+      "venue": "Advances in intelligent systems and computing",
+      "cited_by_count": 98,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2887005207",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Unsupervised Random Walk Sentence Embeddings: A Strong but Simple Baseline",
+      "venue": null,
+      "cited_by_count": 95,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3000144571",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Effects of Persuasive Dialogues: Testing Bot Identities and Inquiry Strategies",
+      "venue": null,
+      "cited_by_count": 87,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2995409942",
+      "arxiv_id": "1909.03329",
+      "year": 2019,
+      "title": "LAMOL: LAnguage MOdeling for Lifelong Language Learning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 84,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4214733302",
+      "arxiv_id": null,
+      "year": 2013,
+      "title": "Electronics",
+      "venue": "Electronics",
+      "cited_by_count": 82,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2591807639",
+      "arxiv_id": "1703.00955v1",
+      "year": 2017,
+      "title": "Toward Controlled Generation of Text",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 78,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2949276121",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Augmenting Neural Networks with First-order Logic",
+      "venue": null,
+      "cited_by_count": 74,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2735665712",
+      "arxiv_id": "1707.04108",
+      "year": 2017,
+      "title": "Do Convolutional Networks need to be Deep for Text Classification ?",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 72,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2971016465",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "hULMonA: The Universal Language Model in Arabic",
+      "venue": null,
+      "cited_by_count": 70,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2797947982",
+      "arxiv_id": "1804.05788",
+      "year": 2018,
+      "title": "Multi-Modal Emotion recognition on IEMOCAP Dataset using Deep Learning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 69,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2941596569",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Proceedings of the First Workshop on Abusive Language Online",
+      "venue": null,
+      "cited_by_count": 62,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2886490473",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Character-Level Language Modeling with Deeper Self-Attention",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 60,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3088111612",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Deep Learning for Software Defect Prediction",
+      "venue": null,
+      "cited_by_count": 59,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3002639525",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Low-N protein engineering with data-efficient deep learning",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 54,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3155340931",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Story Centaur: Large Language Model Few Shot Learning as a Creative Writing Tool",
+      "venue": null,
+      "cited_by_count": 54,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2741420507",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Technology Solutions to Combat Online Harassment",
+      "venue": null,
+      "cited_by_count": 52,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2922674004",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Unified rational protein engineering with sequence-only deep representation learning",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 50,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952208026",
+      "arxiv_id": "1903.07435",
+      "year": 2019,
+      "title": "The emergence of number and syntax units in LSTM language models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 50,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3007960301",
+      "arxiv_id": "1910.07969",
+      "year": 2019,
+      "title": "On Completeness-aware Concept-Based Explanations in Deep Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 50,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2735574368",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Controlling Linguistic Style Aspects in Neural Language Generation",
+      "venue": null,
+      "cited_by_count": 49,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3115080939",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Understanding Pre-trained BERT for Aspect-based Sentiment Analysis",
+      "venue": null,
+      "cited_by_count": 48,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2786399470",
+      "arxiv_id": "1801.10121",
+      "year": 2018,
+      "title": "Image Captioning at Will: A Versatile Scheme for Effectively Injecting Sentiments into Image Descriptions",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 47,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963972328",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Efficient Contextualized Representation: Language Model Pruning for Sequence Labeling",
+      "venue": null,
+      "cited_by_count": 47,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2945397504",
+      "arxiv_id": "1905.05709",
+      "year": 2019,
+      "title": "Challenges in Building Intelligent Open-domain Dialog Systems",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 44,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2965267010",
+      "arxiv_id": "1802.08232",
+      "year": 2018,
+      "title": "The Secret Sharer: Evaluating and Testing Unintended Memorization in Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 44,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3176390156",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Ecco: An Open Source Library for the Explainability of Transformer Language Models",
+      "venue": null,
+      "cited_by_count": 44,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2805944731",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "TCS Research at SemEval-2018 Task 1: Learning Robust Representations using Multi-Attention Architecture",
+      "venue": null,
+      "cited_by_count": 41,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2918073309",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Cooperative Learning of Disjoint Syntax and Semantics",
+      "venue": null,
+      "cited_by_count": 39,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4231859362",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Proceedings of the Fourth Arabic Natural Language Processing Workshop",
+      "venue": null,
+      "cited_by_count": 37,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4365799807",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Proceedings of the 8th Workshop on Computational Approaches to Subjectivity, Sentiment and Social Media Analysis",
+      "venue": null,
+      "cited_by_count": 36,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2803241009",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Learning Hidden Unit Contribution for Adapting Neural Machine Translation Models",
+      "venue": null,
+      "cited_by_count": 35,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2917166349",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Pretraining-Based Natural Language Generation for Text Summarization",
+      "venue": null,
+      "cited_by_count": 35,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2970553031",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Style Transfer for Texts: Retrain, Report Errors, Compare with Rewrites",
+      "venue": null,
+      "cited_by_count": 32,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3123465393",
+      "arxiv_id": "2106.00750",
+      "year": 2021,
+      "title": "Unsupervised Representation Learning for Time Series with Temporal Neighborhood Coding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 32,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951718443",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "ParaNMT-50M: Pushing the Limits of Paraphrastic Sentence Embeddings with Millions of Machine Translations",
+      "venue": null,
+      "cited_by_count": 31,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3168217275",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Seq2Emo: A Sequence to Multi-Label Emotion Classification Model",
+      "venue": null,
+      "cited_by_count": 31,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2899032424",
+      "arxiv_id": "1811.01157",
+      "year": 2018,
+      "title": "Identifying and Controlling Important Neurons in Neural Machine Translation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 30,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3094509718",
+      "arxiv_id": "2010.12016",
+      "year": 2020,
+      "title": "Towards falsifiable interpretability research",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 30,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952204218",
+      "arxiv_id": "1906.06725",
+      "year": 2019,
+      "title": "Persuasion for Good: Towards a Personalized Persuasive Dialogue System for Social Good",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 29,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2988022164",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Natural Language Generation for Effective Knowledge Distillation",
+      "venue": null,
+      "cited_by_count": 27,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2899004870",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Evolutionary Data Measures: Understanding the Difficulty of Text Classification Tasks",
+      "venue": null,
+      "cited_by_count": 26,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2970909388",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Towards Controllable and Personalized Review Generation",
+      "venue": null,
+      "cited_by_count": 26,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3166583983",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Practical Transformer-based Multilingual Text Classification",
+      "venue": null,
+      "cited_by_count": 26,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2989227218",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Active Learning via Membership Query Synthesis for Semi-Supervised Sentence Classification",
+      "venue": null,
+      "cited_by_count": 25,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3092185277",
+      "arxiv_id": "2010.03648",
+      "year": 2020,
+      "title": "A Mathematical Exploration of Why Language Models Help Solve Downstream Tasks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 25,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3115008740",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Distill and Replay for Continual Language Learning",
+      "venue": null,
+      "cited_by_count": 25,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3203964276",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Multitask Learning Approach for Fake News Detection: Novelty, Emotion, and Sentiment Lend a Helping Hand",
+      "venue": null,
+      "cited_by_count": 25,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4385801046",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Revealing Hidden Context Bias in Segmentation and Object Detection through Concept-specific Explanations",
+      "venue": null,
+      "cited_by_count": 25,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2883159046",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Proceedings of Grand Challenge and Workshop on Human Multimodal Language (Challenge-HML)",
+      "venue": null,
+      "cited_by_count": 24,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2774151336",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Estimating Reactions and Recommending Products with Generative Models of Reviews",
+      "venue": "International Joint Conference on Natural Language Processing",
+      "cited_by_count": 23,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2891376302",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Decipherment of Substitution Ciphers with Neural Language Models",
+      "venue": null,
+      "cited_by_count": 21,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2972395703",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "A Review of Sentiment Analysis for Non-English Language",
+      "venue": null,
+      "cited_by_count": 21,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3009079798",
+      "arxiv_id": "2003.01262",
+      "year": 2020,
+      "title": "Selectivity considered harmful: evaluating the causal impact of class selectivity in DNNs",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 21,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2775019210",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Combining Convolution and Recursive Neural Networks for Sentiment Analysis",
+      "venue": null,
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2780868483",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Recurrent Neural Networks with Interpretable Cells Predict and Classify Worm Behaviour",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2988801199",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Wide-Ranging Review Manipulation Attacks",
+      "venue": null,
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4385573694",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Finding Skill Neurons in Pre-trained Transformer-based Language Models",
+      "venue": null,
+      "cited_by_count": 20,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2891632051",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Dynamic Compositionality in Recursive Neural Networks with Structure-Aware Tag Representations",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 19,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4243882989",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Proceedings of The Third Workshop on Representation Learning for NLP",
+      "venue": null,
+      "cited_by_count": 19,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2934857089",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "On Interpretability and Feature Representations: An Analysis of the Sentiment Neuron",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 18,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3011039244",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Authorship Attribution in Bangla literature using Character-level CNN",
+      "venue": null,
+      "cited_by_count": 18,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2804999422",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Conversational Analysis Using Utterance-level Attention-based Bidirectional Recurrent Neural Networks",
+      "venue": null,
+      "cited_by_count": 17,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951991713",
+      "arxiv_id": "1611.02683",
+      "year": 2016,
+      "title": "Unsupervised Pretraining for Sequence to Sequence Learning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 17,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3163313089",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "The Low-Dimensional Linear Geometry of Contextualized Word Representations",
+      "venue": null,
+      "cited_by_count": 17,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2754520678",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Towards Sentiment Analysis on German Literature",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2958805129",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "A Scalable Framework for Multilevel Streaming Data Analytics using Deep Learning",
+      "venue": null,
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2969275122",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Zero-Shot Multilingual Sentiment Analysis using Hierarchical Attentive Network and BERT",
+      "venue": null,
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3211309061",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Anomaly Detection for In situ Marine Plankton Images",
+      "venue": null,
+      "cited_by_count": 16,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2889494558",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Semi-supervised Learning for Information Extraction from Dialogue",
+      "venue": null,
+      "cited_by_count": 15,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952754453",
+      "arxiv_id": "1808.01371",
+      "year": 2018,
+      "title": "Large Scale Language Modeling: Converging on 40GB of Text in Four Hours",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 15,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2986773982",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "A Fine-grained and Noise-aware Method for Neural Relation Extraction",
+      "venue": null,
+      "cited_by_count": 15,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3134753491",
+      "arxiv_id": "2103.06125",
+      "year": 2021,
+      "title": "Learning to Generate Music With Sentiment",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 15,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2948096105",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Variational Pretraining for Semi-supervised Text Classification",
+      "venue": null,
+      "cited_by_count": 14,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3131755153",
+      "arxiv_id": "2010.03648",
+      "year": 2021,
+      "title": "A Mathematical Exploration of Why Language Models Help Solve Downstream Tasks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 14,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4242073813",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Inductive Transfer Learning for Molecular Activity Prediction: Next-Gen QSAR Models with MolPMoFiT",
+      "venue": "ChemRxiv",
+      "cited_by_count": 14,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2885142640",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Large Scale Language Modeling: Converging on 40GB of Text in Four Hours",
+      "venue": null,
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951257191",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Deep Neural Model Inspection and Comparison via Functional Neuron Pathways",
+      "venue": null,
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2953799047",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Sounds Wilde. Phonetically Extended Embeddings for Author-Stylized Poetry Generation",
+      "venue": null,
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2995199838",
+      "arxiv_id": "2003.00674",
+      "year": 2020,
+      "title": "Style Example-Guided Text Generation using Generative Adversarial Transformers",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3014794741",
+      "arxiv_id": "2004.01254",
+      "year": 2020,
+      "title": "Under the Hood of Neural Networks: Characterizing Learned Representations by Functional Neuron Populations and Network A",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3084507416",
+      "arxiv_id": "2009.08092",
+      "year": 2020,
+      "title": "Distributional Generalization: A New Kind of Generalization",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 13,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2897348568",
+      "arxiv_id": "1810.03805",
+      "year": 2018,
+      "title": "What made you do this? Understanding black-box decisions with sufficient input subsets",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 12,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2911748701",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Language Models Learn POS First",
+      "venue": null,
+      "cited_by_count": 12,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3093908736",
+      "arxiv_id": "2010.12742.pdf",
+      "year": 2020,
+      "title": "Text Style Transfer: A Review and Experiment Evaluation.",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 12,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2743595564",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Proceedings of the Workshop on Stylistic Variation",
+      "venue": null,
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2806042905",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Speeding up Context-based Sentence Representation Learning with Non-autoregressive Convolutional Decoding",
+      "venue": null,
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2901974839",
+      "arxiv_id": "1811.09789",
+      "year": 2018,
+      "title": "Senti-Attend: Image Captioning using Sentiment and Attention",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2949271546",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Bidirectional Transformer Based Multi-Task Learning for Natural Language Understanding",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2997477150",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Non-Local Recurrent Neural Memory for Supervised Sequence Modeling",
+      "venue": null,
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4240999606",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Proceedings of the Second Workshop on Fact Extraction and VERification (FEVER)",
+      "venue": null,
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4285246514",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "A large-scale computational study of content preservation measures for text style transfer and paraphrase generation",
+      "venue": null,
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4295942889",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Accelerating Antibody Design with Active Learning",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 10,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2761394014",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Learning to Compose Task-Specific Tree Structures",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 9,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2798480037",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Predicting Contradiction Intensity",
+      "venue": null,
+      "cited_by_count": 9,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2979995813",
+      "arxiv_id": "1905.11975",
+      "year": 2019,
+      "title": "On Variational Learning of Controllable Representations for Text without Supervision",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 9,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3124944919",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "ArtEmis: Affective Language for Visual Art",
+      "venue": null,
+      "cited_by_count": 9,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2775844704",
+      "arxiv_id": "1712.10066",
+      "year": 2017,
+      "title": "Disentangled Representations for Manipulation of Sentiment in Text",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2804255934",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Breaking the Activation Function Bottleneck through Adaptive Parameterization",
+      "venue": "Research Explorer (The University of Manchester)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2919734269",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Topic Modeling to Extract Information from Nutraceutical Product Reviews",
+      "venue": null,
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963671871",
+      "arxiv_id": "1907.09177",
+      "year": 2019,
+      "title": "Generating Sentiment-Preserving Fake Online Reviews Using Neural Language Models and Their Human- and Machine-based Dete",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3017806159",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Unsupervised Opinion Summarization with Noising and Denoising",
+      "venue": null,
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3093493237",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "The Utility of Context When Extracting Entities From Legal Documents",
+      "venue": null,
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3130765241",
+      "arxiv_id": "2102.11417",
+      "year": 2021,
+      "title": "Parallelizing Legendre Memory Unit Training",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3159852358",
+      "arxiv_id": "2104.14056",
+      "year": 2021,
+      "title": "Machine Learning Techniques for Software Quality Assurance: A Survey",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3216967183",
+      "arxiv_id": "2111.10901",
+      "year": 2021,
+      "title": "Explainable Software Defect Prediction: Are We There Yet?",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4285059067",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "On the\u00a0Evaluation of\u00a0the\u00a0Plausibility and\u00a0Faithfulness of\u00a0Sentiment Analysis Explanations",
+      "venue": "IFIP advances in information and communication technology",
+      "cited_by_count": 8,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2785757655",
+      "arxiv_id": "1801.08985",
+      "year": 2018,
+      "title": "Object category learning and retrieval with weak supervision",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2955060195",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "ParallelDots at SemEval-2019 Task 3: Domain Adaptation with feature embeddings for Contextual Emotion Analysis",
+      "venue": null,
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3008422888",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Learning to Generate Diverse and Authentic Reviews via an Encoder-Decoder Model with Transformer and GRU",
+      "venue": null,
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3015633916",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "AI-Powered Text Generation for Harmonious Human-Machine Interaction: Current State and Future Directions",
+      "venue": null,
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3090039550",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Automatic generation of simulink models to find bugs in a cyber-physical system tool chain using deep learning",
+      "venue": null,
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3096786051",
+      "arxiv_id": "2011.00169",
+      "year": 2020,
+      "title": "Understanding Pre-trained BERT for Aspect-based Sentiment Analysis",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4323060068",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "An Efficient Text Preprocessing and Classification Technique for Multilingual and Transliterated Data",
+      "venue": null,
+      "cited_by_count": 7,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2788394666",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Comparison of Machine Learning Techniques for Multi-label Genre Classification",
+      "venue": "Communications in computer and information science",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2797520209",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "SeerNet at SemEval-2018 Task 1: Domain Adaptation for Affect in Tweets",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2799166683",
+      "arxiv_id": "1804.07827",
+      "year": 2018,
+      "title": "Efficient Contextualized Representation: Language Model Pruning for Sequence Labeling",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2902773438",
+      "arxiv_id": "1811.10736",
+      "year": 2018,
+      "title": "DONUT: CTC-based Query-by-Example Keyword Spotting",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2913868188",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Faster Training by Selecting Samples Using Embeddings",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2949794029",
+      "arxiv_id": "1902.09393",
+      "year": 2019,
+      "title": "Cooperative Learning of Disjoint Syntax and Semantics",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2997747528",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Explaining Concept Drift of Deep Learning Models",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3045656963",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Learning to Generate Multiple Style Transfer Outputs for an Input Sentence",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3082290800",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "\"How are you?\" Estimation of anxiety, sleep quality, and mood using computational voice analysis",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3107874923",
+      "arxiv_id": "2012.01748",
+      "year": 2020,
+      "title": "A journey in ESN and LSTM visualisations on a language task",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3111950829",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "An Attention-based Approach to Detect Emotion from Tweets",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3201396246",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Automatically Exposing Problems with Neural Dialog Models",
+      "venue": "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3209453005",
+      "arxiv_id": "2009.06367",
+      "year": 2020,
+      "title": "GeDi: Generative Discriminator Guided Sequence Generation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4285208219",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Product Review Based on Facial Expression Detection",
+      "venue": "ITM Web of Conferences",
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4385572213",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Emergent Modularity in Pre-trained Transformers",
+      "venue": null,
+      "cited_by_count": 6,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2803897130",
+      "arxiv_id": "1805.07340v1",
+      "year": 2018,
+      "title": "Improved Sentence Modeling using Suffix Bidirectional LSTM",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2910078119",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Clustering Multilingual Aspect Phrases for Sentiment Analysis",
+      "venue": null,
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2915581179",
+      "arxiv_id": "1902.07249",
+      "year": 2019,
+      "title": "Discovery of Natural Language Concepts in Individual Units of CNNs",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951758074",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Curriculum Learning Strategies for Hindi-English Code-Mixed Sentiment Analysis",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2954785300",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "ELiRF-UPV at SemEval-2019 Task 3: Snapshot Ensemble of Hierarchical Convolutional Neural Networks for Contextual Emotion",
+      "venue": null,
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3034119625",
+      "arxiv_id": "2006.01659",
+      "year": 2020,
+      "title": "Surprisal-Triggered Conditional Computation with Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3128277316",
+      "arxiv_id": "2010.12606",
+      "year": 2020,
+      "title": "Exemplary Natural Images Explain CNN Activations Better than State-of-the-Art Feature Visualization",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4206519129",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Generating Musical Sequences with a Given Emotion",
+      "venue": "2021 IEEE International Conference on Systems, Man, and Cybernetics (SMC)",
+      "cited_by_count": 5,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2757814769",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Textmining at EmoInt-2017: A Deep Learning Approach to Sentiment Intensity Scoring of English Tweets",
+      "venue": null,
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2799767501",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Textual Membership Queries",
+      "venue": null,
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951959429",
+      "arxiv_id": "1906.06298",
+      "year": 2019,
+      "title": "Augmenting Neural Networks with First-order Logic",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2981265699",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Exploring Differences in the Impact of Users\u2019 Traces on Arabic and English Facebook Search",
+      "venue": "IEEE/WIC/ACM International Conference on Web Intelligence",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2982115308",
+      "arxiv_id": "1910.11959",
+      "year": 2019,
+      "title": "FineText: Text Classification via Attention-based Language Model Fine-tuning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3004582488",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Related Tasks Can Share! A Multi-task Framework for\u00a0Affective Language",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3084065867",
+      "arxiv_id": "2009.04075",
+      "year": 2020,
+      "title": "Multilinear Latent Conditioning for Generating Unseen Attribute Combinations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3095047681",
+      "arxiv_id": "2010.15114",
+      "year": 2020,
+      "title": "The geometry of integration in text classification RNNs",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3184640364",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Explaining HCV prediction using LIME model",
+      "venue": "2021 2nd International Conference on Secure Cyber Computing and Communications (ICSCCC)",
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4224510354",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "A Vocabulary-Free Multilingual Neural Tokenizer for End-to-End Task Learning",
+      "venue": null,
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4401226787",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "New frontiers in AI for biodiversity research and conservation with multimodal language models",
+      "venue": null,
+      "cited_by_count": 4,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2608912814",
+      "arxiv_id": "1704.06380",
+      "year": 2017,
+      "title": "Improving Context Aware Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2798924688",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Continuous Learning in a Hierarchical Multiscale Neural Network",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2891637870",
+      "arxiv_id": "1809.02279",
+      "year": 2018,
+      "title": "Cell-aware Stacked LSTMs for Modeling Sentences",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2892388085",
+      "arxiv_id": "1810.00681",
+      "year": 2018,
+      "title": "Learning Robust, Transferable Sentence Representations for Text Classification",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2916586819",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Incorporating End-to-End Speech Recognition Models for Sentiment Analysis",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951962790",
+      "arxiv_id": "1710.02603",
+      "year": 2017,
+      "title": "Low-Rank RNN Adaptation for Context-Aware Language Modeling",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963244306",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Learning to Embed Sentences Using Attentive Recursive Trees",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2989020596",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Low-Rank Approximations of Second-Order Document Representations",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2990170844",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Unsupervised Natural Question Answering with a Small Model",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3022561973",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Similarity Analysis of Contextual Word Representation Models",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3035716984",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "ADORE",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3112588582",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Unsupervised Opinion Summarization with Content Planning",
+      "venue": "Proceedings of the AAAI Conference on Artificial Intelligence",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3156861684",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Machine Learning for Physiological Time Series: Representing and Controlling Blood Glucose for Diabetes Management",
+      "venue": "Deep Blue (University of Michigan)",
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4385573975",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Semi-Supervised Lifelong Language Learning",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4406461695",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Property Neurons in Self-Supervised Speech Transformers",
+      "venue": null,
+      "cited_by_count": 3,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2740900542",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Learning Language Representations for Typology Prediction",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2795131556",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Contradiction in Reviews: is it Strong or Low?",
+      "venue": "HAL (Le Centre pour la Communication Scientifique Directe)",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2798230714",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "EmoRL: Continuous Acoustic Emotion Classification Using Deep Reinforcement Learning",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2806901670",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "FOI DSS at SemEval-2018 Task 1: Combining LSTM States, Embeddings, and Lexical Features for Affect Analysis",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2889506631",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Explaining Character-Aware Neural Networks for Word-Level Prediction: Do They Discover Linguistic Rules?",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2890482192",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Towards Language Agnostic Universal Representations",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2921461436",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Large\u2010Scale Social Multimedia Analysis",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2955767419",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "MoonGrad at SemEval-2019 Task 3: Ensemble BiRNNs for Contextual Emotion Detection in Dialogues",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2969611071",
+      "arxiv_id": "1908.09535",
+      "year": 2019,
+      "title": "Non-local Recurrent Neural Memory for Supervised Sequence Modeling",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2971237698",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "What Part of the Neural Network Does This? Understanding LSTMs by Measuring and Dissecting Neurons",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2980360687",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Visual Hide and Seek",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2982221648",
+      "arxiv_id": "1910.10082",
+      "year": 2019,
+      "title": "Toward estimating personal well-being using voice",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2995461939",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "A system for the 2019 Sentiment, Emotion and Cognitive State Task of DARPA's LORELEI project",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3138217237",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Attribute Alignment: Controlling Text Generation from Pre-trained Language Models",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3154300230",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "An Empirical Evaluation of Word Embedding Models for Subjectivity Analysis Tasks",
+      "venue": "2021 International Conference on Advances in Electrical, Computing, Communication and Sustainable Technologies (ICAECT)",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3158797054",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Opinion Mining: Is Feature Engineering Still Relevant?",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3175906283",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Building a \u2018Sicko\u2019 AI",
+      "venue": "ACM International Conference on Interactive Media Experiences",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3198461103",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Dynamic Convolutional Neural Network Approach for Legal Text Classification",
+      "venue": "Lecture notes in business information processing",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4225323184",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Modular Domain Adaptation",
+      "venue": "Findings of the Association for Computational Linguistics: ACL 2022",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4238472956",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Inductive Transfer Learning for Molecular Activity Prediction: Next-Gen QSAR Models with MolPMoFiT",
+      "venue": "ChemRxiv",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4250152099",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Proceedings of the Fifteenth Workshop on Computational Research in Phonetics, Phonology, and Morphology",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4281490541",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "RVAE-LAMOL: Residual Variational Autoencoder to Enhance Lifelong Language Learning",
+      "venue": "2022 International Joint Conference on Neural Networks (IJCNN)",
+      "cited_by_count": 2,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2810771476",
+      "arxiv_id": "1806.11432",
+      "year": 2018,
+      "title": "Using General Adversarial Networks for Marketing: A Case Study of Airbnb",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2815204851",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Assessing Quality Estimation Models for Sentence-Level Prediction",
+      "venue": "International Conference on Computational Linguistics",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2899589744",
+      "arxiv_id": "1811.02338",
+      "year": 2018,
+      "title": "Learning to Embed Sentences Using Attentive Recursive Trees",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2912737479",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Aspect Based Sentiment Analysis On Review Data",
+      "venue": null,
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2914060531",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Character Eyes: Seeing Language through Character-Level Taggers",
+      "venue": null,
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2946521116",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Inter and Intra Document Attention for Depression Risk Assessment",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951625590",
+      "arxiv_id": "1809.02286",
+      "year": 2018,
+      "title": "Dynamic Compositionality in Recursive Neural Networks with Structure-aware Tag Representations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2952874686",
+      "arxiv_id": "1901.07829",
+      "year": 2019,
+      "title": "AspeRa: Aspect-based Rating Prediction Model",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2953476352",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Multiplicative Models for\u00a0Recurrent Language Modeling",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2953712567",
+      "arxiv_id": "1907.02298",
+      "year": 2019,
+      "title": "A Comparative Analysis of Knowledge-Intensive and Data-Intensive Semantic Parsers",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2980032543",
+      "arxiv_id": "1910.03506",
+      "year": 2019,
+      "title": "Towards Controllable and Personalized Review Generation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2981449810",
+      "arxiv_id": "1910.10832",
+      "year": 2019,
+      "title": "Emergent Properties of Finetuned Language Representation Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2999767180",
+      "arxiv_id": "2001.05316",
+      "year": 2020,
+      "title": "Authorship Attribution in Bangla literature using Character-level CNN",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3015285665",
+      "arxiv_id": "2004.03237",
+      "year": 2020,
+      "title": "How Do You Act? An Empirical Study to Understand Behavior of Deep Reinforcement Learning Agents",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3092954394",
+      "arxiv_id": "2010.06328",
+      "year": 2020,
+      "title": "Assessing the Helpfulness of Review Content for Explaining Recommendations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3093280541",
+      "arxiv_id": "2010.07739",
+      "year": 2020,
+      "title": "Music Classification in MIDI Format based on LSTM Mdel",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4205135628",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A practical and universal framework for generating publicly available medical notes of authentic quality via the power o",
+      "venue": "2021 IEEE International Conference on Big Data (Big Data)",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4389519895",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Large-Scale and Multi-Perspective Opinion Summarization with Diverse Review Subsets",
+      "venue": null,
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4391093018",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Fake News Detection via Sentiment Neutralization",
+      "venue": null,
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4404725329",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Linking in\u00a0Style: Understanding Learned Features in\u00a0Deep Learning Models",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 1,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2755520088",
+      "arxiv_id": "1707.00117",
+      "year": 2017,
+      "title": "SAM: Semantic Attribute Modulation for Language Modeling and Style Variation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2794978288",
+      "arxiv_id": "1803.10631",
+      "year": 2018,
+      "title": "Meta-Learning a Dynamical Language Model",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2798407876",
+      "arxiv_id": "1805.01138",
+      "year": 2018,
+      "title": "Detecting Parkinson's Disease from interactions with a search engine: Is expert knowledge sufficient?",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2803214138",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Epilogue: Frontiers of NLP in the Deep Learning Era",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2889251815",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "Iterative Recursive Attention Model for Interpretable Sequence Classification",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2903118043",
+      "arxiv_id": "1911.05586",
+      "year": 2019,
+      "title": "Understanding the Importance of Single Directions via Representative Substitution",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2927029665",
+      "arxiv_id": "1904.00762",
+      "year": 2019,
+      "title": "Affect in Tweets Using Experts Model",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2944373044",
+      "arxiv_id": "1905.01984",
+      "year": 2019,
+      "title": "AI-Powered Text Generation for Harmonious Human-Machine Interaction: Current State and Future Directions",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2949276632",
+      "arxiv_id": "1809.08510",
+      "year": 2018,
+      "title": "Towards Language Agnostic Universal Representations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2950391656",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Tabula nearly rasa: Probing the Linguistic Knowledge of Character-Level Neural Language Models Trained on Unsegmented Te",
+      "venue": "Repositori digital de la UPF (Universitat Pompeu Fabra)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2951047368",
+      "arxiv_id": "1901.11467",
+      "year": 2019,
+      "title": "Towards Controlled Transformation of Sentiment in Sentences",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2958498566",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Interpreting author intentions by analyzing story modulation",
+      "venue": "DSpace@MIT (Massachusetts Institute of Technology)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2963655061",
+      "arxiv_id": "1907.10885",
+      "year": 2019,
+      "title": "Adaptive Noise Injection: A Structure-Expanding Regularization for RNN",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2964885755",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Image Captioning using Facial Expression and Attention",
+      "venue": "Journal of Artificial Intelligence Research",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2965513417",
+      "arxiv_id": "1908.01817",
+      "year": 2019,
+      "title": "Sparsity Emerges Naturally in Neural Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2968706510",
+      "arxiv_id": "1908.03850",
+      "year": 2019,
+      "title": "Semi-Supervised Self-Growing Generative Adversarial Networks for Image Recognition",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W2980032301",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Neural architectures for natural language understanding",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3006595562",
+      "arxiv_id": "2002.06525",
+      "year": 2020,
+      "title": "Learning to Generate Multiple Style Transfer Outputs for an Input Sentence",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3031844328",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Affect inTweets: A Transfer Learning Approach.",
+      "venue": "Language Resources and Evaluation",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3038807875",
+      "arxiv_id": "2007.01062",
+      "year": 2020,
+      "title": "Are there any 'object detectors' in the hidden layers of CNNs trained to identify objects or scenes?",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3092906738",
+      "arxiv_id": "2010.07693",
+      "year": 2020,
+      "title": "Linking average- and worst-case perturbation robustness via class selectivity and dimensionality",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3109902858",
+      "arxiv_id": "2011.10435",
+      "year": 2020,
+      "title": "Low-Dimensional Manifolds Support Multiplexed Integrations in Recurrent Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3112353763",
+      "arxiv_id": "2012.06025",
+      "year": 2020,
+      "title": "Exploring Deep Neural Networks and Transfer Learning for Analyzing Emotions in Tweets",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3131466122",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Selectivity considered harmful: evaluating the causal impact of class selectivity in DNNs",
+      "venue": "International Conference on Learning Representations",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3134998562",
+      "arxiv_id": "2103.05442",
+      "year": 2021,
+      "title": "Mining Program Properties From Neural Networks Trained on Source Code Embeddings",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3169515113",
+      "arxiv_id": "2106.04935",
+      "year": 2021,
+      "title": "Neural Supervised Domain Adaptation by Augmenting Pre-trained Models with Random Units",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3175204263",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Gauging online and offline public opinion for social media monitoring",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3194425768",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Self-supervised Learning for Semantic Sentence Matching with Dense Transformer Inference Network",
+      "venue": "Lecture notes in computer science",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3197366854",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Behavior-Driven Forum Spammer Recognition Method with Its Application in Automobile Forums",
+      "venue": "Mathematical Problems in Engineering",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3212086377",
+      "arxiv_id": "2105.07109",
+      "year": 2021,
+      "title": "The Low-Dimensional Linear Geometry of Contextualized Word Representations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3213312935",
+      "arxiv_id": "2109.06950",
+      "year": 2021,
+      "title": "Automatically Exposing Problems with Neural Dialog Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W3214515876",
+      "arxiv_id": "2103.11070",
+      "year": 2021,
+      "title": "Attribute Alignment: Controlling Text Generation from Pre-trained Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4224063383",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Subjective Prediction of Questions in Q &amp; A System based on the Open Domain of Daily Life",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4231257827",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Inductive Transfer Learning for Molecular Activity Prediction: Next-Gen QSAR Models with MolPMoFiT",
+      "venue": "ChemRxiv",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4248272482",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Forensic Suicidal Inquiry of Depressed Individuals using LSTM and Convolutional Neural Networks",
+      "venue": "International Journal of Innovative Technology and Exploring Engineering",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4297445759",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Automatic Generation of News Commentary on Social Media Based on Self\u2010Attention Mechanism",
+      "venue": "Wireless Communications and Mobile Computing",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4362568832",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Can we Debunk Disinformation by Leveraging SpeakerCredibility and Perplexity Measures?",
+      "venue": "Research Square",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4376487076",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "Innovative procedure for soppiness investigation spending writing and facemask gratitude",
+      "venue": "International Journal of Cloud Computing and Database Management",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4388852397",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Curricular transfer learning for complex grammar acquisition in language models",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4389149744",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Exploratory Dividend Optimization with Entropy Regularization",
+      "venue": "Preprints.org",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4391456424",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Computer-assisted detection of typologically relevant semantic shifts in world languages",
+      "venue": "Computational Linguistics and Intellectual Technologies",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4392195206",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "The basic concept of \u201cattention heads\u201d in Transformers matches with partial features of \u201cislets of inter-LINKed spine he",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4392914406",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Composing music based on machine learning",
+      "venue": "Applied and Computational Engineering",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4400114179",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Translating and Optimising Computational Microscopy Algorithms with Large Language Models",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4407024251",
+      "arxiv_id": null,
+      "year": 2025,
+      "title": "For any two arbitrary slices from one digital rock, its twins can be fast stably reconstructed: A novel integrated model",
+      "venue": "Computers & Geosciences",
+      "cited_by_count": 0,
+      "reason": "single_seed_forward",
+      "detail": "only seed link is ['W2606347107']"
+    },
+    {
+      "id": "W4402502788",
+      "arxiv_id": "2408.05147",
+      "year": 2024,
+      "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "duplicate",
+      "detail": "merged into W4404783416 (Gemma Scope: Open Sparse Autoencoders Everywhere All At Once)"
+    },
+    {
+      "id": "W4297645476",
+      "arxiv_id": "2209.02535",
+      "year": 2022,
+      "title": "Analyzing Transformers in Embedding Space",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 7,
+      "reason": "duplicate",
+      "detail": "merged into W4385571791 (Analyzing Transformers in Embedding Space)"
+    },
+    {
+      "id": "W2952230511",
+      "arxiv_id": null,
+      "year": 2011,
+      "title": "Natural Language Processing (almost) from Scratch",
+      "venue": "Infoscience (Ecole Polytechnique F\u00e9d\u00e9rale de Lausanne)",
+      "cited_by_count": 3995,
+      "reason": "duplicate",
+      "detail": "merged into W2158899491 (Natural Language Processing (almost) from Scratch)"
+    },
+    {
+      "id": "W2963996492",
+      "arxiv_id": null,
+      "year": 2015,
+      "title": "Object Detectors Emerge in Deep Scene CNNs",
+      "venue": "DSpace@MIT (Massachusetts Institute of Technology)",
+      "cited_by_count": 533,
+      "reason": "duplicate",
+      "detail": "merged into W1899185266 (Object Detectors Emerge in Deep Scene CNNs)"
+    },
+    {
+      "id": "W2907252220",
+      "arxiv_id": "1907.12009",
+      "year": 2019,
+      "title": "Representation Degeneration Problem in Training Natural Language Generation Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 53,
+      "reason": "duplicate",
+      "detail": "merged into W2966610483 (Representation Degeneration Problem in Training Natural Lang)"
+    },
+    {
+      "id": "W3098680936",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Compositional Explanations of Neurons",
+      "venue": "Neural Information Processing Systems",
+      "cited_by_count": 18,
+      "reason": "duplicate",
+      "detail": "merged into W3037626499 (Compositional Explanations of Neurons)"
+    },
+    {
+      "id": "W3098824823",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Transformers: State-of-the-Art Natural Language Processing",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 1175,
+      "reason": "duplicate",
+      "detail": "merged into W2979826702 (Transformers: State-of-the-Art Natural Language Processing)"
+    },
+    {
+      "id": "W2949541494",
+      "arxiv_id": "1408.5882",
+      "year": 2014,
+      "title": "Convolutional Neural Networks for Sentence Classification",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1129,
+      "reason": "duplicate",
+      "detail": "merged into W1832693441 (Convolutional Neural Networks for Sentence Classification)"
+    },
+    {
+      "id": "W2952723479",
+      "arxiv_id": "1611.01702.pdf",
+      "year": 2016,
+      "title": "TopicRNN: A Recurrent Neural Network with Long-Range Semantic Dependency",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 88,
+      "reason": "duplicate",
+      "detail": "merged into W2549476280 (TopicRNN: A Recurrent Neural Network with Long-Range Semanti)"
+    },
+    {
+      "id": "W2949988325",
+      "arxiv_id": "1506.08839",
+      "year": 2015,
+      "title": "Inferring Networks of Substitutable and Complementary Products",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 87,
+      "reason": "duplicate",
+      "detail": "merged into W1991418309 (Inferring Networks of Substitutable and Complementary Produc)"
+    },
+    {
+      "id": "W2981852735",
+      "arxiv_id": "1910.10683",
+      "year": 2019,
+      "title": "Exploring the Limits of Transfer Learning with a Unified Text-to-Text Transformer",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3692,
+      "reason": "duplicate",
+      "detail": "merged into W4288089799 (Exploring the Limits of Transfer Learning with a Unified Tex)"
+    },
+    {
+      "id": "W4221166192",
+      "arxiv_id": "2203.14680",
+      "year": 2022,
+      "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 11,
+      "reason": "duplicate",
+      "detail": "merged into W4385572928 (Transformer Feed-Forward Layers Build Predictions by Promoti)"
+    },
+    {
+      "id": "W4301194718",
+      "arxiv_id": "2104.08696",
+      "year": 2021,
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 42,
+      "reason": "duplicate",
+      "detail": "merged into W3152884768 (Knowledge Neurons in Pretrained Transformers)"
+    },
+    {
+      "id": "W4387034804",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "A Review on Large Language Models: Architectures, Applications, Taxonomies, Open Issues and Challenges",
+      "venue": null,
+      "cited_by_count": 49,
+      "reason": "duplicate",
+      "detail": "merged into W4391855109 (A Review on Large Language Models: Architectures, Applicatio)"
+    },
+    {
+      "id": "W4388110356",
+      "arxiv_id": "2310.19775",
+      "year": 2023,
+      "title": "Explainable Artificial Intelligence (XAI) 2.0: A Manifesto of Open Challenges and Interdisciplinary Research Directions",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 14,
+      "reason": "duplicate",
+      "detail": "merged into W4391848979 (Explainable Artificial Intelligence (XAI) 2.0: A manifesto o)"
+    },
+    {
+      "id": "W4317463334",
+      "arxiv_id": "2301.06627",
+      "year": 2023,
+      "title": "Dissociating language and thought in large language models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 91,
+      "reason": "duplicate",
+      "detail": "merged into W4392935324 (Dissociating language and thought in large language models)"
+    },
+    {
+      "id": "W4310923406",
+      "arxiv_id": "2212.03551",
+      "year": 2022,
+      "title": "Talking About Large Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 73,
+      "reason": "duplicate",
+      "detail": "merged into W4391215636 (Talking about Large Language Models)"
+    },
+    {
+      "id": "W4390572997",
+      "arxiv_id": "2401.01301",
+      "year": 2024,
+      "title": "Large Legal Fictions: Profiling Legal Hallucinations in Large Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 14,
+      "reason": "duplicate",
+      "detail": "merged into W4400047099 (Large Legal Fictions: Profiling Legal Hallucinations in Larg)"
+    },
+    {
+      "id": "W4379980445",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Ten deep learning techniques to address small data problems with remote sensing",
+      "venue": null,
+      "cited_by_count": 21,
+      "reason": "duplicate",
+      "detail": "merged into W4388792466 (Ten deep learning techniques to address small data problems )"
+    },
+    {
+      "id": "W4388302774",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Start Generating: Harnessing Generative Artificial Intelligence for Sociological Research",
+      "venue": null,
+      "cited_by_count": 9,
+      "reason": "duplicate",
+      "detail": "merged into W4400920253 (Start Generating: Harnessing Generative Artificial Intellige)"
+    },
+    {
+      "id": "W4410559688",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Eight Things to Know about Large Language Models",
+      "venue": "Critical AI",
+      "cited_by_count": 26,
+      "reason": "duplicate",
+      "detail": "merged into W4362597819 (Eight Things to Know about Large Language Models)"
+    },
+    {
+      "id": "W4388571718",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "How Can Deep Neural Networks Inform Theory in Psychological Science?",
+      "venue": null,
+      "cited_by_count": 2,
+      "reason": "duplicate",
+      "detail": "merged into W4402547588 (How Can Deep Neural Networks Inform Theory in Psychological )"
+    },
+    {
+      "id": "W4387806480",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "Do Domain-Specific Protein Language Models Outperform General Models on Immunology-Related Tasks?",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 3,
+      "reason": "duplicate",
+      "detail": "merged into W4397030738 (Do domain-specific protein language models outperform genera)"
+    },
+    {
+      "id": "W4404683419",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Intuitive physical reasoning is not mediated by linguistic nor exclusively domain-general abstract representations",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 1,
+      "reason": "duplicate",
+      "detail": "merged into W4408560416 (Intuitive physical reasoning is not mediated by linguistic n)"
+    },
+    {
+      "id": "W7134124598",
+      "arxiv_id": null,
+      "year": 2026,
+      "title": "Not another imputation method: A transformer-based model for missing values in tabular datasets",
+      "venue": "AI Open",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4403754522 (Not another imputation method: A transformer-based model for)"
+    },
+    {
+      "id": "W7161500650",
+      "arxiv_id": null,
+      "year": 2026,
+      "title": "LLM Explainability",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4416986401 (LLM Explainability)"
+    },
+    {
+      "id": "W4385945126",
+      "arxiv_id": "2308.01154",
+      "year": 2023,
+      "title": "Arithmetic with Language Models: from Memorization to Computation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4400723242 (Arithmetic with language models: From memorization to comput)"
+    },
+    {
+      "id": "W4399081343",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Artificial Intelligence - Intelligent Art?",
+      "venue": "Digitale Gesellschaft",
+      "cited_by_count": 3,
+      "reason": "duplicate",
+      "detail": "merged into W4398780966 (Artificial Intelligence - Intelligent Art?)"
+    },
+    {
+      "id": "W4288805232",
+      "arxiv_id": "2207.13243",
+      "year": 2022,
+      "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 15,
+      "reason": "duplicate",
+      "detail": "merged into W4378976798 (Toward Transparent AI: A Survey on Interpreting the Inner St)"
+    },
+    {
+      "id": "W4367832894",
+      "arxiv_id": "2304.14767",
+      "year": 2023,
+      "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "duplicate",
+      "detail": "merged into W4389520380 (Dissecting Recall of Factual Associations in Auto-Regressive)"
+    },
+    {
+      "id": "W4378509386",
+      "arxiv_id": "2305.14292",
+      "year": 2023,
+      "title": "WikiChat: Stopping the Hallucination of Large Language Model Chatbots by Few-Shot Grounding on Wikipedia",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 9,
+      "reason": "duplicate",
+      "detail": "merged into W4389520047 (WikiChat: Stopping the Hallucination of Large Language Model)"
+    },
+    {
+      "id": "W4386044411",
+      "arxiv_id": "2308.08742",
+      "year": 2023,
+      "title": "PMET: Precise Model Editing in a Transformer",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6,
+      "reason": "duplicate",
+      "detail": "merged into W4393147125 (PMET: Precise Model Editing in a Transformer)"
+    },
+    {
+      "id": "W4322717984",
+      "arxiv_id": "2302.13942",
+      "year": 2023,
+      "title": "Inseq: An Interpretability Toolkit for Sequence Generation Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 7,
+      "reason": "duplicate",
+      "detail": "merged into W4385570354 (Inseq: An Interpretability Toolkit for Sequence Generation M)"
+    },
+    {
+      "id": "W4404420622",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 25,
+      "reason": "duplicate",
+      "detail": "merged into W4414589084 (InterPLM: discovering interpretable features in protein lang)"
+    },
+    {
+      "id": "W3185478863",
+      "arxiv_id": "2103.14304",
+      "year": 2021,
+      "title": "Exploiting Temporal Contexts with Strided Transformer for 3D Human Pose Estimation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 16,
+      "reason": "duplicate",
+      "detail": "merged into W3140576409 (Exploiting Temporal Contexts with Strided Transformer for 3D)"
+    },
+    {
+      "id": "W4386043250",
+      "arxiv_id": "2308.09067",
+      "year": 2023,
+      "title": "Contrasting Linguistic Patterns in Human and LLM-Generated News Text",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 5,
+      "reason": "duplicate",
+      "detail": "merged into W4392818979 (Contrasting Linguistic Patterns in Human and LLM-Generated N)"
+    },
+    {
+      "id": "W4390214170",
+      "arxiv_id": "2312.14183",
+      "year": 2023,
+      "title": "On Early Detection of Hallucinations in Factual Question Answering",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4401863263 (On Early Detection of Hallucinations in Factual Question Ans)"
+    },
+    {
+      "id": "W3214549598",
+      "arxiv_id": "2010.11859",
+      "year": 2020,
+      "title": "Not all parameters are born equal: Attention is mostly what you need",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W3093886841 (Not all parameters are born equal: Attention is mostly what )"
+    },
+    {
+      "id": "W4388555941",
+      "arxiv_id": "2311.04897",
+      "year": 2023,
+      "title": "Future Lens: Anticipating Subsequent Tokens from a Single Hidden State",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4389521021 (Future Lens: Anticipating Subsequent Tokens from a Single Hi)"
+    },
+    {
+      "id": "W4377096278",
+      "arxiv_id": null,
+      "year": 2023,
+      "title": "In Pursuit of the Exceptional: Research Directions for Machine Learning in Chemical and Materials Science",
+      "venue": "ChemRxiv",
+      "cited_by_count": 1,
+      "reason": "duplicate",
+      "detail": "merged into W4386030906 (In Pursuit of the Exceptional: Research Directions for Machi)"
+    },
+    {
+      "id": "W3104058276",
+      "arxiv_id": "2106.02902",
+      "year": 2020,
+      "title": "BERTnesia: Investigating the capture and forgetting of knowledge in BERT",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1,
+      "reason": "duplicate",
+      "detail": "merged into W3097252660 (BERTnesia: Investigating the capture and forgetting of knowl)"
+    },
+    {
+      "id": "W4380993105",
+      "arxiv_id": "2306.08193",
+      "year": 2023,
+      "title": "Operationalising Representation in Natural Language Processing",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4388558411 (Operationalising Representation in Natural Language Processi)"
+    },
+    {
+      "id": "W4401452043",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "Preface",
+      "venue": null,
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4389739996 (Preface)"
+    },
+    {
+      "id": "W4405114056",
+      "arxiv_id": null,
+      "year": 2024,
+      "title": "AERO: Softmax-Only LLMs for Efficient Private Inference",
+      "venue": "Qeios",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4403796382 (AERO: Softmax-Only LLMs for Efficient Private Inference)"
+    },
+    {
+      "id": "W4410786268",
+      "arxiv_id": null,
+      "year": 2025,
+      "title": "PhosF3C: a feature fusion architecture with fine-tuned protein language model and conformer for prediction of general ph",
+      "venue": "Briefings in Bioinformatics",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4405880216 (PhosF3C: A Feature Fusion Architecture with Fine-Tuned Prote)"
+    },
+    {
+      "id": "W4413044559",
+      "arxiv_id": null,
+      "year": 2025,
+      "title": "Model Mapping: Can We Turn Transformers Into Programs?",
+      "venue": "SSRN Electronic Journal",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W4406236310 (Model Mapping: Can We Turn Transformers Into Programs?)"
+    },
+    {
+      "id": "W7154482400",
+      "arxiv_id": null,
+      "year": 2026,
+      "title": "HLRP #151: Geometric Context Loading \u2014 Multi-Agent Convergence Testing as Governance Architecture",
+      "venue": "Zenodo (CERN European Organization for Nuclear Research)",
+      "cited_by_count": 0,
+      "reason": "duplicate",
+      "detail": "merged into W7154473181 (HLRP #151: Geometric Context Loading \u2014 Multi-Agent Convergen)"
+    },
+    {
+      "id": "W2950635152",
+      "arxiv_id": "1406.1078",
+      "year": 2014,
+      "title": "Learning Phrase Representations using RNN Encoder-Decoder for Statistical Machine Translation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3417,
+      "reason": "duplicate",
+      "detail": "merged into W2157331557 (Learning Phrase Representations using RNN Encoder\u2013Decoder fo)"
+    },
+    {
+      "id": "W2950577311",
+      "arxiv_id": "1301.3781",
+      "year": 2013,
+      "title": "Efficient Estimation of Word Representations in Vector Space",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 11737,
+      "reason": "duplicate",
+      "detail": "merged into W1614298861 (Efficient Estimation of Word Representations in Vector Space)"
+    },
+    {
+      "id": "W4253001367",
+      "arxiv_id": null,
+      "year": 1988,
+      "title": "Connectionism and cognitive architecture: A critical analysis",
+      "venue": "The MIT Press eBooks",
+      "cited_by_count": 303,
+      "reason": "duplicate",
+      "detail": "merged into W2118373646 (Connectionism and cognitive architecture: A critical analysi)"
+    },
+    {
+      "id": "W4239072543",
+      "arxiv_id": null,
+      "year": 2009,
+      "title": "ImageNet: A large-scale hierarchical image database",
+      "venue": "2009 IEEE Conference on Computer Vision and Pattern Recognition",
+      "cited_by_count": 2945,
+      "reason": "duplicate",
+      "detail": "merged into W2108598243 (ImageNet: A large-scale hierarchical image database)"
+    },
+    {
+      "id": "W2949888546",
+      "arxiv_id": "1409.3215.pdf",
+      "year": 2014,
+      "title": "Sequence to Sequence Learning with Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 3526,
+      "reason": "duplicate",
+      "detail": "merged into W2130942839 (Sequence to Sequence Learning with Neural Networks)"
+    },
+    {
+      "id": "W2950178297",
+      "arxiv_id": "1502.03044",
+      "year": 2015,
+      "title": "Show, Attend and Tell: Neural Image Caption Generation with Visual Attention",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1767,
+      "reason": "duplicate",
+      "detail": "merged into W1514535095 (Show, Attend and Tell: Neural Image Caption Generation with )"
+    },
+    {
+      "id": "W2427527485",
+      "arxiv_id": "1606.05250",
+      "year": 2016,
+      "title": "SQuAD: 100,000+ Questions for Machine Comprehension of Text",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 824,
+      "reason": "duplicate",
+      "detail": "merged into W2963748441 (SQuAD: 100,000+ Questions for Machine Comprehension of Text)"
+    },
+    {
+      "id": "W2953084091",
+      "arxiv_id": "1508.05326",
+      "year": 2015,
+      "title": "A large annotated corpus for learning natural language inference",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 465,
+      "reason": "duplicate",
+      "detail": "merged into W1840435438 (A large annotated corpus for learning natural language infer)"
+    },
+    {
+      "id": "W2037413600",
+      "arxiv_id": null,
+      "year": 2015,
+      "title": "Superintelligence: Paths, Dangers, Strategies",
+      "venue": "The Philosophical Quarterly",
+      "cited_by_count": 888,
+      "reason": "duplicate",
+      "detail": "merged into W648152870 (Superintelligence: paths, dangers, strategies)"
+    },
+    {
+      "id": "W4363671832",
+      "arxiv_id": "2304.03442",
+      "year": 2023,
+      "title": "Generative Agents: Interactive Simulacra of Human Behavior",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 175,
+      "reason": "duplicate",
+      "detail": "merged into W4387835442 (Generative Agents: Interactive Simulacra of Human Behavior)"
+    },
+    {
+      "id": "W4297801719",
+      "arxiv_id": "2107.13586",
+      "year": 2021,
+      "title": "Pre-train, Prompt, and Predict: A Systematic Survey of Prompting Methods in Natural Language Processing",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 518,
+      "reason": "duplicate",
+      "detail": "merged into W3185341429 (Pre-train, Prompt, and Predict: A Systematic Survey of Promp)"
+    },
+    {
+      "id": "W2963310665",
+      "arxiv_id": null,
+      "year": 2018,
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "venue": "International Conference on Learning Representations",
+      "cited_by_count": 1869,
+      "reason": "duplicate",
+      "detail": "merged into W2923014074 (GLUE: A Multi-Task Benchmark and Analysis Platform for Natur)"
+    },
+    {
+      "id": "W2799054028",
+      "arxiv_id": "1804.07461",
+      "year": 2018,
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 558,
+      "reason": "duplicate",
+      "detail": "merged into W2923014074 (GLUE: A Multi-Task Benchmark and Analysis Platform for Natur)"
+    },
+    {
+      "id": "W3037273551",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "The neural architecture of language: Integrative modeling converges on predictive processing",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 133,
+      "reason": "duplicate",
+      "detail": "merged into W3210923133 (The neural architecture of language: Integrative modeling co)"
+    },
+    {
+      "id": "W4307123345",
+      "arxiv_id": "2109.07958",
+      "year": 2021,
+      "title": "TruthfulQA: Measuring How Models Mimic Human Falsehoods",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 121,
+      "reason": "duplicate",
+      "detail": "merged into W3201174429 (TruthfulQA: Measuring How Models Mimic Human Falsehoods)"
+    },
+    {
+      "id": "W2469636041",
+      "arxiv_id": null,
+      "year": 2014,
+      "title": "Edible insects: future prospects for food and feed security",
+      "venue": "The International Forestry Review",
+      "cited_by_count": 888,
+      "reason": "duplicate",
+      "detail": "merged into W2578081910 (Edible insects: future prospects for food and feed security)"
+    },
+    {
+      "id": "W4320003957",
+      "arxiv_id": "2211.09110",
+      "year": 2022,
+      "title": "Holistic Evaluation of Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 121,
+      "reason": "duplicate",
+      "detail": "merged into W4378189609 (Holistic Evaluation of Language Models)"
+    },
+    {
+      "id": "W2616247523",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization",
+      "venue": "International Journal of Computer Vision",
+      "cited_by_count": 5684,
+      "reason": "duplicate",
+      "detail": "merged into W2962858109 (Grad-CAM: Visual Explanations from Deep Networks via Gradien)"
+    },
+    {
+      "id": "W2949197630",
+      "arxiv_id": "1703.01365",
+      "year": 2017,
+      "title": "Axiomatic Attribution for Deep Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 412,
+      "reason": "duplicate",
+      "detail": "merged into W2594633041 (Axiomatic Attribution for Deep Networks)"
+    },
+    {
+      "id": "W3119438769",
+      "arxiv_id": "2101.00190",
+      "year": 2021,
+      "title": "Prefix-Tuning: Optimizing Continuous Prompts for Generation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 293,
+      "reason": "duplicate",
+      "detail": "merged into W3174770825 (Prefix-Tuning: Optimizing Continuous Prompts for Generation)"
+    },
+    {
+      "id": "W41554520",
+      "arxiv_id": null,
+      "year": 2000,
+      "title": "Reinforcement Learning: An Introduction",
+      "venue": "Neurocomputing",
+      "cited_by_count": 8698,
+      "reason": "duplicate",
+      "detail": "merged into W4214717370 (Reinforcement Learning: An Introduction)"
+    },
+    {
+      "id": "W4254816979",
+      "arxiv_id": null,
+      "year": 1990,
+      "title": "Finding structure in time",
+      "venue": "Cognitive Science",
+      "cited_by_count": 2934,
+      "reason": "duplicate",
+      "detail": "merged into W2110485445 (Finding Structure in Time)"
+    },
+    {
+      "id": "W2434741482",
+      "arxiv_id": "1606.03657",
+      "year": 2016,
+      "title": "InfoGAN: Interpretable Representation Learning by Information Maximizing Generative Adversarial Nets",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1248,
+      "reason": "duplicate",
+      "detail": "merged into W2963226019 (InfoGAN: Interpretable Representation Learning by Informatio)"
+    },
+    {
+      "id": "W2996287690",
+      "arxiv_id": "1904.09751.pdf",
+      "year": 2020,
+      "title": "The Curious Case of Neural Text Degeneration",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 528,
+      "reason": "duplicate",
+      "detail": "merged into W2938704169 (The Curious Case of Neural Text Degeneration)"
+    },
+    {
+      "id": "W2623293810",
+      "arxiv_id": null,
+      "year": 1996,
+      "title": "Artificial intelligence: A modern approach",
+      "venue": "Artificial Intelligence",
+      "cited_by_count": 10702,
+      "reason": "duplicate",
+      "detail": "merged into W2122410182 (Artificial intelligence: a modern approach)"
+    },
+    {
+      "id": "W2072128103",
+      "arxiv_id": null,
+      "year": 2009,
+      "title": "Learning Deep Architectures for AI",
+      "venue": "now publishers, Inc. eBooks",
+      "cited_by_count": 5076,
+      "reason": "duplicate",
+      "detail": "merged into W4231109964 (Learning Deep Architectures for AI)"
+    },
+    {
+      "id": "W2173520492",
+      "arxiv_id": "1511.06434",
+      "year": 2015,
+      "title": "Unsupervised Representation Learning with Deep Convolutional Generative Adversarial Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 6992,
+      "reason": "duplicate",
+      "detail": "merged into W2963684088 (Unsupervised Representation Learning with Deep Convolutional)"
+    },
+    {
+      "id": "W4367365526",
+      "arxiv_id": "2304.13734",
+      "year": 2023,
+      "title": "The Internal State of an LLM Knows When It's Lying",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 17,
+      "reason": "duplicate",
+      "detail": "merged into W4389519449 (The Internal State of an LLM Knows When It\u2019s Lying)"
+    },
+    {
+      "id": "W4205184193",
+      "arxiv_id": null,
+      "year": 2008,
+      "title": "Opinion Mining and Sentiment Analysis",
+      "venue": "Foundations and Trends\u00ae in Information Retrieval",
+      "cited_by_count": 6234,
+      "reason": "duplicate",
+      "detail": "merged into W2097726431 (Opinion Mining and Sentiment Analysis)"
+    },
+    {
+      "id": "W4223622179",
+      "arxiv_id": null,
+      "year": 2022,
+      "title": "Deep Problems with Neural Network Models of Human Vision",
+      "venue": null,
+      "cited_by_count": 82,
+      "reason": "duplicate",
+      "detail": "merged into W4310572212 (Deep problems with neural network models of human vision)"
+    },
+    {
+      "id": "W2975059944",
+      "arxiv_id": "1909.11942",
+      "year": 2019,
+      "title": "ALBERT: A Lite BERT for Self-supervised Learning of Language Representations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 984,
+      "reason": "duplicate",
+      "detail": "merged into W2996428491 (ALBERT: A Lite BERT for Self-supervised Learning of Language)"
+    },
+    {
+      "id": "W2949433733",
+      "arxiv_id": "1506.06724",
+      "year": 2015,
+      "title": "Aligning Books and Movies: Towards Story-like Visual Explanations by Watching Movies and Reading Books",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 298,
+      "reason": "duplicate",
+      "detail": "merged into W1566289585 (Aligning Books and Movies: Towards Story-Like Visual Explana)"
+    },
+    {
+      "id": "W2990704537",
+      "arxiv_id": null,
+      "year": 2019,
+      "title": "SuperGLUE: A Stickier Benchmark for General-Purpose Language Understanding Systems",
+      "venue": "Neural Information Processing Systems",
+      "cited_by_count": 515,
+      "reason": "duplicate",
+      "detail": "merged into W2943552823 (SuperGLUE: A Stickier Benchmark for General-Purpose Language)"
+    },
+    {
+      "id": "W3119866685",
+      "arxiv_id": "2101.03961",
+      "year": 2021,
+      "title": "Switch Transformers: Scaling to Trillion Parameter Models with Simple and Efficient Sparsity",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 361,
+      "reason": "duplicate",
+      "detail": "merged into W4287391717 (Switch Transformers: Scaling to Trillion Parameter Models wi)"
+    },
+    {
+      "id": "W4246920349",
+      "arxiv_id": null,
+      "year": 1977,
+      "title": "Telling more than we can know: Verbal reports on mental processes.",
+      "venue": "Psychological Review",
+      "cited_by_count": 1331,
+      "reason": "duplicate",
+      "detail": "merged into W2164558494 (Telling more than we can know: Verbal reports on mental proc)"
+    },
+    {
+      "id": "W2613718673",
+      "arxiv_id": "1506.01497",
+      "year": 2015,
+      "title": "Faster R-CNN: Towards Real-Time Object Detection with Region Proposal Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 18240,
+      "reason": "duplicate",
+      "detail": "merged into W639708223 (Faster R-CNN: Towards Real-Time Object Detection with Region)"
+    },
+    {
+      "id": "W2949300694",
+      "arxiv_id": "1404.2188",
+      "year": 2014,
+      "title": "A Convolutional Neural Network for Modelling Sentences",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 482,
+      "reason": "duplicate",
+      "detail": "merged into W2120615054 (A Convolutional Neural Network for Modelling Sentences)"
+    },
+    {
+      "id": "W2798966449",
+      "arxiv_id": "1804.07998",
+      "year": 2018,
+      "title": "Generating Natural Language Adversarial Examples",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 142,
+      "reason": "duplicate",
+      "detail": "merged into W2962718684 (Generating Natural Language Adversarial Examples)"
+    },
+    {
+      "id": "W1601924930",
+      "arxiv_id": "1506.01066",
+      "year": 2015,
+      "title": "Visualizing and Understanding Neural Models in NLP",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 167,
+      "reason": "duplicate",
+      "detail": "merged into W2964159778 (Visualizing and Understanding Neural Models in NLP)"
+    },
+    {
+      "id": "W2963420658",
+      "arxiv_id": "1803.06959",
+      "year": 2018,
+      "title": "On the importance of single directions for generalization",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 66,
+      "reason": "duplicate",
+      "detail": "merged into W2785648721 (On the importance of single directions for generalization)"
+    },
+    {
+      "id": "W4226317937",
+      "arxiv_id": "2112.10752",
+      "year": 2021,
+      "title": "High-Resolution Image Synthesis with Latent Diffusion Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 724,
+      "reason": "duplicate",
+      "detail": "merged into W4312933868 (High-Resolution Image Synthesis with Latent Diffusion Models)"
+    },
+    {
+      "id": "W4214649783",
+      "arxiv_id": null,
+      "year": 1973,
+      "title": "Judgment Under Uncertainty: Heuristics and Biases",
+      "venue": "PsycEXTRA Dataset",
+      "cited_by_count": 522,
+      "reason": "duplicate",
+      "detail": "merged into W4292157289 (Judgment under Uncertainty: Heuristics and Biases)"
+    },
+    {
+      "id": "W2541707354",
+      "arxiv_id": null,
+      "year": 2016,
+      "title": "The successor representation in human reinforcement learning",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 69,
+      "reason": "duplicate",
+      "detail": "merged into W2953319434 (The successor representation in human reinforcement learning)"
+    },
+    {
+      "id": "W4287585714",
+      "arxiv_id": "2011.15091",
+      "year": 2020,
+      "title": "Inductive Biases for Deep Learning of Higher-Level Cognition",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 44,
+      "reason": "duplicate",
+      "detail": "merged into W3108981297 (Inductive biases for deep learning of higher-level cognition)"
+    },
+    {
+      "id": "W3018458867",
+      "arxiv_id": "2004.09984",
+      "year": 2020,
+      "title": "BERT-ATTACK: Adversarial Attack Against BERT Using BERT",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 68,
+      "reason": "duplicate",
+      "detail": "merged into W3101449015 (BERT-ATTACK: Adversarial Attack Against BERT Using BERT)"
+    },
+    {
+      "id": "W4388585881",
+      "arxiv_id": "2311.05232",
+      "year": 2023,
+      "title": "A Survey on Hallucination in Large Language Models: Principles, Taxonomy, Challenges, and Open Questions",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 218,
+      "reason": "duplicate",
+      "detail": "merged into W4404534210 (A Survey on Hallucination in Large Language Models: Principl)"
+    },
+    {
+      "id": "W4243781399",
+      "arxiv_id": null,
+      "year": 1990,
+      "title": "Compositionality: A Connectionist Variation on a Classical Theme",
+      "venue": "Cognitive Science",
+      "cited_by_count": 230,
+      "reason": "duplicate",
+      "detail": "merged into W2150161574 (Compositionality: A connectionist variation on a classical t)"
+    },
+    {
+      "id": "W2085266199",
+      "arxiv_id": null,
+      "year": 2000,
+      "title": "Inner Vision: An Exploration of Art and the Brain.",
+      "venue": "Optometry and Vision Science",
+      "cited_by_count": 364,
+      "reason": "duplicate",
+      "detail": "merged into W1505861512 (Inner Vision: An Exploration of Art and the Brain)"
+    },
+    {
+      "id": "W2016498460",
+      "arxiv_id": null,
+      "year": 1993,
+      "title": "Affect, cognition, and awareness: Affective priming with optimal and suboptimal stimulus exposures.",
+      "venue": "Journal of Personality and Social Psychology",
+      "cited_by_count": 456,
+      "reason": "duplicate",
+      "detail": "merged into W4322703244 (Affect, cognition, and awareness: Affective priming with opt)"
+    },
+    {
+      "id": "W4256584093",
+      "arxiv_id": null,
+      "year": 1994,
+      "title": "Spatial attention and the apprehension of spatial relations.",
+      "venue": "Journal of Experimental Psychology Human Perception & Performance",
+      "cited_by_count": 49,
+      "reason": "duplicate",
+      "detail": "merged into W2004040569 (Spatial attention and the apprehension of spatial relations.)"
+    },
+    {
+      "id": "W4229771186",
+      "arxiv_id": null,
+      "year": 1993,
+      "title": "Early referential understanding: Infants' ability to recognize referential acts for what they are.",
+      "venue": "Developmental Psychology",
+      "cited_by_count": 67,
+      "reason": "duplicate",
+      "detail": "merged into W2028192231 (Early referential understanding: Infants' ability to recogni)"
+    },
+    {
+      "id": "W2100932800",
+      "arxiv_id": null,
+      "year": 2001,
+      "title": "A Neuronal Model of a Global Workspace in Effortful Cognitive Tasks",
+      "venue": "Annals of the New York Academy of Sciences",
+      "cited_by_count": 191,
+      "reason": "duplicate",
+      "detail": "merged into W2133299302 (A neuronal model of a global workspace in effortful cognitiv)"
+    },
+    {
+      "id": "W4241702281",
+      "arxiv_id": null,
+      "year": 1989,
+      "title": "Reinterpreting visual patterns in mental imagery",
+      "venue": "Cognitive Science",
+      "cited_by_count": 44,
+      "reason": "duplicate",
+      "detail": "merged into W2145916745 (Reinterpreting Visual Patterns in Mental Imagery)"
+    },
+    {
+      "id": "W4236939794",
+      "arxiv_id": null,
+      "year": 1999,
+      "title": "A connectionist model of english past tense and plural morphology",
+      "venue": "Cognitive Science",
+      "cited_by_count": 81,
+      "reason": "duplicate",
+      "detail": "merged into W2104162748 (A Connectionist Model of English Past Tense and Plural Morph)"
+    },
+    {
+      "id": "W2782191754",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "The ventral visual pathway represents animal appearance over animacy, unlike human behavior and deep neural networks",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 27,
+      "reason": "duplicate",
+      "detail": "merged into W2952116081 (The Ventral Visual Pathway Represents Animal Appearance over)"
+    },
+    {
+      "id": "W3008489696",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "What do adversarial images tell us about human vision?",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 16,
+      "reason": "duplicate",
+      "detail": "merged into W3081733458 (What do adversarial images tell us about human vision?)"
+    },
+    {
+      "id": "W3133324172",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "When the Ventral Visual Stream is Not Enough: A Deep Learning Account of Medial Temporal Lobe Involvement in Perception",
+      "venue": "SSRN Electronic Journal",
+      "cited_by_count": 16,
+      "reason": "duplicate",
+      "detail": "merged into W3092296583 (When the ventral visual stream is not enough: A deep learnin)"
+    },
+    {
+      "id": "W3042599080",
+      "arxiv_id": null,
+      "year": 2020,
+      "title": "Untangling the animacy organization of occipitotemporal cortex",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 19,
+      "reason": "duplicate",
+      "detail": "merged into W3181362167 (Untangling the Animacy Organization of Occipitotemporal Cort)"
+    },
+    {
+      "id": "W3164158250",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A neural network account of memory replay and knowledge consolidation",
+      "venue": "bioRxiv (Cold Spring Harbor Laboratory)",
+      "cited_by_count": 17,
+      "reason": "duplicate",
+      "detail": "merged into W4210673222 (A neural network account of memory replay and knowledge cons)"
+    },
+    {
+      "id": "W4253226857",
+      "arxiv_id": null,
+      "year": 2021,
+      "title": "A Proof of Concept for Machine Learning-Based Virtual Knapping Using Neural Networks",
+      "venue": null,
+      "cited_by_count": 14,
+      "reason": "duplicate",
+      "detail": "merged into W3203946882 (A proof of concept for machine learning-based virtual knappi)"
+    },
+    {
+      "id": "W4200630175",
+      "arxiv_id": "2112.03763",
+      "year": 2021,
+      "title": "Creating Multimodal Interactive Agents with Imitation and Self-Supervised Learning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 15,
+      "reason": "duplicate",
+      "detail": "merged into W4225937850 (Creating Multimodal Interactive Agents with Imitation and Se)"
+    },
+    {
+      "id": "W4253020087",
+      "arxiv_id": null,
+      "year": 1987,
+      "title": "Parallel Distributed Processing",
+      "venue": "The MIT Press eBooks",
+      "cited_by_count": 3241,
+      "reason": "duplicate",
+      "detail": "merged into W4300402905 (Parallel Distributed Processing)"
+    },
+    {
+      "id": "W4308900200",
+      "arxiv_id": "2101.06804",
+      "year": 2021,
+      "title": "What Makes Good In-Context Examples for GPT-$3$?",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 159,
+      "reason": "duplicate",
+      "detail": "merged into W3122241445 (What Makes Good In-Context Examples for GPT-3?)"
+    },
+    {
+      "id": "W2606462007",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Interpretable Explanations of Black Boxes by Meaningful Perturbation",
+      "venue": null,
+      "cited_by_count": 958,
+      "reason": "duplicate",
+      "detail": "merged into W3101609372 (Interpretable explanations of black boxes by meaningful pert)"
+    },
+    {
+      "id": "W1938755728",
+      "arxiv_id": "1508.06615",
+      "year": 2015,
+      "title": "Character-Aware Neural Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1023,
+      "reason": "duplicate",
+      "detail": "merged into W2951559648 (Character-Aware Neural Language Models)"
+    },
+    {
+      "id": "W2796885425",
+      "arxiv_id": "1711.11279",
+      "year": 2017,
+      "title": "Interpretability Beyond Feature Attribution: Quantitative Testing with Concept Activation Vectors (TCAV)",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 476,
+      "reason": "duplicate",
+      "detail": "merged into W2963483561 (Interpretability Beyond Feature Attribution: Quantitative Te)"
+    },
+    {
+      "id": "W4224051134",
+      "arxiv_id": "2204.06745",
+      "year": 2022,
+      "title": "GPT-NeoX-20B: An Open-Source Autoregressive Language Model",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 69,
+      "reason": "duplicate",
+      "detail": "merged into W4285225959 (GPT-NeoX-20B: An Open-Source Autoregressive Language Model)"
+    },
+    {
+      "id": "W4312050653",
+      "arxiv_id": "2212.09251",
+      "year": 2022,
+      "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 49,
+      "reason": "duplicate",
+      "detail": "merged into W4385571158 (Discovering Language Model Behaviors with Model-Written Eval)"
+    },
+    {
+      "id": "W4383605161",
+      "arxiv_id": "2307.03109",
+      "year": 2023,
+      "title": "A Survey on Evaluation of Large Language Models",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 201,
+      "reason": "duplicate",
+      "detail": "merged into W4391136507 (A Survey on Evaluation of Large Language Models)"
+    },
+    {
+      "id": "W2172140247",
+      "arxiv_id": "1409.1259",
+      "year": 2014,
+      "title": "On the Properties of Neural Machine Translation: Encoder-Decoder Approaches",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1126,
+      "reason": "duplicate",
+      "detail": "merged into W2964199361 (On the Properties of Neural Machine Translation: Encoder\u2013Dec)"
+    },
+    {
+      "id": "W2311783643",
+      "arxiv_id": "1603.06155",
+      "year": 2016,
+      "title": "A Persona-Based Neural Conversation Model",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 181,
+      "reason": "duplicate",
+      "detail": "merged into W2964352131 (A Persona-Based Neural Conversation Model)"
+    },
+    {
+      "id": "W3093517588",
+      "arxiv_id": "2010.11934",
+      "year": 2020,
+      "title": "mT5: A massively multilingual pre-trained text-to-text transformer",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 602,
+      "reason": "duplicate",
+      "detail": "merged into W3169483174 (mT5: A Massively Multilingual Pre-trained Text-to-Text Trans)"
+    },
+    {
+      "id": "W2993398598",
+      "arxiv_id": "1912.02164",
+      "year": 2019,
+      "title": "Plug and Play Language Models: A Simple Approach to Controlled Text Generation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 130,
+      "reason": "duplicate",
+      "detail": "merged into W2997195635 (Plug and Play Language Models: A Simple Approach to Controll)"
+    },
+    {
+      "id": "W2549416390",
+      "arxiv_id": "1611.01462",
+      "year": 2016,
+      "title": "Tying Word Vectors and Word Classifiers: A Loss Framework for Language Modeling",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 175,
+      "reason": "duplicate",
+      "detail": "merged into W2962964385 (Tying Word Vectors and Word Classifiers: A Loss Framework fo)"
+    },
+    {
+      "id": "W2140679639",
+      "arxiv_id": null,
+      "year": 2000,
+      "title": "A Neural Probabilistic Language Model",
+      "venue": null,
+      "cited_by_count": 1163,
+      "reason": "duplicate",
+      "detail": "merged into W2998704965 (A neural probabilistic language model)"
+    },
+    {
+      "id": "W2214168287",
+      "arxiv_id": "1511.03683v4",
+      "year": 2015,
+      "title": "Generative Concatenative Nets Jointly Learn to Write and Classify Reviews",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 23,
+      "reason": "duplicate",
+      "detail": "merged into W2337374637 (Generative Concatenative Nets Jointly Learn to Write and Cla)"
+    },
+    {
+      "id": "W3155806510",
+      "arxiv_id": "2104.09864",
+      "year": 2021,
+      "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 232,
+      "reason": "duplicate",
+      "detail": "merged into W4388979610 (RoFormer: Enhanced transformer with Rotary Position Embeddin)"
+    },
+    {
+      "id": "W3083410900",
+      "arxiv_id": "2009.03300",
+      "year": 2020,
+      "title": "Measuring Massive Multitask Language Understanding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 282,
+      "reason": "duplicate",
+      "detail": "merged into W3121904249 (Measuring Massive Multitask Language Understanding)"
+    },
+    {
+      "id": "W2964265128",
+      "arxiv_id": null,
+      "year": 2017,
+      "title": "Convolutional Sequence to Sequence Learning",
+      "venue": "International Conference on Machine Learning",
+      "cited_by_count": 1340,
+      "reason": "duplicate",
+      "detail": "merged into W2613904329 (Convolutional Sequence to Sequence Learning)"
+    },
+    {
+      "id": "W2254361154",
+      "arxiv_id": "1602.02373",
+      "year": 2016,
+      "title": "Supervised and Semi-Supervised Text Categorization using LSTM for Region Embeddings",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 127,
+      "reason": "duplicate",
+      "detail": "merged into W2963908579 (Supervised and Semi-Supervised Text Categorization using LST)"
+    },
+    {
+      "id": "W4378473839",
+      "arxiv_id": "2305.14739",
+      "year": 2023,
+      "title": "Trusting Your Evidence: Hallucinate Less with Context-aware Decoding",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 8,
+      "reason": "duplicate",
+      "detail": "merged into W4401042371 (Trusting Your Evidence: Hallucinate Less with Context-aware )"
+    },
+    {
+      "id": "W2963799213",
+      "arxiv_id": "1711.00937",
+      "year": 2017,
+      "title": "Neural Discrete Representation Learning",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1930,
+      "reason": "duplicate",
+      "detail": "merged into W2752796333 (Neural Discrete Representation Learning)"
+    },
+    {
+      "id": "W2212703438",
+      "arxiv_id": "1512.05287",
+      "year": 2015,
+      "title": "A Theoretically Grounded Application of Dropout in Recurrent Neural Networks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 792,
+      "reason": "duplicate",
+      "detail": "merged into W2963266340 (A theoretically grounded application of dropout in recurrent)"
+    },
+    {
+      "id": "W2952113915",
+      "arxiv_id": "1702.03814",
+      "year": 2017,
+      "title": "Bilateral Multi-Perspective Matching for Natural Language Sentences",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 119,
+      "reason": "duplicate",
+      "detail": "merged into W2593833795 (Bilateral Multi-Perspective Matching for Natural Language Se)"
+    },
+    {
+      "id": "W2949709688",
+      "arxiv_id": "1308.6242",
+      "year": 2013,
+      "title": "NRC-Canada: Building the State-of-the-Art in Sentiment Analysis of Tweets",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 419,
+      "reason": "duplicate",
+      "detail": "merged into W1589554437 (NRC-Canada: Building the State-of-the-Art in Sentiment Analy)"
+    },
+    {
+      "id": "W3033187248",
+      "arxiv_id": "2006.03654",
+      "year": 2020,
+      "title": "DeBERTa: Decoding-enhanced BERT with Disentangled Attention",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 434,
+      "reason": "duplicate",
+      "detail": "merged into W3122890974 (DEBERTA: DECODING-ENHANCED BERT WITH DISENTANGLED ATTENTION)"
+    },
+    {
+      "id": "W2617566453",
+      "arxiv_id": "1705.09655",
+      "year": 2017,
+      "title": "Style Transfer from Non-Parallel Text by Cross-Alignment",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 358,
+      "reason": "duplicate",
+      "detail": "merged into W2963366196 (Style Transfer from Non-Parallel Text by Cross-Alignment)"
+    },
+    {
+      "id": "W4319793302",
+      "arxiv_id": "2302.04023",
+      "year": 2023,
+      "title": "A Multitask, Multilingual, Multimodal Evaluation of ChatGPT on Reasoning, Hallucination, and Interactivity",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 357,
+      "reason": "duplicate",
+      "detail": "merged into W4392669753 (A Multitask, Multilingual, Multimodal Evaluation of ChatGPT )"
+    },
+    {
+      "id": "W1544827683",
+      "arxiv_id": "1506.03340",
+      "year": 2015,
+      "title": "Teaching Machines to Read and Comprehend",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1528,
+      "reason": "duplicate",
+      "detail": "merged into W2949615363 (Teaching Machines to Read and Comprehend)"
+    },
+    {
+      "id": "W2410983263",
+      "arxiv_id": "1606.01541",
+      "year": 2016,
+      "title": "Deep Reinforcement Learning for Dialogue Generation",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 422,
+      "reason": "duplicate",
+      "detail": "merged into W2963167310 (Deep Reinforcement Learning for Dialogue Generation)"
+    },
+    {
+      "id": "W2950974174",
+      "arxiv_id": "1103.2903",
+      "year": 2011,
+      "title": "A new ANEW: Evaluation of a word list for sentiment analysis in microblogs",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 539,
+      "reason": "duplicate",
+      "detail": "merged into W2111975591 (A new ANEW: Evaluation of a word list for sentiment analysis)"
+    },
+    {
+      "id": "W2951140085",
+      "arxiv_id": "1612.00005",
+      "year": 2016,
+      "title": "Plug &amp; Play Generative Networks: Conditional Iterative Generation of Images in Latent Space",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 160,
+      "reason": "duplicate",
+      "detail": "merged into W2557449848 (Plug &amp; Play Generative Networks: Conditional Iterative G)"
+    },
+    {
+      "id": "W4297730150",
+      "arxiv_id": "1706.05806",
+      "year": 2017,
+      "title": "SVCCA: Singular Vector Canonical Correlation Analysis for Deep Learning Dynamics and Interpretability",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 157,
+      "reason": "duplicate",
+      "detail": "merged into W2767204723 (SVCCA: Singular Vector Canonical Correlation Analysis for De)"
+    },
+    {
+      "id": "W2949998441",
+      "arxiv_id": "0212032",
+      "year": 2002,
+      "title": "Thumbs Up or Thumbs Down? Semantic Orientation Applied to Unsupervised Classification of Reviews",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 1585,
+      "reason": "duplicate",
+      "detail": "merged into W3146306708 (Thumbs Up or Thumbs Down? Semantic Orientation Applied to Un)"
+    },
+    {
+      "id": "W2949382160",
+      "arxiv_id": "1609.03499.pdf",
+      "year": 2016,
+      "title": "WaveNet: A Generative Model for Raw Audio",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 2472,
+      "reason": "duplicate",
+      "detail": "merged into W2519091744 (WaveNet: A Generative Model for Raw Audio)"
+    },
+    {
+      "id": "W2964207259",
+      "arxiv_id": "1612.03975",
+      "year": 2016,
+      "title": "ConceptNet 5.5: An Open Multilingual Graph of General Knowledge",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 844,
+      "reason": "duplicate",
+      "detail": "merged into W2561529111 (ConceptNet 5.5: An Open Multilingual Graph of General Knowle)"
+    },
+    {
+      "id": "W2527467788",
+      "arxiv_id": "1609.08359",
+      "year": 2016,
+      "title": "emoji2vec: Learning Emoji Representations from their Description",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 91,
+      "reason": "duplicate",
+      "detail": "merged into W2963291843 (emoji2vec: Learning Emoji Representations from their Descrip)"
+    },
+    {
+      "id": "W4213009331",
+      "arxiv_id": null,
+      "year": 2008,
+      "title": "Introduction to Information Retrieval",
+      "venue": "Cambridge University Press eBooks",
+      "cited_by_count": 10985,
+      "reason": "duplicate",
+      "detail": "merged into W1532325895 (Introduction to information retrieval)"
+    },
+    {
+      "id": "W4319452268",
+      "arxiv_id": "2302.02083",
+      "year": 2023,
+      "title": "Evaluating Large Language Models in Theory of Mind Tasks",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 133,
+      "reason": "duplicate",
+      "detail": "merged into W4403863303 (Evaluating large language models in theory of mind tasks)"
+    },
+    {
+      "id": "W4300485620",
+      "arxiv_id": "1602.03616",
+      "year": 2016,
+      "title": "Multifaceted Feature Visualization: Uncovering the Different Types of Features Learned By Each Neuron in Deep Neural Net",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 118,
+      "reason": "duplicate",
+      "detail": "merged into W2253993278 (Multifaceted Feature Visualization: Uncovering the Different)"
+    },
+    {
+      "id": "W2119821739",
+      "arxiv_id": null,
+      "year": 1995,
+      "title": "Support-Vector Networks",
+      "venue": "Machine Learning",
+      "cited_by_count": 33310,
+      "reason": "duplicate",
+      "detail": "merged into W4239510810 (Support-vector networks)"
+    },
+    {
+      "id": "W2743087755",
+      "arxiv_id": "1708.02312",
+      "year": 2017,
+      "title": "Shortcut-Stacked Sentence Encoders for Multi-Domain Inference",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 37,
+      "reason": "duplicate",
+      "detail": "merged into W2962685628 (Shortcut-Stacked Sentence Encoders for Multi-Domain Inferenc)"
+    },
+    {
+      "id": "W2742774967",
+      "arxiv_id": "1708.01353",
+      "year": 2017,
+      "title": "Recurrent Neural Network-Based Sentence Encoder with Gated Attention for Natural Language Inference",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 22,
+      "reason": "duplicate",
+      "detail": "merged into W2964072386 (Recurrent Neural Network-Based Sentence Encoder with Gated A)"
+    },
+    {
+      "id": "W4288088047",
+      "arxiv_id": "1910.13461",
+      "year": 2019,
+      "title": "BART: Denoising Sequence-to-Sequence Pre-training for Natural Language Generation, Translation, and Comprehension",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 241,
+      "reason": "duplicate",
+      "detail": "merged into W2982399380 (BART: Denoising Sequence-to-Sequence Pre-training for Natura)"
+    },
+    {
+      "id": "W4367365458",
+      "arxiv_id": "2304.13712",
+      "year": 2023,
+      "title": "Harnessing the Power of LLMs in Practice: A Survey on ChatGPT and Beyond",
+      "venue": "arXiv (Cornell University)",
+      "cited_by_count": 151,
+      "reason": "duplicate",
+      "detail": "merged into W4392240262 (Harnessing the Power of LLMs in Practice: A Survey on ChatGP)"
+    }
+  ]
+}

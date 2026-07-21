@@ -1,0 +1,19 @@
+[hygiene] 4284 candidates, 19 seed records
+[1] arXiv text repair: 745 records resolve to an arXiv id
+  [arxiv] batch 1/8: 100 resolved
+  [arxiv] batch 2/8: 200 resolved
+  [arxiv] batch 3/8: 300 resolved
+  [arxiv] batch 4/8: 400 resolved
+  [arxiv] batch 5/8: 500 resolved
+  [arxiv] batch 6/8: 600 resolved
+  [arxiv] batch 7/8: 700 resolved
+  [arxiv] batch 8/8: 745 resolved
+[1] took arXiv text for 775 records (67 had a corrupted/divergent title)
+[2] corrupt metadata: 24 quarantined
+[3] reference magnets: 3 quarantined
+[4] single-seed forward (1 seed record(s)): 351 quarantined
+[5] dedup: 152 duplicate records merged into 3741 title groups
+
+[hygiene] kept 3754 | quarantined 530 {'corrupt_metadata': 24, 'reference_magnet': 3, 'single_seed_forward': 351, 'duplicate': 152} | in-pool edges 56640
+→ /Users/joao/Projects/clarity-research/data/raw/.ckpt_v3/candidates_clean.json
+→ /Users/joao/Projects/clarity-research/lab/eval/quarantine.json
