@@ -1,0 +1,182 @@
+{
+  "source": "data/raw/interp_corpus_v3_clean.jsonl",
+  "n_records": 683,
+  "candidates": [
+    {
+      "pair": [
+        "W2786672974",
+        "W2889326414"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "jaccard=0.40 overlap=['healy', 'mcinnes']",
+      "title_set": 1.0,
+      "title_sort": 0.8065,
+      "subset": true,
+      "titles": [
+        "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
+        "UMAP: Uniform Manifold Approximation and Projection"
+      ],
+      "years": [
+        2018,
+        2018
+      ]
+    },
+    {
+      "pair": [
+        "W2799124508",
+        "W2964204621"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": true,
+      "author_gate": "overlap=['baroni', 'barrault', 'conneau']",
+      "title_set": 1.0,
+      "title_sort": 0.9787,
+      "subset": true,
+      "titles": [
+        "What you can cram into a single vector: Probing sentence embeddings for linguistic properties",
+        "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties"
+      ],
+      "years": [
+        2018,
+        2018
+      ]
+    },
+    {
+      "pair": [
+        "W2809925683",
+        "W2891503716"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "jaccard=0.00 overlap=[]",
+      "title_set": 1.0,
+      "title_sort": 0.7097,
+      "subset": true,
+      "titles": [
+        "Explainable artificial intelligence: A survey",
+        "Peeking Inside the Black-Box: A Survey on Explainable Artificial Intelligence (XAI)"
+      ],
+      "years": [
+        2018,
+        2018
+      ]
+    },
+    {
+      "pair": [
+        "W4321177655",
+        "W4389984066"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "REJECT: distinct arXiv ids (different works)",
+      "title_set": 1.0,
+      "title_sort": 0.6869,
+      "subset": true,
+      "titles": [
+        "Augmented Language Models: a Survey",
+        "Retrieval-Augmented Generation for Large Language Models: A Survey"
+      ],
+      "years": [
+        2023,
+        2023
+      ]
+    },
+    {
+      "pair": [
+        "W4385849354",
+        "W4395101889"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "jaccard=0.15 overlap=['yao', 'zhang']",
+      "title_set": 1.0,
+      "title_sort": 0.5472,
+      "subset": true,
+      "titles": [
+        "EasyEdit: An Easy-to-use Knowledge Editing Framework for Large Language Models",
+        "Editing Large Language Models"
+      ],
+      "years": [
+        2023,
+        2023
+      ]
+    },
+    {
+      "pair": [
+        "W4388585315",
+        "W4395101889"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "jaccard=0.20 overlap=['zhang']",
+      "title_set": 1.0,
+      "title_sort": 0.6591,
+      "subset": true,
+      "titles": [
+        "Massive Editing for Large Language Models via Meta Learning",
+        "Editing Large Language Models"
+      ],
+      "years": [
+        2023,
+        2023
+      ]
+    },
+    {
+      "pair": [
+        "W4389520370",
+        "W4395101889"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": false,
+      "author_gate": "jaccard=0.38 overlap=['deng', 'yao', 'zhang']",
+      "title_set": 1.0,
+      "title_sort": 0.6237,
+      "subset": true,
+      "titles": [
+        "Editing Large Language Models: Problems, Methods, and Opportunities",
+        "Editing Large Language Models"
+      ],
+      "years": [
+        2023,
+        2023
+      ]
+    },
+    {
+      "pair": [
+        "W2282821441",
+        "W2516809705"
+      ],
+      "tier": "title_fuzzy",
+      "accepted": true,
+      "author_gate": "jaccard=1.00 overlap=['guestrin', 'ribeiro', 'singh']",
+      "title_set": 1.0,
+      "title_sort": 0.4944,
+      "subset": true,
+      "titles": [
+        "\"Why Should I Trust You?\"",
+        "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier"
+      ],
+      "years": [
+        2016,
+        2016
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "members": [
+        "W2799124508",
+        "W2964204621"
+      ],
+      "canonical": "W2964204621"
+    },
+    {
+      "members": [
+        "W2282821441",
+        "W2516809705"
+      ],
+      "canonical": "W2516809705"
+    }
+  ]
+}

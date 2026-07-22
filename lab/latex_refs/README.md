@@ -74,11 +74,15 @@ B (OpenAlex, restricted) = 1,621 — A∩B 1,428 / A\B 1,855 / B\A 193 — plus
 
 ## Backlog (do NOT extend v1 — these gate the NEXT freeze)
 
-- **MANDATORY pre-re-cluster: corpus dedupe by title+year.** The corpus holds
-  duplicate records under distinct Wids (e.g. LIME twice). Post-fix this
-  accounts for **29 of the 193** B\A edges — a ref matches one twin while the
-  OpenAlex edge points at the other. Upstream ingest hygiene, not a resolve
-  fix; must run before the next corpus freeze / re-cluster.
+- ~~**MANDATORY pre-re-cluster: corpus dedupe by title+year.**~~ **DONE
+  (2026-07-23)** — `lab/dedupe_corpus.py` wrote
+  `data/raw/interp_corpus_v4.jsonl` (681 records; LIME + Conneau-probing twins
+  merged, edges remapped). Measured on the frozen latex_refs artifacts: B\A
+  193 → 165, A∩B 1428 → 1444. Audit + merge map in
+  `lab/eval/corpus_dedupe_{audit.md,map.json}` — 6 candidates REJECTED by the
+  gates (the 'Editing LLMs' chain of distinct Yao/Zhang papers; UMAP
+  arXiv-vs-JOSS at jaccard 0.40 is the borderline one worth a human look).
+  v3 stays frozen; the NEXT freeze / re-cluster must read v4.
 - **Full refresh pending for the `delatex` brace fix.** Braces now fold to
   empty string (`{C}lever {H}ans` → `Clever Hans`, was `C lever H ans`) — fixed
   in `common.py` only. `refs.jsonl` / `contexts.jsonl` were NOT regenerated

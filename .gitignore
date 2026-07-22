@@ -50,6 +50,7 @@ lab/out/
 !data/raw/
 data/raw/*
 !data/raw/interp_corpus_v3*.jsonl
+!data/raw/interp_corpus_v4.jsonl
 !data/raw/.ckpt_v3/
 data/raw/.ckpt_v3/*
 !data/raw/.ckpt_v3/seeds.json
