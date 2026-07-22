@@ -54,3 +54,9 @@ data/raw/*
 data/raw/.ckpt_v3/*
 !data/raw/.ckpt_v3/seeds.json
 !data/raw/.ckpt_v3/seed_resolution.json
+
+# Knowledge Lab — latex_refs workstream (parallel to frozen graph assets)
+# Track the per-stage aggregate .jsonl + reports; ignore regenerable resume
+# checkpoints and the raw/extracted arXiv source blobs (large, re-fetchable).
+data/latex/sources/
+data/latex/ckpt/
