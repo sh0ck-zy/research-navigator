@@ -12,6 +12,12 @@ a fixed chain — first hit wins, per the workstream contract, never forced:
               The match query is the ref title with leading URL/DOI junk and
               trailing dates stripped; set-ratio alone force-matched subset
               titles to different papers, the sort co-gate kills those.
+              EXCEPTION (audited recall fix): when the CORPUS title is a strict
+              token-subset of the ref title AND years agree EXACTLY, the sort
+              co-gate is waived — the truncated-corpus-title case ('"Why Should
+              I Trust You?"' with no subtitle) where sort fails a real match.
+              That is the safe direction; ref-subset-of-corpus stays gated
+              (the Emergent/Mirage trap below).
               Near-misses (set passed, sort failed) are logged for audit.
               Quote characters (straight/curly/guillemets/TeX backticks) and
               leading URLs are stripped from BOTH sides before scoring —
@@ -140,10 +146,19 @@ def resolve_ref(ref, by_arxiv, by_doi, by_year):
             # years must agree exactly; string similarity cannot separate these.
             qt, ct = set(q.split()), set(best[1].split())
             subset_trap = qt < ct and len(ct - qt) >= 2 and yd != 0
-            if srt >= SORT_MIN and not subset_trap:
-                return "matched", best[0], "title", {"title_sim": round(best_sim, 4),
-                                                     "title_sort": round(srt, 4),
-                                                     "year_diff": yd}
+            # Recall fix (audited): the sort co-gate also fails REAL matches
+            # where the CORPUS title is truncated — record '"Why Should I Trust
+            # You?"' has no subtitle, the ref carries the full title. When the
+            # corpus title is a strict token-subset of the ref title, the ref
+            # has MORE distinctive tokens, not fewer — the safe direction — so
+            # accept, but ONLY with years agreeing exactly (==, not ±2).
+            corpus_subset = ct < qt and yd == 0
+            if (srt >= SORT_MIN or corpus_subset) and not subset_trap:
+                extra = {"title_sim": round(best_sim, 4),
+                         "title_sort": round(srt, 4), "year_diff": yd}
+                if srt < SORT_MIN:
+                    extra["gate"] = "corpus_subset_exact_year"
+                return "matched", best[0], "title", extra
             reason = "subset_year" if (srt >= SORT_MIN) else "sort_gate"
             return "unmatched", None, None, {"near_miss": {"corpus_id": best[0],
                                                            "title_sim": round(best_sim, 4),

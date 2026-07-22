@@ -87,7 +87,11 @@ def delatex(s):
         s = _CMD_ARG_RE.sub(r"\1", s)
     s = _CMD_RE.sub(" ", s)               # remaining bare commands
     s = re.sub(r"\\([&_%#$])", r"\1", s)  # escaped specials
-    s = s.replace("{", " ").replace("}", " ")
+    # Braces -> EMPTY, not space: '{C}lever {H}ans' must yield 'Clever Hans',
+    # not 'C lever H ans' (brace->space split tokens and sank title matches).
+    # Code-level fix only — refs.jsonl/contexts.jsonl NOT re-run for it yet;
+    # see README backlog ("full refresh pending").
+    s = s.replace("{", "").replace("}", "")
     return re.sub(r"\s+", " ", s).strip()
 
 

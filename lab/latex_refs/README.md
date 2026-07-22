@@ -64,3 +64,25 @@ without a refactor.
 
 Percentages are always written `X/N (%.1f%%)`; denominators are never averaged
 away.
+
+## Status: v1 CLOSED (2026-07-23)
+
+Final numbers over the 431-paper citing universe: A (latex) = 3,283 edges vs
+B (OpenAlex, restricted) = 1,621 — A∩B 1,428 / A\B 1,855 / B\A 193 — plus
+**444 web-pub citations** no aggregator captures. Audit approved twice
+(initial + subset-exact-year recall fix); see `lab/eval/latex_refs_audit.md`.
+
+## Backlog (do NOT extend v1 — these gate the NEXT freeze)
+
+- **MANDATORY pre-re-cluster: corpus dedupe by title+year.** The corpus holds
+  duplicate records under distinct Wids (e.g. LIME twice). Post-fix this
+  accounts for **29 of the 193** B\A edges — a ref matches one twin while the
+  OpenAlex edge points at the other. Upstream ingest hygiene, not a resolve
+  fix; must run before the next corpus freeze / re-cluster.
+- **Full refresh pending for the `delatex` brace fix.** Braces now fold to
+  empty string (`{C}lever {H}ans` → `Clever Hans`, was `C lever H ans`) — fixed
+  in `common.py` only. `refs.jsonl` / `contexts.jsonl` were NOT regenerated
+  (≈5 known edges affected); re-run Stages 2→5 whenever the pipeline next runs.
+- Cluster 2 "Latent Representations & Safety" sits at 42.7% `no_arxiv_id`
+  (50 papers) — the one cluster worth a relaxed second-pass search if coverage
+  ever needs to grow.
