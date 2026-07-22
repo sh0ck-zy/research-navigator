@@ -1,0 +1,6402 @@
+{
+  "denominator_note": "coverage measured over all 683 corpus papers",
+  "total": 683,
+  "status_counts": {
+    "local": 180,
+    "no_arxiv_id": 234,
+    "searched": 262,
+    "unresolved": 7
+  },
+  "resolved_universe": 442,
+  "coverage": "442/683 (64.7%)",
+  "decisions": [
+    {
+      "openalex_id": "W1912570122",
+      "title": "Understanding image representations by measuring their equivariance and equivalence",
+      "year": 2015,
+      "status": "searched",
+      "arxiv_id": "1411.5908",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1411.5908",
+        "title": "Understanding image representations by measuring their equivariance and equivalence",
+        "authors": [
+          "Karel Lenc",
+          "Andrea Vedaldi"
+        ],
+        "year": 2014
+      }
+    },
+    {
+      "openalex_id": "W1915485278",
+      "title": "Understanding deep image representations by inverting them",
+      "year": 2015,
+      "status": "searched",
+      "arxiv_id": "1412.0035",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1412.0035",
+        "title": "Understanding Deep Image Representations by Inverting Them",
+        "authors": [
+          "Aravindh Mahendran",
+          "Andrea Vedaldi"
+        ],
+        "year": 2014
+      }
+    },
+    {
+      "openalex_id": "W1991418309",
+      "title": "Inferring Networks of Substitutable and Complementary Products",
+      "year": 2015,
+      "status": "searched",
+      "arxiv_id": "1506.08839",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1506.08839",
+        "title": "Inferring Networks of Substitutable and Complementary Products",
+        "authors": [
+          "Julian McAuley",
+          "Rahul Pandey",
+          "Jure Leskovec"
+        ],
+        "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2118022153",
+      "title": "Interpretable classifiers using rules and Bayesian analysis: Building a better stroke prediction model",
+      "year": 2015,
+      "status": "searched",
+      "arxiv_id": "1511.01644",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1511.01644",
+        "title": "Interpretable classifiers using rules and Bayesian analysis: Building a better stroke prediction model",
+        "authors": [
+          "Benjamin Letham",
+          "Cynthia Rudin",
+          "Tyler H. McCormick",
+          "David Madigan"
+        ],
+        "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2125847307",
+      "title": "Peeking Inside the Black Box: Visualizing Statistical Learning With Plots of Individual Conditional Expectation",
+      "year": 2014,
+      "status": "searched",
+      "arxiv_id": "1309.6392",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1309.6392",
+        "title": "Peeking Inside the Black Box: Visualizing Statistical Learning with Plots of Individual Conditional Expectation",
+        "authors": [
+          "Alex Goldstein",
+          "Adam Kapelner",
+          "Justin Bleich",
+          "Emil Pitkin"
+        ],
+        "year": 2013
+      }
+    },
+    {
+      "openalex_id": "W2195388612",
+      "title": "Explaining nonlinear classification decisions with deep Taylor decomposition",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1512.02479",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1512.02479",
+        "title": "Explaining NonLinear Classification Decisions with Deep Taylor Decomposition",
+        "authors": [
+          "Grégoire Montavon",
+          "Sebastian Bach",
+          "Alexander Binder",
+          "Wojciech Samek",
+          "Klaus-Robert Müller"
+        ],
+        "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2271328876",
+      "title": "Learning Distributed Representations of Sentences from Unlabelled Data",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1602.03483",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1602.03483",
+        "title": "Learning Distributed Representations of Sentences from Unlabelled Data",
+        "authors": [
+          "Felix Hill",
+          "Kyunghyun Cho",
+          "Anna Korhonen"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2282821441",
+      "title": "\"Why Should I Trust You?\"",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1602.04938",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1602.04938",
+        "title": "\"Why Should I Trust You?\": Explaining the Predictions of Any Classifier",
+        "authors": [
+          "Marco Tulio Ribeiro",
+          "Sameer Singh",
+          "Carlos Guestrin"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2292919134",
+      "title": "Representation of Linguistic Form and Function in Recurrent Neural Networks",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1602.08952",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1602.08952",
+        "title": "Representation of linguistic form and function in recurrent neural networks",
+        "authors": [
+          "Ákos Kádár",
+          "Grzegorz Chrupała",
+          "Afra Alishahi"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2295107390",
+      "title": "Learning Deep Features for Discriminative Localization",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1512.04150",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1512.04150",
+        "title": "Learning Deep Features for Discriminative Localization",
+        "authors": [
+          "Bolei Zhou",
+          "Aditya Khosla",
+          "Agata Lapedriza",
+          "Aude Oliva",
+          "Antonio Torralba"
+        ],
+        "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2295598076",
+      "title": "XGBoost",
+      "year": 2016,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 0,
+        "year_diff": 3
+      },
+      "candidate": {
+        "arxiv_id": "1909.07218",
+        "title": "Learning to Tune XGBoost with XGBoost",
+        "authors": [
+          "Johanna Sommer",
+          "Dimitrios Sarigiannis",
+          "Thomas Parnell"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2439568532",
+      "title": "The Mythos of Model Interpretability",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1606.03490",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "1606.03490",
+        "title": "The Mythos of Model Interpretability",
+        "authors": [
+          "Zachary C. Lipton"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2493343568",
+      "title": "European Union Regulations on Algorithmic Decision Making and a “Right to Explanation”",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1606.08813",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1606.08813",
+        "title": "European Union regulations on algorithmic decision-making and a \"right to explanation\"",
+        "authors": [
+          "Bryce Goodman",
+          "Seth Flaxman"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2516809705",
+      "title": "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1602.04938",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1602.04938",
+        "title": "\"Why Should I Trust You?\": Explaining the Predictions of Any Classifier",
+        "authors": [
+          "Marco Tulio Ribeiro",
+          "Sameer Singh",
+          "Carlos Guestrin"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2560730294",
+      "title": "Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1612.00837",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1612.00837",
+        "title": "Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering",
+        "authors": [
+          "Yash Goyal",
+          "Tejas Khot",
+          "Douglas Summers-Stay",
+          "Dhruv Batra",
+          "Devi Parikh"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2610018085",
+      "title": "Network Dissection: Quantifying Interpretability of Deep Visual Representations",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1704.05796",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1704.05796",
+        "title": "Network Dissection: Quantifying Interpretability of Deep Visual Representations",
+        "authors": [
+          "David Bau",
+          "Bolei Zhou",
+          "Aditya Khosla",
+          "Aude Oliva",
+          "Antonio Torralba"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2614087582",
+      "title": "PALM",
+      "year": 2017,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 0,
+        "year_diff": 7
+      },
+      "candidate": {
+        "arxiv_id": "2405.09530",
+        "title": "A community palm model",
+        "authors": [
+          "Nicholas Clinton",
+          "Andreas Vollrath",
+          "Remi D'annunzio",
+          "Desheng Liu",
+          "Henry B. Glick",
+          "Adrià Descals",
+          "Alicia Sullivan",
+          "Oliver Guinan",
+          "Jacob Abramowitz",
+          "Fred Stolle",
+          "Chris Goodman",
+          "Tanya Birch",
+          "David Quinn",
+          "Olga Danylo",
+          "Tijs Lips",
+          "Daniel Coelho",
+          "Enikoe Bihari",
+          "Bryce Cronkite-Ratcliff",
+          "Ate Poortinga",
+          "Atena Haghighattalab",
+          "Evan Notman",
+          "Michael DeWitt",
+          "Aaron Yonas",
+          "Gennadii Donchyts",
+          "Devaja Shah",
+          "David Saah",
+          "Karis Tenneson",
+          "Nguyen Hanh Quyen",
+          "Megha Verma",
+          "Andrew Wilcox"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W2657631929",
+      "title": "Methods for interpreting and understanding deep neural networks",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1706.07979",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1706.07979",
+        "title": "Methods for Interpreting and Understanding Deep Neural Networks",
+        "authors": [
+          "Grégoire Montavon",
+          "Wojciech Samek",
+          "Klaus-Robert Müller"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2764024122",
+      "title": "Interpretable Convolutional Neural Networks",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1710.00935",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1710.00935",
+        "title": "Interpretable Convolutional Neural Networks",
+        "authors": [
+          "Quanshi Zhang",
+          "Ying Nian Wu",
+          "Song-Chun Zhu"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2809925683",
+      "title": "Explainable artificial intelligence: A survey",
+      "year": 2018,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 0,
+        "year_diff": 5
+      },
+      "candidate": {
+        "arxiv_id": "2312.12936",
+        "title": "Concept-based Explainable Artificial Intelligence: A Survey",
+        "authors": [
+          "Eleonora Poeta",
+          "Gabriele Ciravegna",
+          "Eliana Pastor",
+          "Tania Cerquitelli",
+          "Elena Baralis"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W2889326414",
+      "title": "UMAP: Uniform Manifold Approximation and Projection",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1802.03426",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1802.03426",
+        "title": "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
+        "authors": [
+          "Leland McInnes",
+          "John Healy",
+          "James Melville"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2891488835",
+      "title": "Understanding Convolutional Neural Networks for Text Classification",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1809.08037",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1809.08037",
+        "title": "Understanding Convolutional Neural Networks for Text Classification",
+        "authors": [
+          "Alon Jacovi",
+          "Oren Sar Shalom",
+          "Yoav Goldberg"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2898694742",
+      "title": "Explaining Explanations in AI",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1811.01439",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1811.01439",
+        "title": "Explaining Explanations in AI",
+        "authors": [
+          "Brent Mittelstadt",
+          "Chris Russell",
+          "Sandra Wachter"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2906152891",
+      "title": "Analysis Methods in Neural Language Processing: A Survey",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1812.08951",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1812.08951",
+        "title": "Analysis Methods in Neural Language Processing: A Survey",
+        "authors": [
+          "Yonatan Belinkov",
+          "James Glass"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2921802966",
+      "title": "Unmasking Clever Hans predictors and assessing what machines really learn",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1902.10178",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1902.10178",
+        "title": "Unmasking Clever Hans Predictors and Assessing What Machines Really Learn",
+        "authors": [
+          "Sebastian Lapuschkin",
+          "Stephan Wäldchen",
+          "Alexander Binder",
+          "Grégoire Montavon",
+          "Wojciech Samek",
+          "Klaus-Robert Müller"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2923014074",
+      "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1804.07461",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1804.07461",
+        "title": "GLUE: A Multi-Task Benchmark and Analysis Platform for Natural Language Understanding",
+        "authors": [
+          "Alex Wang",
+          "Amanpreet Singh",
+          "Julian Michael",
+          "Felix Hill",
+          "Omer Levy",
+          "Samuel R. Bowman"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2930926105",
+      "title": "Comprehensive Privacy Analysis of Deep Learning: Passive and Active White-box Inference Attacks against Centralized and Federated Learning",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1812.00910",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1812.00910",
+        "title": "Comprehensive Privacy Analysis of Deep Learning: Passive and Active White-box Inference Attacks against Centralized and Federated Learning",
+        "authors": [
+          "Milad Nasr",
+          "Reza Shokri",
+          "Amir Houmansadr"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2946417913",
+      "title": "BERT Rediscovers the Classical NLP Pipeline",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1905.05950",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1905.05950",
+        "title": "BERT Rediscovers the Classical NLP Pipeline",
+        "authors": [
+          "Ian Tenney",
+          "Dipanjan Das",
+          "Ellie Pavlick"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2946794439",
+      "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1905.09418",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1905.09418",
+        "title": "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can Be Pruned",
+        "authors": [
+          "Elena Voita",
+          "David Talbot",
+          "Fedor Moiseev",
+          "Rico Sennrich",
+          "Ivan Titov"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2952638691",
+      "title": "How Multilingual is Multilingual BERT?",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1906.01502",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1906.01502",
+        "title": "How multilingual is Multilingual BERT?",
+        "authors": [
+          "Telmo Pires",
+          "Eva Schlinger",
+          "Dan Garrette"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2952984539",
+      "title": "Probing Neural Network Comprehension of Natural Language Arguments",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1907.07355",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1907.07355",
+        "title": "Probing Neural Network Comprehension of Natural Language Arguments",
+        "authors": [
+          "Timothy Niven",
+          "Hung-Yu Kao"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2958089299",
+      "title": "A Survey on Explainable Artificial Intelligence (XAI): Toward Medical XAI",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "1907.07374",
+      "verify": {
+        "title_sim": 0.9925,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1907.07374",
+        "title": "A Survey on Explainable Artificial Intelligence (XAI): Towards Medical XAI",
+        "authors": [
+          "Erico Tjoa",
+          "Cuntai Guan"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2962772482",
+      "title": "A survey of methods for explaining black box models",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1802.01933",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1802.01933",
+        "title": "A Survey Of Methods For Explaining Black Box Models",
+        "authors": [
+          "Riccardo Guidotti",
+          "Anna Monreale",
+          "Salvatore Ruggieri",
+          "Franco Turini",
+          "Dino Pedreschi",
+          "Fosca Giannotti"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2962785568",
+      "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1801.03924",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1801.03924",
+        "title": "The Unreasonable Effectiveness of Deep Features as a Perceptual Metric",
+        "authors": [
+          "Richard Zhang",
+          "Phillip Isola",
+          "Alexei A. Efros",
+          "Eli Shechtman",
+          "Oliver Wang"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2962816513",
+      "title": "Pathologies of Neural Models Make Interpretations Difficult",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1804.07781",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1804.07781",
+        "title": "Pathologies of Neural Models Make Interpretations Difficult",
+        "authors": [
+          "Shi Feng",
+          "Eric Wallace",
+          "Alvin Grissom",
+          "Mohit Iyyer",
+          "Pedro Rodriguez",
+          "Jordan Boyd-Graber"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2962843949",
+      "title": "Interpretation of Neural Networks Is Fragile",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1710.10547",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "1710.10547",
+        "title": "Interpretation of Neural Networks is Fragile",
+        "authors": [
+          "Amirata Ghorbani",
+          "Abubakar Abid",
+          "James Zou"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2962858109",
+      "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1610.02391",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1610.02391",
+        "title": "Grad-CAM: Visual Explanations from Deep Networks via Gradient-based Localization",
+        "authors": [
+          "Ramprasaath R. Selvaraju",
+          "Michael Cogswell",
+          "Abhishek Das",
+          "Ramakrishna Vedantam",
+          "Devi Parikh",
+          "Dhruv Batra"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2963018920",
+      "title": "Generating Sentences by Editing Prototypes",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1709.08878",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1709.08878",
+        "title": "Generating Sentences by Editing Prototypes",
+        "authors": [
+          "Kelvin Guu",
+          "Tatsunori B. Hashimoto",
+          "Yonatan Oren",
+          "Percy Liang"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2963064482",
+      "title": "How Important Is a Neuron",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1805.12233",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1805.12233",
+        "title": "How Important Is a Neuron?",
+        "authors": [
+          "Kedar Dhamdhere",
+          "Mukund Sundararajan",
+          "Qiqi Yan"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2963081790",
+      "title": "Interpreting Deep Visual Representations via Network Dissection",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1711.05611",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1711.05611",
+        "title": "Interpreting Deep Visual Representations via Network Dissection",
+        "authors": [
+          "Bolei Zhou",
+          "David Bau",
+          "Aude Oliva",
+          "Antonio Torralba"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2963374347",
+      "title": "Visual interpretability for deep learning: a survey",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1802.00614",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1802.00614",
+        "title": "Visual Interpretability for Deep Learning: a Survey",
+        "authors": [
+          "Quanshi Zhang",
+          "Song-Chun Zhu"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2964027067",
+      "title": "SPINE: SParse Interpretable Neural Embeddings",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1711.08792",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1711.08792",
+        "title": "SPINE: SParse Interpretable Neural Embeddings",
+        "authors": [
+          "Anant Subramanian",
+          "Danish Pruthi",
+          "Harsh Jhamtani",
+          "Taylor Berg-Kirkpatrick",
+          "Eduard Hovy"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W2964159778",
+      "title": "Visualizing and Understanding Neural Models in NLP",
+      "year": 2016,
+      "status": "searched",
+      "arxiv_id": "1506.01066",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1506.01066",
+        "title": "Visualizing and Understanding Neural Models in NLP",
+        "authors": [
+          "Jiwei Li",
+          "Xinlei Chen",
+          "Eduard Hovy",
+          "Dan Jurafsky"
+        ],
+        "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2966280323",
+      "title": "NeuroX: A Toolkit for Analyzing Individual Neurons in Neural Networks",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1812.09359",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1812.09359",
+        "title": "NeuroX: A Toolkit for Analyzing Individual Neurons in Neural Networks",
+        "authors": [
+          "Fahim Dalvi",
+          "Avery Nortonsmith",
+          "D. Anthony Bau",
+          "Yonatan Belinkov",
+          "Hassan Sajjad",
+          "Nadir Durrani",
+          "James Glass"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2970641574",
+      "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1908.10084",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1908.10084",
+        "title": "Sentence-BERT: Sentence Embeddings using Siamese BERT-Networks",
+        "authors": [
+          "Nils Reimers",
+          "Iryna Gurevych"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2970820321",
+      "title": "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1909.01380",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1909.01380",
+        "title": "The Bottom-up Evolution of Representations in the Transformer: A Study with Machine Translation and Language Modeling Objectives",
+        "authors": [
+          "Elena Voita",
+          "Rico Sennrich",
+          "Ivan Titov"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2970862333",
+      "title": "Designing and Interpreting Probes with Control Tasks",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1909.03368",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1909.03368",
+        "title": "Designing and Interpreting Probes with Control Tasks",
+        "authors": [
+          "John Hewitt",
+          "Percy Liang"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2971569798",
+      "title": "How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1909.00512",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1909.00512",
+        "title": "How Contextual are Contextualized Word Representations? Comparing the Geometry of BERT, ELMo, and GPT-2 Embeddings",
+        "authors": [
+          "Kawin Ethayarajh"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W3005086430",
+      "title": "Fooling LIME and SHAP",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "1911.02508",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1911.02508",
+        "title": "Fooling LIME and SHAP: Adversarial Attacks on Post hoc Explanation Methods",
+        "authors": [
+          "Dylan Slack",
+          "Sophie Hilgard",
+          "Emily Jia",
+          "Sameer Singh",
+          "Himabindu Lakkaraju"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W3018827121",
+      "title": "Syntactic Structure from Deep Learning",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2004.10827",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2004.10827",
+        "title": "Syntactic Structure from Deep Learning",
+        "authors": [
+          "Tal Linzen",
+          "Marco Baroni"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3034188538",
+      "title": "Asking and Answering Questions to Evaluate the Factual Consistency of Summaries",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2004.04228",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2004.04228",
+        "title": "Asking and Answering Questions to Evaluate the Factual Consistency of Summaries",
+        "authors": [
+          "Alex Wang",
+          "Kyunghyun Cho",
+          "Mike Lewis"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3034475796",
+      "title": "Explaining Black Box Predictions and Unveiling Data Artifacts through Influence Functions",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2005.06676",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2005.06676",
+        "title": "Explaining Black Box Predictions and Unveiling Data Artifacts through Influence Functions",
+        "authors": [
+          "Xiaochuang Han",
+          "Byron C. Wallace",
+          "Yulia Tsvetkov"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3035371891",
+      "title": "Evaluating Explainable AI: Which Algorithmic Explanations Help Users Predict Model Behavior?",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2005.01831",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2005.01831",
+        "title": "Evaluating Explainable AI: Which Algorithmic Explanations Help Users Predict Model Behavior?",
+        "authors": [
+          "Peter Hase",
+          "Mohit Bansal"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3038035611",
+      "title": "exBERT: A Visual Analysis Tool to Explore Learned Representations in Transformer Models",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "1910.05276",
+      "verify": {
+        "title_sim": 0.9942,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1910.05276",
+        "title": "exBERT: A Visual Analysis Tool to Explore Learned Representations in Transformers Models",
+        "authors": [
+          "Benjamin Hoover",
+          "Hendrik Strobelt",
+          "Sebastian Gehrmann"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W3091782154",
+      "title": "Analyzing Individual Neurons in Pre-trained Language Models",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2010.02695",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2010.02695",
+        "title": "Analyzing Individual Neurons in Pre-trained Language Models",
+        "authors": [
+          "Nadir Durrani",
+          "Hassan Sajjad",
+          "Fahim Dalvi",
+          "Yonatan Belinkov"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3092292656",
+      "title": "The elephant in the interpretability room: Why use attention as explanation when we have saliency methods?",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2010.05607",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2010.05607",
+        "title": "The elephant in the interpretability room: Why use attention as explanation when we have saliency methods?",
+        "authors": [
+          "Jasmijn Bastings",
+          "Katja Filippova"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3093886841",
+      "title": "Not all parameters are born equal: Attention is mostly what you need",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2010.11859",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2010.11859",
+        "title": "Not all parameters are born equal: Attention is mostly what you need",
+        "authors": [
+          "Nikolay Bogoychev"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3097252660",
+      "title": "BERTnesia: Investigating the capture and forgetting of knowledge in BERT",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2010.09313",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2010.09313",
+        "title": "BERTnesia: Investigating the capture and forgetting of knowledge in BERT",
+        "authors": [
+          "Jonas Wallat",
+          "Jaspreet Singh",
+          "Avishek Anand"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3098267758",
+      "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2010.15980",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2010.15980",
+        "title": "AutoPrompt: Eliciting Knowledge from Language Models with Automatically Generated Prompts",
+        "authors": [
+          "Taylor Shin",
+          "Yasaman Razeghi",
+          "Robert L. Logan",
+          "Eric Wallace",
+          "Sameer Singh"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3099878876",
+      "title": "Array programming with NumPy",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2006.10256",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 26,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2006.10256",
+        "title": "Array Programming with NumPy",
+        "authors": [
+          "Charles R. Harris",
+          "K. Jarrod Millman",
+          "Stéfan J. van der Walt",
+          "Ralf Gommers",
+          "Pauli Virtanen",
+          "David Cournapeau",
+          "Eric Wieser",
+          "Julian Taylor",
+          "Sebastian Berg",
+          "Nathaniel J. Smith",
+          "Robert Kern",
+          "Matti Picus",
+          "Stephan Hoyer",
+          "Marten H. van Kerkwijk",
+          "Matthew Brett",
+          "Allan Haldane",
+          "Jaime Fernández del Río",
+          "Mark Wiebe",
+          "Pearu Peterson",
+          "Pierre Gérard-Marchant",
+          "Kevin Sheppard",
+          "Tyler Reddy",
+          "Warren Weckesser",
+          "Hameer Abbasi",
+          "Christoph Gohlke",
+          "Travis E. Oliphant"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3101155149",
+      "title": "A Diagnostic Study of Explainability Techniques for Text Classification",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2009.13295",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2009.13295",
+        "title": "A Diagnostic Study of Explainability Techniques for Text Classification",
+        "authors": [
+          "Pepa Atanasova",
+          "Jakob Grue Simonsen",
+          "Christina Lioma",
+          "Isabelle Augenstein"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3101609372",
+      "title": "Interpretable explanations of black boxes by meaningful perturbation",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1704.03296",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1704.03296",
+        "title": "Interpretable Explanations of Black Boxes by Meaningful Perturbation",
+        "authors": [
+          "Ruth Fong",
+          "Andrea Vedaldi"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W3101662419",
+      "title": "The Language Interpretability Tool: Extensible, Interactive Visualizations and Analysis for NLP Models",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2008.05122",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 11,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2008.05122",
+        "title": "The Language Interpretability Tool: Extensible, Interactive Visualizations and Analysis for NLP Models",
+        "authors": [
+          "Ian Tenney",
+          "James Wexler",
+          "Jasmijn Bastings",
+          "Tolga Bolukbasi",
+          "Andy Coenen",
+          "Sebastian Gehrmann",
+          "Ellen Jiang",
+          "Mahima Pushkarna",
+          "Carey Radebaugh",
+          "Emily Reif",
+          "Ann Yuan"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3102812725",
+      "title": "Intrinsic Probing through Dimension Selection",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2010.02812",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2010.02812",
+        "title": "Intrinsic Probing through Dimension Selection",
+        "authors": [
+          "Lucas Torroba Hennigen",
+          "Adina Williams",
+          "Ryan Cotterell"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3117576675",
+      "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2012.14913",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2012.14913",
+        "title": "Transformer Feed-Forward Layers Are Key-Value Memories",
+        "authors": [
+          "Mor Geva",
+          "Roei Schuster",
+          "Jonathan Berant",
+          "Omer Levy"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3123340107",
+      "title": "BOLD",
+      "year": 2021,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 0,
+        "year_diff": 26
+      },
+      "candidate": {
+        "arxiv_id": "math/9509203v1",
+        "title": "On $\\bold N$-circled $\\bold{H^\\infty}$-domains of holomorphy",
+        "authors": [
+          "Marek Jarnicki",
+          "Peter Pflug"
+        ],
+        "year": 1995
+      }
+    },
+    {
+      "openalex_id": "W3132191748",
+      "title": "Explaining Deep Neural Networks and Beyond: A Review of Methods and Applications",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2003.07631",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2003.07631",
+        "title": "Explaining Deep Neural Networks and Beyond: A Review of Methods and Applications",
+        "authors": [
+          "Wojciech Samek",
+          "Grégoire Montavon",
+          "Sebastian Lapuschkin",
+          "Christopher J. Anders",
+          "Klaus-Robert Müller"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3152409010",
+      "title": "Exploring the Role of BERT Token Representations to Explain Sentence Probing Results",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2104.01477",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2104.01477",
+        "title": "Exploring the Role of BERT Token Representations to Explain Sentence Probing Results",
+        "authors": [
+          "Hosein Mohebbi",
+          "Ali Modarressi",
+          "Mohammad Taher Pilehvar"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3152884768",
+      "title": "Knowledge Neurons in Pretrained Transformers",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2104.08696",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2104.08696",
+        "title": "Knowledge Neurons in Pretrained Transformers",
+        "authors": [
+          "Damai Dai",
+          "Li Dong",
+          "Yaru Hao",
+          "Zhifang Sui",
+          "Baobao Chang",
+          "Furu Wei"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3159900299",
+      "title": "Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2006.00995",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2006.00995",
+        "title": "Amnesic Probing: Behavioral Explanation with Amnesic Counterfactuals",
+        "authors": [
+          "Yanai Elazar",
+          "Shauli Ravfogel",
+          "Alon Jacovi",
+          "Yoav Goldberg"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3166986030",
+      "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2104.05240",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2104.05240",
+        "title": "Factual Probing Is [MASK]: Learning vs. Learning to Recall",
+        "authors": [
+          "Zexuan Zhong",
+          "Dan Friedman",
+          "Danqi Chen"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3170470779",
+      "title": "Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2103.15949",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2103.15949",
+        "title": "Transformer visualization via dictionary learning: contextualized embedding as a linear superposition of transformer factors",
+        "authors": [
+          "Zeyu Yun",
+          "Yubei Chen",
+          "Bruno A Olshausen",
+          "Yann LeCun"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3173787059",
+      "title": "Self-Attention Attribution: Interpreting Information Interactions Inside Transformer",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2004.11207",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2004.11207",
+        "title": "Self-Attention Attribution: Interpreting Information Interactions Inside Transformer",
+        "authors": [
+          "Yaru Hao",
+          "Li Dong",
+          "Furu Wei",
+          "Ke Xu"
+        ],
+        "year": 2020
+      }
+    },
+    {
+      "openalex_id": "W3174086521",
+      "title": "TabNet: Attentive Interpretable Tabular Learning",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "1908.07442",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "1908.07442",
+        "title": "TabNet: Attentive Interpretable Tabular Learning",
+        "authors": [
+          "Sercan O. Arik",
+          "Tomas Pfister"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W3174220540",
+      "title": "The Values Encoded in Machine Learning Research",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2106.15590",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2106.15590",
+        "title": "The Values Encoded in Machine Learning Research",
+        "authors": [
+          "Abeba Birhane",
+          "Pratyusha Kalluri",
+          "Dallas Card",
+          "William Agnew",
+          "Ravit Dotan",
+          "Michelle Bao"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3187467055",
+      "title": "Post-hoc Interpretability for Neural NLP: A Survey",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2108.04840",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2108.04840",
+        "title": "Post-hoc Interpretability for Neural NLP: A Survey",
+        "authors": [
+          "Andreas Madsen",
+          "Siva Reddy",
+          "Sarath Chandar"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3193068792",
+      "title": "Probing Classifiers: Promises, Shortcomings, and Advances",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2102.12452",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2102.12452",
+        "title": "Probing Classifiers: Promises, Shortcomings, and Advances",
+        "authors": [
+          "Yonatan Belinkov"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3196986263",
+      "title": "Neuron-level Interpretation of Deep NLP Models: A Survey",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2108.13138",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2108.13138",
+        "title": "Neuron-level Interpretation of Deep NLP Models: A Survey",
+        "authors": [
+          "Hassan Sajjad",
+          "Nadir Durrani",
+          "Fahim Dalvi"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3200704197",
+      "title": "Incorporating Residual and Normalization Layers into Analysis of Masked Language Models",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2109.07152",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2109.07152",
+        "title": "Incorporating Residual and Normalization Layers into Analysis of Masked Language Models",
+        "authors": [
+          "Goro Kobayashi",
+          "Tatsuki Kuribayashi",
+          "Sho Yokoi",
+          "Kentaro Inui"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3212603771",
+      "title": "Discretized Integrated Gradients for Explaining Language Models",
+      "year": 2021,
+      "status": "searched",
+      "arxiv_id": "2108.13654",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2108.13654",
+        "title": "Discretized Integrated Gradients for Explaining Language Models",
+        "authors": [
+          "Soumya Sanyal",
+          "Xiang Ren"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W3212876771",
+      "title": "Acquisition of chess knowledge in AlphaZero",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2111.09259",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2111.09259",
+        "title": "Acquisition of Chess Knowledge in AlphaZero",
+        "authors": [
+          "Thomas McGrath",
+          "Andrei Kapishnikov",
+          "Nenad Tomašev",
+          "Adam Pearce",
+          "Demis Hassabis",
+          "Been Kim",
+          "Ulrich Paquet",
+          "Vladimir Kramnik"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W4253525579",
+      "title": "Activation Atlas",
+      "year": 2019,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.4762,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "1702.08606",
+        "title": "The Active Atlas: Combining 3D Anatomical Models with Texture Detectors",
+        "authors": [
+          "Yuncong Chen",
+          "Lauren McElvain",
+          "Alex Tolpygo",
+          "Daniel Ferrante",
+          "Harvey Karten",
+          "Partha Mitra",
+          "David Kleinfeld",
+          "Yoav Freund"
+        ],
+        "year": 2017
+      }
+    },
+    {
+      "openalex_id": "W4285127912",
+      "title": "Probing for the Usage of Grammatical Number",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2204.08831",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2204.08831",
+        "title": "Probing for the Usage of Grammatical Number",
+        "authors": [
+          "Karim Lasri",
+          "Tiago Pimentel",
+          "Alessandro Lenci",
+          "Thierry Poibeau",
+          "Ryan Cotterell"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4294955582",
+      "title": "How to Dissect a Muppet: The Structure of Transformer Embedding Spaces",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2206.03529",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2206.03529",
+        "title": "How to Dissect a Muppet: The Structure of Transformer Embedding Spaces",
+        "authors": [
+          "Timothee Mickus",
+          "Denis Paperno",
+          "Mathieu Constant"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4307475457",
+      "title": "Social Simulacra: Creating Populated Prototypes for Social Computing Systems",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2208.04024",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2208.04024",
+        "title": "Social Simulacra: Creating Populated Prototypes for Social Computing Systems",
+        "authors": [
+          "Joon Sung Park",
+          "Lindsay Popowski",
+          "Carrie J. Cai",
+          "Meredith Ringel Morris",
+          "Percy Liang",
+          "Michael S. Bernstein"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4312261477",
+      "title": "Winoground: Probing Vision and Language Models for Visio-Linguistic Compositionality",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2204.03162",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2204.03162",
+        "title": "Winoground: Probing Vision and Language Models for Visio-Linguistic Compositionality",
+        "authors": [
+          "Tristan Thrush",
+          "Ryan Jiang",
+          "Max Bartolo",
+          "Amanpreet Singh",
+          "Adina Williams",
+          "Douwe Kiela",
+          "Candace Ross"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4312516176",
+      "title": "Causal Inference in Natural Language Processing: Estimation, Prediction, Interpretation and Beyond",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2109.00725",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 13,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2109.00725",
+        "title": "Causal Inference in Natural Language Processing: Estimation, Prediction, Interpretation and Beyond",
+        "authors": [
+          "Amir Feder",
+          "Katherine A. Keith",
+          "Emaad Manzoor",
+          "Reid Pryzant",
+          "Dhanya Sridhar",
+          "Zach Wood-Doughty",
+          "Jacob Eisenstein",
+          "Justin Grimmer",
+          "Roi Reichart",
+          "Margaret E. Roberts",
+          "Brandon M. Stewart",
+          "Victor Veitch",
+          "Diyi Yang"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W4378976798",
+      "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neural Networks",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2207.13243",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2207.13243",
+        "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neural Networks",
+        "authors": [
+          "Tilman Räuker",
+          "Anson Ho",
+          "Stephen Casper",
+          "Dylan Hadfield-Menell"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385565472",
+      "title": "DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2211.05655",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2211.05655",
+        "title": "DisentQA: Disentangling Parametric and Contextual Knowledge with Counterfactual Question Answering",
+        "authors": [
+          "Ella Neeman",
+          "Roee Aharoni",
+          "Or Honovich",
+          "Leshem Choshen",
+          "Idan Szpektor",
+          "Omri Abend"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385567134",
+      "title": "Language Models as Agent Models",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2212.01681",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2212.01681",
+        "title": "Language Models as Agent Models",
+        "authors": [
+          "Jacob Andreas"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385569886",
+      "title": "Explaining How Transformers Use Context to Build Predictions",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.12535",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.12535",
+        "title": "Explaining How Transformers Use Context to Build Predictions",
+        "authors": [
+          "Javier Ferrando",
+          "Gerard I. Gállego",
+          "Ioannis Tsiamas",
+          "Marta R. Costa-jussà"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385569933",
+      "title": "Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.01651",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.01651",
+        "title": "Can LMs Learn New Entities from Descriptions? Challenges in Propagating Injected Knowledge",
+        "authors": [
+          "Yasumasa Onoe",
+          "Michael J. Q. Zhang",
+          "Shankar Padmanabhan",
+          "Greg Durrett",
+          "Eunsol Choi"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385570354",
+      "title": "Inseq: An Interpretability Toolkit for Sequence Generation Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2302.13942",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2302.13942",
+        "title": "Inseq: An Interpretability Toolkit for Sequence Generation Models",
+        "authors": [
+          "Gabriele Sarti",
+          "Nils Feldhus",
+          "Ludwig Sickert",
+          "Oskar van der Wal",
+          "Malvina Nissim",
+          "Arianna Bisazza"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385570565",
+      "title": "A Robust Information-Masking Approach for Domain Counterfactual Generation",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.02858",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.02858",
+        "title": "ReMask: A Robust Information-Masking Approach for Domain Counterfactual Generation",
+        "authors": [
+          "Pengfei Hong",
+          "Rishabh Bhardwaj",
+          "Navonil Majumdar",
+          "Somak Aditya",
+          "Soujanya Poria"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385570579",
+      "title": "Entity Tracking in Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.02363",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.02363",
+        "title": "Entity Tracking in Language Models",
+        "authors": [
+          "Najoung Kim",
+          "Sebastian Schuster"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385570929",
+      "title": "Chain-of-Skills: A Configurable Model for Open-Domain Question Answering",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.03130",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.03130",
+        "title": "Chain-of-Skills: A Configurable Model for Open-domain Question Answering",
+        "authors": [
+          "Kaixin Ma",
+          "Hao Cheng",
+          "Yu Zhang",
+          "Xiaodong Liu",
+          "Eric Nyberg",
+          "Jianfeng Gao"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385570965",
+      "title": "Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2212.09095",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2212.09095",
+        "title": "Rethinking the Role of Scale for In-Context Learning: An Interpretability-based Case Study at 66 Billion Scale",
+        "authors": [
+          "Hritik Bansal",
+          "Karthik Gopalakrishnan",
+          "Saket Dingliwal",
+          "Sravan Bodapati",
+          "Katrin Kirchhoff",
+          "Dan Roth"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385571158",
+      "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2212.09251",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 61,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2212.09251",
+        "title": "Discovering Language Model Behaviors with Model-Written Evaluations",
+        "authors": [
+          "Ethan Perez",
+          "Sam Ringer",
+          "Kamilė Lukošiūtė",
+          "Karina Nguyen",
+          "Edwin Chen",
+          "Scott Heiner",
+          "Craig Pettit",
+          "Catherine Olsson",
+          "Sandipan Kundu",
+          "Saurav Kadavath",
+          "Andy Jones",
+          "Anna Chen",
+          "Ben Mann",
+          "Brian Israel",
+          "Bryan Seethor",
+          "Cameron McKinnon",
+          "Christopher Olah",
+          "Da Yan",
+          "Daniela Amodei",
+          "Dario Amodei",
+          "Dawn Drain",
+          "Dustin Li",
+          "Eli Tran-Johnson",
+          "Guro Khundadze",
+          "Jackson Kernion",
+          "James Landis",
+          "Jamie Kerr",
+          "Jared Mueller",
+          "Jeeyoon Hyun",
+          "Joshua Landau",
+          "Kamal Ndousse",
+          "Landon Goldberg",
+          "Liane Lovitt",
+          "Martin Lucas",
+          "Michael Sellitto",
+          "Miranda Zhang",
+          "Neerav Kingsland",
+          "Nelson Elhage",
+          "Nicholas Joseph",
+          "Noemí Mercado",
+          "Nova DasSarma",
+          "Oliver Rausch",
+          "Robin Larson",
+          "Sam McCandlish",
+          "Scott Johnston",
+          "Shauna Kravec",
+          "Sheer El Showk",
+          "Tamera Lanham",
+          "Timothy Telleen-Lawton",
+          "Tom Brown",
+          "Tom Henighan",
+          "Tristan Hume",
+          "Yuntao Bai",
+          "Zac Hatfield-Dodds",
+          "Jack Clark",
+          "Samuel R. Bowman",
+          "Amanda Askell",
+          "Roger Grosse",
+          "Danny Hernandez",
+          "Deep Ganguli",
+          "Evan Hubinger",
+          "Nicholas Schiefer",
+          "Jared Kaplan"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385571276",
+      "title": "Sequential Integrated Gradients: a simple but effective method for explaining language models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.15853",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.15853",
+        "title": "Sequential Integrated Gradients: a simple but effective method for explaining language models",
+        "authors": [
+          "Joseph Enguehard"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571289",
+      "title": "Detecting Edit Failures In Large Language Models: An Improved Specificity Benchmark",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.17553",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.17553",
+        "title": "Detecting Edit Failures In Large Language Models: An Improved Specificity Benchmark",
+        "authors": [
+          "Jason Hoelscher-Obermaier",
+          "Julia Persson",
+          "Esben Kran",
+          "Ioannis Konstas",
+          "Fazl Barez"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571306",
+      "title": "Token-wise Decomposition of Autoregressive Language Model Hidden States for Analyzing Model Predictions",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.10614",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.10614",
+        "title": "Token-wise Decomposition of Autoregressive Language Model Hidden States for Analyzing Model Predictions",
+        "authors": [
+          "Byung-Doh Oh",
+          "William Schuler"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571392",
+      "title": "Causal interventions expose implicit situation models for commonsense language understanding",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2306.03882",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2306.03882",
+        "title": "Causal interventions expose implicit situation models for commonsense language understanding",
+        "authors": [
+          "Takateru Yamakoshi",
+          "James L. McClelland",
+          "Adele E. Goldberg",
+          "Robert D. Hawkins"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571671",
+      "title": "What In-Context Learning “Learns” In-Context: Disentangling Task Recognition and Task Learning",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.09731",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.09731",
+        "title": "What In-Context Learning \"Learns\" In-Context: Disentangling Task Recognition and Task Learning",
+        "authors": [
+          "Jane Pan",
+          "Tianyu Gao",
+          "Howard Chen",
+          "Danqi Chen"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571718",
+      "title": "Backpack Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.16765",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.16765",
+        "title": "Backpack Language Models",
+        "authors": [
+          "John Hewitt",
+          "John Thickstun",
+          "Christopher D. Manning",
+          "Percy Liang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385571791",
+      "title": "Analyzing Transformers in Embedding Space",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2209.02535",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2209.02535",
+        "title": "Analyzing Transformers in Embedding Space",
+        "authors": [
+          "Guy Dar",
+          "Mor Geva",
+          "Ankit Gupta",
+          "Jonathan Berant"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385572504",
+      "title": "What Are You Token About? Dense Retrieval as Distributions Over the Vocabulary",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2212.10380",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2212.10380",
+        "title": "What Are You Token About? Dense Retrieval as Distributions Over the Vocabulary",
+        "authors": [
+          "Ori Ram",
+          "Liat Bezalel",
+          "Adi Zicher",
+          "Yonatan Belinkov",
+          "Jonathan Berant",
+          "Amir Globerson"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385572928",
+      "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2203.14680",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2203.14680",
+        "title": "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary Space",
+        "authors": [
+          "Mor Geva",
+          "Avi Caciularu",
+          "Kevin Ro Wang",
+          "Yoav Goldberg"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385572950",
+      "title": "Analyzing the Mono- and Cross-Lingual Pretraining Dynamics of Multilingual Language Models",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2205.11758",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2205.11758",
+        "title": "Analyzing the Mono- and Cross-Lingual Pretraining Dynamics of Multilingual Language Models",
+        "authors": [
+          "Terra Blevins",
+          "Hila Gonen",
+          "Luke Zettlemoyer"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385572952",
+      "title": "Interpreting Language Models with Contrastive Explanations",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2202.10419",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2202.10419",
+        "title": "Interpreting Language Models with Contrastive Explanations",
+        "authors": [
+          "Kayo Yin",
+          "Graham Neubig"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385573190",
+      "title": "LM-Debugger: An Interactive Tool for Inspection and Intervention in Transformer-Based Language Models",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2204.12130",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2204.12130",
+        "title": "LM-Debugger: An Interactive Tool for Inspection and Intervention in Transformer-Based Language Models",
+        "authors": [
+          "Mor Geva",
+          "Avi Caciularu",
+          "Guy Dar",
+          "Paul Roit",
+          "Shoval Sadde",
+          "Micah Shlain",
+          "Bar Tamir",
+          "Yoav Goldberg"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385573738",
+      "title": "Causal Analysis of Syntactic Agreement Neurons in Multilingual Language Models",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2210.14328",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2210.14328",
+        "title": "Causal Analysis of Syntactic Agreement Neurons in Multilingual Language Models",
+        "authors": [
+          "Aaron Mueller",
+          "Yu Xia",
+          "Tal Linzen"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385574113",
+      "title": "Calibrating Factual Knowledge in Pretrained Language Models",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2210.03329",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2210.03329",
+        "title": "Calibrating Factual Knowledge in Pretrained Language Models",
+        "authors": [
+          "Qingxiu Dong",
+          "Damai Dai",
+          "Yifan Song",
+          "Jingjing Xu",
+          "Zhifang Sui",
+          "Lei Li"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385574244",
+      "title": "Towards Opening the Black Box of Neural Machine Translation: Source and Target Interpretations of the Transformer",
+      "year": 2022,
+      "status": "searched",
+      "arxiv_id": "2205.11631",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2205.11631",
+        "title": "Towards Opening the Black Box of Neural Machine Translation: Source and Target Interpretations of the Transformer",
+        "authors": [
+          "Javier Ferrando",
+          "Gerard I. Gállego",
+          "Belen Alastruey",
+          "Carlos Escolano",
+          "Marta R. Costa-jussà"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4385652328",
+      "title": "Inductive reasoning in humans and large language models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2306.06548",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2306.06548",
+        "title": "Inductive reasoning in humans and large language models",
+        "authors": [
+          "Simon J. Han",
+          "Keith Ransom",
+          "Andrew Perfors",
+          "Charles Kemp"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385805111",
+      "title": "Disentangling Neuron Representations with Concept Vectors",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2304.09707",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2304.09707",
+        "title": "Disentangling Neuron Representations with Concept Vectors",
+        "authors": [
+          "Laura O'Mahony",
+          "Vincent Andrearczyk",
+          "Henning Muller",
+          "Mara Graziani"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385815502",
+      "title": "Improving Data-Efficient Fossil Segmentation via Model Editing",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2210.03879",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2210.03879",
+        "title": "Improving Data-Efficient Fossil Segmentation via Model Editing",
+        "authors": [
+          "Indu Panigrahi",
+          "Ryan Manzuk",
+          "Adam Maloof",
+          "Ruth Fong"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4386076059",
+      "title": "CRAFT: Concept Recursive Activation FacTorization for Explainability",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2211.10154",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2211.10154",
+        "title": "CRAFT: Concept Recursive Activation FacTorization for Explainability",
+        "authors": [
+          "Thomas Fel",
+          "Agustin Picard",
+          "Louis Bethune",
+          "Thibaut Boissin",
+          "David Vigouroux",
+          "Julien Colin",
+          "Rémi Cadène",
+          "Thomas Serre"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4386076465",
+      "title": "Visual DNA: Representing and Comparing Images Using Distributions of Neuron Activations",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2304.10036",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2304.10036",
+        "title": "Visual DNA: Representing and Comparing Images using Distributions of Neuron Activations",
+        "authors": [
+          "Benjamin Ramtoula",
+          "Matthew Gadd",
+          "Paul Newman",
+          "Daniele De Martini"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4386566424",
+      "title": "Crawling The Internal Knowledge-Base of Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2301.12810",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2301.12810",
+        "title": "Crawling the Internal Knowledge-Base of Language Models",
+        "authors": [
+          "Roi Cohen",
+          "Mor Geva",
+          "Jonathan Berant",
+          "Amir Globerson"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4386566638",
+      "title": "Should You Mask 15% in Masked Language Modeling?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2202.08005",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2202.08005",
+        "title": "Should You Mask 15% in Masked Language Modeling?",
+        "authors": [
+          "Alexander Wettig",
+          "Tianyu Gao",
+          "Zexuan Zhong",
+          "Danqi Chen"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4386566794",
+      "title": "Quantifying Context Mixing in Transformers",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2301.12971",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2301.12971",
+        "title": "Quantifying Context Mixing in Transformers",
+        "authors": [
+          "Hosein Mohebbi",
+          "Willem Zuidema",
+          "Grzegorz Chrupała",
+          "Afra Alishahi"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4386566901",
+      "title": "Understanding Transformer Memorization Recall Through Idioms",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2210.03588",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2210.03588",
+        "title": "Understanding Transformer Memorization Recall Through Idioms",
+        "authors": [
+          "Adi Haviv",
+          "Ido Cohen",
+          "Jacob Gidron",
+          "Roei Schuster",
+          "Yoav Goldberg",
+          "Mor Geva"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4386576772",
+      "title": "Shapley Head Pruning: Identifying and Removing Interference in Multilingual Transformers",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2210.05709",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2210.05709",
+        "title": "Shapley Head Pruning: Identifying and Removing Interference in Multilingual Transformers",
+        "authors": [
+          "William Held",
+          "Diyi Yang"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4387507766",
+      "title": "Domain-specific chatbots for science using embeddings",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2306.10067",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2306.10067",
+        "title": "Domain-specific ChatBots for Science using Embeddings",
+        "authors": [
+          "Kevin G. Yager"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4387966251",
+      "title": "AttentionViz: A Global View of Transformer Attention",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.03210",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.03210",
+        "title": "AttentionViz: A Global View of Transformer Attention",
+        "authors": [
+          "Catherine Yeh",
+          "Yida Chen",
+          "Aoyu Wu",
+          "Cynthia Chen",
+          "Fernanda Viégas",
+          "Martin Wattenberg"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4388558411",
+      "title": "Operationalising Representation in Natural Language Processing",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2306.08193",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2306.08193",
+        "title": "Operationalising Representation in Natural Language Processing",
+        "authors": [
+          "Jacqueline Harding"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4388876471",
+      "title": "Simultaneous energy and mass calibration of large-radius jets with the ATLAS detector using a deep neural network",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2311.08885",
+        "title": "Simultaneous energy and mass calibration of large-radius jets with the ATLAS detector using a deep neural network",
+        "authors": [
+          " ATLAS Collaboration"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4388979610",
+      "title": "RoFormer: Enhanced transformer with Rotary Position Embedding",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2104.09864",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2104.09864",
+        "title": "RoFormer: Enhanced Transformer with Rotary Position Embedding",
+        "authors": [
+          "Jianlin Su",
+          "Yu Lu",
+          "Shengfeng Pan",
+          "Ahmed Murtadha",
+          "Bo Wen",
+          "Yunfeng Liu"
+        ],
+        "year": 2021
+      }
+    },
+    {
+      "openalex_id": "W4389518242",
+      "title": "Identifying and Adapting Transformer-Components Responsible for Gender Bias in an English Language Model",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.12611",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.12611",
+        "title": "Identifying and Adapting Transformer-Components Responsible for Gender Bias in an English Language Model",
+        "authors": [
+          "Abhijith Chintam",
+          "Rahel Beloch",
+          "Willem Zuidema",
+          "Michael Hanna",
+          "Oskar van der Wal"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518250",
+      "title": "Rigorously Assessing Natural Language Explanations of Neurons",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2309.10312",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2309.10312",
+        "title": "Rigorously Assessing Natural Language Explanations of Neurons",
+        "authors": [
+          "Jing Huang",
+          "Atticus Geiger",
+          "Karel D'Oosterlinck",
+          "Zhengxuan Wu",
+          "Christopher Potts"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518294",
+      "title": "Unveiling Multilinguality in Transformer Models: Exploring Language Specificity in Feed-Forward Networks",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.15552",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.15552",
+        "title": "Unveiling Multilinguality in Transformer Models: Exploring Language Specificity in Feed-Forward Networks",
+        "authors": [
+          "Sunit Bhattacharya",
+          "Ondrej Bojar"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518382",
+      "title": "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2309.00941",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2309.00941",
+        "title": "Emergent Linear Representations in World Models of Self-Supervised Sequence Models",
+        "authors": [
+          "Neel Nanda",
+          "Andrew Lee",
+          "Martin Wattenberg"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518420",
+      "title": "Why Bother with Geometry? On the Relevance of Linear Decompositions of Transformer Embeddings",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.06977",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.06977",
+        "title": "Why bother with geometry? On the relevance of linear decompositions of Transformer embeddings",
+        "authors": [
+          "Timothee Mickus",
+          "Raúl Vázquez"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518433",
+      "title": "Memory Injections: Correcting Multi-Hop Reasoning Failures During Inference in Transformer-Based Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2309.05605",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2309.05605",
+        "title": "Memory Injections: Correcting Multi-Hop Reasoning Failures during Inference in Transformer-Based Language Models",
+        "authors": [
+          "Mansi Sakarvadia",
+          "Aswathy Ajith",
+          "Arham Khan",
+          "Daniel Grzenda",
+          "Nathaniel Hudson",
+          "André Bauer",
+          "Kyle Chard",
+          "Ian Foster"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518626",
+      "title": "Are Structural Concepts Universal in Transformer Language Models? Towards Interpretable Cross-Lingual Generalization",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.12794",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.12794",
+        "title": "Are Structural Concepts Universal in Transformer Language Models? Towards Interpretable Cross-Lingual Generalization",
+        "authors": [
+          "Ningyu Xu",
+          "Qi Zhang",
+          "Jingting Ye",
+          "Menghan Zhang",
+          "Xuanjing Huang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518648",
+      "title": "Unnatural language processing: How do language models handle machine-generated prompts?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.15829",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.15829",
+        "title": "Unnatural language processing: How do language models handle machine-generated prompts?",
+        "authors": [
+          "Corentin Kervadec",
+          "Francesca Franzon",
+          "Marco Baroni"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518654",
+      "title": "Give Me the Facts! A Survey on Factual Knowledge Probing in Pre-trained Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.16570",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.16570",
+        "title": "Give Me the Facts! A Survey on Factual Knowledge Probing in Pre-trained Language Models",
+        "authors": [
+          "Paul Youssef",
+          "Osman Alperen Koraş",
+          "Meijie Li",
+          "Jörg Schlötterer",
+          "Christin Seifert"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518779",
+      "title": "Cognitive Dissonance: Why Do Language Model Outputs Disagree with Internal Representations of Truthfulness?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2312.03729",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2312.03729",
+        "title": "Cognitive Dissonance: Why Do Language Model Outputs Disagree with Internal Representations of Truthfulness?",
+        "authors": [
+          "Kevin Liu",
+          "Stephen Casper",
+          "Dylan Hadfield-Menell",
+          "Jacob Andreas"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518797",
+      "title": "Can We Edit Factual Knowledge by In-Context Learning?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.12740",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.12740",
+        "title": "Can We Edit Factual Knowledge by In-Context Learning?",
+        "authors": [
+          "Ce Zheng",
+          "Lei Li",
+          "Qingxiu Dong",
+          "Yuxuan Fan",
+          "Zhiyong Wu",
+          "Jingjing Xu",
+          "Baobao Chang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518993",
+      "title": "Evaluating Dependencies in Fact Editing for Language Models: Specificity and Implication Awareness",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2312.01858",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2312.01858",
+        "title": "Evaluating Dependencies in Fact Editing for Language Models: Specificity and Implication Awareness",
+        "authors": [
+          "Zichao Li",
+          "Ines Arous",
+          "Siva Reddy",
+          "Jackie C. K. Cheung"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389518997",
+      "title": "In-Context Learning Creates Task Vectors",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.15916",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.15916",
+        "title": "In-Context Learning Creates Task Vectors",
+        "authors": [
+          "Roee Hendel",
+          "Mor Geva",
+          "Amir Globerson"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519056",
+      "title": "A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.15054",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.15054",
+        "title": "A Mechanistic Interpretation of Arithmetic Reasoning in Language Models using Causal Mediation Analysis",
+        "authors": [
+          "Alessandro Stolfo",
+          "Yonatan Belinkov",
+          "Mrinmaya Sachan"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519122",
+      "title": "Editing Common Sense in Transformers",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.14956",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.14956",
+        "title": "Editing Common Sense in Transformers",
+        "authors": [
+          "Anshita Gupta",
+          "Debanjan Mondal",
+          "Akshay Krishna Sheshadri",
+          "Wenlong Zhao",
+          "Xiang Lorraine Li",
+          "Sarah Wiegreffe",
+          "Niket Tandon"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519291",
+      "title": "Enhancing Chat Language Models by Scaling High-quality Instructional Conversations",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.14233",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.14233",
+        "title": "Enhancing Chat Language Models by Scaling High-quality Instructional Conversations",
+        "authors": [
+          "Ning Ding",
+          "Yulin Chen",
+          "Bokai Xu",
+          "Yujia Qin",
+          "Zhi Zheng",
+          "Shengding Hu",
+          "Zhiyuan Liu",
+          "Maosong Sun",
+          "Bowen Zhou"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519364",
+      "title": "FactKB: Generalizable Factuality Evaluation using Language Models Enhanced with Factual Knowledge",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.08281",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.08281",
+        "title": "FactKB: Generalizable Factuality Evaluation using Language Models Enhanced with Factual Knowledge",
+        "authors": [
+          "Shangbin Feng",
+          "Vidhisha Balachandran",
+          "Yuyang Bai",
+          "Yulia Tsvetkov"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519384",
+      "title": "Interpreting Embedding Spaces by Conceptualization",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2209.00445",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2209.00445",
+        "title": "Interpreting Embedding Spaces by Conceptualization",
+        "authors": [
+          "Adi Simhi",
+          "Shaul Markovitch"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4389519509",
+      "title": "Can LLMs Facilitate Interpretation of Pre-trained Language Models?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.13386",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.13386",
+        "title": "Can LLMs facilitate interpretation of pre-trained language models?",
+        "authors": [
+          "Basel Mousi",
+          "Nadir Durrani",
+          "Fahim Dalvi"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519513",
+      "title": "DUnE: Dataset for Unified Editing",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2311.16087",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2311.16087",
+        "title": "DUnE: Dataset for Unified Editing",
+        "authors": [
+          "Afra Feyza Akyürek",
+          "Eric Pan",
+          "Garry Kuwanto",
+          "Derry Wijaya"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389519586",
+      "title": "MQuAKE: Assessing Knowledge Editing in Language Models via Multi-Hop Questions",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.14795",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.14795",
+        "title": "MQuAKE: Assessing Knowledge Editing in Language Models via Multi-Hop Questions",
+        "authors": [
+          "Zexuan Zhong",
+          "Zhengxuan Wu",
+          "Christopher D. Manning",
+          "Christopher Potts",
+          "Danqi Chen"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520089",
+      "title": "Plausibility Processing in Transformer Language Models: Focusing on the Role of Attention Heads in GPT",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.13824",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.13824",
+        "title": "Plausibility Processing in Transformer Language Models: Focusing on the Role of Attention Heads in GPT",
+        "authors": [
+          "Soo Hyun Ryu"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520123",
+      "title": "Do Transformers Parse while Predicting the Masked Word?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2303.08117",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2303.08117",
+        "title": "Do Transformers Parse while Predicting the Masked Word?",
+        "authors": [
+          "Haoyu Zhao",
+          "Abhishek Panigrahi",
+          "Rong Ge",
+          "Sanjeev Arora"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520348",
+      "title": "Characterizing Mechanisms for Factual Recall in Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.15910",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.15910",
+        "title": "Characterizing Mechanisms for Factual Recall in Language Models",
+        "authors": [
+          "Qinan Yu",
+          "Jack Merullo",
+          "Ellie Pavlick"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520358",
+      "title": "When Language Models Fall in Love: Animacy Processing in Transformer Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.15004",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.15004",
+        "title": "When Language Models Fall in Love: Animacy Processing in Transformer Language Models",
+        "authors": [
+          "Michael Hanna",
+          "Yonatan Belinkov",
+          "Sandro Pezzelle"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520370",
+      "title": "Editing Large Language Models: Problems, Methods, and Opportunities",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.13172",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.13172",
+        "title": "Editing Large Language Models: Problems, Methods, and Opportunities",
+        "authors": [
+          "Yunzhi Yao",
+          "Peng Wang",
+          "Bozhong Tian",
+          "Siyuan Cheng",
+          "Zhoubo Li",
+          "Shumin Deng",
+          "Huajun Chen",
+          "Ningyu Zhang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520374",
+      "title": "Cross-Lingual Consistency of Factual Knowledge in Multilingual Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.10378",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.10378",
+        "title": "Cross-Lingual Consistency of Factual Knowledge in Multilingual Language Models",
+        "authors": [
+          "Jirui Qi",
+          "Raquel Fernández",
+          "Arianna Bisazza"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520380",
+      "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2304.14767",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2304.14767",
+        "title": "Dissecting Recall of Factual Associations in Auto-Regressive Language Models",
+        "authors": [
+          "Mor Geva",
+          "Jasmijn Bastings",
+          "Katja Filippova",
+          "Amir Globerson"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389520743",
+      "title": "DSI++: Updating Transformer Memory with New Documents",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2212.09744",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 9,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2212.09744",
+        "title": "DSI++: Updating Transformer Memory with New Documents",
+        "authors": [
+          "Sanket Vaibhav Mehta",
+          "Jai Gupta",
+          "Yi Tay",
+          "Mostafa Dehghani",
+          "Vinh Q. Tran",
+          "Jinfeng Rao",
+          "Marc Najork",
+          "Emma Strubell",
+          "Donald Metzler"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4389521021",
+      "title": "Future Lens: Anticipating Subsequent Tokens from a Single Hidden State",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2311.04897",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2311.04897",
+        "title": "Future Lens: Anticipating Subsequent Tokens from a Single Hidden State",
+        "authors": [
+          "Koyena Pal",
+          "Jiuding Sun",
+          "Andrew Yuan",
+          "Byron C. Wallace",
+          "David Bau"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389521044",
+      "title": "Humans and language models diverge when predicting repeating text",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.06408",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.06408",
+        "title": "Humans and language models diverge when predicting repeating text",
+        "authors": [
+          "Aditya R. Vaidya",
+          "Javier Turek",
+          "Alexander G. Huth"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389523672",
+      "title": "Emptying the Ocean with a Spoon: Should We Edit Models?",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.11958",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.11958",
+        "title": "Emptying the Ocean with a Spoon: Should We Edit Models?",
+        "authors": [
+          "Yuval Pinter",
+          "Michael Elhadad"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389523782",
+      "title": "Emergence of Abstract State Representations in Embodied Sequence Modeling",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2311.02171",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2311.02171",
+        "title": "Emergence of Abstract State Representations in Embodied Sequence Modeling",
+        "authors": [
+          "Tian Yun",
+          "Zilai Zeng",
+          "Kunal Handa",
+          "Ashish V. Thapliyal",
+          "Bo Pang",
+          "Ellie Pavlick",
+          "Chen Sun"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389523811",
+      "title": "Look-back Decoding for Open-Ended Text Generation",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.13477",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.13477",
+        "title": "Look-back Decoding for Open-Ended Text Generation",
+        "authors": [
+          "Nan Xu",
+          "Chunting Zhou",
+          "Asli Celikyilmaz",
+          "Xuezhe Ma"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389523892",
+      "title": "DialGuide: Aligning Dialogue Model Behavior with Developer Guidelines",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2212.10557",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2212.10557",
+        "title": "DialGuide: Aligning Dialogue Model Behavior with Developer Guidelines",
+        "authors": [
+          "Prakhar Gupta",
+          "Yang Liu",
+          "Di Jin",
+          "Behnam Hedayatnia",
+          "Spandana Gella",
+          "Sijia Liu",
+          "Patrick Lange",
+          "Julia Hirschberg",
+          "Dilek Hakkani-Tur"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4389523945",
+      "title": "Towards a Mechanistic Interpretation of Multi-Step Reasoning Capabilities of Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.14491",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.14491",
+        "title": "Towards a Mechanistic Interpretation of Multi-Step Reasoning Capabilities of Language Models",
+        "authors": [
+          "Yifan Hou",
+          "Jiaoda Li",
+          "Yu Fei",
+          "Alessandro Stolfo",
+          "Wangchunshu Zhou",
+          "Guangtao Zeng",
+          "Antoine Bosselut",
+          "Mrinmaya Sachan"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389524066",
+      "title": "Meta-Learning Online Adaptation of Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.15076",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.15076",
+        "title": "Meta-Learning Online Adaptation of Language Models",
+        "authors": [
+          "Nathan Hu",
+          "Eric Mitchell",
+          "Christopher D. Manning",
+          "Chelsea Finn"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389524330",
+      "title": "DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.20138",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.20138",
+        "title": "DEPN: Detecting and Editing Privacy Neurons in Pretrained Language Models",
+        "authors": [
+          "Xinwei Wu",
+          "Junzhuo Li",
+          "Minghui Xu",
+          "Weilong Dong",
+          "Shuangzhi Wu",
+          "Chao Bian",
+          "Deyi Xiong"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4389524389",
+      "title": "Self-Detoxifying Language Models via Toxification Reversal",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2310.09573",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.09573",
+        "title": "Self-Detoxifying Language Models via Toxification Reversal",
+        "authors": [
+          "Chak Tou Leong",
+          "Yi Cheng",
+          "Jiashuo Wang",
+          "Jian Wang",
+          "Wenjie Li"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4390190013",
+      "title": "Multimodal Neurons in Pretrained Text-Only Transformers",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2308.01544",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2308.01544",
+        "title": "Multimodal Neurons in Pretrained Text-Only Transformers",
+        "authors": [
+          "Sarah Schwettmann",
+          "Neil Chowdhury",
+          "Samuel Klein",
+          "David Bau",
+          "Antonio Torralba"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4390190202",
+      "title": "Towards Vision-Language Mechanistic Interpretability: A Causal Tracing Tool for BLIP",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2308.14179",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2308.14179",
+        "title": "Towards Vision-Language Mechanistic Interpretability: A Causal Tracing Tool for BLIP",
+        "authors": [
+          "Vedant Palit",
+          "Rohan Pandey",
+          "Aryaman Arora",
+          "Paul Pu Liang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4390467836",
+      "title": "Seeing Is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.08746",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.08746",
+        "title": "Seeing is Believing: Brain-Inspired Modular Training for Mechanistic Interpretability",
+        "authors": [
+          "Ziming Liu",
+          "Eric Gan",
+          "Max Tegmark"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4390490761",
+      "title": "Explainability for Large Language Models: A Survey",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2309.01029",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 9,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2309.01029",
+        "title": "Explainability for Large Language Models: A Survey",
+        "authors": [
+          "Haiyan Zhao",
+          "Hanjie Chen",
+          "Fan Yang",
+          "Ninghao Liu",
+          "Huiqi Deng",
+          "Hengyi Cai",
+          "Shuaiqiang Wang",
+          "Dawei Yin",
+          "Mengnan Du"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4390820828",
+      "title": "Real sparks of artificial intelligence and the importance of inner interpretability",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2402.00901",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2402.00901",
+        "title": "Real Sparks of Artificial Intelligence and the Importance of Inner Interpretability",
+        "authors": [
+          "Alex Grzankowski"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4391215636",
+      "title": "Talking about Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2212.03551",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2212.03551",
+        "title": "Talking About Large Language Models",
+        "authors": [
+          "Murray Shanahan"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4392112307",
+      "title": "Mode combinability: Exploring convex combinations of permutation aligned models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.11511",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.11511",
+        "title": "Mode Combinability: Exploring Convex Combinations of Permutation Aligned Models",
+        "authors": [
+          "Adrián Csiszárik",
+          "Melinda F. Kiss",
+          "Péter Kőrösi-Szabó",
+          "Márton Muntag",
+          "Gergely Papp",
+          "Dániel Varga"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4392942881",
+      "title": "Measuring and Modifying Factual Knowledge in Large Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2306.06264",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2306.06264",
+        "title": "Measuring and Modifying Factual Knowledge in Large Language Models",
+        "authors": [
+          "Pouya Pezeshkpour"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393146683",
+      "title": "Truth Forest: Toward Multi-Scale Truthfulness in Large Language Models through Intervention without Tuning",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.17484",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.17484",
+        "title": "Truth Forest: Toward Multi-Scale Truthfulness in Large Language Models through Intervention without Tuning",
+        "authors": [
+          "Zhongzhi Chen",
+          "Xingwu Sun",
+          "Xianfeng Jiao",
+          "Fengzong Lian",
+          "Zhanhui Kang",
+          "Di Wang",
+          "Cheng-Zhong Xu"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393147065",
+      "title": "Sparsity-Guided Holistic Explanation for LLMs with Interpretable Inference-Time Intervention",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.15033",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.15033",
+        "title": "Sparsity-Guided Holistic Explanation for LLMs with Interpretable Inference-Time Intervention",
+        "authors": [
+          "Zhen Tan",
+          "Tianlong Chen",
+          "Zhenyu Zhang",
+          "Huan Liu"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393147125",
+      "title": "PMET: Precise Model Editing in a Transformer",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.08742",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.08742",
+        "title": "PMET: Precise Model Editing in a Transformer",
+        "authors": [
+          "Xiaopeng Li",
+          "Shasha Li",
+          "Shezheng Song",
+          "Jing Yang",
+          "Jun Ma",
+          "Jie Yu"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393147147",
+      "title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.13198",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.13198",
+        "title": "Journey to the Center of the Knowledge Neurons: Discoveries of Language-Independent Knowledge Neurons and Degenerate Knowledge Neurons",
+        "authors": [
+          "Yuheng Chen",
+          "Pengfei Cao",
+          "Yubo Chen",
+          "Kang Liu",
+          "Jun Zhao"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393147175",
+      "title": "Separate the Wheat from the Chaff: Model Deficiency Unlearning via Parameter-Efficient Module Operation",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.08090",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.08090",
+        "title": "Separate the Wheat from the Chaff: Model Deficiency Unlearning via Parameter-Efficient Module Operation",
+        "authors": [
+          "Xinshuo Hu",
+          "Dongfang Li",
+          "Baotian Hu",
+          "Zihao Zheng",
+          "Zhenyu Liu",
+          "Min Zhang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393148616",
+      "title": "Adversarial Attacks on the Interpretation of Neuron Activation Maximization",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2306.07397",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2306.07397",
+        "title": "Adversarial Attacks on the Interpretation of Neuron Activation Maximization",
+        "authors": [
+          "Geraldin Nanfack",
+          "Alexander Fulleringer",
+          "Jonathan Marty",
+          "Michael Eickenberg",
+          "Eugene Belilovsky"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393152647",
+      "title": "MELO: Enhancing Model Editing with Neuron-Indexed Dynamic LoRA",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.11795",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.11795",
+        "title": "MELO: Enhancing Model Editing with Neuron-Indexed Dynamic LoRA",
+        "authors": [
+          "Lang Yu",
+          "Qin Chen",
+          "Jie Zhou",
+          "Liang He"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393156673",
+      "title": "Measuring Self-Supervised Representation Quality for Downstream Classification Using Discriminative Features",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2203.01881",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2203.01881",
+        "title": "Measuring Self-Supervised Representation Quality for Downstream Classification using Discriminative Features",
+        "authors": [
+          "Neha Kalibhat",
+          "Kanika Narang",
+          "Hamed Firooz",
+          "Maziar Sanjabi",
+          "Soheil Feizi"
+        ],
+        "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4393157523",
+      "title": "Fairness-Aware Structured Pruning in Transformers",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.15398",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.15398",
+        "title": "Fairness-Aware Structured Pruning in Transformers",
+        "authors": [
+          "Abdelrahman Zayed",
+          "Goncalo Mordido",
+          "Samira Shabanian",
+          "Ioana Baldini",
+          "Sarath Chandar"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4393869221",
+      "title": "Trillion Parameter AI Serving Infrastructure for Scientific Discovery: A Survey and Vision",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2402.03480",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 15,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2402.03480",
+        "title": "Trillion Parameter AI Serving Infrastructure for Scientific Discovery: A Survey and Vision",
+        "authors": [
+          "Nathaniel Hudson",
+          "J. Gregory Pauloski",
+          "Matt Baughman",
+          "Alok Kamatar",
+          "Mansi Sakarvadia",
+          "Logan Ward",
+          "Ryan Chard",
+          "André Bauer",
+          "Maksim Levental",
+          "Wenyi Wang",
+          "Will Engler",
+          "Owen Price Skelly",
+          "Ben Blaiszik",
+          "Rick Stevens",
+          "Kyle Chard",
+          "Ian Foster"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4394743141",
+      "title": "Evaluating the Ripple Effects of Knowledge Editing in Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2307.12976",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2307.12976",
+        "title": "Evaluating the Ripple Effects of Knowledge Editing in Language Models",
+        "authors": [
+          "Roi Cohen",
+          "Eden Biran",
+          "Ori Yoran",
+          "Amir Globerson",
+          "Mor Geva"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4395064954",
+      "title": "HiVG: Hierarchical Multimodal Fine-grained Modulation for Visual Grounding",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2404.13400",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2404.13400",
+        "title": "HiVG: Hierarchical Multimodal Fine-grained Modulation for Visual Grounding",
+        "authors": [
+          "Linhui Xiao",
+          "Xiaoshan Yang",
+          "Fang Peng",
+          "Yaowei Wang",
+          "Changsheng Xu"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4395101889",
+      "title": "Editing Large Language Models",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2402.05827",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2402.05827",
+        "title": "On the Robustness of Editing Large Language Models",
+        "authors": [
+          "Xinbei Ma",
+          "Tianjie Ju",
+          "Jiyang Qiu",
+          "Zhuosheng Zhang",
+          "Hai Zhao",
+          "Lifeng Liu",
+          "Yulong Wang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4395481548",
+      "title": "In Silico Sociology: Forecasting COVID-19 Polarization with Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2407.11190",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2407.11190",
+        "title": "In Silico Sociology: Forecasting COVID-19 Polarization with Large Language Models",
+        "authors": [
+          "Austin C. Kozlowski",
+          "Hyunku Kwon",
+          "James A. Evans"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4399281666",
+      "title": "Evaluating language models for mathematics through interactions",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2306.01694",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 14,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2306.01694",
+        "title": "Evaluating Language Models for Mathematics through Interactions",
+        "authors": [
+          "Katherine M. Collins",
+          "Albert Q. Jiang",
+          "Simon Frieder",
+          "Lionel Wong",
+          "Miri Zilka",
+          "Umang Bhatt",
+          "Thomas Lukasiewicz",
+          "Yuhuai Wu",
+          "Joshua B. Tenenbaum",
+          "William Hart",
+          "Timothy Gowers",
+          "Wenda Li",
+          "Adrian Weller",
+          "Mateja Jamnik"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4399768519",
+      "title": "LUNA: A Model-Based Universal Analysis Framework for Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2310.14211",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2310.14211",
+        "title": "LUNA: A Model-Based Universal Analysis Framework for Large Language Models",
+        "authors": [
+          "Da Song",
+          "Xuan Xie",
+          "Jiayang Song",
+          "Derui Zhu",
+          "Yuheng Huang",
+          "Felix Juefei-Xu",
+          "Lei Ma"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4399790320",
+      "title": "Large Knowledge Model: Perspectives and Challenges",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.02706",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.02706",
+        "title": "Large Knowledge Model: Perspectives and Challenges",
+        "authors": [
+          "Huajun Chen"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4400141999",
+      "title": "Which Neurons Matter in IR? Applying Integrated Gradients-based Methods to Understand Cross-Encoders",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2406.19309",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2406.19309",
+        "title": "Which Neurons Matter in IR? Applying Integrated Gradients-based Methods to Understand Cross-Encoders",
+        "authors": [
+          "Mathias Vast",
+          "Basile Van Cooten",
+          "Laure Soulier",
+          "Benjamin Piwowarski"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4400525779",
+      "title": "Axiomatic Causal Interventions for Reverse Engineering Relevance Computation in Neural Retrieval Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2405.02503",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2405.02503",
+        "title": "Axiomatic Causal Interventions for Reverse Engineering Relevance Computation in Neural Retrieval Models",
+        "authors": [
+          "Catherine Chen",
+          "Jack Merullo",
+          "Carsten Eickhoff"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4400644218",
+      "title": "A Survey on Symbolic Knowledge Distillation of Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2408.10210",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2408.10210",
+        "title": "A Survey on Symbolic Knowledge Distillation of Large Language Models",
+        "authors": [
+          "Kamal Acharya",
+          "Alvaro Velasquez",
+          "Houbing Herbert Song"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4400723242",
+      "title": "Arithmetic with language models: From memorization to computation",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.01154",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.01154",
+        "title": "Arithmetic with Language Models: from Memorization to Computation",
+        "authors": [
+          "Davide Maltoni",
+          "Matteo Ferrara"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4400977996",
+      "title": "Exploring the reversal curse and other deductive logical reasoning in BERT and GPT-based large language models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.03633",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.03633",
+        "title": "Exploring the Reversal Curse and Other Deductive Logical Reasoning in BERT and GPT-Based Large Language Models",
+        "authors": [
+          "Da Wu",
+          "Jingye Yang",
+          "Kai Wang"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4401042420",
+      "title": "Language Models Implement Simple Word2Vec-style Vector Arithmetic",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2305.16130",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2305.16130",
+        "title": "Language Models Implement Simple Word2Vec-style Vector Arithmetic",
+        "authors": [
+          "Jack Merullo",
+          "Carsten Eickhoff",
+          "Ellie Pavlick"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4401389494",
+      "title": "The problem of alignment",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2401.00210",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2401.00210",
+        "title": "The Problem of Alignment",
+        "authors": [
+          "Tsvetelina Hristova",
+          "Liam Magee",
+          "Karen Soldatic"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4401661463",
+      "title": "Mechanistic interpretability of large language models with applications to the financial services industry",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2407.11215",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2407.11215",
+        "title": "Mechanistic interpretability of large language models with applications to the financial services industry",
+        "authors": [
+          "Ashkan Golgoon",
+          "Khashayar Filom",
+          "Arjun Ravi Kannan"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4401702120",
+      "title": "Towards a science exocortex",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2406.17809",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2406.17809",
+        "title": "Towards a Science Exocortex",
+        "authors": [
+          "Kevin G. Yager"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4401863263",
+      "title": "On Early Detection of Hallucinations in Factual Question Answering",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.14183",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.14183",
+        "title": "On Early Detection of Hallucinations in Factual Question Answering",
+        "authors": [
+          "Ben Snyder",
+          "Marius Moisescu",
+          "Muhammad Bilal Zafar"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4401863475",
+      "title": "Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2407.12858",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2407.12858",
+        "title": "Grounding and Evaluation for Large Language Models: Practical Challenges and Lessons Learned (Survey)",
+        "authors": [
+          "Krishnaram Kenthapadi",
+          "Mehrnoosh Sameki",
+          "Ankur Taly"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4401863775",
+      "title": "Prompt Perturbation in Retrieval-Augmented Generation based Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2402.07179",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2402.07179",
+        "title": "Prompt Perturbation in Retrieval-Augmented Generation based Large Language Models",
+        "authors": [
+          "Zhibo Hu",
+          "Chen Wang",
+          "Yanfeng Shu",
+          " Helen",
+          " Paik",
+          "Liming Zhu"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4402351622",
+      "title": "Enhancing Event Causality Identification with Rationale and Structure-Aware Causal Question Answering",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2403.11129",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2403.11129",
+        "title": "Enhancing Event Causality Identification with Rationale and Structure-Aware Causal Question Answering",
+        "authors": [
+          "Baiyan Zhang",
+          "Qin Chen",
+          "Jie Zhou",
+          "Jian Jin",
+          "Liang He"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4402670703",
+      "title": "Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2402.18154",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 9,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2402.18154",
+        "title": "Cutting Off the Head Ends the Conflict: A Mechanism for Interpreting and Mitigating Knowledge Conflicts in Language Models",
+        "authors": [
+          "Zhuoran Jin",
+          "Pengfei Cao",
+          "Hongbang Yuan",
+          "Yubo Chen",
+          "Jiexin Xu",
+          "Huaijun Li",
+          "Xiaojian Jiang",
+          "Kang Liu",
+          "Jun Zhao"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4402671231",
+      "title": "Steering Llama 2 via Contrastive Activation Addition",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2312.06681",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2312.06681",
+        "title": "Steering Llama 2 via Contrastive Activation Addition",
+        "authors": [
+          "Nina Panickssery",
+          "Nick Gabrieli",
+          "Julian Schulz",
+          "Meg Tong",
+          "Evan Hubinger",
+          "Alexander Matt Turner"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4402702975",
+      "title": "Overcoming Generic Knowledge Loss with Selective Parameter Update",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.12462",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.12462",
+        "title": "Overcoming Generic Knowledge Loss with Selective Parameter Update",
+        "authors": [
+          "Wenxuan Zhang",
+          "Paul Janson",
+          "Rahaf Aljundi",
+          "Mohamed Elhoseiny"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4402715906",
+      "title": "MACE: Mass Concept Erasure in Diffusion Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2403.06135",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2403.06135",
+        "title": "MACE: Mass Concept Erasure in Diffusion Models",
+        "authors": [
+          "Shilin Lu",
+          "Zilan Wang",
+          "Leyang Li",
+          "Yanzhu Liu",
+          "Adams Wai-Kin Kong"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403223051",
+      "title": "Drowzee: Metamorphic Testing for Fact-Conflicting Hallucination Detection in Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2405.00648",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2405.00648",
+        "title": "Drowzee: Metamorphic Testing for Fact-Conflicting Hallucination Detection in Large Language Models",
+        "authors": [
+          "Ningke Li",
+          "Yuekang Li",
+          "Yi Liu",
+          "Ling Shi",
+          "Kailong Wang",
+          "Haoyu Wang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403536772",
+      "title": "Efficient Detection of Toxic Prompts in Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2408.11727",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2408.11727",
+        "title": "Efficient Detection of Toxic Prompts in Large Language Models",
+        "authors": [
+          "Yi Liu",
+          "Junzhe Yu",
+          "Huijia Sun",
+          "Ling Shi",
+          "Gelei Deng",
+          "Yuqi Chen",
+          "Yang Liu"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403577370",
+      "title": "Editing Factual Knowledge and Explanatory Ability of Medical Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2402.18099",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 11,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2402.18099",
+        "title": "Editing Factual Knowledge and Explanatory Ability of Medical Large Language Models",
+        "authors": [
+          "Derong Xu",
+          "Ziheng Zhang",
+          "Zhihong Zhu",
+          "Zhenxi Lin",
+          "Qidong Liu",
+          "Xian Wu",
+          "Tong Xu",
+          "Wanyu Wang",
+          "Yuyang Ye",
+          "Xiangyu Zhao",
+          "Enhong Chen",
+          "Yefeng Zheng"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403754522",
+      "title": "Not another imputation method: A transformer-based model for missing values in tabular datasets",
+      "year": 2026,
+      "status": "searched",
+      "arxiv_id": "2407.11540",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2407.11540",
+        "title": "Not Another Imputation Method: A Transformer-based Model for Missing Values in Tabular Datasets",
+        "authors": [
+          "Camillo Maria Caruso",
+          "Paolo Soda",
+          "Valerio Guarrasi"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403791325",
+      "title": "Infusion: Preventing Customized Text-to-Image Diffusion from Overfitting",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2404.14007",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2404.14007",
+        "title": "Infusion: Preventing Customized Text-to-Image Diffusion from Overfitting",
+        "authors": [
+          "Weili Zeng",
+          "Yichao Yan",
+          "Qi Zhu",
+          "Zhuo Chen",
+          "Pengzhi Chu",
+          "Weiming Zhao",
+          "Xiaokang Yang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4404132457",
+      "title": "Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stability",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2308.15419",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2308.15419",
+        "title": "Characterizing Learning Curves During Language Model Pre-Training: Learning, Forgetting, and Stability",
+        "authors": [
+          "Tyler A. Chang",
+          "Zhuowen Tu",
+          "Benjamin K. Bergen"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4404261038",
+      "title": "Chatting with bots: AI, speech acts, and the edge of assertion",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2410.16645",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2410.16645",
+        "title": "Chatting with Bots: AI, Speech Acts, and the Edge of Assertion",
+        "authors": [
+          "Iwan Williams",
+          "Tim Bayne"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4404541818",
+      "title": "Improving Instruction-Following in Language Models through Activation Steering",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2410.12877",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2410.12877",
+        "title": "Improving Instruction-Following in Language Models through Activation Steering",
+        "authors": [
+          "Alessandro Stolfo",
+          "Vidhisha Balachandran",
+          "Safoora Yousefi",
+          "Eric Horvitz",
+          "Besmira Nushi"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4404708545",
+      "title": "A Survey on Knowledge Editing of Neural Networks",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2310.19704",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2310.19704",
+        "title": "A Survey on Knowledge Editing of Neural Networks",
+        "authors": [
+          "Vittorio Mazzia",
+          "Alessandro Pedrani",
+          "Andrea Caciolai",
+          "Kay Rottmann",
+          "Davide Bernardi"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4404783416",
+      "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2408.05147",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 10,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2408.05147",
+        "title": "Gemma Scope: Open Sparse Autoencoders Everywhere All At Once on Gemma 2",
+        "authors": [
+          "Tom Lieberum",
+          "Senthooran Rajamanoharan",
+          "Arthur Conmy",
+          "Lewis Smith",
+          "Nicolas Sonnerat",
+          "Vikrant Varma",
+          "János Kramár",
+          "Anca Dragan",
+          "Rohin Shah",
+          "Neel Nanda"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4405114187",
+      "title": "Crystal structure generation with autoregressive large language modeling",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2307.04340",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2307.04340",
+        "title": "Crystal Structure Generation with Autoregressive Large Language Modeling",
+        "authors": [
+          "Luis M. Antunes",
+          "Keith T. Butler",
+          "Ricardo Grau-Crespo"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4405181259",
+      "title": "A Causal Explainable Guardrails for Large Language Models",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2405.04160",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2405.04160",
+        "title": "A Causal Explainable Guardrails for Large Language Models",
+        "authors": [
+          "Zhixuan Chu",
+          "Yan Wang",
+          "Longfei Li",
+          "Zhibo Wang",
+          "Zhan Qin",
+          "Kui Ren"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4406290930",
+      "title": "METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.02045",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.02045",
+        "title": "METAGENE-1: Metagenomic Foundation Model for Pandemic Monitoring",
+        "authors": [
+          "Ollie Liu",
+          "Sami Jaghouar",
+          "Johannes Hagemann",
+          "Shangshang Wang",
+          "Jason Wiemels",
+          "Jeff Kaufman",
+          "Willie Neiswanger"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4406460142",
+      "title": "Opportunities and Challenges of Generative-AI in Finance",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2410.15653",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2410.15653",
+        "title": "Opportunities and Challenges of Generative-AI in Finance",
+        "authors": [
+          "Akshar Prabhu Desai",
+          "Ganesh Satish Mallya",
+          "Mohammad Luqman",
+          "Tejasvi Ravi",
+          "Nithya Kota",
+          "Pranjul Yadav"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4406461795",
+      "title": "Confidence Estimation For LLM-Based Dialogue State Tracking",
+      "year": 2024,
+      "status": "searched",
+      "arxiv_id": "2409.09629",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2409.09629",
+        "title": "Confidence Estimation for LLM-Based Dialogue State Tracking",
+        "authors": [
+          "Yi-Jyun Sun",
+          "Suvodip Dey",
+          "Dilek Hakkani-Tur",
+          "Gokhan Tur"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4406533397",
+      "title": "A Non-Ergodic Framework for Understanding Emergent Capabilities in Large Language Models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.01638",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.01638",
+        "title": "A non-ergodic framework for understanding emergent capabilities in Large Language Models",
+        "authors": [
+          "Javier Marín"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4406684509",
+      "title": "On trusting chatbots",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.7097,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2304.11852",
+        "title": "Can we Trust Chatbots for now? Accuracy, reproducibility, traceability; a Case Study on Leonardo da Vinci's Contribution to Astronomy",
+        "authors": [
+          "Didier El Baz"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4406810993",
+      "title": "Superposition in Transformers: A Novel Way of Building Mixture of Experts",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.00530",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2501.00530",
+        "title": "Superposition in Transformers: A Novel Way of Building Mixture of Experts",
+        "authors": [
+          "Ayoub Ben Chaliah",
+          "Hela Dellagi"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4406947254",
+      "title": "Toward cultural interpretability: A linguistic anthropological framework for describing and evaluating large language models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2411.05200",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2411.05200",
+        "title": "Toward Cultural Interpretability: A Linguistic Anthropological Framework for Describing and Evaluating Large Language Models (LLMs)",
+        "authors": [
+          "Graham M. Jones",
+          "Shai Satran",
+          "Arvind Satyanarayan"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4407194361",
+      "title": "Attention heads of large language models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2409.03752",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2409.03752",
+        "title": "Attention Heads of Large Language Models: A Survey",
+        "authors": [
+          "Zifan Zheng",
+          "Yezhaohui Wang",
+          "Yuxin Huang",
+          "Shichao Song",
+          "Mingchuan Yang",
+          "Bo Tang",
+          "Feiyu Xiong",
+          "Zhiyu Li"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4407241465",
+      "title": "Out-of-distribution generalization via composition: A lens through induction heads in Transformers",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2408.09503",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2408.09503",
+        "title": "Out-of-distribution generalization via composition: a lens through induction heads in Transformers",
+        "authors": [
+          "Jiajun Song",
+          "Zhuoyan Xu",
+          "Yiqiao Zhong"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4407584607",
+      "title": "Easing Optimization Paths: a Circuit Perspective",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.02362",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.02362",
+        "title": "Easing Optimization Paths: a Circuit Perspective",
+        "authors": [
+          "Ambroise Odonnat",
+          "Wassim Bouaziz",
+          "Vivien Cabannes"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4408919020",
+      "title": "The Geometry of Concepts: Sparse Autoencoder Feature Structure",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2410.19750",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2410.19750",
+        "title": "The Geometry of Concepts: Sparse Autoencoder Feature Structure",
+        "authors": [
+          "Yuxiao Li",
+          "Eric J. Michaud",
+          "David D. Baek",
+          "Joshua Engels",
+          "Xiaoqing Sun",
+          "Max Tegmark"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409348199",
+      "title": "SWEA: Updating Factual Knowledge in Large Language Models via Subject Word Embedding Altering",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2401.17809",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2401.17809",
+        "title": "SWEA: Updating Factual Knowledge in Large Language Models via Subject Word Embedding Altering",
+        "authors": [
+          "Xiaopeng Li",
+          "Shasha Li",
+          "Shezheng Song",
+          "Huijun Liu",
+          "Bin Ji",
+          "Xi Wang",
+          "Jun Ma",
+          "Jie Yu",
+          "Xiaodong Liu",
+          "Jing Wang",
+          "Weimin Zhang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409348217",
+      "title": "Identifying Query-Relevant Neurons in Large Language Models for Long-Form Texts",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2406.10868",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2406.10868",
+        "title": "Identifying Query-Relevant Neurons in Large Language Models for Long-Form Texts",
+        "authors": [
+          "Lihu Chen",
+          "Adam Dejl",
+          "Francesca Toni"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409628374",
+      "title": "Implementing NLP in industrial process modeling: Addressing categorical variables",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2409.19097",
+      "verify": {
+        "title_sim": 0.9938,
+        "author_overlap": 7,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2409.19097",
+        "title": "Implementing NLPs in industrial process modeling: Addressing Categorical Variables",
+        "authors": [
+          "Eleni D. Koronaki",
+          "Geremy Loachamin Suntaxi",
+          "Paris Papavasileiou",
+          "Dimitrios G. Giovanis",
+          "Martin Kathrein",
+          "Andreas G. Boudouvis",
+          "Stéphane P. A. Bordas"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409670972",
+      "title": "Graph-aware isomorphic attention for adaptive dynamics in transformers",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.02393",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.02393",
+        "title": "Graph-Aware Isomorphic Attention for Adaptive Dynamics in Transformers",
+        "authors": [
+          "Markus J. Buehler"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4409671508",
+      "title": "Adaptive Activation Steering: A Tuning-Free LLM Truthfulness Improvement Method for Diverse Hallucinations Categories",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2406.00034",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 8,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2406.00034",
+        "title": "Adaptive Activation Steering: A Tuning-Free LLM Truthfulness Improvement Method for Diverse Hallucinations Categories",
+        "authors": [
+          "Tianlong Wang",
+          "Xianfeng Jiao",
+          "Yinghao Zhu",
+          "Zhongzhi Chen",
+          "Yifan He",
+          "Xu Chu",
+          "Junyi Gao",
+          "Yasha Wang",
+          "Liantao Ma"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409996147",
+      "title": "Preference Tuning with Human Feedback on Language, Speech, and Vision Tasks: A Survey",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2409.11564",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 7,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2409.11564",
+        "title": "Preference Tuning with Human Feedback on Language, Speech, and Vision Tasks: A Survey",
+        "authors": [
+          "Genta Indra Winata",
+          "Hanyang Zhao",
+          "Anirban Das",
+          "Wenpin Tang",
+          "David D. Yao",
+          "Shi-Xiong Zhang",
+          "Sambit Sahu"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4410428524",
+      "title": "FiberKAN: Kolmogorov–Arnold Networks for Nonlinear Fiber Optics",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2504.18833",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2504.18833",
+        "title": "FiberKAN: Kolmogorov-Arnold Networks for Nonlinear Fiber Optics",
+        "authors": [
+          "Xiaotian Jiang",
+          "Min Zhang",
+          "Xiao Luo",
+          "Zelai Yu",
+          "Yiming Meng",
+          "Danshi Wang"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4410609044",
+      "title": "When Mitigating Bias is Unfair: Multiplicity and Arbitrariness in Algorithmic Group Fairness",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2302.07185",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2302.07185",
+        "title": "When mitigating bias is unfair: multiplicity and arbitrariness in algorithmic group fairness",
+        "authors": [
+          "Natasa Krco",
+          "Thibault Laugel",
+          "Vincent Grari",
+          "Jean-Michel Loubes",
+          "Marcin Detyniecki"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4410781058",
+      "title": "Evidence from counterfactual tasks supports emergent analogical reasoning in large language models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2404.13070",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2404.13070",
+        "title": "Evidence from counterfactual tasks supports emergent analogical reasoning in large language models",
+        "authors": [
+          "Taylor Webb",
+          "Keith J. Holyoak",
+          "Hongjing Lu"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4411048702",
+      "title": "Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2504.02922",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2504.02922",
+        "title": "Overcoming Sparsity Artifacts in Crosscoders to Interpret Chat-Tuning",
+        "authors": [
+          "Julian Minder",
+          "Clément Dumas",
+          "Caden Juang",
+          "Bilal Chugtai",
+          "Neel Nanda"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4411337774",
+      "title": "Debugging and Runtime Analysis of Neural Networks with VLMs (A Case Study)",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2503.17416",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2503.17416",
+        "title": "Debugging and Runtime Analysis of Neural Networks with VLMs (A Case Study)",
+        "authors": [
+          "Boyue Caroline Hu",
+          "Divya Gopinath",
+          "Corina S. Pasareanu",
+          "Nina Narodytska",
+          "Ravi Mangal",
+          "Susmit Jha"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4411450184",
+      "title": "IRepair: An Intent-Aware Approach to Repair Data-Driven Errors in Large Language Models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2502.07072",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2502.07072",
+        "title": "IRepair: An Intent-Aware Approach to Repair Data-Driven Errors in Large Language Models",
+        "authors": [
+          "Sayem Mohammad Imtiaz",
+          "Astha Singh",
+          "Fraol Batole",
+          "Hridesh Rajan"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4411523116",
+      "title": "Fairness Mediator: Neutralize Stereotype Associations to Mitigate Bias in Large Language Models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2504.07787",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2504.07787",
+        "title": "Fairness Mediator: Neutralize Stereotype Associations to Mitigate Bias in Large Language Models",
+        "authors": [
+          "Yisong Xiao",
+          "Aishan Liu",
+          "Siyuan Liang",
+          "Xianglong Liu",
+          "Dacheng Tao"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4411610300",
+      "title": "What is AI safety? What do we want it to be?",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2505.02313",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2505.02313",
+        "title": "What Is AI Safety? What Do We Want It to Be?",
+        "authors": [
+          "Jacqueline Harding",
+          "Cameron Domenico Kirk-Giannini"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412062638",
+      "title": "Large Language Models as Psychological Simulators: A Methodological Guide",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2506.16702",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 1,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2506.16702",
+        "title": "Large Language Models as Psychological Simulators: A Methodological Guide",
+        "authors": [
+          "Zhicheng Lin"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412106365",
+      "title": "Guiding Evolutionary AutoEncoder Training with Activation-Based Pruning Operators",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2505.05138",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2505.05138",
+        "title": "Guiding Evolutionary AutoEncoder Training with Activation-Based Pruning Operators",
+        "authors": [
+          "Steven Jorgensen",
+          "Erik Hemberg",
+          "Jamal Toutouh",
+          "Una-May O'Reilly"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412377079",
+      "title": "Reverse-Engineering the Retrieval Process in GenIR Models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2503.19715",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2503.19715",
+        "title": "Reverse-Engineering the Retrieval Process in GenIR Models",
+        "authors": [
+          "Anja Reusch",
+          "Yonatan Belinkov"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412720666",
+      "title": "AI–AI bias: Large language models favor communications generated by large language models",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2407.12856",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2407.12856",
+        "title": "AI-AI Bias: large language models favor communications generated by large language models",
+        "authors": [
+          "Walter Laurito",
+          "Benjamin Davis",
+          "Peli Grietzer",
+          "Tomáš Gavenčiak",
+          "Ada Böhm",
+          "Jan Kulveit"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4412774260",
+      "title": "Mixture-of-experts graph transformers for interpretable particle collision detection",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.03432",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 9,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.03432",
+        "title": "Mixture-of-Experts Graph Transformers for Interpretable Particle Collision Detection",
+        "authors": [
+          "Donatella Genovese",
+          "Alessandro Sgroi",
+          "Alessio Devoto",
+          "Samuel Valentine",
+          "Lennox Wood",
+          "Cristiano Sebastiani",
+          "Stefano Giagu",
+          "Monica D'Onofrio",
+          "Simone Scardapane"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412827352",
+      "title": "AcTracer: Active Testing of Large Language Model via Multi-Stage Sampling",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2408.03573",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2408.03573",
+        "title": "AcTracer: Active Testing of Large Language Model via Multi-Stage Sampling",
+        "authors": [
+          "Yuheng Huang",
+          "Jiayang Song",
+          "Qiang Hu",
+          "Felix Juefei-Xu",
+          "Lei Ma"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4412876851",
+      "title": "Self-Regularization with Sparse Autoencoders for Controllable LLM-based Classification",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2502.14133",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2502.14133",
+        "title": "Self-Regularization with Sparse Autoencoders for Controllable LLM-based Classification",
+        "authors": [
+          "Xuansheng Wu",
+          "Wenhao Yu",
+          "Xiaoming Zhai",
+          "Ninghao Liu"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412876946",
+      "title": "The Expressibility of Polynomial based Attention Scheme",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2310.20051",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2310.20051",
+        "title": "The Expressibility of Polynomial based Attention Scheme",
+        "authors": [
+          "Zhao Song",
+          "Guangyi Xu",
+          "Junze Yin"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4412888130",
+      "title": "Is External Information Useful for Stance Detection with LLMs?",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2507.01543",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2507.01543",
+        "title": "Is External Information Useful for Stance Detection with LLMs?",
+        "authors": [
+          "Quang Minh Nguyen",
+          "Taegyoon Kim"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412945586",
+      "title": "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2503.16334",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2503.16334",
+        "title": "LLM Braces: Straightening Out LLM Predictions with Relevant Sub-Updates",
+        "authors": [
+          "Ying Shen",
+          "Lifu Huang"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4413105748",
+      "title": "Ensuring medical AI safety: interpretability-driven detection and mitigation of spurious model behavior and associated data",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2501.13818",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2501.13818",
+        "title": "Ensuring Medical AI Safety: Interpretability-Driven Detection and Mitigation of Spurious Model Behavior and Associated Data",
+        "authors": [
+          "Frederik Pahde",
+          "Thomas Wiegand",
+          "Sebastian Lapuschkin",
+          "Wojciech Samek"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4413156614",
+      "title": "A Comprehensive Study of Decoder-Only LLMs for Text-to-Image Generation",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2506.08210",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2506.08210",
+        "title": "A Comprehensive Study of Decoder-Only LLMs for Text-to-Image Generation",
+        "authors": [
+          "Andrew Z. Wang",
+          "Songwei Ge",
+          "Tero Karras",
+          "Ming-Yu Liu",
+          "Yogesh Balaji"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4413243258",
+      "title": "The complexity dynamics of grokking",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2412.09810",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2412.09810",
+        "title": "The Complexity Dynamics of Grokking",
+        "authors": [
+          "Branton DeMoss",
+          "Silvia Sapora",
+          "Jakob Foerster",
+          "Nick Hawes",
+          "Ingmar Posner"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4413363322",
+      "title": "Probing for consciousness in machines",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2411.16262",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2411.16262",
+        "title": "Probing for Consciousness in Machines",
+        "authors": [
+          "Mathis Immertreu",
+          "Achim Schilling",
+          "Andreas Maier",
+          "Patrick Krauss"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4414385814",
+      "title": "Memorization in Deep Learning: A Survey",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2406.03880",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 6,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2406.03880",
+        "title": "Memorization in deep learning: A survey",
+        "authors": [
+          "Jiaheng Wei",
+          "Yanjun Zhang",
+          "Leo Yu Zhang",
+          "Ming Ding",
+          "Chao Chen",
+          "Kok-Leong Ong",
+          "Jun Zhang",
+          "Yang Xiang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4414589084",
+      "title": "InterPLM: discovering interpretable features in protein language models via sparse autoencoders",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2412.12101",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2412.12101",
+        "title": "InterPLM: Discovering Interpretable Features in Protein Language Models via Sparse Autoencoders",
+        "authors": [
+          "Elana Simon",
+          "James Zou"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4414880188",
+      "title": "HiProbe-VAD: Video Anomaly Detection via Hidden States Probing in Tuning-Free Multimodal LLMs",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2507.17394",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2507.17394",
+        "title": "HiProbe-VAD: Video Anomaly Detection via Hidden States Probing in Tuning-Free Multimodal LLMs",
+        "authors": [
+          "Zhaolin Cai",
+          "Fan Li",
+          "Ziwei Zheng",
+          "Yanjun Qin"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4415015395",
+      "title": "Misalignment or misuse? The AGI alignment tradeoff",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2506.03755",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2506.03755",
+        "title": "Misalignment or misuse? The AGI alignment tradeoff",
+        "authors": [
+          "Max Hellrigel-Holderbaum",
+          "Leonard Dung"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4416109867",
+      "title": "How Do Large Language Models Understand Relevance? A Mechanistic Interpretability Perspective",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2504.07898",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2504.07898",
+        "title": "How do Large Language Models Understand Relevance? A Mechanistic Interpretability Perspective",
+        "authors": [
+          "Qi Liu",
+          "Jiaxin Mao",
+          "Ji-Rong Wen"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W7108214532",
+      "title": "Large Language Models Are Human-Like Internally",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2502.01615",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2502.01615",
+        "title": "Large Language Models Are Human-Like Internally",
+        "authors": [
+          "Tatsuki Kuribayashi",
+          "Yohei Oseki",
+          "Souhaib Ben Taieb",
+          "Kentaro Inui",
+          "Timothy Baldwin"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W7117578504",
+      "title": "Whose journey matters? Investigating identity biases in large language models (LLMs) for travel planning assistance",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2410.17333",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2410.17333",
+        "title": "Whose Journey Matters? Investigating Identity Biases in Large Language Models (LLMs) for Travel Planning Assistance",
+        "authors": [
+          "Ruiping Ren",
+          " Yingwei",
+          " Xu",
+          "Xing Yao",
+          "Shu Cole",
+          "Haining Wang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W7128589046",
+      "title": "A framework for causal concept-based model explanations",
+      "year": 2026,
+      "status": "searched",
+      "arxiv_id": "2512.02735",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2512.02735",
+        "title": "A Framework for Causal Concept-based Model Explanations",
+        "authors": [
+          "Anna Rodum Bjøru",
+          "Jacob Lysnæs-Larsen",
+          "Oskar Jørgensen",
+          "Inga Strümke",
+          "Helge Langseth"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W7155038902",
+      "title": "Principled Coarse-Grained Acceptance For Speculative Decoding In Speech",
+      "year": 2026,
+      "status": "searched",
+      "arxiv_id": "2511.13732",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2511.13732",
+        "title": "Principled Coarse-Grained Acceptance for Speculative Decoding in Speech",
+        "authors": [
+          "Moran Yanuka",
+          "Paul Dixon",
+          "Eyal Finkelshtein",
+          "Daniel Rotman",
+          "Raja Giryes"
+        ],
+        "year": 2025
+      }
+    }
+  ]
+}
