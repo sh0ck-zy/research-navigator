@@ -17,7 +17,7 @@ KG extraction, no writes to the main graph).
 | 0 | resolve ids | `resolve_ids.py` | corpus (683) | `data/latex/ids.jsonl` + `lab/eval/arxiv_id_resolution.json` |
 | 1 | fetch source | `fetch_sources.py` | `ids.jsonl` | `data/latex/fetch.jsonl` + `sources/<Wid>/` |
 | 2 | parse refs | `parse_refs.py` | `sources/` | `data/latex/refs.jsonl` |
-| 3 | resolve refs | `resolve.py` | `refs.jsonl` + corpus + pool | `data/latex/resolved.jsonl` |
+| 3 | resolve refs | `resolve.py` | `refs.jsonl` + corpus + `ids.jsonl` | `data/latex/resolved.jsonl` |
 | 4 | contexts | `contexts.py` | `sources/` + `refs.jsonl` | `data/latex/contexts.jsonl` |
 | 5 | compare | `compare.py` | `resolved.jsonl` + corpus `edges` | `data/latex/compare.json` + `lab/eval/latex_refs_audit.md` |
 
@@ -52,8 +52,9 @@ journal/bioRxiv-only), `search_error` (retryable).
 The **only** network egress is arXiv, paced ≥3s: `api/query` (Stage 0) and
 `e-print` (Stage 1). **OpenAlex and Semantic Scholar are forbidden** in this
 package. The comparison (Stage 5) runs entirely on local data — the corpus's
-in-corpus `edges` and the candidate pool's `referenced_works`. `compare.py` is
-built so a third source (S2) slots in as another column without a refactor.
+in-corpus `edges` field. `compare.py` is built so a third source (S2, or the
+candidate pool's `referenced_works`) slots in as another named edge set
+without a refactor.
 
 ## Acceptance gates (both denominators always reported)
 
