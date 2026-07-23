@@ -1,0 +1,165 @@
+{
+  "run_id": "hybrid_v4latex_a0.25_drl",
+  "alpha": 0.25,
+  "source": "lab/out/recluster_v4 (V2)",
+  "cites": "v4 OpenAlex ∪ latex_refs Stage-3 (directed union)",
+  "predecessor": "hybrid_a0.25_drl (backup: lab/out/recluster_v4/frozen_backup_hybrid_a0.25.json)",
+  "clusters": [
+    {
+      "cluster_id": 0,
+      "name": "Attribution & Classic XAI",
+      "nameable": true,
+      "why_not": null,
+      "size": 126,
+      "n_subclusters": 11,
+      "top_terms": [
+        "deep",
+        "networks",
+        "neural"
+      ],
+      "exemplars": [
+        "Axiomatic Attribution for Deep Networks",
+        "Towards A Rigorous Science of Interpretable Machine Learning",
+        "“Why Should I Trust You?”: Explaining the Predictions of Any Classifier",
+        "On Pixel-Wise Explanations for Non-Linear Classifier Decisions by Layer-Wise Relevance Pro",
+        "Grad-CAM: Visual Explanations from Deep Networks via Gradient-Based Localization"
+      ]
+    },
+    {
+      "cluster_id": 1,
+      "name": "Factual Knowledge & Editing",
+      "nameable": true,
+      "why_not": null,
+      "size": 121,
+      "n_subclusters": 10,
+      "top_terms": [
+        "knowledge",
+        "editing",
+        "language"
+      ],
+      "exemplars": [
+        "Locating and Editing Factual Associations in GPT",
+        "Transformer Feed-Forward Layers Build Predictions by Promoting Concepts in the Vocabulary ",
+        "Knowledge Neurons in Pretrained Transformers",
+        "Analyzing Transformers in Embedding Space",
+        "Mass-Editing Memory in a Transformer"
+      ]
+    },
+    {
+      "cluster_id": 2,
+      "name": "BERT-Era Probing",
+      "nameable": true,
+      "why_not": null,
+      "size": 105,
+      "n_subclusters": 10,
+      "top_terms": [
+        "bert",
+        "probing",
+        "sentence"
+      ],
+      "exemplars": [
+        "BERT Rediscovers the Classical NLP Pipeline",
+        "Analyzing Multi-Head Self-Attention: Specialized Heads Do the Heavy Lifting, the Rest Can ",
+        "Designing and Interpreting Probes with Control Tasks",
+        "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguist",
+        "Visualizing and Understanding Neural Models in NLP"
+      ]
+    },
+    {
+      "cluster_id": 3,
+      "name": "Foundation Models & LLM Substrate",
+      "nameable": true,
+      "why_not": "core is crisp (LLaMA/ViT/FlashAttention — the cited substrate, not interp itself) but the applications tail is heterogeneous.",
+      "size": 95,
+      "n_subclusters": 8,
+      "top_terms": [
+        "large",
+        "language",
+        "reasoning"
+      ],
+      "exemplars": [
+        "LLaMA: Open and Efficient Foundation Language Models",
+        "Llama 2: Open Foundation and Fine-Tuned Chat Models",
+        "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+        "Tree of Thoughts: Deliberate Problem Solving with Large Language Models",
+        "Pythia: A Suite for Analyzing Large Language Models Across Training and Scaling"
+      ]
+    },
+    {
+      "cluster_id": 4,
+      "name": "Linear Representations & Steering",
+      "nameable": true,
+      "why_not": null,
+      "size": 93,
+      "n_subclusters": 12,
+      "top_terms": [
+        "intelligence",
+        "language",
+        "artificial"
+      ],
+      "exemplars": [
+        "Emergent World Representations: Exploring a Sequence Model Trained on a Synthetic Task",
+        "Toy Models of Superposition",
+        "Representation Engineering: A Top-Down Approach to AI Transparency",
+        "Inference-Time Intervention: Eliciting Truthful Answers from a Language Model",
+        "The Geometry of Truth: Emergent Linear Structure in Large Language Model Representations o"
+      ]
+    },
+    {
+      "cluster_id": 5,
+      "name": "Circuits, Grokking & ICL",
+      "nameable": true,
+      "why_not": "one minority strand (psycholinguistic surprisal/reading-time work, ~15%) rides along via the cognitive-modeling papers.",
+      "size": 79,
+      "n_subclusters": 8,
+      "top_terms": [
+        "language",
+        "large",
+        "learning"
+      ],
+      "exemplars": [
+        "Interpretability in the Wild: a Circuit for Indirect Object Identification in GPT-2 small",
+        "In-context Learning and Induction Heads",
+        "Progress measures for grokking via mechanistic interpretability",
+        "Towards Automated Circuit Discovery for Mechanistic Interpretability",
+        "On the Predictive Power of Neural Language Models for Human Real-Time Comprehension Behavi"
+      ]
+    },
+    {
+      "cluster_id": 6,
+      "name": "Sparse Autoencoders / Bio-LMs",
+      "nameable": false,
+      "why_not": "still the two-theme fusion of the old cluster 5 (SAE/dictionary learning + protein/DNA LMs). The SAE-on-protein-LM crossover papers are a real bridge now, but the bio/clinical tail is a grab-bag; only a conjunction names the whole.",
+      "size": 61,
+      "n_subclusters": 8,
+      "top_terms": [
+        "protein",
+        "sparse",
+        "autoencoders"
+      ],
+      "exemplars": [
+        "Sparse Autoencoders Find Highly Interpretable Features in Language Models",
+        "Biological structure and function emerge from scaling unsupervised learning to 250 million",
+        "Evolutionary-scale prediction of atomic-level protein structure with a language model",
+        "UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction",
+        "ProtTrans: Toward Understanding the Language of Life Through Self-Supervised Learning"
+      ]
+    },
+    {
+      "cluster_id": 7,
+      "name": "(singleton)",
+      "nameable": false,
+      "why_not": "one paper, infant psychology.",
+      "size": 1,
+      "n_subclusters": 1,
+      "top_terms": [
+        "strength",
+        "wynn",
+        "hamlin"
+      ],
+      "exemplars": [
+        "Probing the Strength of Infants' Preference for Helpers over Hinderers: Two Replication At"
+      ]
+    }
+  ]
+}

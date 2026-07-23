@@ -1,9 +1,15 @@
 """lab/export_viewer.py — export viewer_data.json for the lab map viewer.
 
 Single data file, single source of truth: the frozen Kùzu graph
-(data/graph_v3_clean, run_id='hybrid_a0.25_drl'). The viewer hardcodes
+(data/graph_v3_clean, run_id='hybrid_v4latex_a0.25_drl'). The viewer hardcodes
 NOTHING about clusters, names, counts or positions — after a re-cluster,
 re-run this exporter and the viewer follows.
+
+KNOWN GAP after the v4+latex freeze (2026-07-24): cluster_id now comes from
+the V2 partition (CITES = v4 ∪ latex), but the graph's CITES table — and so
+the exported edges, flows and membership halo — is still the v3 OpenAlex
+layer. Coherent again only after the graph re-ingest (v4 nodes + latex
+edges), which is the next structural step and a separate decision.
 
 Emits lab/out/viewer_data.json:
   meta      {run_id, n_papers, n_edges, generated_from}
@@ -33,7 +39,7 @@ EVAL = ROOT / "lab" / "eval"
 OUT = ROOT / "lab" / "out"
 
 DB = "data/graph_v3_clean"
-NAMES_FILE = EVAL / "cluster_names_hybrid_a0.25.json"
+NAMES_FILE = EVAL / "cluster_names_hybrid_v4latex_a0.25_drl.json"
 FUSION_ALPHA = 0.25   # same fusion the frozen clustering used
 LP_ALPHA, LP_ITERS = 0.55, 6  # same params as ingest_v3.label_propagation
 TOP_FLOWS = 10
@@ -52,6 +58,16 @@ ONE_LINERS = {
         6: "A grab-bag at the edges: vision, speech and architecture analysis adjacent to interp.",
         7: "A lone outlier: an infant-psychology replication with no ties to the field.",
     },
+    "hybrid_v4latex_a0.25_drl": {
+        0: "The classic explainability toolkit: saliency, attribution, LIME/SHAP and the XAI surveys.",
+        1: "Where facts live in transformers — locating, probing and rewriting stored knowledge.",
+        2: "Probing classifiers and attention analysis from the BERT era of NLP interpretability.",
+        3: "The cited substrate: LLaMA-class foundation models, architectures and LLM applications.",
+        4: "Linear representations — world models, truth directions, steering vectors and AI safety.",
+        5: "Reverse-engineering computation: circuits, induction heads, grokking, in-context learning.",
+        6: "An uneasy pair: sparse-autoencoder dictionary learning fused with protein/DNA language models.",
+        7: "A lone outlier: an infant-psychology replication with no ties to the field.",
+    },
 }
 
 
@@ -68,7 +84,7 @@ def main():
                            venue=venue, cluster_id=int(cid), x=float(x), y=float(y),
                            centrality=float(cent)))
         run_ids.add(run)
-    assert run_ids == {"hybrid_a0.25_drl"}, f"unexpected run_ids in graph: {run_ids}"
+    assert run_ids == {"hybrid_v4latex_a0.25_drl"}, f"unexpected run_ids in graph: {run_ids}"
     idx = {p["id"]: i for i, p in enumerate(papers)}
     n = len(papers)
     print(f"[export] {n} papers, run_id={run_ids}")
@@ -181,8 +197,10 @@ def main():
         edges_adj[a].append(b)
 
     out = {
-        "meta": {"run_id": "hybrid_a0.25_drl", "cluster_run": names_doc["run_id"],
+        "meta": {"run_id": "hybrid_v4latex_a0.25_drl", "cluster_run": names_doc["run_id"],
                  "n_papers": n, "n_edges": len(cites),
+                 "edge_layer_note": "CITES shown are still the v3 OpenAlex layer; "
+                                    "clusters were computed on v4 ∪ latex (see docstring)",
                  "generated_from": DB},
         "clusters": clusters,
         "flows": flows,
