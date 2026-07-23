@@ -1,22 +1,22 @@
 {
-  "citing_universe": "431 source-parsed papers (of 683)",
-  "n_A_latex": 3283,
-  "n_B_openalex_restricted": 1621,
+  "citing_universe": "439 source-parsed papers (of 683)",
+  "n_A_latex": 3307,
+  "n_B_openalex_restricted": 1667,
   "n_B_openalex_full": 2663,
-  "both": 1428,
-  "latex_only": 1855,
-  "oa_only": 193,
-  "union": 3476,
+  "both": 1449,
+  "latex_only": 1858,
+  "oa_only": 218,
+  "union": 3525,
   "A_by_method": {
-    "title": 1610,
     "doi": 426,
-    "eprint": 1247
+    "eprint": 1264,
+    "title": 1617
   },
   "latex_only_by_method": {
-    "title": 912,
     "doi": 167,
-    "eprint": 776
+    "title": 908,
+    "eprint": 783
   },
-  "oa_only_near_miss_in_unmatched_refs": 17,
+  "oa_only_near_miss_in_unmatched_refs": 23,
   "note": "latex_only = edges our index sees that OpenAlex lacks; oa_only near-miss count = how many look like OUR resolution misses rather than absent references"
 }
