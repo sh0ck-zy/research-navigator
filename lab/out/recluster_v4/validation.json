@@ -1,0 +1,61 @@
+{
+  "date": "2026-07-24",
+  "partition": "v2_v4_plus_latex (seed 1)",
+  "bars_feasible": {
+    "ari_semantic": [
+      0.2215,
+      ">=0.20",
+      "PASS"
+    ],
+    "max_cluster_share": [
+      0.185,
+      "<=0.40",
+      "PASS"
+    ],
+    "singleton_share": [
+      0.0015,
+      "<=0.05",
+      "PASS"
+    ],
+    "stability": [
+      0.6694,
+      ">=0.50",
+      "PASS"
+    ],
+    "k": [
+      8,
+      "4..30",
+      "PASS"
+    ]
+  },
+  "vs_frozen_baseline_a0.25": {
+    "landmark_ari": {
+      "v2": 0.6784,
+      "frozen": 0.507,
+      "verdict": "BETTER"
+    },
+    "landmark_core_span": 5,
+    "nameability_proxy": {
+      "v2": 0.4294,
+      "frozen": 0.463,
+      "verdict": "slightly lower; human pass decides"
+    },
+    "stability": {
+      "v2": 0.6694,
+      "frozen": 0.643,
+      "verdict": "BETTER"
+    }
+  },
+  "human_naming_pass": {
+    "nameable": 6,
+    "of": 8,
+    "frozen_had": "5 of 8",
+    "notes": [
+      "c3 core crisp (foundation-model substrate), heterogeneous tail",
+      "c5 carries a ~15% psycholinguistics strand",
+      "c6 remains the SAE/Bio-LM conjunction (nameable false)",
+      "c7 singleton (nameable false)"
+    ]
+  },
+  "verdict": "FREEZE APPROVED (decision: Joao, 2026-07-24, option B)"
+}

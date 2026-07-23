@@ -1,0 +1,380 @@
+{
+  "nodes": 681,
+  "alpha": 0.25,
+  "resolution": 1.0,
+  "seeds": [
+    1,
+    2,
+    3
+  ],
+  "edges": {
+    "oa_directed": 2647,
+    "latex_directed": 3301,
+    "union_directed": 4486,
+    "latex_novel": 1839
+  },
+  "variants": {
+    "v1_v4_only": {
+      "k": 8,
+      "sizes": [
+        138,
+        122,
+        116,
+        110,
+        105,
+        55,
+        34,
+        1
+      ],
+      "max_cluster_share": 0.2026431718061674,
+      "singletons": 1,
+      "stability": 0.7484,
+      "graph_edges": 9704,
+      "ari_vs_frozen": 0.7638,
+      "nmi_vs_frozen": 0.7876,
+      "frozen_crosstab": {
+        "0 Factual Knowledge & Editing": {
+          "n": 144,
+          "lands_in": [
+            {
+              "new_cluster": 2,
+              "n": 108
+            },
+            {
+              "new_cluster": 0,
+              "n": 21
+            },
+            {
+              "new_cluster": 3,
+              "n": 12
+            },
+            {
+              "new_cluster": 4,
+              "n": 2
+            }
+          ],
+          "intact_share": 0.75
+        },
+        "1 Attribution & Feature Visualization": {
+          "n": 124,
+          "lands_in": [
+            {
+              "new_cluster": 1,
+              "n": 119
+            },
+            {
+              "new_cluster": 6,
+              "n": 3
+            },
+            {
+              "new_cluster": 0,
+              "n": 1
+            },
+            {
+              "new_cluster": 3,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.96
+        },
+        "2 Latent Representations & Safety": {
+          "n": 117,
+          "lands_in": [
+            {
+              "new_cluster": 0,
+              "n": 107
+            },
+            {
+              "new_cluster": 3,
+              "n": 5
+            },
+            {
+              "new_cluster": 6,
+              "n": 4
+            },
+            {
+              "new_cluster": 2,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.915
+        },
+        "3 BERT-Era Probing": {
+          "n": 107,
+          "lands_in": [
+            {
+              "new_cluster": 4,
+              "n": 102
+            },
+            {
+              "new_cluster": 2,
+              "n": 4
+            },
+            {
+              "new_cluster": 1,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.953
+        },
+        "4 Circuits & Superposition": {
+          "n": 99,
+          "lands_in": [
+            {
+              "new_cluster": 3,
+              "n": 90
+            },
+            {
+              "new_cluster": 0,
+              "n": 6
+            },
+            {
+              "new_cluster": 4,
+              "n": 1
+            },
+            {
+              "new_cluster": 2,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.909
+        },
+        "5 Sparse Autoencoders / Bio-LMs": {
+          "n": 56,
+          "lands_in": [
+            {
+              "new_cluster": 5,
+              "n": 55
+            },
+            {
+              "new_cluster": 3,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.982
+        },
+        "6 Multimodal & Architecture Misc": {
+          "n": 33,
+          "lands_in": [
+            {
+              "new_cluster": 6,
+              "n": 27
+            },
+            {
+              "new_cluster": 0,
+              "n": 3
+            },
+            {
+              "new_cluster": 2,
+              "n": 2
+            },
+            {
+              "new_cluster": 3,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.818
+        },
+        "7 (singleton)": {
+          "n": 1,
+          "lands_in": [
+            {
+              "new_cluster": 7,
+              "n": 1
+            }
+          ],
+          "intact_share": 1.0
+        }
+      }
+    },
+    "v2_v4_plus_latex": {
+      "k": 8,
+      "sizes": [
+        126,
+        121,
+        105,
+        95,
+        93,
+        79,
+        61,
+        1
+      ],
+      "max_cluster_share": 0.18502202643171806,
+      "singletons": 1,
+      "stability": 0.6694,
+      "graph_edges": 11090,
+      "ari_vs_frozen": 0.5563,
+      "nmi_vs_frozen": 0.5744,
+      "frozen_crosstab": {
+        "0 Factual Knowledge & Editing": {
+          "n": 144,
+          "lands_in": [
+            {
+              "new_cluster": 1,
+              "n": 100
+            },
+            {
+              "new_cluster": 3,
+              "n": 32
+            },
+            {
+              "new_cluster": 4,
+              "n": 7
+            },
+            {
+              "new_cluster": 5,
+              "n": 3
+            }
+          ],
+          "intact_share": 0.694
+        },
+        "1 Attribution & Feature Visualization": {
+          "n": 124,
+          "lands_in": [
+            {
+              "new_cluster": 0,
+              "n": 114
+            },
+            {
+              "new_cluster": 6,
+              "n": 4
+            },
+            {
+              "new_cluster": 5,
+              "n": 3
+            },
+            {
+              "new_cluster": 3,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.919
+        },
+        "2 Latent Representations & Safety": {
+          "n": 117,
+          "lands_in": [
+            {
+              "new_cluster": 4,
+              "n": 66
+            },
+            {
+              "new_cluster": 3,
+              "n": 35
+            },
+            {
+              "new_cluster": 5,
+              "n": 7
+            },
+            {
+              "new_cluster": 6,
+              "n": 5
+            }
+          ],
+          "intact_share": 0.564
+        },
+        "3 BERT-Era Probing": {
+          "n": 107,
+          "lands_in": [
+            {
+              "new_cluster": 2,
+              "n": 93
+            },
+            {
+              "new_cluster": 0,
+              "n": 4
+            },
+            {
+              "new_cluster": 6,
+              "n": 4
+            },
+            {
+              "new_cluster": 4,
+              "n": 3
+            }
+          ],
+          "intact_share": 0.869
+        },
+        "4 Circuits & Superposition": {
+          "n": 99,
+          "lands_in": [
+            {
+              "new_cluster": 5,
+              "n": 65
+            },
+            {
+              "new_cluster": 4,
+              "n": 11
+            },
+            {
+              "new_cluster": 3,
+              "n": 8
+            },
+            {
+              "new_cluster": 2,
+              "n": 7
+            }
+          ],
+          "intact_share": 0.657
+        },
+        "5 Sparse Autoencoders / Bio-LMs": {
+          "n": 56,
+          "lands_in": [
+            {
+              "new_cluster": 6,
+              "n": 45
+            },
+            {
+              "new_cluster": 3,
+              "n": 7
+            },
+            {
+              "new_cluster": 2,
+              "n": 1
+            },
+            {
+              "new_cluster": 4,
+              "n": 1
+            }
+          ],
+          "intact_share": 0.804
+        },
+        "6 Multimodal & Architecture Misc": {
+          "n": 33,
+          "lands_in": [
+            {
+              "new_cluster": 1,
+              "n": 13
+            },
+            {
+              "new_cluster": 3,
+              "n": 12
+            },
+            {
+              "new_cluster": 4,
+              "n": 4
+            },
+            {
+              "new_cluster": 2,
+              "n": 2
+            }
+          ],
+          "intact_share": 0.394
+        },
+        "7 (singleton)": {
+          "n": 1,
+          "lands_in": [
+            {
+              "new_cluster": 7,
+              "n": 1
+            }
+          ],
+          "intact_share": 1.0
+        }
+      }
+    }
+  },
+  "v1_vs_v2": {
+    "ari": 0.5617,
+    "nmi": 0.5844
+  }
+}

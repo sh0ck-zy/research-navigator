@@ -42,7 +42,10 @@ data/graph*
 
 # Knowledge Lab — regenerable artifacts
 data/processed/
-lab/out/
+# lab/out is regenerable EXCEPT recluster_v4: the validation record and the
+# pre-freeze partition backup are provenance, not regenerable — tracked.
+lab/out/*
+!lab/out/recluster_v4/
 /lib/
 
 # ...but the interp corpora + seed audit ARE tracked (expensive to regenerate:
