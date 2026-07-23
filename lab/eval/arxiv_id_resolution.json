@@ -3,12 +3,12 @@
   "total": 683,
   "status_counts": {
     "local": 180,
-    "no_arxiv_id": 234,
-    "searched": 262,
-    "unresolved": 7
+    "no_arxiv_id": 204,
+    "searched": 271,
+    "unresolved": 28
   },
-  "resolved_universe": 442,
-  "coverage": "442/683 (64.7%)",
+  "resolved_universe": 451,
+  "coverage": "451/683 (66.0%)",
   "decisions": [
     {
       "openalex_id": "W1912570122",
@@ -72,6 +72,28 @@
           "Jure Leskovec"
         ],
         "year": 2015
+      }
+    },
+    {
+      "openalex_id": "W2026905436",
+      "title": "Comprehensible classification models",
+      "year": 2014,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.7368,
+        "author_overlap": 0,
+        "year_diff": 10
+      },
+      "candidate": {
+        "arxiv_id": "2401.11062",
+        "title": "Learned Image resizing with efficient training (LRET) facilitates improved performance of large-scale digital histopathology image classification models",
+        "authors": [
+          "Md Zahangir Alom",
+          "Quynh T. Tran",
+          "Brent A. Orr"
+        ],
+        "year": 2024
       }
     },
     {
@@ -246,14 +268,33 @@
         "year_diff": 3
       },
       "candidate": {
-        "arxiv_id": "1909.07218",
-        "title": "Learning to Tune XGBoost with XGBoost",
+        "arxiv_id": "1907.03178",
+        "title": "XGBoostLSS -- An extension of XGBoost to probabilistic forecasting",
         "authors": [
-          "Johanna Sommer",
-          "Dimitrios Sarigiannis",
-          "Thomas Parnell"
+          "Alexander März"
         ],
         "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2302501749",
+      "title": "The FAIR Guiding Principles for scientific data management and stewardship",
+      "year": 2016,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.5306,
+        "author_overlap": 0,
+        "year_diff": 6
+      },
+      "candidate": {
+        "arxiv_id": "2203.10710",
+        "title": "FAIR standards for astronomical data",
+        "authors": [
+          "Simon O'Toole",
+          "James Tocknell"
+        ],
+        "year": 2022
       }
     },
     {
@@ -320,6 +361,30 @@
       }
     },
     {
+      "openalex_id": "W2557449848",
+      "title": "Plug &amp; Play Generative Networks: Conditional Iterative Generation of Images in Latent Space",
+      "year": 2017,
+      "status": "searched",
+      "arxiv_id": "1612.00005",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "1612.00005",
+        "title": "Plug & Play Generative Networks: Conditional Iterative Generation of Images in Latent Space",
+        "authors": [
+          "Anh Nguyen",
+          "Jeff Clune",
+          "Yoshua Bengio",
+          "Alexey Dosovitskiy",
+          "Jason Yosinski"
+        ],
+        "year": 2016
+      }
+    },
+    {
       "openalex_id": "W2560730294",
       "title": "Making the V in VQA Matter: Elevating the Role of Image Understanding in Visual Question Answering",
       "year": 2017,
@@ -341,6 +406,29 @@
           "Devi Parikh"
         ],
         "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2606555609",
+      "title": "Proceedings of the 2023 Conference on Empirical Methods in Natural Language Processing",
+      "year": 2023,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.6024,
+        "author_overlap": 0,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2310.17010",
+        "title": "This Reads Like That: Deep Learning for Interpretable Natural Language Processing",
+        "authors": [
+          "Claudio Fanconi",
+          "Moritz Vandenhirtz",
+          "Severin Husmann",
+          "Julia E. Vogt"
+        ],
+        "year": 2023
       }
     },
     {
@@ -469,19 +557,18 @@
       "verify": {
         "title_sim": 1.0,
         "author_overlap": 0,
-        "year_diff": 5
+        "year_diff": 3
       },
       "candidate": {
-        "arxiv_id": "2312.12936",
-        "title": "Concept-based Explainable Artificial Intelligence: A Survey",
+        "arxiv_id": "2101.09429",
+        "title": "Explainable Artificial Intelligence Approaches: A Survey",
         "authors": [
-          "Eleonora Poeta",
-          "Gabriele Ciravegna",
-          "Eliana Pastor",
-          "Tania Cerquitelli",
-          "Elena Baralis"
+          "Sheikh Rabiul Islam",
+          "William Eberle",
+          "Sheikh Khaled Ghafoor",
+          "Mohiuddin Ahmed"
         ],
-        "year": 2023
+        "year": 2021
       }
     },
     {
@@ -529,6 +616,32 @@
       }
     },
     {
+      "openalex_id": "W2891503716",
+      "title": "Peeking Inside the Black-Box: A Survey on Explainable Artificial Intelligence (XAI)",
+      "year": 2018,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.6257,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2011.11284",
+        "title": "Peeking inside the Black Box: Interpreting Deep Learning Models for Exoplanet Atmospheric Retrievals",
+        "authors": [
+          "Kai Hou Yip",
+          "Quentin Changeat",
+          "Nikolaos Nikolaou",
+          "Mario Morvan",
+          "Billy Edwards",
+          "Ingo P. Waldmann",
+          "Giovanna Tinetti"
+        ],
+        "year": 2020
+      }
+    },
+    {
       "openalex_id": "W2898694742",
       "title": "Explaining Explanations in AI",
       "year": 2019,
@@ -567,6 +680,72 @@
         "authors": [
           "Yonatan Belinkov",
           "James Glass"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2910705748",
+      "title": "Definitions, methods, and applications in interpretable machine learning",
+      "year": 2019,
+      "status": "searched",
+      "arxiv_id": "1901.04592",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1901.04592",
+        "title": "Interpretable machine learning: definitions, methods, and applications",
+        "authors": [
+          "W. James Murdoch",
+          "Chandan Singh",
+          "Karl Kumbier",
+          "Reza Abbasi-Asl",
+          "Bin Yu"
+        ],
+        "year": 2019
+      }
+    },
+    {
+      "openalex_id": "W2914874661",
+      "title": "Proceedings of the 22nd ACM SIGKDD International Conference on Knowledge Discovery and Data Mining",
+      "year": 2016,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.425,
+        "author_overlap": 0,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1602.05012",
+        "title": "A Subsequence Interleaving Model for Sequential Pattern Mining",
+        "authors": [
+          "Jaroslav Fowkes",
+          "Charles Sutton"
+        ],
+        "year": 2016
+      }
+    },
+    {
+      "openalex_id": "W2914924671",
+      "title": "Language Modeling Teaches You More than Translation Does: Lessons Learned Through Auxiliary Syntactic Task Analysis",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1809.10040",
+      "verify": {
+        "title_sim": 0.9778,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1809.10040",
+        "title": "Language Modeling Teaches You More Syntax than Translation Does: Lessons Learned Through Auxiliary Task Analysis",
+        "authors": [
+          "Kelly W. Zhang",
+          "Samuel R. Bowman"
         ],
         "year": 2018
       }
@@ -1011,6 +1190,51 @@
       }
     },
     {
+      "openalex_id": "W2964204621",
+      "title": "What you can cram into a single $&amp;!#* vector: Probing sentence embeddings for linguistic properties",
+      "year": 2018,
+      "status": "searched",
+      "arxiv_id": "1805.01070",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "1805.01070",
+        "title": "What you can cram into a single vector: Probing sentence embeddings for linguistic properties",
+        "authors": [
+          "Alexis Conneau",
+          "German Kruszewski",
+          "Guillaume Lample",
+          "Loïc Barrault",
+          "Marco Baroni"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W2964303497",
+      "title": "Machine Learning Interpretability: A Survey on Methods and Metrics",
+      "year": 2019,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.7681,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2006.04300",
+        "title": "Machine Learning Interpretability and Its Impact on Smart Campus Projects",
+        "authors": [
+          "Raghad Zenki",
+          "Mu Mu"
+        ],
+        "year": 2020
+      }
+    },
+    {
       "openalex_id": "W2966280323",
       "title": "NeuroX: A Toolkit for Analyzing Individual Neurons in Neural Networks",
       "year": 2019,
@@ -1408,6 +1632,29 @@
       }
     },
     {
+      "openalex_id": "W3100198908",
+      "title": "From Zero to Hero: On the Limitations of Zero-Shot Language Transfer with Multilingual Transformers",
+      "year": 2020,
+      "status": "searched",
+      "arxiv_id": "2005.00633",
+      "verify": {
+        "title_sim": 0.9492,
+        "author_overlap": 3,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2005.00633",
+        "title": "From Zero to Hero: On the Limitations of Zero-Shot Cross-Lingual Transfer with Multilingual Transformers",
+        "authors": [
+          "Anne Lauscher",
+          "Vinit Ravishankar",
+          "Ivan Vulić",
+          "Goran Glavaš"
+        ],
+        "year": 2020
+      }
+    },
+    {
       "openalex_id": "W3101155149",
       "title": "A Diagnostic Study of Explainability Techniques for Text Classification",
       "year": 2020,
@@ -1535,16 +1782,16 @@
       "verify": {
         "title_sim": 1.0,
         "author_overlap": 0,
-        "year_diff": 26
+        "year_diff": 0
       },
       "candidate": {
-        "arxiv_id": "math/9509203v1",
-        "title": "On $\\bold N$-circled $\\bold{H^\\infty}$-domains of holomorphy",
+        "arxiv_id": "2110.13830",
+        "title": "Does TMS increase BOLD activity at the site of stimulation?",
         "authors": [
-          "Marek Jarnicki",
-          "Peter Pflug"
+          "Farshad Rafiei",
+          "Dobromir Rahnev"
         ],
-        "year": 1995
+        "year": 2021
       }
     },
     {
@@ -2047,6 +2294,29 @@
       }
     },
     {
+      "openalex_id": "W4323537222",
+      "title": "Diving into Deep Learning: On Reading and Interpreting Black Boxes",
+      "year": 2023,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.878,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2106.11342",
+        "title": "Dive into Deep Learning",
+        "authors": [
+          "Aston Zhang",
+          "Zachary C. Lipton",
+          "Mu Li",
+          "Alexander J. Smola"
+        ],
+        "year": 2021
+      }
+    },
+    {
       "openalex_id": "W4378976798",
       "title": "Toward Transparent AI: A Survey on Interpreting the Inner Structures of Deep Neural Networks",
       "year": 2023,
@@ -2067,6 +2337,75 @@
           "Dylan Hadfield-Menell"
         ],
         "year": 2022
+      }
+    },
+    {
+      "openalex_id": "W4379347837",
+      "title": "Symbols and grounding in large language models",
+      "year": 2023,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8642,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2512.09117",
+        "title": "A Categorical Analysis of Large Language Models and Why LLMs Circumvent the Symbol Grounding Problem",
+        "authors": [
+          "Luciano Floridi",
+          "Yiyang Jia",
+          "Fernando Tohmé"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4382583857",
+      "title": "Cognitive Network Science Reveals Bias in GPT-3, GPT-3.5 Turbo, and GPT-4 Mirroring Math Anxiety in High-School Students",
+      "year": 2023,
+      "status": "searched",
+      "arxiv_id": "2305.18320",
+      "verify": {
+        "title_sim": 0.9604,
+        "author_overlap": 5,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2305.18320",
+        "title": "Cognitive network science reveals bias in GPT-3, ChatGPT, and GPT-4 mirroring math anxiety in high-school students",
+        "authors": [
+          "Katherine Abramski",
+          "Salvatore Citraro",
+          "Luigi Lombardi",
+          "Giulio Rossetti",
+          "Massimo Stella"
+        ],
+        "year": 2023
+      }
+    },
+    {
+      "openalex_id": "W4385360966",
+      "title": "Iterative improvements from feedback for language models",
+      "year": 2023,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8085,
+        "author_overlap": 0,
+        "year_diff": 3
+      },
+      "candidate": {
+        "arxiv_id": "2601.15188",
+        "title": "Benchmarking Large Language Models for ABAP Code Generation: An Empirical Study on Iterative Improvement by Compiler Feedback",
+        "authors": [
+          "Stephan Wallraven",
+          "Tim Köhne",
+          "Hartmut Westenberger",
+          "Andreas Moser"
+        ],
+        "year": 2026
       }
     },
     {
@@ -4329,6 +4668,33 @@
       }
     },
     {
+      "openalex_id": "W4393156110",
+      "title": "On the Opacity of Deep Neural Networks",
+      "year": 2023,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8986,
+        "author_overlap": 0,
+        "year_diff": 3
+      },
+      "candidate": {
+        "arxiv_id": "2005.12855",
+        "title": "COVID-Net S: Towards computer-aided severity assessment via training and validation of deep neural networks for geographic extent and opacity extent scoring of chest X-rays for SARS-CoV-2 lung disease severity",
+        "authors": [
+          "Alexander Wong",
+          "Zhong Qiu Lin",
+          "Linda Wang",
+          "Audrey G. Chung",
+          "Beiyi Shen",
+          "Almas Abbasi",
+          "Mahsa Hoshmand-Kochi",
+          "Timothy Q. Duong"
+        ],
+        "year": 2020
+      }
+    },
+    {
       "openalex_id": "W4393156673",
       "title": "Measuring Self-Supervised Representation Quality for Downstream Classification Using Discriminative Features",
       "year": 2024,
@@ -4508,6 +4874,51 @@
       }
     },
     {
+      "openalex_id": "W4398774455",
+      "title": "Efficient Training and Inference: Techniques for Large Language Models Using Llama",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2510.22852",
+        "title": "Encoder-Decoder Diffusion Language Models for Efficient Training and Inference",
+        "authors": [
+          "Marianne Arriola",
+          "Yair Schiff",
+          "Hao Phung",
+          "Aaron Gokaslan",
+          "Volodymyr Kuleshov"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4398780966",
+      "title": "Artificial Intelligence - Intelligent Art?",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8571,
+        "author_overlap": 0,
+        "year_diff": 3
+      },
+      "candidate": {
+        "arxiv_id": "2104.07598",
+        "title": "Can Artificial Intelligence Make Art?",
+        "authors": [
+          "Elzė Sigutė Mikalonytė",
+          "Markus Kneer"
+        ],
+        "year": 2021
+      }
+    },
+    {
       "openalex_id": "W4399281666",
       "title": "Evaluating language models for mathematics through interactions",
       "year": 2024,
@@ -4629,6 +5040,31 @@
           "Carsten Eickhoff"
         ],
         "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4400585813",
+      "title": "In-Context Learning in Large Language Models: A Comprehensive Survey",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.9425,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2305.12907",
+        "title": "Meta-in-context learning in large language models",
+        "authors": [
+          "Julian Coda-Forno",
+          "Marcel Binz",
+          "Zeynep Akata",
+          "Matthew Botvinick",
+          "Jane X. Wang",
+          "Eric Schulz"
+        ],
+        "year": 2023
       }
     },
     {
@@ -4976,6 +5412,33 @@
       }
     },
     {
+      "openalex_id": "W4403011922",
+      "title": "Directions of Technical Innovation for Regulatable AI Systems",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.6882,
+        "author_overlap": 8,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2306.12609",
+        "title": "Towards Regulatable AI Systems: Technical Gaps and Policy Opportunities",
+        "authors": [
+          "Xudong Shen",
+          "Hannah Brown",
+          "Jiashu Tao",
+          "Martin Strobel",
+          "Yao Tong",
+          "Akshay Narayan",
+          "Harold Soh",
+          "Finale Doshi-Velez"
+        ],
+        "year": 2023
+      }
+    },
+    {
       "openalex_id": "W4403223051",
       "title": "Drowzee: Metamorphic Testing for Fact-Conflicting Hallucination Detection in Large Language Models",
       "year": 2024,
@@ -5101,6 +5564,27 @@
           "Pengzhi Chu",
           "Weiming Zhao",
           "Xiaokang Yang"
+        ],
+        "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4403796382",
+      "title": "AERO: Softmax-Only LLMs for Efficient Private Inference",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.65,
+        "author_overlap": 2,
+        "year_diff": 0
+      },
+      "candidate": {
+        "arxiv_id": "2410.13060",
+        "title": "AERO: Entropy-Guided Framework for Private LLM Inference",
+        "authors": [
+          "Nandan Kumar Jha",
+          "Brandon Reagen"
         ],
         "year": 2024
       }
@@ -5270,6 +5754,35 @@
           "Kui Ren"
         ],
         "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4405637820",
+      "title": "Knowing that as knowing how: a neurocognitive practicalism",
+      "year": 2024,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.4724,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2603.00676",
+        "title": "K^2-Agent: Co-Evolving Know-What and Know-How for Hierarchical Mobile Device Control",
+        "authors": [
+          "Zhe Wu",
+          "Donglin Mo",
+          "Hongjin Lu",
+          "Junliang Xing",
+          "Jianheng Liu",
+          "Yuheng Jing",
+          "Kai Li",
+          "Kun Shao",
+          "Jianye Hao",
+          "Yuanchun Shi"
+        ],
+        "year": 2026
       }
     },
     {
@@ -5501,6 +6014,30 @@
       }
     },
     {
+      "openalex_id": "W4408102289",
+      "title": "Artificial intelligence and human decision making: Exploring similarities in cognitive bias",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.7826,
+        "author_overlap": 0,
+        "year_diff": 5
+      },
+      "candidate": {
+        "arxiv_id": "2006.11194",
+        "title": "Does Explainable Artificial Intelligence Improve Human Decision-Making?",
+        "authors": [
+          "Yasmeen Alufaisan",
+          "Laura R. Marusich",
+          "Jonathan Z. Bakdash",
+          "Yan Zhou",
+          "Murat Kantarcioglu"
+        ],
+        "year": 2020
+      }
+    },
+    {
       "openalex_id": "W4408919020",
       "title": "The Geometry of Concepts: Sparse Autoencoder Feature Structure",
       "year": 2025,
@@ -5523,6 +6060,27 @@
           "Max Tegmark"
         ],
         "year": 2024
+      }
+    },
+    {
+      "openalex_id": "W4409012860",
+      "title": "Exploring latent spaces: A visual comparison of sentence-BERT and GPT-2 models",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.6438,
+        "author_overlap": 0,
+        "year_diff": 2
+      },
+      "candidate": {
+        "arxiv_id": "2311.03621",
+        "title": "Exploring Latent Spaces of Tonal Music using Variational Autoencoders",
+        "authors": [
+          "Nádia Carvalho",
+          "Gilberto Bernardes"
+        ],
+        "year": 2023
       }
     },
     {
@@ -5727,6 +6285,31 @@
       }
     },
     {
+      "openalex_id": "W4410635628",
+      "title": "Bigger is not always better: The importance of human-scale language modeling for psycholinguistics",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.6706,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2404.01367",
+        "title": "Bigger is not Always Better: Scaling Properties of Latent Diffusion Models",
+        "authors": [
+          "Kangfu Mei",
+          "Zhengzhong Tu",
+          "Mauricio Delbracio",
+          "Hossein Talebi",
+          "Vishal M. Patel",
+          "Peyman Milanfar"
+        ],
+        "year": 2024
+      }
+    },
+    {
       "openalex_id": "W4410781058",
       "title": "Evidence from counterfactual tasks supports emergent analogical reasoning in large language models",
       "year": 2025,
@@ -5883,6 +6466,29 @@
           "Zhicheng Lin"
         ],
         "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4412094090",
+      "title": "A phase transition between positional and semantic learning in a solvable model of dot-product attention<sup>*</sup>",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2402.03902",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2402.03902",
+        "title": "A phase transition between positional and semantic learning in a solvable model of dot-product attention",
+        "authors": [
+          "Hugo Cui",
+          "Freya Behrens",
+          "Florent Krzakala",
+          "Lenka Zdeborová"
+        ],
+        "year": 2024
       }
     },
     {
@@ -6280,6 +6886,28 @@
       }
     },
     {
+      "openalex_id": "W4415272559",
+      "title": "CNNs, RNNs and Transformers in human action recognition: a survey and a hybrid model",
+      "year": 2025,
+      "status": "searched",
+      "arxiv_id": "2407.06162",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 3,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2407.06162",
+        "title": "RNNs, CNNs and Transformers in Human Action Recognition: A Survey and a Hybrid Model",
+        "authors": [
+          "Khaled Alomar",
+          "Halil Ibrahim Aysel",
+          "Xiaohao Cai"
+        ],
+        "year": 2024
+      }
+    },
+    {
       "openalex_id": "W4416109867",
       "title": "How Do Large Language Models Understand Relevance? A Mechanistic Interpretability Perspective",
       "year": 2025,
@@ -6299,6 +6927,54 @@
           "Ji-Rong Wen"
         ],
         "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W4416176191",
+      "title": "Learning to Decompose: Human-Like Subgoal Preferences Emerge in Neural Networks Learning Graph Traversal",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.7872,
+        "author_overlap": 0,
+        "year_diff": 7
+      },
+      "candidate": {
+        "arxiv_id": "1811.05249",
+        "title": "Modular Networks: Learning to Decompose Neural Computation",
+        "authors": [
+          "Louis Kirsch",
+          "Julius Kunze",
+          "David Barber"
+        ],
+        "year": 2018
+      }
+    },
+    {
+      "openalex_id": "W4417491397",
+      "title": "Detection of Hallucinations Based on the Internal States of Large Language Models",
+      "year": 2025,
+      "status": "unresolved",
+      "arxiv_id": null,
+      "verify": {
+        "title_sim": 0.8936,
+        "author_overlap": 0,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2403.06448",
+        "title": "Unsupervised Real-Time Hallucination Detection based on the Internal States of Large Language Models",
+        "authors": [
+          "Weihang Su",
+          "Changyue Wang",
+          "Qingyao Ai",
+          "Yiran HU",
+          "Zhijing Wu",
+          "Yujia Zhou",
+          "Yiqun Liu"
+        ],
+        "year": 2024
       }
     },
     {
@@ -6394,6 +7070,29 @@
           "Eyal Finkelshtein",
           "Daniel Rotman",
           "Raja Giryes"
+        ],
+        "year": 2025
+      }
+    },
+    {
+      "openalex_id": "W7168640570",
+      "title": "Do Language Models Know Who Did What to Whom?",
+      "year": 2026,
+      "status": "searched",
+      "arxiv_id": "2504.16884",
+      "verify": {
+        "title_sim": 1.0,
+        "author_overlap": 4,
+        "year_diff": 1
+      },
+      "candidate": {
+        "arxiv_id": "2504.16884",
+        "title": "Do Large Language Models know who did what to whom?",
+        "authors": [
+          "Joseph M. Denning",
+          "Xiaohan Hannah Guo",
+          "Bryor Snefjella",
+          "Idan A. Blank"
         ],
         "year": 2025
       }
